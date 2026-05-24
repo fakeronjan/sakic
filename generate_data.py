@@ -69,13 +69,16 @@ TEAM_CONFERENCE = {
     "Atlanta Thrashers":     "Eastern",   # 1999-2011
     "Minnesota North Stars": "Western",   # 1967-1993
     "Colorado Rockies":      "Western",   # 1976-1982 (NHL franchise, not the MLB one)
-    "Original Winnipeg Jets":"Western",   # 1979-1996 (alias below collapses raw name)
     "Arizona Coyotes":       "Western",   # 1996-2024
 }
 
-# Source data emits the original Jets as "Winnipeg Jets" — same name as the
-# modern franchise. We need to disambiguate. Done in prepare-time below.
-# (Handled in remap_original_jets function called from main.)
+# Per fleet 'leaving a market breaks history; returning doesn't' rule (same as
+# Charlotte Hornets/Bobcats/Hornets in DUNCAN): the original Winnipeg Jets
+# (1979-1996) AND the modern Winnipeg Jets (2011+) are ONE canonical franchise.
+# The 1996-2011 gap is just absence from the market. The Atlanta Thrashers
+# (1999-2011) who became the modern Jets are a SEPARATE defunct franchise
+# (because they LEFT Atlanta). The Arizona Coyotes / Utah Hockey Club chain is
+# also separate (the org left Winnipeg in 1996; new franchise starts in Phoenix).
 
 
 # Era-aware division history for 2013-14 onward. Pre-2013 uses conference
@@ -215,15 +218,10 @@ games = pd.read_csv("all_nhl_games.csv", low_memory=False)
 games["date_game"] = pd.to_datetime(games["date_game"])
 games["season"] = games["season"].astype(int)
 
-# Disambiguate the original Winnipeg Jets (1979-1996) from the modern Jets (2011+).
-# Same canonical name in source data; rename historical rows.
-mask = (games["season"] <= 1996) & (
-    (games["home_team_name"] == "Winnipeg Jets") | (games["visitor_team_name"] == "Winnipeg Jets")
-)
-games.loc[(games["season"] <= 1996) & (games["home_team_name"] == "Winnipeg Jets"), "home_team_name"] = "Original Winnipeg Jets"
-games.loc[(games["season"] <= 1996) & (games["visitor_team_name"] == "Winnipeg Jets"), "visitor_team_name"] = "Original Winnipeg Jets"
-# Same on ratings (the model used the original name)
-ratings.loc[(ratings["season"] <= 1996) & (ratings["name"] == "Winnipeg Jets"), "name"] = "Original Winnipeg Jets"
+# Per fleet relocation policy (leaving a market breaks history; returning doesn't),
+# the original Jets (1979-1996) and modern Jets (2011+) are ONE canonical "Winnipeg
+# Jets" franchise. Source data already emits both eras as "Winnipeg Jets" with a
+# 1996-2011 gap, so no rename needed here.
 
 print(f"  Ratings: {len(ratings):,} rows, {ratings['season'].min()}-{ratings['season'].max()}")
 print(f"  Games:   {len(games):,} rows, {games['season'].min()}-{games['season'].max()}")
@@ -485,6 +483,11 @@ for s in sorted(ws_results)[-5:]:
 # =========================================================
 # DIVISION WINNERS (per season, per team)
 # =========================================================
+# 2004-05: NHL lockout cancelled the entire season — no games played, no
+# division titles, no Presidents' Trophy, no Stanley Cup. Mirrors the GRIFFEY
+# 1994 strike handling pattern.
+NO_TITLES_SEASONS = {2005}
+
 # Only for COMPLETED seasons and only for 2013-14+ (when modern divisions exist).
 print("\nComputing division winners (2013-14+)...")
 COMPLETED_SEASONS = set(rs_end_by_season.keys())
@@ -497,7 +500,7 @@ rs_only_simple["pts"] = rs_only_simple["won"] * 2 + rs_only_simple["ot_so_loss"]
 
 for s, sub in rs_only_simple.groupby("season"):
     s = int(s)
-    if s not in COMPLETED_SEASONS or s < 2014:
+    if s not in COMPLETED_SEASONS or s < 2014 or s in NO_TITLES_SEASONS:
         continue
     by_team = sub.groupby("team").agg(P=("pts", "sum"), G=("pts", "size")).reset_index()
     by_team["ppg"] = by_team["P"] / by_team["G"]
@@ -621,7 +624,7 @@ for team in sorted(ratings["name"].unique()):
         }, f, separators=(",", ":"))
 
     teams_index.append({
-        "team":              team,
+        "name":              team,
         "display_name":      current_display_name(team),
         "conference":        conference(team),
         "historical_names":  historical_display_names(team),
@@ -677,10 +680,26 @@ for s in sorted(ws_results.keys(), reverse=True):
         },
     })
 
+# 2004-05: NHL lockout cancelled the entire season — no Cup awarded. Inject a
+# synthetic entry (mirrors GRIFFEY's 1994 strike handling).
+if not any(e["season"] == 2005 for e in champs_list):
+    champs_list.append({
+        "season":       2005,
+        "season_label": season_label(2005),
+        "series":       "",
+        "no_series":    True,
+        "pre_rated":    False,
+        "champion":     None,
+        "runner_up":    None,
+    })
+    champs_list.sort(key=lambda e: -e["season"])
+
 # Running title counts (no pre-1980 dict for v1)
 _champ_count = {}
 _ru_count    = {}
 for entry in reversed(champs_list):
+    if entry.get("no_series"):
+        continue  # 2004-05 lockout — no champion/runner-up to count
     ct = entry["champion"]["team"]
     rt = entry["runner_up"]["team"]
     _champ_count[ct] = _champ_count.get(ct, 0) + 1
