@@ -98,7 +98,7 @@ NHL_API_TEAM = {
     "MIN": "Minnesota Wild",            # 2000+ expansion (NOT a continuation of North Stars)
     "NSH": "Nashville Predators",
     "STL": "St. Louis Blues",
-    "UTA": "Utah Hockey Club",          # 2024+ (separate from Arizona Coyotes)
+    "UTA": "Utah Mammoth",              # 2024+ (separate from Arizona Coyotes; UHC 2024-25 only, rebranded Mammoth 2025-26+)
     "WPG": "Winnipeg Jets",             # 2011+ (modern Jets, separate from original 1979-1996 Jets)
     # Modern Pacific Division
     "ANA": "Anaheim Ducks",             # Same franchise as Mighty Ducks of Anaheim (era display)
@@ -123,6 +123,7 @@ NHL_API_TEAM = {
 TEAM_ALIASES = {
     "Mighty Ducks of Anaheim": "Anaheim Ducks",
     "Phoenix Coyotes":         "Arizona Coyotes",   # Same metro; collapse to modern Arizona name
+    "Utah Hockey Club":        "Utah Mammoth",      # Same-market rebrand: UHC 2024-25 only → Mammoth 2025-26+
     # The 2024 Utah move is a relocation: stays separate (mapped above).
 }
 

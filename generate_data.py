@@ -53,7 +53,7 @@ TEAM_CONFERENCE = {
     "Minnesota Wild":        "Western",
     "Nashville Predators":   "Western",
     "St. Louis Blues":       "Western",
-    "Utah Hockey Club":      "Western",
+    "Utah Mammoth":          "Western",   # 2024+ (UHC 2024-25 → Mammoth 2025-26+, same-market rebrand)
     "Winnipeg Jets":         "Western",  # modern Jets (2011+)
     "Anaheim Ducks":         "Western",
     "Calgary Flames":        "Western",
@@ -110,7 +110,7 @@ TEAM_DIVISION_HISTORY = {
     "Minnesota Wild":        [(2014, 9999, "Central")],
     "Nashville Predators":   [(2014, 9999, "Central")],
     "St. Louis Blues":       [(2014, 9999, "Central")],
-    "Utah Hockey Club":      [(2025, 9999, "Central")],
+    "Utah Mammoth":          [(2025, 9999, "Central")],
     "Winnipeg Jets":         [(2014, 9999, "Central")],
     # Pacific Division (2013+)
     "Anaheim Ducks":         [(2014, 9999, "Pacific")],
@@ -133,6 +133,10 @@ SAKIC_TEAM_DISPLAY_HISTORY = {
     # 'Arizona Coyotes'); era display reflects the historical name
     "Arizona Coyotes":       [(1997, 2014, "Phoenix Coyotes"),
                               (2015, 2024, "Arizona Coyotes")],
+    # Utah: arrived 2024-25 as Utah Hockey Club, rebranded to Utah Mammoth for
+    # 2025-26+. Same-market rebrand → one canonical franchise, era display.
+    "Utah Mammoth":          [(2025, 2025, "Utah Hockey Club"),
+                              (2026, 9999, "Utah Mammoth")],
 }
 
 
