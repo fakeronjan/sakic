@@ -720,7 +720,13 @@ for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
         champ, ru, series = a, b, f"{a_wins}-{b_wins}"
     else:
         champ, ru, series = b, a, f"{b_wins}-{a_wins}"
-    ws_results[s_int] = {"champion": champ, "runner_up": ru, "series": series}
+    # Clinching game score (from champion's POV).
+    clincher = finals_games.sort_values("date_game").iloc[-1]
+    if clincher["home_team_name"] == champ:
+        final_score = f"{int(clincher['home_pts'])}-{int(clincher['visitor_pts'])}"
+    else:
+        final_score = f"{int(clincher['visitor_pts'])}-{int(clincher['home_pts'])}"
+    ws_results[s_int] = {"champion": champ, "runner_up": ru, "series": series, "final_score": final_score}
 
 print(f"  Detected {len(ws_results)} Stanley Cup champions.")
 for s in sorted(ws_results)[-5:]:
@@ -929,6 +935,7 @@ for s in sorted(ws_results.keys(), reverse=True):
         "season":       s,
         "season_label": season_label(s),
         "series":       info["series"],
+        "final_score":  info.get("final_score", ""),
         "pre_rated":    pre_rated,
         "champion": {
             "team":           info["champion"],
