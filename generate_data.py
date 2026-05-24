@@ -323,33 +323,27 @@ for (season, team, is_po), sub in team_games.groupby(["season", "team", "is_play
     records[(int(season), team)][key] = (w, reg_l, otl, t)
 
 
-def format_record(season, rs_or_ps_tuple):
-    """Era-aware: pre-2005 = W-L-T; 2005+ = W-L-OTL (OTL combines OT loss + SO loss; ties don't exist)."""
-    w, reg_l, otl, t = rs_or_ps_tuple
-    if (w + reg_l + otl + t) == 0:
-        return ""
-    if int(season) >= 2006:  # 2005-06 onward = shootout era
-        return f"{w}-{reg_l + otl}-{otl}"  # W - regulation losses (incl OTL count) ... actually let me think
-    return f"{w}-{reg_l}-{t}"
-
-
-# Actually NHL convention since 2005:
-#   W = total wins (REG + OT + SO)
-#   L = regulation losses ONLY
-#   OTL = OT or SO losses
-# Total games = W + L + OTL
-# So display format is "W-L-OTL" where L excludes OTL.
-def format_record(season, tup):
+def format_record(season, tup, is_ps=False):
+    """Era-aware record formatter.
+       Regular season: era-dependent 3-column (W-L-T pre-1999, W-L-(T+OTL) 1999-2005, W-L-OTL 2005+).
+       Postseason: always 2-column W-L (NHL playoffs have no ties or loser points)."""
     w, reg_l, otl, t = tup
     if (w + reg_l + otl + t) == 0:
         return ""
-    if int(season) >= 2006:
-        # W-L-OTL (L excludes OT/SO losses)
-        return f"{w}-{reg_l}-{otl}"
-    # Pre-2006 (incl 1999-2005 transition era for simplicity): W-L-T
-    # In 1999-2005 there was a "loser point" but ties still appeared. Use W-L-T which captures both.
-    total_l = reg_l + otl  # all non-tie losses
-    return f"{w}-{total_l}-{t}"
+    if is_ps:
+        # NHL playoffs: every game has a winner; no OT loss / tie. 2-column.
+        return f"{w}-{reg_l + otl}"
+    s = int(season)
+    if s >= 2006:
+        return f"{w}-{reg_l}-{otl}"            # W-L-OTL (modern shootout era)
+    if s >= 2000:
+        return f"{w}-{reg_l}-{otl + t}"        # W-L-(T+OTL) (1999-2005 loser-point era)
+    return f"{w}-{reg_l + otl}-{t}"             # W-L-T (pre-1999, no OTL)
+
+
+def format_pts(season, tup):
+    w, reg_l, otl, t = tup
+    return _pts_for(season, w, reg_l, otl, t)
 
 
 # =========================================================
@@ -394,9 +388,16 @@ def _fmt_rs(r, season):
     otl = int(r["cum_rs_otl"]) if pd.notna(r["cum_rs_otl"]) else 0
     t   = int(r["cum_rs_t"])   if pd.notna(r["cum_rs_t"])   else 0
     if (w + l + otl + t) == 0:
-        return f"0-0-0"
-    if int(season) >= 2006:
+        return "0-0-0"
+    s = int(season)
+    if s >= 2006:
+        # Modern shootout era: W-L-OTL, T is always 0
         return f"{w}-{l}-{otl}"
+    if s >= 2000:
+        # 1999-2005: loser-point era. Combine OTL and T into one "loser points" column
+        # (both gave 1 pt). Display as W-L-(T+OTL).
+        return f"{w}-{l}-{otl + t}"
+    # Pre-1999: no loser point. OTL didn't exist as a separate category — folded into L.
     return f"{w}-{l + otl}-{t}"
 
 
@@ -405,7 +406,18 @@ def _fmt_ps(r):
     pl = int(r["cum_ps_l"]) if pd.notna(r["cum_ps_l"]) else 0
     if (pw + pl) == 0:
         return ""
-    return f"{pw}-{pl}"
+    return f"{pw}-{pl}"   # NHL playoffs: 2-col W-L (every game has a winner)
+
+
+def _pts_for(season, w, l, otl, t):
+    """NHL points: W*2 + (T or OTL = 1 pt). Era rules:
+       1979-80 to 1998-99: W*2 + T*1 (no OT-loss point)
+       1999-00 to 2004-05: W*2 + OTL*1 + T*1 (loser point introduced 1999)
+       2005-06 onward:     W*2 + OTL*1 (no ties; OTL is OT/SO loss)"""
+    s = int(season)
+    if s >= 2000:  # 1999-00 introduced loser point; modern era continues it
+        return w * 2 + otl + t
+    return w * 2 + t  # pre-1999
 
 
 snap_records["rs_record"] = [
@@ -414,11 +426,23 @@ snap_records["rs_record"] = [
 snap_records["ps_record"]       = snap_records.apply(_fmt_ps, axis=1)
 snap_records["last_match"]      = snap_records["result"].fillna("")
 snap_records["last_match_date"] = snap_records["actual_game_date"].dt.strftime("%Y-%m-%d").fillna("")
+# Era-aware points for the standings (NHL ranks by points, not wins).
+snap_records["rs_pts"] = [
+    _pts_for(
+        s,
+        int(r["cum_rs_w"])   if pd.notna(r["cum_rs_w"])   else 0,
+        int(r["cum_rs_l"])   if pd.notna(r["cum_rs_l"])   else 0,
+        int(r["cum_rs_otl"]) if pd.notna(r["cum_rs_otl"]) else 0,
+        int(r["cum_rs_t"])   if pd.notna(r["cum_rs_t"])   else 0,
+    )
+    for r, s in zip(snap_records.to_dict("records"), snap_records["season"])
+]
 
 snap_record_lookup = {
     (int(r["season"]), r["team"], r["date_game"]): {
         "rs_record":       r["rs_record"],
         "ps_record":       r["ps_record"],
+        "rs_pts":          int(r["rs_pts"]),
         "last_match":      r["last_match"],
         "last_match_date": r["last_match_date"],
     }
@@ -487,6 +511,16 @@ for s in sorted(ws_results)[-5:]:
 # division titles, no Presidents' Trophy, no Stanley Cup. Mirrors the GRIFFEY
 # 1994 strike handling pattern.
 NO_TITLES_SEASONS = {2005}
+
+# Short / disrupted seasons — flagged on GOAT entries so the UI can tag them.
+# Pattern matches GRIFFEY's COVID tag for 2020. Small samples bias ratings;
+# the tag gives readers context without altering the model.
+SHORT_SEASONS = {
+    1995: "lockout 48g",   # 1994-95 lockout: 48-game season
+    2013: "lockout 48g",   # 2012-13 lockout: 48-game season
+    2020: "COVID 70g",     # 2019-20 stopped early at COVID stoppage (~70 g)
+    2021: "COVID 56g",     # 2020-21 COVID-shortened: 56 games
+}
 
 # Only for COMPLETED seasons and only for 2013-14+ (when modern divisions exist).
 print("\nComputing division winners (2013-14+)...")
@@ -558,6 +592,7 @@ for s in sorted(ratings["season"].unique()):
                 "division":         division(r["name"], s),
                 "rating":           round(float(r["rating"]), 3),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
+                "regular_pts":      rec.get("rs_pts", 0),
                 "playoff_record":   rec.get("ps_record", ""),
                 "last_match":       rec.get("last_match", ""),
                 "last_match_date":  rec.get("last_match_date", ""),
@@ -599,14 +634,23 @@ for team in sorted(ratings["name"].unique()):
             snap_date_ts = r["ranking_date"]
             rec = snap_record_lookup.get((s, team, snap_date_ts), {})
             sf = 2 if int(r["is_ps_end"]) == 1 else (1 if int(r["is_rs_end"]) == 1 else 0)
+            # Filter to game-days for THIS team (last_match_date == snap date)
+            # PLUS season-flag rows (EOR / EOS). Matches DUNCAN's data-layer
+            # filter — keeps the file small AND avoids stale-row pollution in
+            # the single-season Team Summary view.
+            snap_date_str = str(snap_date_ts.date())
+            is_game_day = rec.get("last_match_date") == snap_date_str
+            if not (is_game_day or sf != 0):
+                continue
             entries.append({
-                "date":             str(snap_date_ts.date()),
+                "date":             snap_date_str,
                 "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
                 "rating":           round(float(r["rating"]), 3),
                 "display_name":     display_name(team, s),
                 "conference":       conference(team),
                 "division":         division(team, s),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
+                "regular_pts":      rec.get("rs_pts", 0),
                 "playoff_record":   rec.get("ps_record", ""),
                 "last_match":       rec.get("last_match", ""),
                 "last_match_date":  rec.get("last_match_date", ""),
@@ -661,7 +705,8 @@ for s in sorted(ws_results.keys(), reverse=True):
             "display_name":   display_name(info["champion"], s),
             "conference":     conference(info["champion"]),
             "rs_record":      format_record(s, rec_ch["rs"]) if rec_ch else "",
-            "ps_record":      format_record(s, rec_ch["ps"]) if rec_ch else "",
+            "rs_pts":         format_pts(s, rec_ch["rs"]) if rec_ch else 0,
+            "ps_record":      format_record(s, rec_ch["ps"], is_ps=True) if rec_ch else "",
             "rs_end_rating":  round(float(ch_rs["rating"].iloc[0]), 3) if not ch_rs.empty else None,
             "rs_end_rank":    int(ch_rs["rank"].iloc[0]) if not ch_rs.empty else None,
             "ps_end_rating":  round(float(ch_ps["rating"].iloc[0]), 3) if not ch_ps.empty else None,
@@ -672,7 +717,8 @@ for s in sorted(ws_results.keys(), reverse=True):
             "display_name":   display_name(info["runner_up"], s),
             "conference":     conference(info["runner_up"]),
             "rs_record":      format_record(s, rec_ru["rs"]) if rec_ru else "",
-            "ps_record":      format_record(s, rec_ru["ps"]) if rec_ru else "",
+            "rs_pts":         format_pts(s, rec_ru["rs"]) if rec_ru else 0,
+            "ps_record":      format_record(s, rec_ru["ps"], is_ps=True) if rec_ru else "",
             "rs_end_rating":  round(float(ru_rs["rating"].iloc[0]), 3) if not ru_rs.empty else None,
             "rs_end_rank":    int(ru_rs["rank"].iloc[0]) if not ru_rs.empty else None,
             "ps_end_rating":  round(float(ru_ps["rating"].iloc[0]), 3) if not ru_ps.empty else None,
@@ -745,9 +791,12 @@ def build_goat(flag_col, require_cup=False):
             "division_winner":  1 if (s, r["name"]) in division_winners else 0,
             "season":           s,
             "season_label":     season_label(s),
+            "short_season":     s in SHORT_SEASONS,
+            "short_season_tag": SHORT_SEASONS.get(s, ""),
             "rating":           round(float(r["rating"]), 3),
             "regular_record":   format_record(s, rec["rs"]) if rec else "",
-            "playoff_record":   format_record(s, rec["ps"]) if rec else "",
+            "regular_pts":      format_pts(s, rec["rs"]) if rec else 0,
+            "playoff_record":   format_record(s, rec["ps"], is_ps=True) if rec else "",
             "finals_status":    finals_status,
         })
     return out
