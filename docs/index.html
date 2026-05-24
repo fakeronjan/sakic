@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAKIC - NHL Power Rankings</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8f8f6;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  header {
+    background: #1a6b8a;
+    color: #fff;
+    padding: 20px 24px 16px;
+  }
+  header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ff6eb4;
+  }
+  header p.subtitle {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  header p.model-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.82);
+    margin-top: 8px;
+    max-width: 720px;
+    line-height: 1.5;
+  }
+  header p.updated {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+  }
+
+  nav {
+    background: #155a75;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: #aaa;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  nav button:hover { color: #fff; }
+  nav button.active { color: #ff6eb4; border-bottom-color: #ff6eb4; }
+
+  .tab { display: none; padding: 16px; max-width: 1100px; margin: 0 auto; }
+  .tab.active { display: block; }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: center;
+  }
+  select {
+    padding: 7px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    background: #fff;
+    cursor: pointer;
+    min-width: 160px;
+  }
+  .count-label {
+    font-size: 12px;
+    color: #888;
+    margin-left: auto;
+  }
+
+  .conf-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .conf-pills button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #155a75;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+  .conf-pills button:hover { background: #fafafa; }
+  .conf-pills button.active { background: #1a6b8a; color: #ff6eb4; border-color: #1a6b8a; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  thead th {
+    background: #1a6b8a;
+    color: #ff6eb4;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid #f0f0f0; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #fafafa; }
+  tbody td {
+    padding: 9px 12px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+
+  .rank-cell {
+    font-weight: 700;
+    color: #888;
+    width: 36px;
+    text-align: center;
+  }
+  .team-cell { font-weight: 600; }
+
+  /* Clickable cells - deep-link to Team Summary / Standings */
+  .linked { cursor: pointer; }
+  .linked:hover { text-decoration: underline; }
+  .team-cell.linked, .team-link.linked { color: #1a6b8a; }
+
+  .rating-cell {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: #1a6b8a;
+  }
+  .rating-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .rating-bar-track {
+    width: 80px;
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .rating-bar-center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 6px;
+    background: #ccc;
+  }
+  .rating-bar-fill {
+    position: absolute;
+    height: 6px;
+    border-radius: 3px;
+    top: 0;
+  }
+  .bar-pos { background: #1a6b8a; }
+  .bar-neg { background: #ff6eb4; }
+
+  .finish-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .finish-champion { background: #c8a84b; color: #1a6b8a; }
+  .finish-runner   { background: #ddd; color: #444; }
+  .conf-pill       { background: #f4f4f4; color: #555; border: 1px solid #e8e8e8; }
+
+  .last-match-cell {
+    font-size: 12px;
+    color: #555;
+    max-width: 240px;
+  }
+  .result-W       { color: #2e7d32; font-weight: 700; }
+  .result-L       { color: #c62828; font-weight: 700; }
+  .result-W-stale { color: #2e7d32; font-weight: 400; }
+  .result-L-stale { color: #c62828; font-weight: 400; }
+
+  /* Season chart */
+  #chart-wrap {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  #season-chart {
+    width: 100%;
+    height: 180px;
+    display: block;
+  }
+
+  .loading { color: #888; padding: 20px; text-align: center; font-size: 13px; }
+  .error   { color: #c62828; padding: 20px; font-size: 13px; }
+  .data-note { font-size: 11px; color: #888; margin-bottom: 10px; }
+
+  /* League History table */
+  .col-champ  { background: #fffdf3; }
+  .col-ru     { background: #fafafa; }
+  .season-cell { font-weight: 700; color: #1a6b8a; white-space: nowrap; }
+  .divider-col { width: 4px; background: #e8e8e8; padding: 0; }
+  #history-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  #standings-table-wrap,
+  #team-table-wrap,
+  #goat-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  @media (max-width: 600px) {
+    header { padding: 14px 16px 12px; }
+    header h1 { font-size: 20px; letter-spacing: 2px; }
+    nav button { padding: 10px 14px; font-size: 12px; }
+    .tab { padding: 12px; }
+    td, th { padding: 7px 8px; font-size: 12px; }
+    .last-match-cell { max-width: 180px; }
+    .controls { flex-direction: column; align-items: stretch; }
+    select { min-width: unset; width: 100%; }
+    .conf-pills button { font-size: 11px; padding: 5px 9px; }
+    .rating-bar-track { display: none; }
+    .col-hide-mobile { display: none; }
+  }
+
+  /* Fleet nav strip — links to sister sites in the fakeronjan sports ratings family */
+  .fleet-nav {
+    background: #0e4a5f;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 12px;
+    align-items: stretch;
+    white-space: nowrap;
+  }
+  .fleet-nav a {
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: color 0.15s, background 0.15s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .fleet-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .fleet-nav a.active { color: #ff6eb4; }
+  .fleet-nav .home { font-weight: 700; }
+  .fleet-nav .sep { width: 1px; background: rgba(255,255,255,0.18); margin: 4px 4px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+
+<nav class="fleet-nav">
+  <a class="home" href="https://fakeronjan.com/sports" target="_top">📊 All Sports</a>
+  <span class="sep"></span>
+  <a class="" href="https://fakeronjan.com/nba" target="_top">🏀 NBA</a>
+  <a class="" href="https://fakeronjan.com/wnba" target="_top">🏀 WNBA</a>
+  <a class="" href="https://fakeronjan.com/nfl" target="_top">🏈 NFL</a>
+  <a class="" href="https://fakeronjan.com/ncaafb" target="_top">🏈 NCAA</a>
+  <a class="" href="https://fakeronjan.com/eurosoccer" target="_top">⚽ Euro</a>
+  <a class="" href="https://fakeronjan.com/mls" target="_top">⚽ MLS</a>
+  <a class="" href="https://fakeronjan.com/intlsoccer" target="_top">⚽ Intl</a>
+  <a class="" href="https://fakeronjan.com/mlb" target="_top">⚾ MLB</a>
+  <a class="active" href="https://fakeronjan.com/nhl" target="_top">🏒 NHL</a>
+  <a class="" href="https://fakeronjan.com/tennis" target="_top">🎾 Tennis</a>
+  <a class="" href="https://fakeronjan.com/thechallenge" target="_top">📺 Challenge</a>
+</nav>
+
+<header>
+  <h1>SAKIC 🥅🏒</h1>
+  <p class="subtitle">NHL Power Rankings · Alpha</p>
+  <p class="model-note">Considers strength of opponent, margin of result, and recency. Reads as approximate goal-margin vs avg team. ~+0.5 = contender; ~+1.0 = elite; ~+1.5+ = generational (1981-82 New York Islanders = 1.87).</p>
+  <p class="updated" id="last-updated">Loading...</p>
+  <p class="updated" id="last-refreshed" style="font-size:11px;color:#999;margin-top:-4px"></p>
+</header>
+
+<nav>
+  <button class="active" data-tab="standings">Standings</button>
+  <button data-tab="team-summary">Team Summary</button>
+  <button data-tab="league-history">Champions</button>
+  <button data-tab="goat">GOAT Table</button>
+</nav>
+
+<!-- ── STANDINGS ────────────────────────────────────────────────────────── -->
+<div id="standings" class="tab active">
+  <div class="conf-pills" id="standings-conf-pills"></div>
+  <div class="controls">
+    <select id="season-filter"></select>
+    <select id="date-filter" style="min-width:240px"></select>
+    <span class="count-label" id="standings-count"></span>
+  </div>
+  <p class="data-note" id="warmup-note" style="display:none">
+    Note: ratings need a 120 game-day warm-up window, so the 1979-80 season's first ranked snapshot is February 16.
+  </p>
+  <div id="standings-table-wrap"><p class="loading">Loading standings...</p></div>
+</div>
+
+<!-- ── TEAM SUMMARY ─────────────────────────────────────────────────────── -->
+<div id="team-summary" class="tab">
+  <div class="conf-pills" id="ts-conf-pills"></div>
+  <div class="conf-pills" id="ts-view-pills"></div>
+  <div class="controls">
+    <select id="team-select"><option value="">- Select a team -</option></select>
+    <select id="season-select" style="display:none"></select>
+    <select id="date-type-select">
+      <option value="eos">End of playoffs</option>
+      <option value="eor">End of regular season</option>
+    </select>
+  </div>
+  <div id="chart-wrap" style="display:none">
+    <svg id="season-chart"></svg>
+  </div>
+  <div id="team-table-wrap"><p class="loading">Select a team above.</p></div>
+</div>
+
+<!-- ── CHAMPIONS (League History) ────────────────────────────────────────── -->
+<div id="league-history" class="tab">
+  <p class="data-note">
+    Counts reflect Stanley Cup titles won within our data window (1979-80 onward). Relocations are treated as separate franchises - e.g., the Quebec Nordiques' history is not carried into the Colorado Avalanche; the original Winnipeg Jets (1979-1996, now Arizona) are separate from the modern Jets (2011+).
+  </p>
+  <div id="history-table-wrap"><p class="loading">Loading champions...</p></div>
+</div>
+
+<!-- ── GOAT TABLE ───────────────────────────────────────────────────────── -->
+<div id="goat" class="tab">
+  <p class="data-note">Top 50 single-season ratings · Switch between end of regular season (full-year answer) and end of playoffs (eligibility requires reaching the Stanley Cup Final).</p>
+  <div class="conf-pills" id="goat-mode-pills"></div>
+  <div class="conf-pills" id="goat-conf-pills"></div>
+  <div id="goat-table-wrap"><p class="loading">Loading GOAT table...</p></div>
+</div>
+
+<script>
+const BASE = './data';
+let currentSeasonData = null;
+let currentSnapshot   = null;
+let goatDataRS        = null;
+let goatDataPS        = null;
+let goatMode          = 'rs';  // 'rs' or 'ps'
+let teamsIndex        = null;
+let teamCache         = {};
+let nameToSlug        = {};  // canonical + historical name → slug, built from teamsIndex
+
+// ── Conference filter pillbox (shared across Standings / TS / GOAT) ─────────
+const CONFERENCES = ['Eastern', 'Western'];
+let standingsConf = 'all';
+let tsConf        = 'all';
+let goatConf      = 'all';
+let tsView        = 'cross';  // 'cross' (all-season summary) or 'single' (one season, all game-days)
+
+function buildConfPills(containerId, current, onSelect, options) {
+  const wrap = document.getElementById(containerId);
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const opts = options || [{ value: 'all', label: 'All' }, ...CONFERENCES.map(c => ({ value: c, label: c }))];
+  opts.forEach(o => {
+    const b = document.createElement('button');
+    b.textContent = o.label;
+    b.dataset.conf = o.value;
+    if (o.value === current) b.classList.add('active');
+    b.addEventListener('click', () => {
+      wrap.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      onSelect(o.value);
+    });
+    wrap.appendChild(b);
+  });
+}
+
+// ── Utilities ───────────────────────────────────────────────────────────────
+// Strip legacy "no game yet" placeholders so empty cells render as a single
+// dash via the standard `|| '-'` fallback at each call site.
+const _PLACEHOLDER_LM = new Set(['No match yet', 'No competitive match yet', 'No Game', 'Bye / No Game']);
+function displayMatch(s) { return (!s || _PLACEHOLDER_LM.has(s)) ? '' : s; }
+
+function fmtRecord(rec) {
+  // NBA records come in as "12-10" (W-L). Show win pct in dimmed parens.
+  if (!rec || rec === '-') return '0-0';
+  const m = rec.match(/^(\d+)\s*-\s*(\d+)$/);
+  if (!m) return rec;
+  const w = parseInt(m[1]);
+  const l = parseInt(m[2]);
+  if (w + l === 0) return `${w}-${l}`;
+  const pct = (w / (w + l)).toFixed(3).replace(/^0/, '');
+  return `${w}-${l} <span style="color:#888;font-size:0.85em">(${pct})</span>`;
+}
+
+function fmtRecordStacked(reg, playoff) {
+  // Champions/GOAT: regular-season W-L with win pct on top.
+  // For playoff teams, add playoff W-L on a new line (no parens).
+  if (!reg || reg === '-') return '0-0';
+  const top = fmtRecord(reg);
+  const pm = playoff ? playoff.match(/^(\d+)-(\d+)$/) : null;
+  const hasPlayoffs = pm && (parseInt(pm[1]) + parseInt(pm[2]) > 0);
+  if (!hasPlayoffs) return top;
+  return `${top}<div style="font-size:10px;color:#888;font-weight:400;line-height:1.2">${playoff}</div>`;
+}
+
+function fmtRecordSmart(reg, playoff, fallback) {
+  // Standings/Team Summary: always show regular-season W-L with win pct on top.
+  // For playoff teams, add playoff W-L on a new line (no parens).
+  const top = fmtRecord(reg || fallback);
+  const pm = playoff ? playoff.match(/^(\d+)-(\d+)$/) : null;
+  const hasPlayoffs = pm && (parseInt(pm[1]) + parseInt(pm[2]) > 0);
+  if (!hasPlayoffs) return top;
+  return `${top}<div style="font-size:10px;color:#888;font-weight:400;line-height:1.2">${playoff}</div>`;
+}
+
+function confBadge(conf, finalsStatus, division, divisionWinner) {
+  if (!conf) return '';
+  // finals_status >= 1 means the team made the Stanley Cup Final = won the conference championship round.
+  const lgClass = (finalsStatus >= 1) ? 'finish-badge finish-champion' : 'finish-badge conf-pill';
+  const lgIcon  = (finalsStatus >= 1) ? ' 🏆' : '';
+  const lgTitle = (finalsStatus >= 1) ? `${conf} Conference Champion` : conf;
+  let html = `<span class="${lgClass}" title="${lgTitle}">${conf}${lgIcon}</span>`;
+
+  // Division pill: only show when we have a division name (post-2013-14) and it differs from conference label.
+  if (division && division !== conf && division !== 'Other') {
+    const divClass = divisionWinner ? 'finish-badge finish-champion' : 'finish-badge conf-pill';
+    const divIcon  = divisionWinner ? ' 🥇' : '';
+    const divTitle = divisionWinner ? `${division} Division Winner` : division;
+    html += ` <span class="${divClass}" title="${divTitle}">${division}${divIcon}</span>`;
+  }
+  return html;
+}
+
+function finishBadge(finalsStatus) {
+  if (finalsStatus === 2) return `<span title="Stanley Cup Champion" style="font-size:14px">👑</span>`;
+  if (finalsStatus === 1) return `<span title="Stanley Cup Runner-Up" style="font-size:14px">🥈</span>`;
+  return '';
+}
+
+function resultClass(match, isStale) {
+  if (!match) return '';
+  const first = match[0];
+  const suffix = isStale ? '-stale' : '';
+  if (first === 'W') return 'result-W' + suffix;
+  if (first === 'L') return 'result-L' + suffix;
+  return '';
+}
+
+// Parse "L vs. Orlando Magic 90-99" or "W @ Boston Celtics 84-96" → wrap
+// opponent name in a linked span. Opponent name may be a historical name
+// (e.g. "Charlotte Bobcats") - nameToSlug includes those aliases.
+function renderLastMatch(raw, season, isStale) {
+  const display = displayMatch(raw);
+  if (!display) return '-';
+  const rc = resultClass(raw, isStale);
+  const m = display.match(/^([WLT])\s+(\d+\s*-\s*\d+)\s+(vs\.?(?:\s*\(N\))?|@)\s+(.+)$/);
+  if (!m) return `<span class="${rc}">${display}</span>`;
+  const [, letter, score, venue, opponent] = m;
+  const slug = nameToSlug[opponent.trim()];
+  const oppHtml = slug
+    ? `<span class="team-link linked" data-team-slug="${slug}" data-season="${season}">${opponent}</span>`
+    : opponent;
+  return `<span class="${rc}">${letter} ${score} ${venue} ${oppHtml}</span>`;
+}
+
+// ── Deep-link handlers ──────────────────────────────────────────────────────
+async function teamLinkClick(slug, season) {
+  if (!slug) return;
+  if (!teamsIndex) await loadTeamsIndex();
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('nav button[data-tab="team-summary"]').classList.add('active');
+  document.getElementById('team-summary').classList.add('active');
+  tsConf = 'all';
+  buildConfPills('ts-conf-pills', tsConf, v => { tsConf = v; populateTeamSelect(); });
+  populateTeamSelect();
+  document.getElementById('team-select').value = slug;
+  const wantSingle = season != null && season !== '';
+  tsView = wantSingle ? 'single' : 'cross';
+  buildConfPills('ts-view-pills', tsView, v => {
+    tsView = v;
+    document.getElementById('season-select').style.display   = (v === 'single') ? '' : 'none';
+    document.getElementById('date-type-select').style.display = (v === 'cross')  ? '' : 'none';
+    renderTeamTable();
+  }, [
+    { value: 'cross',  label: 'All season summary' },
+    { value: 'single', label: 'All games within one season' },
+  ]);
+  document.getElementById('season-select').style.display    = wantSingle ? '' : 'none';
+  document.getElementById('date-type-select').style.display = wantSingle ? 'none' : '';
+  await loadTeam(slug);
+  if (wantSingle) {
+    const sel = document.getElementById('season-select');
+    const targetVal = String(season);
+    if ([...sel.options].some(o => o.value === targetVal)) {
+      sel.value = targetVal;
+      renderTeamTable();
+    }
+  }
+}
+
+function seasonLinkClick(season) {
+  if (!season) return;
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('nav button[data-tab="standings"]').classList.add('active');
+  document.getElementById('standings').classList.add('active');
+  document.getElementById('season-filter').value = season;
+  loadSeason(season);
+}
+
+function attachLinks() {
+  document.querySelectorAll('.team-cell.linked, .team-link.linked').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      teamLinkClick(el.dataset.teamSlug, el.dataset.season);
+    });
+  });
+  document.querySelectorAll('[data-season-link].linked').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      seasonLinkClick(el.dataset.seasonLink);
+    });
+  });
+}
+
+const BAR_MIN = -2.5, BAR_MAX = 2.5, BAR_RANGE = 5;
+
+function ratingBar(rating) {
+  const clipped = Math.max(BAR_MIN, Math.min(BAR_MAX, rating));
+  let leftPct, widthPct;
+  if (clipped >= 0) {
+    leftPct  = 50;
+    widthPct = (clipped / BAR_RANGE) * 100;
+  } else {
+    widthPct = (-clipped / BAR_RANGE) * 100;
+    leftPct  = 50 - widthPct;
+  }
+  return `<div class="rating-bar-wrap">
+    <span class="rating-cell">${rating.toFixed(2)}</span>
+    <div class="rating-bar-track">
+      <div class="rating-bar-center-line"></div>
+      <div class="rating-bar-fill ${rating >= 0 ? 'bar-pos' : 'bar-neg'}" style="left:${leftPct.toFixed(1)}%;width:${widthPct.toFixed(1)}%"></div>
+    </div>
+  </div>`;
+}
+
+// ── Tab switching ────────────────────────────────────────────────────────────
+document.querySelectorAll('nav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── Standings ────────────────────────────────────────────────────────────────
+function fmtDate(ds) {
+  const d = new Date(ds + 'T00:00:00');
+  return d.toLocaleDateString('en-US', {month: 'numeric', day: 'numeric', year: 'numeric'});
+}
+
+// NBA seasons are stored as the calendar year of the Finals (e.g. 2024 = the
+// 2023-24 season, which finished in June 2024). Display as "2023-24" to match
+// the convention used across the other Power Rankings sites.
+function fmtSeason(s) {
+  const n = parseInt(s, 10);
+  if (Number.isNaN(n)) return s;
+  const yy = String(n).slice(-2);
+  return `${n - 1}-${yy}`;
+}
+
+async function initStandings() {
+  try {
+    const res  = await fetch(`${BASE}/seasons_index.json`);
+    const meta = await res.json();
+    document.getElementById('last-updated').textContent =
+      `Ratings include games from ${fmtDate(meta.first_date)} to ${fmtDate(meta.last_date)}`;
+    if (meta.generated_at) {
+      const refreshed = new Date(meta.generated_at);
+      document.getElementById('last-refreshed').textContent =
+        `Last refreshed: ${refreshed.toLocaleString(undefined, {year:'numeric', month:'numeric', day:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'})}`;
+    }
+    const sel = document.getElementById('season-filter');
+    meta.seasons.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s; opt.textContent = fmtSeason(s);
+      sel.appendChild(opt);
+    });
+    await loadSeason(meta.seasons[0]);
+  } catch(e) {
+    document.getElementById('standings-table-wrap').innerHTML =
+      `<p class="error">Could not load standings.</p>`;
+  }
+}
+
+async function loadSeason(season) {
+  try {
+    const res = await fetch(`${BASE}/seasons/${season}.json`);
+    currentSeasonData = await res.json();
+    const snaps = currentSeasonData.snapshots;
+    const dateSel = document.getElementById('date-filter');
+    dateSel.innerHTML = '';
+    [...snaps].reverse().forEach(snap => {
+      const opt = document.createElement('option');
+      opt.value = snap.date;
+      opt.textContent = snap.label ? `${snap.date} | ${snap.label}` : snap.date;
+      dateSel.appendChild(opt);
+    });
+    selectSnapshot(snaps[snaps.length - 1].date);
+
+    // Show warm-up note for 1980 (the first season; first 100 game-days are warm-up)
+    document.getElementById('warmup-note').style.display =
+      (parseInt(season) === 1980) ? 'block' : 'none';
+  } catch(e) {
+    document.getElementById('standings-table-wrap').innerHTML =
+      `<p class="error">Could not load season data.</p>`;
+  }
+}
+
+function selectSnapshot(date) {
+  currentSnapshot = currentSeasonData.snapshots.find(s => s.date === date);
+  document.getElementById('date-filter').value = date;
+  renderStandings();
+}
+
+function renderStandings() {
+  if (!currentSnapshot) return;
+  const conf = standingsConf;
+  let teams = currentSnapshot.teams;
+  if (conf !== 'all') teams = teams.filter(t => t.conference === conf);
+
+  const snaps = currentSeasonData.snapshots;
+  const idx = snaps.findIndex(s => s.date === currentSnapshot.date);
+  const prevDate = idx > 0 ? snaps[idx - 1].date : null;
+
+  // Preserve the all-time/league-wide rank when filtered (gaps are informative -
+  // they show where filtered-out teams sit). Same pattern as GOAT and DILLON.
+  const season = currentSeasonData && currentSeasonData.season;
+  const rows = teams.map(t => {
+    const isStale = !!(prevDate && t.last_match_date && t.last_match_date <= prevDate);
+    const slug = nameToSlug[t.team];  // t.team is the canonical name
+    const label = t.display_name || t.team;
+    const teamTd = slug
+      ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${season}">${label}</td>`
+      : `<td class="team-cell">${label}</td>`;
+    return `<tr>
+      <td class="rank-cell">${t.rank}</td>
+      ${teamTd}
+      <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
+      <td style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordSmart(t.regular_record, t.playoff_record, t.record)}</td>
+      <td>${ratingBar(t.rating)}</td>
+      <td class="last-match-cell">${renderLastMatch(t.last_match, season, isStale)}</td>
+      <td class="col-hide-mobile" style="font-size:11px;color:#888;white-space:nowrap">${t.last_match_date || ''}</td>
+      <td class="col-hide-mobile" style="text-align:center">${finishBadge(t.finals_status)}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('standings-count').textContent =
+    `${teams.length} team${teams.length !== 1 ? 's' : ''}`;
+
+  document.getElementById('standings-table-wrap').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Rank</th><th>Team</th>
+        <th class="col-hide-mobile">Conf</th>
+        <th>W-L (Pct)</th><th>Rating</th>
+        <th>Last Game</th>
+        <th class="col-hide-mobile">Date</th>
+        <th class="col-hide-mobile">Honors</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  attachLinks();
+}
+
+document.getElementById('season-filter').addEventListener('change', e => loadSeason(e.target.value));
+document.getElementById('date-filter').addEventListener('change', e => selectSnapshot(e.target.value));
+
+// ── Team Summary ─────────────────────────────────────────────────────────────
+function populateTeamSelect() {
+  if (!teamsIndex) return;
+  const sel = document.getElementById('team-select');
+  const filtered = tsConf === 'all'
+    ? teamsIndex
+    : teamsIndex.filter(t => t.conference === tsConf);
+  sel.innerHTML = '<option value="">- Select a team -</option>';
+  filtered.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.slug;
+    // For franchises that have changed names in the same market, append
+    // the prior names in parens so search-by-typing finds them too.
+    const priors = (t.historical_names || []);
+    opt.textContent = priors.length
+      ? `${t.name} (${priors.join(' / ')})`
+      : t.name;
+    sel.appendChild(opt);
+  });
+}
+
+async function loadTeamsIndex() {
+  try {
+    const res = await fetch(`${BASE}/teams_index.json`);
+    teamsIndex = await res.json();
+    nameToSlug = {};
+    teamsIndex.forEach(t => {
+      nameToSlug[t.name] = t.slug;
+      (t.historical_names || []).forEach(h => { nameToSlug[h] = t.slug; });
+    });
+    populateTeamSelect();
+  } catch(e) {
+    document.getElementById('team-select').innerHTML =
+      '<option>Could not load teams</option>';
+  }
+}
+
+async function loadTeam(slug) {
+  if (!slug) return;
+  if (!teamCache[slug]) {
+    document.getElementById('team-table-wrap').innerHTML =
+      '<p class="loading">Loading team data...</p>';
+    try {
+      const res = await fetch(`${BASE}/teams/${slug}.json`);
+      teamCache[slug] = await res.json();
+    } catch(e) {
+      document.getElementById('team-table-wrap').innerHTML =
+        '<p class="error">Could not load team data.</p>';
+      return;
+    }
+  }
+  const data = teamCache[slug];
+  const seasons = Object.keys(data.seasons).sort().reverse();
+  const seasonSel = document.getElementById('season-select');
+  const prevValue = seasonSel.value;
+  seasonSel.innerHTML = '';
+  seasons.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s;
+    opt.textContent = fmtSeason(s);
+    seasonSel.appendChild(opt);
+  });
+  // Preserve a deep-linked selection if still valid; otherwise default to most recent.
+  seasonSel.value = (prevValue && seasons.includes(prevValue)) ? prevValue : (seasons[0] || '');
+  renderTeamTable();
+}
+
+function renderTeamTable() {
+  const slug = document.getElementById('team-select').value;
+  if (!slug || !teamCache[slug]) return;
+  const data = teamCache[slug];
+
+  let rows = [];
+  const seasons = Object.keys(data.seasons).sort();
+  let seasonFilter;
+  if (tsView === 'single') {
+    // One-season view: every snapshot in the selected season. Mark rows where the
+    // team's last_match hasn't changed since the previous snapshot as stale (covers
+    // synthetic EOS rows on the league's final day for teams eliminated earlier).
+    seasonFilter = document.getElementById('season-select').value;
+    seasons.forEach(s => {
+      if (s !== seasonFilter) return;
+      let prevLastMatch = null;
+      data.seasons[s].forEach(g => {
+        const stale = prevLastMatch != null && g.last_match === prevLastMatch;
+        rows.push({...g, season: s, _isStale: stale});
+        prevLastMatch = g.last_match;
+      });
+    });
+  } else {
+    // Cross-season summary view: one snapshot per season (end of regular season OR end of playoffs).
+    seasonFilter = 'all';
+    const dateType = document.getElementById('date-type-select').value;
+    const flag     = (dateType === 'eor') ? 1 : 2;
+    seasons.forEach(s => {
+      data.seasons[s].forEach(g => {
+        if (g.season_flag === flag) rows.push({...g, season: s});
+      });
+    });
+  }
+
+  drawChart(rows, seasonFilter);
+
+  // For franchises that have changed names, show the era display name
+  // beneath the season number when it differs from the canonical (the
+  // team page's identity).
+  const canonical = data.team;
+  const tableRows = [...rows].reverse().map(g => {
+    const era = (g.display_name && g.display_name !== canonical) ? g.display_name : '';
+    const seasonCell = era
+      ? `${fmtSeason(g.season)}<div style="font-size:10px;color:#999;font-style:italic;line-height:1.2">${era}</div>`
+      : fmtSeason(g.season);
+    const dateLabel = g.season_flag === 1 ? 'End of regular season'
+                    : g.season_flag === 2 ? 'End of playoffs'
+                    : '';
+    const dateCell = dateLabel
+      ? `${g.date}<div style="font-size:10px;color:#999;font-style:italic;line-height:1.2">${dateLabel}</div>`
+      : g.date;
+    return `<tr>
+    <td style="white-space:nowrap;color:#888;font-size:12px">${dateCell}</td>
+    <td class="linked" data-season-link="${g.season}" style="font-size:11px;color:#555">${seasonCell}</td>
+    <td class="last-match-cell">${renderLastMatch(g.last_match, g.season, !!g._isStale)}</td>
+    <td style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordSmart(g.regular_record, g.playoff_record, g.record)}</td>
+    <td class="rank-cell">${g.rank}</td>
+    <td>${ratingBar(g.rating)}</td>
+    <td class="col-hide-mobile" style="font-size:11px">${confBadge(g.conference || data.conference, g.finals_status, g.division, g.division_winner)}</td>
+    <td class="col-hide-mobile" style="font-size:11px">${finishBadge(g.finals_status)}</td>
+  </tr>`;
+  }).join('');
+
+  document.getElementById('team-table-wrap').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Date</th><th>Season</th><th>Last Game</th>
+        <th>W-L (Pct)</th><th>Rank</th><th>Rating</th>
+        <th class="col-hide-mobile">Conf</th>
+        <th class="col-hide-mobile">Honors</th>
+      </tr></thead>
+      <tbody>${tableRows}</tbody>
+    </table>`;
+  attachLinks();
+}
+
+function drawChart(rows, seasonFilter) {
+  const wrap = document.getElementById('chart-wrap');
+  if (rows.length < 2) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+
+  const svg = document.getElementById('season-chart');
+  const W = svg.parentElement.clientWidth - 32;
+  const H = 180;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  const CHART_MIN = -2.5, CHART_MAX = 2.5;
+  const CTOP = 10, CBOT = 152;
+
+  const px = (i) => (i / (rows.length - 1)) * (W - 20) + 10;
+  const py = (r) => CBOT - ((r - CHART_MIN) / (CHART_MAX - CHART_MIN)) * (CBOT - CTOP);
+
+  const zeroY  = py(0);
+  const points = rows.map((r, i) => `${px(i).toFixed(1)},${py(r.rating).toFixed(1)}`).join(' ');
+
+  const isSingle = seasonFilter !== 'all';
+  const MONTHS   = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const ticks = [], xlabels = [];
+  const seen = {};
+  let lastX = -99;
+
+  rows.forEach((r, i) => {
+    const key   = isSingle ? r.date.substring(0, 7) : r.date.substring(0, 4);
+    const label = isSingle
+      ? MONTHS[parseInt(r.date.substring(5, 7)) - 1]
+      : r.date.substring(0, 4);
+    if (!seen[key]) {
+      seen[key] = true;
+      const x = parseFloat(px(i).toFixed(1));
+      if (x - lastX >= 24) {
+        lastX = x;
+        ticks.push(`<line x1="${x}" y1="${CBOT + 2}" x2="${x}" y2="${CBOT + 6}" stroke="#bbb" stroke-width="1"/>`);
+        xlabels.push(`<text x="${x}" y="${CBOT + 16}" font-size="9" fill="#999" text-anchor="middle">${label}</text>`);
+      }
+    }
+  });
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="lineGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}">
+        <stop offset="${(zeroY / H - 0.0001).toFixed(4)}" stop-color="#1a6b8a"/>
+        <stop offset="${(zeroY / H + 0.0001).toFixed(4)}" stop-color="#ff6eb4"/>
+      </linearGradient>
+    </defs>
+    <line x1="10" y1="${zeroY.toFixed(1)}" x2="${(W - 10).toFixed(1)}" y2="${zeroY.toFixed(1)}"
+          stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="10" y1="${CBOT + 2}" x2="${(W - 10).toFixed(1)}" y2="${CBOT + 2}"
+          stroke="#ddd" stroke-width="1"/>
+    ${ticks.join('')}
+    ${xlabels.join('')}
+    <polyline points="${points}" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linejoin="round"/>`;
+}
+
+document.getElementById('team-select').addEventListener('change', e => loadTeam(e.target.value));
+document.getElementById('season-select').addEventListener('change', renderTeamTable);
+document.getElementById('date-type-select').addEventListener('change', renderTeamTable);
+
+// ── Champions ────────────────────────────────────────────────────────────────
+let championsData = null;
+
+async function loadChampions() {
+  try {
+    const res = await fetch(`${BASE}/champions.json`);
+    championsData = await res.json();
+    renderChampions();
+  } catch(e) {
+    document.getElementById('history-table-wrap').innerHTML =
+      `<p class="error">Could not load champions.</p>`;
+  }
+}
+
+function renderChampions() {
+  if (!championsData) return;
+  const entries = championsData['NHL'] || [];
+  if (!entries.length) {
+    document.getElementById('history-table-wrap').innerHTML =
+      `<p class="loading">No champions data.</p>`;
+    return;
+  }
+
+  function teamCell(t, bg, season) {
+    if (!t) return `<td class="${bg}" colspan="3">-</td>`;
+    const rating = t.ps_end_rating != null ? t.ps_end_rating.toFixed(2) : '-';
+    const rank   = t.ps_end_rank   != null ? `${t.ps_end_rank}` : '-';
+    const countStr = t.title_count
+      ? ` <span style="color:#888;font-size:0.85em;font-weight:400">(${t.title_count} 👑)</span>`
+      : t.runner_up_count
+      ? ` <span style="color:#888;font-size:0.85em;font-weight:400">(${t.runner_up_count} 🥈)</span>`
+      : '';
+    const label = t.display_name || t.team;
+    const slug = nameToSlug[t.team] || nameToSlug[label];
+    const teamTd = slug
+      ? `<td class="${bg} team-cell linked" data-team-slug="${slug}" data-season="${season}" style="white-space:nowrap">${label}${countStr}</td>`
+      : `<td class="${bg} team-cell" style="white-space:nowrap">${label}${countStr}</td>`;
+    return `
+      ${teamTd}
+      <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em">${rank}</td>
+      <td class="${bg} rating-cell" style="font-variant-numeric:tabular-nums">${rating}</td>
+      <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordStacked(t.rs_record, t.ps_record)}</td>`;
+  }
+
+  const rows = entries.map(e => `<tr>
+    <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}</td>
+    ${teamCell(e.champion,  'col-champ', e.season)}
+    <td class="divider-col" style="text-align:center;font-size:11px;font-weight:600;white-space:nowrap;width:64px;padding:2px 4px;line-height:1.3">
+      ${e.series || ''}
+    </td>
+    ${teamCell(e.runner_up, 'col-ru', e.season)}
+  </tr>`).join('');
+
+  document.getElementById('history-table-wrap').innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Season</th>
+        <th class="col-champ">Champion</th>
+        <th class="col-champ col-hide-mobile">Rank</th>
+        <th class="col-champ">Rating</th>
+        <th class="col-champ col-hide-mobile">W-L</th>
+        <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series</th>
+        <th class="col-ru">Runner-Up</th>
+        <th class="col-ru col-hide-mobile">Rank</th>
+        <th class="col-ru">Rating</th>
+        <th class="col-ru col-hide-mobile">W-L</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  attachLinks();
+}
+
+// ── GOAT Table ────────────────────────────────────────────────────────────────
+async function loadGoat() {
+  try {
+    const [r1, r2] = await Promise.all([
+      fetch(`${BASE}/goat_rs.json`),
+      fetch(`${BASE}/goat_ps.json`),
+    ]);
+    goatDataRS = await r1.json();
+    goatDataPS = await r2.json();
+    renderGoat();
+  } catch(e) {
+    document.getElementById('goat-table-wrap').innerHTML =
+      `<p class="error">Could not load GOAT table.</p>`;
+  }
+}
+
+function renderGoat() {
+  const data = goatMode === 'rs' ? goatDataRS : goatDataPS;
+  if (!data) return;
+  const teams = goatConf === 'all'
+    ? data
+    : data.filter(t => t.conference === goatConf);
+  const rows = teams.map(t => {
+    const label = t.display_name || t.team;
+    const slug = nameToSlug[t.team] || nameToSlug[label];
+    const teamTd = slug
+      ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${t.season}">${label}</td>`
+      : `<td class="team-cell">${label}</td>`;
+    return `<tr>
+    <td class="rank-cell">${t.rank}</td>
+    <td class="season-cell linked" data-season-link="${t.season}" style="text-align:center">${fmtSeason(t.season)}</td>
+    ${teamTd}
+    <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
+    <td>${ratingBar(t.rating)}</td>
+    <td style="font-variant-numeric:tabular-nums;white-space:nowrap" class="col-hide-mobile">${fmtRecordStacked(t.regular_record, t.playoff_record)}</td>
+    <td class="col-hide-mobile" style="font-size:11px">${finishBadge(t.finals_status)}</td>
+  </tr>`;
+  }).join('');
+
+  document.getElementById('goat-table-wrap').innerHTML = `
+    <table>
+      <thead><tr>
+        <th style="text-align:center">All time rank</th>
+        <th style="text-align:center">Season</th>
+        <th>Team</th>
+        <th class="col-hide-mobile">Conf</th>
+        <th>Rating</th>
+        <th class="col-hide-mobile">W-L</th>
+        <th class="col-hide-mobile">Honors</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  attachLinks();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+buildConfPills('standings-conf-pills', standingsConf, v => { standingsConf = v; renderStandings(); });
+buildConfPills('ts-conf-pills',        tsConf,        v => { tsConf = v; populateTeamSelect(); });
+buildConfPills('goat-conf-pills',      goatConf,      v => { goatConf = v; renderGoat(); });
+buildConfPills('goat-mode-pills',      goatMode,      v => { goatMode = v; renderGoat(); }, [
+  { value: 'rs', label: 'End of regular season' },
+  { value: 'ps', label: 'End of playoffs' },
+]);
+buildConfPills('ts-view-pills', tsView, v => {
+  tsView = v;
+  document.getElementById('season-select').style.display   = (v === 'single') ? '' : 'none';
+  document.getElementById('date-type-select').style.display = (v === 'cross')  ? '' : 'none';
+  renderTeamTable();
+}, [
+  { value: 'cross',  label: 'All season summary' },
+  { value: 'single', label: 'All games within one season' },
+]);
+// Initial dropdown visibility for default view ('cross')
+document.getElementById('date-type-select').style.display = '';
+document.getElementById('season-select').style.display    = 'none';
+// Load teams_index first so opponent/slug lookups are populated before any
+// table renders - avoids a double-render flash on initial page load.
+(async () => {
+  await loadTeamsIndex();
+  initStandings();
+  loadChampions();
+  loadGoat();
+})();
+
+// Auto-resize: when embedded in an iframe, post our scroll height to the
+// parent so the iframe can size itself with no internal scroll.
+(function() {
+  if (window.parent === window) return;
+  function postHeight() {
+    parent.postMessage({type: 'fakeronjan-resize', height: document.documentElement.scrollHeight}, '*');
+  }
+  window.addEventListener('load', postHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(postHeight).observe(document.body);
+  } else {
+    setTimeout(postHeight, 500);
+    setTimeout(postHeight, 1500);
+    setTimeout(postHeight, 3000);
+  }
+})();
+</script>
+</body>
+</html>

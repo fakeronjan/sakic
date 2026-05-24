@@ -1,0 +1,5 @@
+.DS_Store
+__pycache__/
+*.pyc
+# Raw hockey-reference scrape cache — regenerable from URL each run, no need to track
+loaded_nhl_games.csv

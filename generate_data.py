@@ -1,0 +1,781 @@
+"""
+generate_data.py — reads sakic_ratings.csv.gz + all_nhl_games.csv and writes
+JSON files for the SAKIC web frontend. Run after sakic.py. Outputs to docs/data/.
+
+Structure clones DUNCAN/GRIFFEY:
+  - current_standings.json  (latest snapshot)
+  - teams_index.json        (slug → display_name + conference)
+  - seasons_index.json      (year list + first/last date)
+  - teams/<slug>.json       (per-team per-snapshot history)
+  - seasons/<year>.json     (per-season snapshots)
+  - champions.json          (Stanley Cup champs + runners-up with ratings)
+  - goat_rs.json / goat_ps.json (top 50 by RS-end / PS-end rating)
+"""
+
+import json, os, re
+from datetime import datetime, timezone
+
+import numpy as np
+import pandas as pd
+
+os.makedirs("docs/data/teams",   exist_ok=True)
+os.makedirs("docs/data/seasons", exist_ok=True)
+
+
+# =========================================================
+# TEAM CONFERENCE + DIVISION (era-aware)
+# =========================================================
+# NHL realigned in 1981, 1993, 1998, 2013. Pre-2013 divisions are skipped for
+# v1 (fall back to conference label only); post-2013 modern division shown.
+
+TEAM_CONFERENCE = {
+    # Eastern Conference (modern)
+    "Boston Bruins":         "Eastern",
+    "Buffalo Sabres":        "Eastern",
+    "Detroit Red Wings":     "Eastern",
+    "Florida Panthers":      "Eastern",
+    "Montreal Canadiens":    "Eastern",
+    "Ottawa Senators":       "Eastern",
+    "Tampa Bay Lightning":   "Eastern",
+    "Toronto Maple Leafs":   "Eastern",
+    "Carolina Hurricanes":   "Eastern",
+    "Columbus Blue Jackets": "Eastern",
+    "New Jersey Devils":     "Eastern",
+    "New York Islanders":    "Eastern",
+    "New York Rangers":      "Eastern",
+    "Philadelphia Flyers":   "Eastern",
+    "Pittsburgh Penguins":   "Eastern",
+    "Washington Capitals":   "Eastern",
+    # Western Conference (modern)
+    "Chicago Blackhawks":    "Western",
+    "Colorado Avalanche":    "Western",
+    "Dallas Stars":          "Western",
+    "Minnesota Wild":        "Western",
+    "Nashville Predators":   "Western",
+    "St. Louis Blues":       "Western",
+    "Utah Hockey Club":      "Western",
+    "Winnipeg Jets":         "Western",  # modern Jets (2011+)
+    "Anaheim Ducks":         "Western",
+    "Calgary Flames":        "Western",
+    "Edmonton Oilers":       "Western",
+    "Los Angeles Kings":     "Western",
+    "Seattle Kraken":        "Western",
+    "San Jose Sharks":       "Western",
+    "Vancouver Canucks":     "Western",
+    "Vegas Golden Knights":  "Western",
+    # Defunct franchises (separate per fleet relocation policy)
+    "Quebec Nordiques":      "Eastern",   # 1979-1995
+    "Hartford Whalers":      "Eastern",   # 1979-1997
+    "Atlanta Thrashers":     "Eastern",   # 1999-2011
+    "Minnesota North Stars": "Western",   # 1967-1993
+    "Colorado Rockies":      "Western",   # 1976-1982 (NHL franchise, not the MLB one)
+    "Original Winnipeg Jets":"Western",   # 1979-1996 (alias below collapses raw name)
+    "Arizona Coyotes":       "Western",   # 1996-2024
+}
+
+# Source data emits the original Jets as "Winnipeg Jets" — same name as the
+# modern franchise. We need to disambiguate. Done in prepare-time below.
+# (Handled in remap_original_jets function called from main.)
+
+
+# Era-aware division history for 2013-14 onward. Pre-2013 uses conference
+# fallback. Realignment dates in NHL official records — Atlantic/Metro split
+# the old East; Central/Pacific split the old West, but with some shuffling.
+TEAM_DIVISION_HISTORY = {
+    # Atlantic Division (2013+) - was reshuffled with Detroit moving from West
+    "Boston Bruins":         [(2014, 9999, "Atlantic")],
+    "Buffalo Sabres":        [(2014, 9999, "Atlantic")],
+    "Detroit Red Wings":     [(2014, 9999, "Atlantic")],
+    "Florida Panthers":      [(2014, 9999, "Atlantic")],
+    "Montreal Canadiens":    [(2014, 9999, "Atlantic")],
+    "Ottawa Senators":       [(2014, 9999, "Atlantic")],
+    "Tampa Bay Lightning":   [(2014, 9999, "Atlantic")],
+    "Toronto Maple Leafs":   [(2014, 9999, "Atlantic")],
+    # Metropolitan Division (2013+)
+    "Carolina Hurricanes":   [(2014, 9999, "Metropolitan")],
+    "Columbus Blue Jackets": [(2014, 9999, "Metropolitan")],
+    "New Jersey Devils":     [(2014, 9999, "Metropolitan")],
+    "New York Islanders":    [(2014, 9999, "Metropolitan")],
+    "New York Rangers":      [(2014, 9999, "Metropolitan")],
+    "Philadelphia Flyers":   [(2014, 9999, "Metropolitan")],
+    "Pittsburgh Penguins":   [(2014, 9999, "Metropolitan")],
+    "Washington Capitals":   [(2014, 9999, "Metropolitan")],
+    # Central Division (2013+) - lost Detroit, gained Dallas/Minnesota/Winnipeg
+    "Chicago Blackhawks":    [(2014, 9999, "Central")],
+    "Colorado Avalanche":    [(2014, 9999, "Central")],
+    "Dallas Stars":          [(2014, 9999, "Central")],
+    "Minnesota Wild":        [(2014, 9999, "Central")],
+    "Nashville Predators":   [(2014, 9999, "Central")],
+    "St. Louis Blues":       [(2014, 9999, "Central")],
+    "Utah Hockey Club":      [(2025, 9999, "Central")],
+    "Winnipeg Jets":         [(2014, 9999, "Central")],
+    # Pacific Division (2013+)
+    "Anaheim Ducks":         [(2014, 9999, "Pacific")],
+    "Calgary Flames":        [(2014, 9999, "Pacific")],
+    "Edmonton Oilers":       [(2014, 9999, "Pacific")],
+    "Los Angeles Kings":     [(2014, 9999, "Pacific")],
+    "Seattle Kraken":        [(2022, 9999, "Pacific")],
+    "San Jose Sharks":       [(2014, 9999, "Pacific")],
+    "Vancouver Canucks":     [(2014, 9999, "Pacific")],
+    "Vegas Golden Knights":  [(2018, 9999, "Pacific")],
+    "Arizona Coyotes":       [(2014, 2024, "Central")],  # was Central pre-Utah move
+}
+
+
+# Era-aware display names (same-market rebrands)
+SAKIC_TEAM_DISPLAY_HISTORY = {
+    "Anaheim Ducks":         [(1994, 2006, "Mighty Ducks of Anaheim"),
+                              (2007, 9999, "Anaheim Ducks")],
+    # Phoenix→Arizona was a same-market rebrand (collapsed in sakic.py to
+    # 'Arizona Coyotes'); era display reflects the historical name
+    "Arizona Coyotes":       [(1997, 2014, "Phoenix Coyotes"),
+                              (2015, 2024, "Arizona Coyotes")],
+}
+
+
+def display_name(canonical, season):
+    history = SAKIC_TEAM_DISPLAY_HISTORY.get(canonical)
+    if not history:
+        return canonical
+    s = int(season)
+    for start, end, name in history:
+        if start <= s <= end:
+            return name
+    return canonical
+
+
+def current_display_name(canonical):
+    history = SAKIC_TEAM_DISPLAY_HISTORY.get(canonical)
+    if not history:
+        return canonical
+    return history[-1][2]
+
+
+def historical_display_names(canonical):
+    history = SAKIC_TEAM_DISPLAY_HISTORY.get(canonical)
+    if not history:
+        return []
+    current = history[-1][2]
+    seen = {current}
+    out = []
+    for _, _, name in reversed(history[:-1]):
+        if name not in seen:
+            out.append(name)
+            seen.add(name)
+    return out
+
+
+def conference(team):
+    return TEAM_CONFERENCE.get(team, "Other")
+
+
+def division(team, season=None):
+    """Era-aware division. Returns conference fallback for pre-2013-14 seasons."""
+    if season is None or int(season) < 2014:
+        return conference(team)  # pre-modern division era → label as conference
+    history = TEAM_DIVISION_HISTORY.get(team)
+    if history:
+        s = int(season)
+        for start, end, d in history:
+            if start <= s <= end:
+                return d
+    return conference(team)
+
+
+# =========================================================
+# HELPERS
+# =========================================================
+
+def clean(val):
+    if pd.isna(val):
+        return ""
+    return str(val)
+
+
+def slug(name):
+    return re.sub(r"[^A-Za-z0-9]+", "_", name).strip("_")
+
+
+def season_label(season):
+    """1980 → '1979-80'"""
+    s = int(season)
+    return f"{s - 1}-{str(s)[-2:]}"
+
+
+# =========================================================
+# DATA LOAD
+# =========================================================
+
+print("Reading ratings + games...")
+ratings = pd.read_csv("sakic_ratings.csv.gz")
+ratings["ranking_date"] = pd.to_datetime(ratings["ranking_date"])
+ratings["season"] = ratings["season"].astype(int)
+
+games = pd.read_csv("all_nhl_games.csv", low_memory=False)
+games["date_game"] = pd.to_datetime(games["date_game"])
+games["season"] = games["season"].astype(int)
+
+# Disambiguate the original Winnipeg Jets (1979-1996) from the modern Jets (2011+).
+# Same canonical name in source data; rename historical rows.
+mask = (games["season"] <= 1996) & (
+    (games["home_team_name"] == "Winnipeg Jets") | (games["visitor_team_name"] == "Winnipeg Jets")
+)
+games.loc[(games["season"] <= 1996) & (games["home_team_name"] == "Winnipeg Jets"), "home_team_name"] = "Original Winnipeg Jets"
+games.loc[(games["season"] <= 1996) & (games["visitor_team_name"] == "Winnipeg Jets"), "visitor_team_name"] = "Original Winnipeg Jets"
+# Same on ratings (the model used the original name)
+ratings.loc[(ratings["season"] <= 1996) & (ratings["name"] == "Winnipeg Jets"), "name"] = "Original Winnipeg Jets"
+
+print(f"  Ratings: {len(ratings):,} rows, {ratings['season'].min()}-{ratings['season'].max()}")
+print(f"  Games:   {len(games):,} rows, {games['season'].min()}-{games['season'].max()}")
+
+
+# =========================================================
+# REGULAR-SEASON END DETECTION (per season)
+# =========================================================
+# Gate on actual completion: rs_end fires only if postseason games exist OR
+# enough teams have played their full RS schedule. Mirrors GRIFFEY's gate.
+
+REGULAR_SEASON_GAMES = {
+    **{y: 82 for y in range(1996, 2030)},
+    1980: 80, 1981: 80, 1982: 80, 1983: 80, 1984: 80, 1985: 80,
+    1986: 80, 1987: 80, 1988: 80, 1989: 80, 1990: 80, 1991: 80, 1992: 80,
+    1993: 84, 1994: 84,
+    1995: 48, 2013: 48, 2020: 70, 2021: 56,
+}
+
+rs_end_by_season = {}
+rs_games = games[games["is_playoff_game_flag"] == 0]
+for s, sub in rs_games.groupby("season"):
+    th = REGULAR_SEASON_GAMES.get(int(s), 82)
+    home = sub[["date_game", "home_team_name"]].rename(columns={"home_team_name": "team"})
+    away = sub[["date_game", "visitor_team_name"]].rename(columns={"visitor_team_name": "team"})
+    g = pd.concat([home, away])
+    team_totals = g.groupby("team").size()
+    n_teams_done = int((team_totals >= th).sum())
+    has_ps = ((games["season"] == s) & (games["is_playoff_game_flag"] == 1)).any()
+    if has_ps or n_teams_done >= 16:  # ≥ half the league
+        rs_end_by_season[int(s)] = sub["date_game"].max()
+print(f"\nRS-end dates detected for {len(rs_end_by_season)} seasons.")
+
+
+# =========================================================
+# FLAG RS-end and PS-end ON SNAPSHOTS
+# =========================================================
+
+ratings["is_rs_end"] = 0
+ratings["is_ps_end"] = 0
+ratings["is_playoff_snapshot"] = 0
+
+for s, rs_end in rs_end_by_season.items():
+    season_mask = ratings["season"] == s
+    season_subset = ratings[season_mask]
+    if season_subset.empty:
+        continue
+    rs_candidates = season_subset[season_subset["ranking_date"] <= rs_end]
+    if not rs_candidates.empty:
+        rs_end_id = rs_candidates["ranking_id"].max()
+        ratings.loc[season_mask & (ratings["ranking_id"] == rs_end_id), "is_rs_end"] = 1
+    ps_end_id = season_subset["ranking_id"].max()
+    ratings.loc[season_mask & (ratings["ranking_id"] == ps_end_id), "is_ps_end"] = 1
+    ratings.loc[season_mask & (ratings["ranking_date"] > rs_end), "is_playoff_snapshot"] = 1
+
+
+# =========================================================
+# PER-TEAM SEASON RECORDS
+# =========================================================
+# NHL has ties (pre-2005) and OT/SO losses (post-1999, 2-point system since 2005)
+
+def team_game_view(games_df):
+    home = games_df[["season", "date_game", "home_team_name", "home_win", "is_tie", "overtimes", "home_result", "is_playoff_game_flag"]].rename(
+        columns={"home_team_name": "team", "home_win": "won", "home_result": "result"})
+    home["home"] = 1
+    away = games_df[["season", "date_game", "visitor_team_name", "visitor_win", "is_tie", "overtimes", "visitor_result", "is_playoff_game_flag"]].rename(
+        columns={"visitor_team_name": "team", "visitor_win": "won", "visitor_result": "result"})
+    away["home"] = 0
+    return pd.concat([home, away], ignore_index=True)
+
+team_games = team_game_view(games)
+team_games["is_playoff_game"] = team_games["is_playoff_game_flag"] == 1
+
+# Loss types (regular season only):
+#   ot_so_loss = 1 if team lost AND game ended in OT/SO
+#   regular_loss = 1 if team lost in regulation
+#   tie = 1 if game ended in REG tie (pre-2005)
+team_games["ot_so_loss"] = (
+    (team_games["won"] == 0)
+    & (team_games["is_tie"] == 0)
+    & (team_games["overtimes"].isin(["OT", "SO"]))
+).astype(int)
+
+
+def _build_record(sub):
+    w = int(sub["won"].sum())
+    t = int(sub["is_tie"].sum())
+    otl = int(sub["ot_so_loss"].sum())
+    total_l = int(((sub["won"] == 0) & (sub["is_tie"] == 0)).sum())
+    reg_l = total_l - otl
+    return w, reg_l, otl, t
+
+
+records = {}
+for (season, team, is_po), sub in team_games.groupby(["season", "team", "is_playoff_game"]):
+    w, reg_l, otl, t = _build_record(sub)
+    records.setdefault((int(season), team), {"rs": (0,0,0,0), "ps": (0,0,0,0)})
+    key = "ps" if is_po else "rs"
+    records[(int(season), team)][key] = (w, reg_l, otl, t)
+
+
+def format_record(season, rs_or_ps_tuple):
+    """Era-aware: pre-2005 = W-L-T; 2005+ = W-L-OTL (OTL combines OT loss + SO loss; ties don't exist)."""
+    w, reg_l, otl, t = rs_or_ps_tuple
+    if (w + reg_l + otl + t) == 0:
+        return ""
+    if int(season) >= 2006:  # 2005-06 onward = shootout era
+        return f"{w}-{reg_l + otl}-{otl}"  # W - regulation losses (incl OTL count) ... actually let me think
+    return f"{w}-{reg_l}-{t}"
+
+
+# Actually NHL convention since 2005:
+#   W = total wins (REG + OT + SO)
+#   L = regulation losses ONLY
+#   OTL = OT or SO losses
+# Total games = W + L + OTL
+# So display format is "W-L-OTL" where L excludes OTL.
+def format_record(season, tup):
+    w, reg_l, otl, t = tup
+    if (w + reg_l + otl + t) == 0:
+        return ""
+    if int(season) >= 2006:
+        # W-L-OTL (L excludes OT/SO losses)
+        return f"{w}-{reg_l}-{otl}"
+    # Pre-2006 (incl 1999-2005 transition era for simplicity): W-L-T
+    # In 1999-2005 there was a "loser point" but ties still appeared. Use W-L-T which captures both.
+    total_l = reg_l + otl  # all non-tie losses
+    return f"{w}-{total_l}-{t}"
+
+
+# =========================================================
+# PER-SNAPSHOT RECORDS (rolling)
+# =========================================================
+# For each (team, snapshot_date), compute running record + last_match.
+print("\nComputing per-snapshot rolling records + last-match lookups...")
+team_games_sorted = team_games.sort_values(["team", "season", "date_game"]).copy()
+team_games_sorted["rs_w_inc"]    = (~team_games_sorted["is_playoff_game"] & (team_games_sorted["won"] == 1)).astype(int)
+team_games_sorted["rs_l_inc"]    = (~team_games_sorted["is_playoff_game"] & (team_games_sorted["won"] == 0) & (team_games_sorted["is_tie"] == 0) & (team_games_sorted["ot_so_loss"] == 0)).astype(int)
+team_games_sorted["rs_otl_inc"]  = (~team_games_sorted["is_playoff_game"] & (team_games_sorted["ot_so_loss"] == 1)).astype(int)
+team_games_sorted["rs_t_inc"]    = (~team_games_sorted["is_playoff_game"] & (team_games_sorted["is_tie"] == 1)).astype(int)
+team_games_sorted["ps_w_inc"]    = ( team_games_sorted["is_playoff_game"] & (team_games_sorted["won"] == 1)).astype(int)
+team_games_sorted["ps_l_inc"]    = ( team_games_sorted["is_playoff_game"] & (team_games_sorted["won"] == 0) & (team_games_sorted["is_tie"] == 0)).astype(int)
+# Playoff OT losses still count as just "L" in playoff record (no loser point)
+
+for col in ["rs_w", "rs_l", "rs_otl", "rs_t", "ps_w", "ps_l"]:
+    team_games_sorted[f"cum_{col}"] = (
+        team_games_sorted.groupby(["team", "season"])[f"{col}_inc"].cumsum().astype(int)
+    )
+
+unique_snaps = ratings[["season", "name", "ranking_date"]].drop_duplicates().copy()
+unique_snaps = unique_snaps.rename(columns={"name": "team", "ranking_date": "date_game"})
+
+unique_snaps_sorted = unique_snaps.sort_values("date_game").reset_index(drop=True)
+team_games_for_merge = team_games_sorted[
+    ["team", "season", "date_game", "result", "cum_rs_w", "cum_rs_l", "cum_rs_otl", "cum_rs_t", "cum_ps_w", "cum_ps_l"]
+].copy()
+team_games_for_merge["actual_game_date"] = team_games_for_merge["date_game"]
+team_games_for_merge = team_games_for_merge.sort_values("date_game").reset_index(drop=True)
+
+snap_records = pd.merge_asof(
+    unique_snaps_sorted, team_games_for_merge,
+    on="date_game", by=["team", "season"],
+    direction="backward",
+)
+
+
+def _fmt_rs(r, season):
+    w   = int(r["cum_rs_w"])   if pd.notna(r["cum_rs_w"])   else 0
+    l   = int(r["cum_rs_l"])   if pd.notna(r["cum_rs_l"])   else 0
+    otl = int(r["cum_rs_otl"]) if pd.notna(r["cum_rs_otl"]) else 0
+    t   = int(r["cum_rs_t"])   if pd.notna(r["cum_rs_t"])   else 0
+    if (w + l + otl + t) == 0:
+        return f"0-0-0"
+    if int(season) >= 2006:
+        return f"{w}-{l}-{otl}"
+    return f"{w}-{l + otl}-{t}"
+
+
+def _fmt_ps(r):
+    pw = int(r["cum_ps_w"]) if pd.notna(r["cum_ps_w"]) else 0
+    pl = int(r["cum_ps_l"]) if pd.notna(r["cum_ps_l"]) else 0
+    if (pw + pl) == 0:
+        return ""
+    return f"{pw}-{pl}"
+
+
+snap_records["rs_record"] = [
+    _fmt_rs(r, s) for r, s in zip(snap_records.to_dict("records"), snap_records["season"])
+]
+snap_records["ps_record"]       = snap_records.apply(_fmt_ps, axis=1)
+snap_records["last_match"]      = snap_records["result"].fillna("")
+snap_records["last_match_date"] = snap_records["actual_game_date"].dt.strftime("%Y-%m-%d").fillna("")
+
+snap_record_lookup = {
+    (int(r["season"]), r["team"], r["date_game"]): {
+        "rs_record":       r["rs_record"],
+        "ps_record":       r["ps_record"],
+        "last_match":      r["last_match"],
+        "last_match_date": r["last_match_date"],
+    }
+    for _, r in snap_records.iterrows()
+}
+print(f"  {len(snap_record_lookup):,} (season, team, snapshot) lookups built.")
+
+
+# =========================================================
+# STANLEY CUP CHAMPIONS (derived from playoff games)
+# =========================================================
+# Like GRIFFEY's WS walker: the last team to play in the playoff bracket is
+# the Cup champion; their opponent in that final series is the runner-up.
+
+print("\nDeriving Stanley Cup champions from playoff games...")
+ws_results = {}  # season -> {champion, runner_up, series}
+for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
+    last_date = ps_games["date_game"].max()
+    finals_teams = set(ps_games[ps_games["date_game"] == last_date]["home_team_name"]) | \
+                   set(ps_games[ps_games["date_game"] == last_date]["visitor_team_name"])
+    if len(finals_teams) != 2:
+        continue
+    a, b = sorted(finals_teams)
+    finals_games = ps_games[
+        ((ps_games["home_team_name"] == a) & (ps_games["visitor_team_name"] == b)) |
+        ((ps_games["home_team_name"] == b) & (ps_games["visitor_team_name"] == a))
+    ]
+    a_wins = int(((finals_games["home_team_name"] == a) & (finals_games["home_win"] == 1)).sum()
+              + ((finals_games["visitor_team_name"] == a) & (finals_games["visitor_win"] == 1)).sum())
+    b_wins = len(finals_games) - a_wins
+    if a_wins == b_wins:
+        continue  # series tied? skip (shouldn't happen)
+    if a_wins > b_wins:
+        champ, ru, series = a, b, f"{a_wins}-{b_wins}"
+    else:
+        champ, ru, series = b, a, f"{b_wins}-{a_wins}"
+    ws_results[int(s)] = {"champion": champ, "runner_up": ru, "series": series}
+
+print(f"  Detected {len(ws_results)} Stanley Cup champions.")
+for s in sorted(ws_results)[-5:]:
+    info = ws_results[s]
+    print(f"    {season_label(s)}: {info['champion']} def. {info['runner_up']} ({info['series']})")
+
+
+# =========================================================
+# DIVISION WINNERS (per season, per team)
+# =========================================================
+# Only for COMPLETED seasons and only for 2013-14+ (when modern divisions exist).
+print("\nComputing division winners (2013-14+)...")
+COMPLETED_SEASONS = set(rs_end_by_season.keys())
+division_winners = set()
+
+rs_only_simple = team_games[~team_games["is_playoff_game"]].copy()
+# NHL standings = 2 pts per win + 1 pt per OT/SO loss + 1 pt per tie (pre-2005)
+# For division-winner detection we'll use points pct.
+rs_only_simple["pts"] = rs_only_simple["won"] * 2 + rs_only_simple["ot_so_loss"] + rs_only_simple["is_tie"]
+
+for s, sub in rs_only_simple.groupby("season"):
+    s = int(s)
+    if s not in COMPLETED_SEASONS or s < 2014:
+        continue
+    by_team = sub.groupby("team").agg(P=("pts", "sum"), G=("pts", "size")).reset_index()
+    by_team["ppg"] = by_team["P"] / by_team["G"]
+    by_team["div"] = by_team["team"].apply(lambda t: division(t, s))
+    by_team = by_team[by_team["div"].isin({"Atlantic", "Metropolitan", "Central", "Pacific"})]
+    if by_team.empty:
+        continue
+    for div_name, div_sub in by_team.groupby("div"):
+        top = div_sub.sort_values("ppg", ascending=False).head(1)
+        if not top.empty:
+            division_winners.add((s, top.iloc[0]["team"]))
+print(f"  {len(division_winners)} division titles flagged.")
+
+
+# =========================================================
+# OUTPUT: per-season JSON files
+# =========================================================
+print("\nWriting per-season JSON files...")
+
+teams_played_by_season = {}
+for s_, sub in games.groupby("season"):
+    teams_played_by_season[int(s_)] = set(sub["home_team_name"]) | set(sub["visitor_team_name"])
+
+for s in sorted(ratings["season"].unique()):
+    s = int(s)
+    sdf = ratings[ratings["season"] == s].copy()
+    ws_info = ws_results.get(s, {})
+    cup_champ = ws_info.get("champion")
+    cup_ru    = ws_info.get("runner_up")
+    snapshots = []
+    played_this_season = teams_played_by_season.get(s, set())
+    for rid, rdf in sdf.groupby("ranking_id"):
+        rdf = rdf[rdf["name"].isin(played_this_season)].copy() if played_this_season else rdf
+        rdf = rdf.sort_values("rank")
+        snap_date_ts = rdf["ranking_date"].iloc[0]
+        snap_date = str(snap_date_ts.date())
+        is_rs_end = int(rdf["is_rs_end"].iloc[0])
+        is_ps_end = int(rdf["is_ps_end"].iloc[0])
+        is_playoff_snap = int(rdf["is_playoff_snapshot"].iloc[0])
+        label = None
+        if is_rs_end:
+            label = "End of regular season"
+        elif is_ps_end and is_playoff_snap:
+            label = "End of playoffs"
+        teams_snap = []
+        for _, r in rdf.iterrows():
+            rec = snap_record_lookup.get((s, r["name"], snap_date_ts), {})
+            finals_status = 2 if r["name"] == cup_champ else (1 if r["name"] == cup_ru else 0)
+            div_winner = 1 if (s, r["name"]) in division_winners else 0
+            teams_snap.append({
+                "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
+                "team":             r["name"],
+                "display_name":     display_name(r["name"], s),
+                "conference":       conference(r["name"]),
+                "division":         division(r["name"], s),
+                "rating":           round(float(r["rating"]), 3),
+                "regular_record":   rec.get("rs_record", "0-0-0"),
+                "playoff_record":   rec.get("ps_record", ""),
+                "last_match":       rec.get("last_match", ""),
+                "last_match_date":  rec.get("last_match_date", ""),
+                "finals_status":    finals_status,
+                "division_winner":  div_winner,
+            })
+        snapshots.append({
+            "date":            snap_date,
+            "label":           label,
+            "is_rs_end":       is_rs_end,
+            "is_ps_end":       is_ps_end,
+            "is_playoff_snap": is_playoff_snap,
+            "teams":           teams_snap,
+        })
+
+    snapshots.sort(key=lambda x: x["date"])
+    with open(f"docs/data/seasons/{s}.json", "w") as f:
+        json.dump({"season": s, "season_label": season_label(s), "snapshots": snapshots}, f, separators=(",", ":"))
+
+
+# =========================================================
+# OUTPUT: per-team JSON files
+# =========================================================
+print("Writing per-team JSON files...")
+teams_index = []
+for team in sorted(ratings["name"].unique()):
+    tdf = ratings[ratings["name"] == team].copy()
+    team_slug = slug(team)
+    seasons_dict = {}
+    for s, sub in tdf.groupby("season"):
+        s = int(s)
+        if team not in teams_played_by_season.get(s, set()):
+            continue
+        ws_info = ws_results.get(s, {})
+        finals_status = 2 if ws_info.get("champion") == team else (1 if ws_info.get("runner_up") == team else 0)
+        entries = []
+        div_winner = 1 if (s, team) in division_winners else 0
+        for _, r in sub.sort_values("ranking_date").iterrows():
+            snap_date_ts = r["ranking_date"]
+            rec = snap_record_lookup.get((s, team, snap_date_ts), {})
+            sf = 2 if int(r["is_ps_end"]) == 1 else (1 if int(r["is_rs_end"]) == 1 else 0)
+            entries.append({
+                "date":             str(snap_date_ts.date()),
+                "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
+                "rating":           round(float(r["rating"]), 3),
+                "display_name":     display_name(team, s),
+                "conference":       conference(team),
+                "division":         division(team, s),
+                "regular_record":   rec.get("rs_record", "0-0-0"),
+                "playoff_record":   rec.get("ps_record", ""),
+                "last_match":       rec.get("last_match", ""),
+                "last_match_date":  rec.get("last_match_date", ""),
+                "finals_status":    finals_status,
+                "division_winner":  div_winner,
+                "season_flag":      sf,
+            })
+        seasons_dict[str(s)] = entries
+    with open(f"docs/data/teams/{team_slug}.json", "w") as f:
+        json.dump({
+            "team":         team,
+            "display_name": current_display_name(team),
+            "conference":   conference(team),
+            "seasons":      seasons_dict,
+        }, f, separators=(",", ":"))
+
+    teams_index.append({
+        "team":              team,
+        "display_name":      current_display_name(team),
+        "conference":        conference(team),
+        "historical_names":  historical_display_names(team),
+        "slug":              team_slug,
+    })
+
+with open("docs/data/teams_index.json", "w") as f:
+    json.dump(teams_index, f, separators=(",", ":"))
+
+
+# =========================================================
+# OUTPUT: champions.json
+# =========================================================
+print("Writing champions.json...")
+rec_lookup = {(s, t): records.get((s, t)) for (s, t) in records}
+
+champs_list = []
+for s in sorted(ws_results.keys(), reverse=True):
+    info = ws_results[s]
+    ch_rs = ratings[(ratings["season"] == s) & (ratings["name"] == info["champion"]) & (ratings["is_rs_end"] == 1)]
+    ch_ps = ratings[(ratings["season"] == s) & (ratings["name"] == info["champion"]) & (ratings["is_ps_end"] == 1)]
+    ru_rs = ratings[(ratings["season"] == s) & (ratings["name"] == info["runner_up"]) & (ratings["is_rs_end"] == 1)]
+    ru_ps = ratings[(ratings["season"] == s) & (ratings["name"] == info["runner_up"]) & (ratings["is_ps_end"] == 1)]
+    rec_ch = rec_lookup.get((s, info["champion"]))
+    rec_ru = rec_lookup.get((s, info["runner_up"]))
+    pre_rated = ch_rs.empty and ch_ps.empty
+    champs_list.append({
+        "season":       s,
+        "season_label": season_label(s),
+        "series":       info["series"],
+        "pre_rated":    pre_rated,
+        "champion": {
+            "team":           info["champion"],
+            "display_name":   display_name(info["champion"], s),
+            "conference":     conference(info["champion"]),
+            "rs_record":      format_record(s, rec_ch["rs"]) if rec_ch else "",
+            "ps_record":      format_record(s, rec_ch["ps"]) if rec_ch else "",
+            "rs_end_rating":  round(float(ch_rs["rating"].iloc[0]), 3) if not ch_rs.empty else None,
+            "rs_end_rank":    int(ch_rs["rank"].iloc[0]) if not ch_rs.empty else None,
+            "ps_end_rating":  round(float(ch_ps["rating"].iloc[0]), 3) if not ch_ps.empty else None,
+            "ps_end_rank":    int(ch_ps["rank"].iloc[0]) if not ch_ps.empty else None,
+        },
+        "runner_up": {
+            "team":           info["runner_up"],
+            "display_name":   display_name(info["runner_up"], s),
+            "conference":     conference(info["runner_up"]),
+            "rs_record":      format_record(s, rec_ru["rs"]) if rec_ru else "",
+            "ps_record":      format_record(s, rec_ru["ps"]) if rec_ru else "",
+            "rs_end_rating":  round(float(ru_rs["rating"].iloc[0]), 3) if not ru_rs.empty else None,
+            "rs_end_rank":    int(ru_rs["rank"].iloc[0]) if not ru_rs.empty else None,
+            "ps_end_rating":  round(float(ru_ps["rating"].iloc[0]), 3) if not ru_ps.empty else None,
+            "ps_end_rank":    int(ru_ps["rank"].iloc[0]) if not ru_ps.empty else None,
+        },
+    })
+
+# Running title counts (no pre-1980 dict for v1)
+_champ_count = {}
+_ru_count    = {}
+for entry in reversed(champs_list):
+    ct = entry["champion"]["team"]
+    rt = entry["runner_up"]["team"]
+    _champ_count[ct] = _champ_count.get(ct, 0) + 1
+    _ru_count[rt]    = _ru_count.get(rt, 0) + 1
+    entry["champion"]["title_count"]      = _champ_count[ct]
+    entry["runner_up"]["runner_up_count"] = _ru_count[rt]
+
+with open("docs/data/champions.json", "w") as f:
+    json.dump({"NHL": champs_list}, f, separators=(",", ":"))
+
+
+# =========================================================
+# OUTPUT: goat_rs.json + goat_ps.json
+# =========================================================
+print("Writing GOAT lists...")
+GOAT_TOP_N = 50
+cup_seasons = set(ws_results.keys())
+
+
+def build_goat(flag_col, require_cup=False):
+    rows = ratings[(ratings[flag_col] == 1) & (ratings["season"].isin(cup_seasons))].copy()
+    rows = rows[rows.apply(
+        lambda r: r["name"] in teams_played_by_season.get(int(r["season"]), set()), axis=1
+    )]
+    if require_cup:
+        cup_teams = {(s, info["champion"]) for s, info in ws_results.items()} | \
+                    {(s, info["runner_up"]) for s, info in ws_results.items()}
+        rows = rows[rows.apply(lambda r: (int(r["season"]), r["name"]) in cup_teams, axis=1)]
+    rows = rows.sort_values("rating", ascending=False).reset_index(drop=True)
+    top = rows.head(GOAT_TOP_N)
+    out = []
+    for i, r in top.iterrows():
+        s = int(r["season"])
+        rec = rec_lookup.get((s, r["name"]))
+        info = ws_results.get(s, {})
+        finals_status = 2 if info.get("champion") == r["name"] else (1 if info.get("runner_up") == r["name"] else 0)
+        out.append({
+            "rank":             i + 1,
+            "team":             r["name"],
+            "display_name":     display_name(r["name"], s),
+            "conference":       conference(r["name"]),
+            "division":         division(r["name"], s),
+            "division_winner":  1 if (s, r["name"]) in division_winners else 0,
+            "season":           s,
+            "season_label":     season_label(s),
+            "rating":           round(float(r["rating"]), 3),
+            "regular_record":   format_record(s, rec["rs"]) if rec else "",
+            "playoff_record":   format_record(s, rec["ps"]) if rec else "",
+            "finals_status":    finals_status,
+        })
+    return out
+
+
+goat_rs = build_goat("is_rs_end", require_cup=False)
+goat_ps = build_goat("is_ps_end", require_cup=True)
+
+with open("docs/data/goat_rs.json", "w") as f:
+    json.dump(goat_rs, f, separators=(",", ":"))
+with open("docs/data/goat_ps.json", "w") as f:
+    json.dump(goat_ps, f, separators=(",", ":"))
+
+
+# =========================================================
+# OUTPUT: current_standings.json + seasons_index.json
+# =========================================================
+latest_id = ratings["ranking_id"].max()
+latest_snap = ratings[ratings["ranking_id"] == latest_id].copy()
+latest_season = int(latest_snap["season"].iloc[0])
+latest_date = str(latest_snap["ranking_date"].iloc[0].date())
+latest_played = teams_played_by_season.get(latest_season, set())
+latest_snap = latest_snap[latest_snap["name"].isin(latest_played)] if latest_played else latest_snap
+
+current_teams = []
+for _, r in latest_snap.sort_values("rank").iterrows():
+    current_teams.append({
+        "rank":         int(r["rank"]) if not pd.isna(r["rank"]) else None,
+        "team":         r["name"],
+        "display_name": display_name(r["name"], latest_season),
+        "conference":   conference(r["name"]),
+        "division":     division(r["name"], latest_season),
+        "rating":       round(float(r["rating"]), 3),
+    })
+
+with open("docs/data/current_standings.json", "w") as f:
+    json.dump({
+        "updated":      latest_date,
+        "season":       latest_season,
+        "season_label": season_label(latest_season),
+        "teams":        current_teams,
+    }, f, separators=(",", ":"))
+
+seasons_index = sorted({int(s) for s in ratings["season"].unique()}, reverse=True)
+with open("docs/data/seasons_index.json", "w") as f:
+    json.dump({
+        "seasons":        seasons_index,
+        "season_labels":  {s: season_label(s) for s in seasons_index},
+        "first_date":     str(games["date_game"].min().date()),
+        "last_date":      str(games["date_game"].max().date()),
+        "generated_at":   datetime.now(timezone.utc).isoformat(),
+    }, f, separators=(",", ":"))
+
+
+# =========================================================
+# DONE
+# =========================================================
+print(f"\nDone. {len(teams_index)} teams, {len(seasons_index)} seasons, "
+      f"{len(ws_results)} Cups detected, {len(goat_rs)} GOAT-RS, {len(goat_ps)} GOAT-PS.")
+print(f"\nGOAT-PS top 10:")
+for t in goat_ps[:10]:
+    marker = " ★" if t["finals_status"] == 2 else " (RU)" if t["finals_status"] == 1 else ""
+    print(f"  #{t['rank']:2d}. {t['display_name']} {t['season_label']}  ({t['regular_record']}, {t['rating']:+.2f}){marker}")
+print(f"\nGOAT-RS top 10:")
+for t in goat_rs[:10]:
+    marker = " ★" if t["finals_status"] == 2 else " (RU)" if t["finals_status"] == 1 else ""
+    print(f"  #{t['rank']:2d}. {t['display_name']} {t['season_label']}  ({t['regular_record']}, {t['rating']:+.2f}){marker}")
