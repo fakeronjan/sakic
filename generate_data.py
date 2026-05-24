@@ -23,105 +23,317 @@ os.makedirs("docs/data/seasons", exist_ok=True)
 
 
 # =========================================================
-# TEAM CONFERENCE + DIVISION (era-aware)
+# TEAM CONFERENCE + DIVISION (era-aware, full 1979-80 → present)
 # =========================================================
-# NHL realigned in 1981, 1993, 1998, 2013. Pre-2013 divisions are skipped for
-# v1 (fall back to conference label only); post-2013 modern division shown.
-
-TEAM_CONFERENCE = {
-    # Eastern Conference (modern)
-    "Boston Bruins":         "Eastern",
-    "Buffalo Sabres":        "Eastern",
-    "Detroit Red Wings":     "Eastern",
-    "Florida Panthers":      "Eastern",
-    "Montreal Canadiens":    "Eastern",
-    "Ottawa Senators":       "Eastern",
-    "Tampa Bay Lightning":   "Eastern",
-    "Toronto Maple Leafs":   "Eastern",
-    "Carolina Hurricanes":   "Eastern",
-    "Columbus Blue Jackets": "Eastern",
-    "New Jersey Devils":     "Eastern",
-    "New York Islanders":    "Eastern",
-    "New York Rangers":      "Eastern",
-    "Philadelphia Flyers":   "Eastern",
-    "Pittsburgh Penguins":   "Eastern",
-    "Washington Capitals":   "Eastern",
-    # Western Conference (modern)
-    "Chicago Blackhawks":    "Western",
-    "Colorado Avalanche":    "Western",
-    "Dallas Stars":          "Western",
-    "Minnesota Wild":        "Western",
-    "Nashville Predators":   "Western",
-    "St. Louis Blues":       "Western",
-    "Utah Mammoth":          "Western",   # 2024+ (UHC 2024-25 → Mammoth 2025-26+, same-market rebrand)
-    "Winnipeg Jets":         "Western",  # modern Jets (2011+)
-    "Anaheim Ducks":         "Western",
-    "Calgary Flames":        "Western",
-    "Edmonton Oilers":       "Western",
-    "Los Angeles Kings":     "Western",
-    "Seattle Kraken":        "Western",
-    "San Jose Sharks":       "Western",
-    "Vancouver Canucks":     "Western",
-    "Vegas Golden Knights":  "Western",
-    # Defunct franchises (separate per fleet relocation policy)
-    "Quebec Nordiques":      "Eastern",   # 1979-1995
-    "Hartford Whalers":      "Eastern",   # 1979-1997
-    "Atlanta Thrashers":     "Eastern",   # 1999-2011
-    "Minnesota North Stars": "Western",   # 1967-1993
-    "Colorado Rockies":      "Western",   # 1976-1982 (NHL franchise, not the MLB one)
-    "Arizona Coyotes":       "Western",   # 1996-2024
+# Major NHL realignments (season-end-year notation, so season=1982 means
+# the 1981-82 season):
+#   - 1981 (1980-81): last year of pre-realignment Wales/Campbell. Original
+#     four divisions Norris/Adams/Patrick/Smythe but NOT geographic.
+#   - 1982 (1981-82): geographic realignment of the same four divisions.
+#     Detroit/Toronto/Chicago move to Campbell (Norris); Pittsburgh to Wales
+#     (Patrick); New Jersey takes Colorado Rockies' Patrick slot (1983).
+#   - 1994 (1993-94): renamed to Eastern/Western conferences with
+#     Atlantic/Northeast/Central/Pacific. PIT moved from Patrick to Northeast.
+#     Florida Panthers + Anaheim Mighty Ducks expansion.
+#   - 1999 (1998-99): expanded to 6 divisions (Southeast + Northwest added).
+#     PIT/TOR shuffle. Nashville Predators expansion.
+#   - 2014 (2013-14): consolidated to 4 divisions (Atlantic/Metropolitan/
+#     Central/Pacific). Detroit + Columbus moved East. Winnipeg/Dallas to West.
+#   - 2021 (2020-21): COVID-temporary 4 divisions (East/Central/West/North,
+#     Canadian teams pooled into North). No Eastern/Western conferences that
+#     year — encoded as conf=div=temp-name.
+#   - 2022 (2021-22): back to 4-division layout. Seattle Kraken joins Pacific;
+#     Arizona moves from Pacific to Central to make room.
+#   - 2025 (2024-25): Arizona Coyotes franchise moves to Utah (Utah Hockey
+#     Club → Utah Mammoth rebrand same market). Stays in Central.
+#
+# Format: team → list of (start_season, end_season_inclusive, conference,
+# division) ranges. 9999 = ongoing.
+TEAM_DIVISION_HISTORY = {
+    # ─── Eastern (originally Adams / now Atlantic-Northeast lineage) ──
+    "Boston Bruins": [
+        (1980, 1993, "Wales",   "Adams"),
+        (1994, 2013, "Eastern", "Northeast"),
+        (2014, 2020, "Eastern", "Atlantic"),
+        (2021, 2021, "East",    "East"),         # COVID
+        (2022, 9999, "Eastern", "Atlantic"),
+    ],
+    "Buffalo Sabres": [
+        (1980, 1993, "Wales",   "Adams"),
+        (1994, 2013, "Eastern", "Northeast"),
+        (2014, 2020, "Eastern", "Atlantic"),
+        (2021, 2021, "East",    "East"),
+        (2022, 9999, "Eastern", "Atlantic"),
+    ],
+    "Detroit Red Wings": [
+        (1980, 1981, "Wales",    "Norris"),       # pre-realignment Wales/Norris
+        (1982, 1993, "Campbell", "Norris"),       # geographic realignment
+        (1994, 2013, "Western",  "Central"),
+        (2014, 2020, "Eastern",  "Atlantic"),     # moved East with 2013 realignment
+        (2021, 2021, "Central",  "Central"),
+        (2022, 9999, "Eastern",  "Atlantic"),
+    ],
+    "Florida Panthers": [
+        (1994, 1998, "Eastern", "Atlantic"),      # joined 1993-94 expansion
+        (1999, 2013, "Eastern", "Southeast"),
+        (2014, 2020, "Eastern", "Atlantic"),
+        (2021, 2021, "Central", "Central"),
+        (2022, 9999, "Eastern", "Atlantic"),
+    ],
+    "Montreal Canadiens": [
+        (1980, 1981, "Wales",   "Norris"),
+        (1982, 1993, "Wales",   "Adams"),
+        (1994, 2013, "Eastern", "Northeast"),
+        (2014, 2020, "Eastern", "Atlantic"),
+        (2021, 2021, "North",   "North"),
+        (2022, 9999, "Eastern", "Atlantic"),
+    ],
+    "Ottawa Senators": [
+        (1993, 1993, "Wales",   "Adams"),         # joined 1992-93
+        (1994, 2013, "Eastern", "Northeast"),
+        (2014, 2020, "Eastern", "Atlantic"),
+        (2021, 2021, "North",   "North"),
+        (2022, 9999, "Eastern", "Atlantic"),
+    ],
+    "Tampa Bay Lightning": [
+        (1993, 1993, "Campbell", "Norris"),        # joined 1992-93 in Norris
+        (1994, 1998, "Eastern",  "Atlantic"),
+        (1999, 2013, "Eastern",  "Southeast"),
+        (2014, 2020, "Eastern",  "Atlantic"),
+        (2021, 2021, "Central",  "Central"),
+        (2022, 9999, "Eastern",  "Atlantic"),
+    ],
+    "Toronto Maple Leafs": [
+        (1980, 1981, "Wales",    "Adams"),
+        (1982, 1993, "Campbell", "Norris"),        # moved to Norris in 1982 realignment
+        (1994, 1998, "Western",  "Central"),
+        (1999, 2013, "Eastern",  "Northeast"),     # moved back to East 1998-99
+        (2014, 2020, "Eastern",  "Atlantic"),
+        (2021, 2021, "North",    "North"),
+        (2022, 9999, "Eastern",  "Atlantic"),
+    ],
+    # ─── Eastern (originally Patrick / now Metropolitan lineage) ──────
+    "Carolina Hurricanes": [
+        (1998, 1998, "Eastern", "Northeast"),     # was Hartford until 1996-97; became CAR 1997-98
+        (1999, 2013, "Eastern", "Southeast"),
+        (2014, 2020, "Eastern", "Metropolitan"),
+        (2021, 2021, "Central", "Central"),
+        (2022, 9999, "Eastern", "Metropolitan"),
+    ],
+    "Columbus Blue Jackets": [
+        (2001, 2013, "Western", "Central"),       # 2000-01 expansion (Central, Western)
+        (2014, 2020, "Eastern", "Metropolitan"),
+        (2021, 2021, "Central", "Central"),
+        (2022, 9999, "Eastern", "Metropolitan"),
+    ],
+    "New Jersey Devils": [
+        (1983, 1993, "Wales",   "Patrick"),        # franchise (formerly Colorado Rockies) settled in NJ for 1982-83
+        (1994, 2013, "Eastern", "Atlantic"),
+        (2014, 2020, "Eastern", "Metropolitan"),
+        (2021, 2021, "East",    "East"),
+        (2022, 9999, "Eastern", "Metropolitan"),
+    ],
+    "New York Islanders": [
+        (1980, 1981, "Campbell", "Patrick"),       # pre-realignment Patrick was a Campbell division
+        (1982, 1993, "Wales",    "Patrick"),        # geographic realignment swapped Patrick to Wales
+        (1994, 2013, "Eastern",  "Atlantic"),
+        (2014, 2020, "Eastern",  "Metropolitan"),
+        (2021, 2021, "East",     "East"),
+        (2022, 9999, "Eastern",  "Metropolitan"),
+    ],
+    "New York Rangers": [
+        (1980, 1981, "Campbell", "Patrick"),
+        (1982, 1993, "Wales",    "Patrick"),
+        (1994, 2013, "Eastern",  "Atlantic"),
+        (2014, 2020, "Eastern",  "Metropolitan"),
+        (2021, 2021, "East",     "East"),
+        (2022, 9999, "Eastern",  "Metropolitan"),
+    ],
+    "Philadelphia Flyers": [
+        (1980, 1981, "Campbell", "Patrick"),
+        (1982, 1993, "Wales",    "Patrick"),
+        (1994, 2013, "Eastern",  "Atlantic"),
+        (2014, 2020, "Eastern",  "Metropolitan"),
+        (2021, 2021, "East",     "East"),
+        (2022, 9999, "Eastern",  "Metropolitan"),
+    ],
+    "Pittsburgh Penguins": [
+        (1980, 1981, "Wales",   "Norris"),         # pre-realignment Wales/Norris
+        (1982, 1993, "Wales",   "Patrick"),        # moved to Patrick in 1982
+        (1994, 1998, "Eastern", "Northeast"),      # moved Patrick→Northeast in 1994 rename
+        (1999, 2013, "Eastern", "Atlantic"),       # moved back to Atlantic in 1998-99
+        (2014, 2020, "Eastern", "Metropolitan"),
+        (2021, 2021, "East",    "East"),
+        (2022, 9999, "Eastern", "Metropolitan"),
+    ],
+    "Washington Capitals": [
+        (1980, 1981, "Campbell", "Patrick"),
+        (1982, 1993, "Wales",    "Patrick"),
+        (1994, 1998, "Eastern",  "Atlantic"),
+        (1999, 2013, "Eastern",  "Southeast"),
+        (2014, 2020, "Eastern",  "Metropolitan"),
+        (2021, 2021, "East",     "East"),
+        (2022, 9999, "Eastern",  "Metropolitan"),
+    ],
+    # ─── Western (originally Norris / now Central lineage) ────────────
+    "Chicago Black Hawks": [
+        (1980, 1981, "Campbell", "Smythe"),        # pre-realignment Smythe (Chicago's pre-realignment home)
+        (1982, 1987, "Campbell", "Norris"),        # moved to Norris in 1982; renamed Blackhawks for 1986-87 (= season 1987)
+    ],
+    "Chicago Blackhawks": [
+        (1987, 1993, "Campbell", "Norris"),        # renamed from Black Hawks for 1986-87
+        (1994, 2013, "Western",  "Central"),
+        (2014, 2020, "Western",  "Central"),
+        (2021, 2021, "Central",  "Central"),
+        (2022, 9999, "Western",  "Central"),
+    ],
+    "Colorado Avalanche": [
+        (1996, 1998, "Eastern", "Northeast"),     # Quebec relocated to COL for 1995-96; inherited NE slot
+        (1999, 2013, "Western", "Northwest"),
+        (2014, 2020, "Western", "Central"),
+        (2021, 2021, "West",    "West"),
+        (2022, 9999, "Western", "Central"),
+    ],
+    "Dallas Stars": [
+        (1994, 1998, "Western", "Central"),       # MIN North Stars relocated to DAL for 1993-94; inherited Central slot
+        (1999, 2013, "Western", "Pacific"),       # moved to Pacific in 1998-99 reorg
+        (2014, 2020, "Western", "Central"),
+        (2021, 2021, "Central", "Central"),
+        (2022, 9999, "Western", "Central"),
+    ],
+    "Minnesota Wild": [
+        (2001, 2013, "Western", "Northwest"),     # 2000-01 expansion
+        (2014, 2020, "Western", "Central"),
+        (2021, 2021, "West",    "West"),
+        (2022, 9999, "Western", "Central"),
+    ],
+    "Nashville Predators": [
+        (1999, 2013, "Western", "Central"),       # 1998-99 expansion
+        (2014, 2020, "Western", "Central"),
+        (2021, 2021, "Central", "Central"),
+        (2022, 9999, "Western", "Central"),
+    ],
+    "St. Louis Blues": [
+        (1980, 1981, "Campbell", "Smythe"),
+        (1982, 1993, "Campbell", "Norris"),
+        (1994, 2013, "Western",  "Central"),
+        (2014, 2020, "Western",  "Central"),
+        (2021, 2021, "West",     "West"),
+        (2022, 9999, "Western",  "Central"),
+    ],
+    "Utah Mammoth": [
+        # Arizona Coyotes relocated to Utah for 2024-25; same franchise per
+        # leaving-a-market-breaks-history rule? No — Arizona LEFT, so per fleet
+        # rule the franchise breaks. Utah is a NEW canonical franchise.
+        # 2024-25 played as Utah Hockey Club; rebranded Utah Mammoth 2025-26.
+        (2025, 9999, "Western", "Central"),
+    ],
+    "Winnipeg Jets": [
+        (1980, 1981, "Campbell", "Smythe"),        # original Jets, joined 1979-80 from WHA merger
+        (1982, 1982, "Campbell", "Norris"),        # briefly Norris in 1981-82 only
+        (1983, 1993, "Campbell", "Smythe"),        # back to Smythe
+        (1994, 1996, "Western",  "Central"),       # joined Central in 1993 rename; original Jets relocated to PHX for 1996-97
+        # 1997-2011: gap (no NHL team in Winnipeg)
+        (2012, 2013, "Eastern",  "Southeast"),     # modern Jets inherit ATL Thrashers slot in 2011-12 (= season 2012)
+        (2014, 2020, "Western",  "Central"),       # 2013 realignment moved them west
+        (2021, 2021, "North",    "North"),
+        (2022, 9999, "Western",  "Central"),
+    ],
+    # ─── Western (originally Smythe / now Pacific lineage) ────────────
+    "Anaheim Ducks": [
+        (1994, 2013, "Western", "Pacific"),       # joined 1993-94 expansion as Mighty Ducks of Anaheim
+        (2014, 2020, "Western", "Pacific"),
+        (2021, 2021, "West",    "West"),
+        (2022, 9999, "Western", "Pacific"),
+    ],
+    "Calgary Flames": [
+        (1981, 1981, "Campbell", "Patrick"),       # first year in Calgary (1980-81); inherited Atlanta's Patrick slot
+        (1982, 1993, "Campbell", "Smythe"),        # joined Smythe in geographic realignment
+        (1994, 2013, "Western",  "Pacific"),
+        (2014, 2020, "Western",  "Pacific"),
+        (2021, 2021, "North",    "North"),
+        (2022, 9999, "Western",  "Pacific"),
+    ],
+    "Edmonton Oilers": [
+        (1980, 1993, "Campbell", "Smythe"),        # joined 1979-80 from WHA merger
+        (1994, 2013, "Western",  "Pacific"),
+        (2014, 2020, "Western",  "Pacific"),
+        (2021, 2021, "North",    "North"),
+        (2022, 9999, "Western",  "Pacific"),
+    ],
+    "Los Angeles Kings": [
+        (1980, 1981, "Wales",    "Norris"),         # pre-realignment Wales/Norris (oddly)
+        (1982, 1993, "Campbell", "Smythe"),
+        (1994, 2013, "Western",  "Pacific"),
+        (2014, 2020, "Western",  "Pacific"),
+        (2021, 2021, "West",     "West"),
+        (2022, 9999, "Western",  "Pacific"),
+    ],
+    "Seattle Kraken": [
+        (2022, 9999, "Western", "Pacific"),       # 2021-22 expansion
+    ],
+    "San Jose Sharks": [
+        (1992, 1993, "Campbell", "Smythe"),        # 1991-92 expansion
+        (1994, 2013, "Western",  "Pacific"),
+        (2014, 2020, "Western",  "Pacific"),
+        (2021, 2021, "West",     "West"),
+        (2022, 9999, "Western",  "Pacific"),
+    ],
+    "Vancouver Canucks": [
+        (1980, 1981, "Campbell", "Smythe"),
+        (1982, 1993, "Campbell", "Smythe"),
+        (1994, 1998, "Western",  "Pacific"),
+        (1999, 2013, "Western",  "Northwest"),     # moved to Northwest in 1998-99
+        (2014, 2020, "Western",  "Pacific"),
+        (2021, 2021, "North",    "North"),
+        (2022, 9999, "Western",  "Pacific"),
+    ],
+    "Vegas Golden Knights": [
+        (2018, 2020, "Western", "Pacific"),       # 2017-18 expansion
+        (2021, 2021, "West",    "West"),
+        (2022, 9999, "Western", "Pacific"),
+    ],
+    # ─── Defunct franchises (separate per relocation policy) ──────────
+    "Quebec Nordiques": [
+        (1980, 1981, "Wales", "Adams"),            # joined 1979-80 from WHA merger
+        (1982, 1993, "Wales", "Adams"),
+        (1994, 1995, "Eastern", "Northeast"),      # last 2 seasons before relocating to COL for 1995-96
+    ],
+    "Hartford Whalers": [
+        (1980, 1981, "Wales",   "Norris"),         # joined 1979-80 from WHA merger
+        (1982, 1993, "Wales",   "Adams"),
+        (1994, 1997, "Eastern", "Northeast"),      # last 4 seasons before relocating to CAR for 1997-98
+    ],
+    "Atlanta Thrashers": [
+        (2000, 2013, "Eastern", "Southeast"),      # 1999-2000 expansion; left for Winnipeg 2011-12
+        # NOTE: ATL's last season was 2010-11; the franchise relocated to
+        # become modern Winnipeg Jets for 2011-12. ATL has data up to 2012.
+    ],
+    "Minnesota North Stars": [
+        (1980, 1981, "Wales",    "Adams"),         # pre-realignment, oddly in Wales/Adams
+        (1982, 1993, "Campbell", "Norris"),        # 1982+ in Norris; relocated to DAL for 1993-94
+        (1994, 1994, "Western",  "Central"),       # ghost year
+    ],
+    "Colorado Rockies": [
+        (1980, 1982, "Campbell", "Smythe"),        # NHL franchise; relocated to NJ for 1982-83
+    ],
+    "Arizona Coyotes": [
+        (1997, 1998, "Western", "Central"),       # WPG Jets relocated to Phoenix for 1996-97; was Central
+        (1999, 2013, "Western", "Pacific"),       # moved to Pacific in 1998-99 reorg
+        (2014, 2020, "Western", "Pacific"),
+        (2021, 2021, "West",    "West"),
+        (2022, 2024, "Western", "Central"),        # moved Pacific→Central in 2021-22 to make room for SEA
+        # Relocated to Utah for 2024-25
+    ],
+    "Atlanta Flames": [
+        (1980, 1981, "Campbell", "Patrick"),       # original Atlanta; relocated to Calgary for 1980-81 (= season 1981)
+    ],
 }
 
-# Per fleet 'leaving a market breaks history; returning doesn't' rule (same as
-# Charlotte Hornets/Bobcats/Hornets in DUNCAN): the original Winnipeg Jets
-# (1979-1996) AND the modern Winnipeg Jets (2011+) are ONE canonical franchise.
-# The 1996-2011 gap is just absence from the market. The Atlanta Thrashers
-# (1999-2011) who became the modern Jets are a SEPARATE defunct franchise
-# (because they LEFT Atlanta). The Arizona Coyotes / Utah Hockey Club chain is
-# also separate (the org left Winnipeg in 1996; new franchise starts in Phoenix).
 
-
-# Era-aware division history for 2013-14 onward. Pre-2013 uses conference
-# fallback. Realignment dates in NHL official records — Atlantic/Metro split
-# the old East; Central/Pacific split the old West, but with some shuffling.
-TEAM_DIVISION_HISTORY = {
-    # Atlantic Division (2013+) - was reshuffled with Detroit moving from West
-    "Boston Bruins":         [(2014, 9999, "Atlantic")],
-    "Buffalo Sabres":        [(2014, 9999, "Atlantic")],
-    "Detroit Red Wings":     [(2014, 9999, "Atlantic")],
-    "Florida Panthers":      [(2014, 9999, "Atlantic")],
-    "Montreal Canadiens":    [(2014, 9999, "Atlantic")],
-    "Ottawa Senators":       [(2014, 9999, "Atlantic")],
-    "Tampa Bay Lightning":   [(2014, 9999, "Atlantic")],
-    "Toronto Maple Leafs":   [(2014, 9999, "Atlantic")],
-    # Metropolitan Division (2013+)
-    "Carolina Hurricanes":   [(2014, 9999, "Metropolitan")],
-    "Columbus Blue Jackets": [(2014, 9999, "Metropolitan")],
-    "New Jersey Devils":     [(2014, 9999, "Metropolitan")],
-    "New York Islanders":    [(2014, 9999, "Metropolitan")],
-    "New York Rangers":      [(2014, 9999, "Metropolitan")],
-    "Philadelphia Flyers":   [(2014, 9999, "Metropolitan")],
-    "Pittsburgh Penguins":   [(2014, 9999, "Metropolitan")],
-    "Washington Capitals":   [(2014, 9999, "Metropolitan")],
-    # Central Division (2013+) - lost Detroit, gained Dallas/Minnesota/Winnipeg
-    "Chicago Blackhawks":    [(2014, 9999, "Central")],
-    "Colorado Avalanche":    [(2014, 9999, "Central")],
-    "Dallas Stars":          [(2014, 9999, "Central")],
-    "Minnesota Wild":        [(2014, 9999, "Central")],
-    "Nashville Predators":   [(2014, 9999, "Central")],
-    "St. Louis Blues":       [(2014, 9999, "Central")],
-    "Utah Mammoth":          [(2025, 9999, "Central")],
-    "Winnipeg Jets":         [(2014, 9999, "Central")],
-    # Pacific Division (2013+)
-    "Anaheim Ducks":         [(2014, 9999, "Pacific")],
-    "Calgary Flames":        [(2014, 9999, "Pacific")],
-    "Edmonton Oilers":       [(2014, 9999, "Pacific")],
-    "Los Angeles Kings":     [(2014, 9999, "Pacific")],
-    "Seattle Kraken":        [(2022, 9999, "Pacific")],
-    "San Jose Sharks":       [(2014, 9999, "Pacific")],
-    "Vancouver Canucks":     [(2014, 9999, "Pacific")],
-    "Vegas Golden Knights":  [(2018, 9999, "Pacific")],
-    "Arizona Coyotes":       [(2014, 2024, "Central")],  # was Central pre-Utah move
+# Modern conference lookup (legacy fallback for any team not yet in history).
+TEAM_CONFERENCE = {
+    team: ranges[-1][2] for team, ranges in TEAM_DIVISION_HISTORY.items()
 }
 
 
@@ -172,21 +384,29 @@ def historical_display_names(canonical):
     return out
 
 
-def conference(team):
-    return TEAM_CONFERENCE.get(team, "Other")
+def _conf_div(team, season):
+    """Era-aware (conference, division) lookup. Falls back to the team's
+    most-recent (conf, div) if the season is outside any encoded range."""
+    history = TEAM_DIVISION_HISTORY.get(team)
+    if not history:
+        return ("Other", "Other")
+    s = int(season) if season is not None else history[-1][1]
+    for start, end, c, d in history:
+        if start <= s <= end:
+            return (c, d)
+    # Outside any range (typically a ghost snapshot from rolling-window math
+    # for a season the team didn't actually play). Fall back to closest era.
+    if s < history[0][0]:
+        return (history[0][2], history[0][3])
+    return (history[-1][2], history[-1][3])
+
+
+def conference(team, season=None):
+    return _conf_div(team, season)[0]
 
 
 def division(team, season=None):
-    """Era-aware division. Returns conference fallback for pre-2013-14 seasons."""
-    if season is None or int(season) < 2014:
-        return conference(team)  # pre-modern division era → label as conference
-    history = TEAM_DIVISION_HISTORY.get(team)
-    if history:
-        s = int(season)
-        for start, end, d in history:
-            if start <= s <= end:
-                return d
-    return conference(team)
+    return _conf_div(team, season)[1]
 
 
 # =========================================================
@@ -526,28 +746,34 @@ SHORT_SEASONS = {
     2021: "COVID 56g",     # 2020-21 COVID-shortened: 56 games
 }
 
-# Only for COMPLETED seasons and only for 2013-14+ (when modern divisions exist).
-print("\nComputing division winners (2013-14+)...")
+# Compute division winners for ALL completed seasons (1979-80 onward),
+# scoped to each season's (conf, div). NHL points = 2*W + 1*OTL + 1*T.
+print("\nComputing division winners...")
 COMPLETED_SEASONS = set(rs_end_by_season.keys())
 division_winners = set()
 
 rs_only_simple = team_games[~team_games["is_playoff_game"]].copy()
-# NHL standings = 2 pts per win + 1 pt per OT/SO loss + 1 pt per tie (pre-2005)
-# For division-winner detection we'll use points pct.
 rs_only_simple["pts"] = rs_only_simple["won"] * 2 + rs_only_simple["ot_so_loss"] + rs_only_simple["is_tie"]
+
+# Names that mean "no real division" — skip them.
+_GENERIC_DIV_LABELS = {"Other", ""}
 
 for s, sub in rs_only_simple.groupby("season"):
     s = int(s)
-    if s not in COMPLETED_SEASONS or s < 2014 or s in NO_TITLES_SEASONS:
+    if s not in COMPLETED_SEASONS or s in NO_TITLES_SEASONS:
         continue
     by_team = sub.groupby("team").agg(P=("pts", "sum"), G=("pts", "size")).reset_index()
     by_team["ppg"] = by_team["P"] / by_team["G"]
-    by_team["div"] = by_team["team"].apply(lambda t: division(t, s))
-    by_team = by_team[by_team["div"].isin({"Atlantic", "Metropolitan", "Central", "Pacific"})]
+    by_team["conf"] = by_team["team"].apply(lambda t: conference(t, s))
+    by_team["div"]  = by_team["team"].apply(lambda t: division(t, s))
+    by_team = by_team[~by_team["div"].isin(_GENERIC_DIV_LABELS)
+                      & ~by_team["conf"].isin(_GENERIC_DIV_LABELS)]
     if by_team.empty:
         continue
-    for div_name, div_sub in by_team.groupby("div"):
-        top = div_sub.sort_values("ppg", ascending=False).head(1)
+    # Scope by (conf, div) so two divisions sharing a name in different
+    # conferences (none in NHL, but defensive) don't collide.
+    for (_cf, _dv), grp in by_team.groupby(["conf", "div"]):
+        top = grp.sort_values("ppg", ascending=False).head(1)
         if not top.empty:
             division_winners.add((s, top.iloc[0]["team"]))
 print(f"  {len(division_winners)} division titles flagged.")
@@ -592,7 +818,7 @@ for s in sorted(ratings["season"].unique()):
                 "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
                 "team":             r["name"],
                 "display_name":     display_name(r["name"], s),
-                "conference":       conference(r["name"]),
+                "conference":       conference(r["name"], s),
                 "division":         division(r["name"], s),
                 "rating":           round(float(r["rating"]), 3),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
@@ -651,7 +877,7 @@ for team in sorted(ratings["name"].unique()):
                 "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
                 "rating":           round(float(r["rating"]), 3),
                 "display_name":     display_name(team, s),
-                "conference":       conference(team),
+                "conference":       conference(team, s),
                 "division":         division(team, s),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
                 "regular_pts":      rec.get("rs_pts", 0),
@@ -707,7 +933,7 @@ for s in sorted(ws_results.keys(), reverse=True):
         "champion": {
             "team":           info["champion"],
             "display_name":   display_name(info["champion"], s),
-            "conference":     conference(info["champion"]),
+            "conference":     conference(info["champion"], s),
             "rs_record":      format_record(s, rec_ch["rs"]) if rec_ch else "",
             "rs_pts":         format_pts(s, rec_ch["rs"]) if rec_ch else 0,
             "ps_record":      format_record(s, rec_ch["ps"], is_ps=True) if rec_ch else "",
@@ -719,7 +945,7 @@ for s in sorted(ws_results.keys(), reverse=True):
         "runner_up": {
             "team":           info["runner_up"],
             "display_name":   display_name(info["runner_up"], s),
-            "conference":     conference(info["runner_up"]),
+            "conference":     conference(info["runner_up"], s),
             "rs_record":      format_record(s, rec_ru["rs"]) if rec_ru else "",
             "rs_pts":         format_pts(s, rec_ru["rs"]) if rec_ru else 0,
             "ps_record":      format_record(s, rec_ru["ps"], is_ps=True) if rec_ru else "",
@@ -818,7 +1044,7 @@ def build_goat(flag_col, require_cup=False):
             "rank":             i + 1,
             "team":             r["name"],
             "display_name":     display_name(r["name"], s),
-            "conference":       conference(r["name"]),
+            "conference":       conference(r["name"], s),
             "division":         division(r["name"], s),
             "division_winner":  1 if (s, r["name"]) in division_winners else 0,
             "season":           s,
@@ -859,7 +1085,7 @@ for _, r in latest_snap.sort_values("rank").iterrows():
         "rank":         int(r["rank"]) if not pd.isna(r["rank"]) else None,
         "team":         r["name"],
         "display_name": display_name(r["name"], latest_season),
-        "conference":   conference(r["name"]),
+        "conference":   conference(r["name"], latest_season),
         "division":     division(r["name"], latest_season),
         "rating":       round(float(r["rating"]), 3),
     })
