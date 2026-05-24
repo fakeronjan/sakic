@@ -99,7 +99,7 @@ NHL_API_TEAM = {
     "NSH": "Nashville Predators",
     "STL": "St. Louis Blues",
     "UTA": "Utah Mammoth",              # 2024+ (separate from Arizona Coyotes; UHC 2024-25 only, rebranded Mammoth 2025-26+)
-    "WPG": "Winnipeg Jets",             # 2011+ (modern Jets, separate from original 1979-1996 Jets)
+    "WPG": "Winnipeg Jets",             # 2011+ (modern Jets — same canonical franchise as original 1979-1996 Jets per the returning-to-market rule)
     # Modern Pacific Division
     "ANA": "Anaheim Ducks",             # Same franchise as Mighty Ducks of Anaheim (era display)
     "CGY": "Calgary Flames",
