@@ -436,11 +436,25 @@ print(f"  {len(snap_record_lookup):,} (season, team, snapshot) lookups built.")
 # the Cup champion; their opponent in that final series is the runner-up.
 
 print("\nDeriving Stanley Cup champions from playoff games...")
+# Gate on the postseason being COMPLETE (not just started). Two checks:
+#   (a) The bracket has resolved to a single 2-team series at the end (last-date games == 1 series)
+#   (b) The winner of that final series has clinched best-of-7 (>= 4 wins)
+#   (c) Today's date is past the typical Cup Final window (Jul 1 of end year)
+# All three must hold. Without these, in-progress 2025-26 incorrectly emits a
+# conference-final leader as Cup champ. Same in-progress-season bug we've hit
+# repeatedly on other sites.
+import datetime as _dt
+_today = _dt.date.today()
 ws_results = {}  # season -> {champion, runner_up, series}
 for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
+    s_int = int(s)
+    # Gate (c): season's Cup Final window must be in the past.
+    if _today < _dt.date(s_int, 7, 1):
+        continue
     last_date = ps_games["date_game"].max()
     finals_teams = set(ps_games[ps_games["date_game"] == last_date]["home_team_name"]) | \
                    set(ps_games[ps_games["date_game"] == last_date]["visitor_team_name"])
+    # Gate (a): exactly two teams on the latest date (a clinching game).
     if len(finals_teams) != 2:
         continue
     a, b = sorted(finals_teams)
@@ -451,13 +465,16 @@ for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
     a_wins = int(((finals_games["home_team_name"] == a) & (finals_games["home_win"] == 1)).sum()
               + ((finals_games["visitor_team_name"] == a) & (finals_games["visitor_win"] == 1)).sum())
     b_wins = len(finals_games) - a_wins
+    # Gate (b): winner clinched the best-of-7 series (>= 4 wins).
+    if max(a_wins, b_wins) < 4:
+        continue
     if a_wins == b_wins:
-        continue  # series tied? skip (shouldn't happen)
+        continue
     if a_wins > b_wins:
         champ, ru, series = a, b, f"{a_wins}-{b_wins}"
     else:
         champ, ru, series = b, a, f"{b_wins}-{a_wins}"
-    ws_results[int(s)] = {"champion": champ, "runner_up": ru, "series": series}
+    ws_results[s_int] = {"champion": champ, "runner_up": ru, "series": series}
 
 print(f"  Detected {len(ws_results)} Stanley Cup champions.")
 for s in sorted(ws_results)[-5:]:
