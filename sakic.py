@@ -490,8 +490,15 @@ def _solve_massey(window_df, hca, weighting_mode, margin_transform, margin_cap):
 
 
 def _window_for_season(season):
-    reg_games = REGULAR_SEASON_GAMES.get(int(season), 82)
-    return int(round(reg_games * WINDOW_MULTIPLIER))
+    """Fixed rolling window across all seasons (82 * WINDOW_MULTIPLIER).
+
+    Why fixed not variable: short seasons (1995 lockout 48g, 2013 lockout 48g,
+    2020 COVID-shortened 69-71g, 2021 COVID 56g) used to get a proportionally
+    shrunk window, which inflated tiny-sample ratings for whoever ran hot in
+    those years. A constant 123-game-day window pulls extra lookback from the
+    prior season for short years and keeps full seasons unchanged.
+    """
+    return int(round(82 * WINDOW_MULTIPLIER))
 
 
 _MIN_WINDOW = min(_window_for_season(s) for s in REGULAR_SEASON_GAMES)

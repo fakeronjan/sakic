@@ -50461,7 +50461,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2024,2024-06-24,Edmonton Oilers,Florida Panthers,1,2,-1,1,0,1,0,,9355,50460,W,L,W 2-1 vs. Edmonton Oilers,L 1-2 @ Florida Panthers,1
 2025,2024-10-04,New Jersey Devils,Buffalo Sabres,4,1,3,-3,1,0,0,,9356,50461,L,W,L 1-4 vs. New Jersey Devils,W 4-1 @ Buffalo Sabres,0
 2025,2024-10-05,Buffalo Sabres,New Jersey Devils,1,3,-2,2,0,1,0,,9357,50462,W,L,W 3-1 vs. Buffalo Sabres,L 1-3 @ New Jersey Devils,0
-2025,2024-10-08,Chicago Blackhawks,Utah Mammoth,2,5,-3,3,0,1,0,,9358,50463,W,L,W 5-2 vs. Chicago Blackhawks,L 2-5 @ Utah Hockey Club,0
+2025,2024-10-08,Chicago Blackhawks,Utah Mammoth,2,5,-3,3,0,1,0,,9358,50463,W,L,W 5-2 vs. Chicago Blackhawks,L 2-5 @ Utah Mammoth,0
 2025,2024-10-08,St. Louis Blues,Seattle Kraken,3,2,1,-1,1,0,0,,9358,50464,L,W,L 2-3 vs. St. Louis Blues,W 3-2 @ Seattle Kraken,0
 2025,2024-10-08,Boston Bruins,Florida Panthers,4,6,-2,2,0,1,0,,9358,50465,W,L,W 6-4 vs. Boston Bruins,L 4-6 @ Florida Panthers,0
 2025,2024-10-09,Winnipeg Jets,Edmonton Oilers,6,0,6,-6,1,0,0,,9359,50466,L,W,L 0-6 vs. Winnipeg Jets,W 6-0 @ Edmonton Oilers,0
@@ -50473,7 +50473,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-10,Florida Panthers,Ottawa Senators,1,3,-2,2,0,1,0,,9360,50472,W,L,W 3-1 vs. Florida Panthers,L 1-3 @ Ottawa Senators,0
 2025,2024-10-10,Dallas Stars,Nashville Predators,4,3,1,-1,1,0,0,,9360,50473,L,W,L 3-4 vs. Dallas Stars,W 4-3 @ Nashville Predators,0
 2025,2024-10-10,Toronto Maple Leafs,New Jersey Devils,4,2,2,-2,1,0,0,,9360,50474,L,W,L 2-4 vs. Toronto Maple Leafs,W 4-2 @ New Jersey Devils,0
-2025,2024-10-10,Utah Mammoth,New York Islanders,5,4,1,-1,1,0,0,OT,9360,50475,L,W,L 4-5 vs. Utah Hockey Club (OT),W 5-4 @ New York Islanders (OT),0
+2025,2024-10-10,Utah Mammoth,New York Islanders,5,4,1,-1,1,0,0,OT,9360,50475,L,W,L 4-5 vs. Utah Mammoth (OT),W 5-4 @ New York Islanders (OT),0
 2025,2024-10-10,Pittsburgh Penguins,Detroit Red Wings,6,3,3,-3,1,0,0,,9360,50476,L,W,L 3-6 vs. Pittsburgh Penguins,W 6-3 @ Detroit Red Wings,0
 2025,2024-10-10,Los Angeles Kings,Buffalo Sabres,3,1,2,-2,1,0,0,,9360,50477,L,W,L 1-3 vs. Los Angeles Kings,W 3-1 @ Buffalo Sabres,0
 2025,2024-10-10,Montreal Canadiens,Boston Bruins,4,6,-2,2,0,1,0,,9360,50478,W,L,W 6-4 vs. Montreal Canadiens,L 4-6 @ Boston Bruins,0
@@ -50486,7 +50486,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-12,New Jersey Devils,Washington Capitals,5,3,2,-2,1,0,0,,9362,50485,L,W,L 3-5 vs. New Jersey Devils,W 5-3 @ Washington Capitals,0
 2025,2024-10-12,Pittsburgh Penguins,Toronto Maple Leafs,2,4,-2,2,0,1,0,,9362,50486,W,L,W 4-2 vs. Pittsburgh Penguins,L 2-4 @ Toronto Maple Leafs,0
 2025,2024-10-12,Anaheim Ducks,San Jose Sharks,2,0,2,-2,1,0,0,,9362,50487,L,W,L 0-2 vs. Anaheim Ducks,W 2-0 @ San Jose Sharks,0
-2025,2024-10-12,Utah Mammoth,New York Rangers,6,5,1,-1,1,0,0,OT,9362,50488,L,W,L 5-6 vs. Utah Hockey Club (OT),W 6-5 @ New York Rangers (OT),0
+2025,2024-10-12,Utah Mammoth,New York Rangers,6,5,1,-1,1,0,0,OT,9362,50488,L,W,L 5-6 vs. Utah Mammoth (OT),W 6-5 @ New York Rangers (OT),0
 2025,2024-10-12,Seattle Kraken,Minnesota Wild,5,4,1,-1,1,0,0,SO,9362,50489,L,W,L 4-5 vs. Seattle Kraken (SO),W 5-4 @ Minnesota Wild (SO),0
 2025,2024-10-12,Nashville Predators,Detroit Red Wings,0,3,-3,3,0,1,0,,9362,50490,W,L,W 3-0 vs. Nashville Predators,L 0-3 @ Detroit Red Wings,0
 2025,2024-10-12,Chicago Blackhawks,Edmonton Oilers,5,2,3,-3,1,0,0,,9362,50491,L,W,L 2-5 vs. Chicago Blackhawks,W 5-2 @ Edmonton Oilers,0
@@ -50503,7 +50503,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-14,Florida Panthers,Boston Bruins,4,3,1,-1,1,0,0,,9364,50502,L,W,L 3-4 vs. Florida Panthers,W 4-3 @ Boston Bruins,0
 2025,2024-10-14,New York Islanders,Colorado Avalanche,6,2,4,-4,1,0,0,,9364,50503,L,W,L 2-6 vs. New York Islanders,W 6-2 @ Colorado Avalanche,0
 2025,2024-10-14,Pittsburgh Penguins,Montreal Canadiens,6,3,3,-3,1,0,0,,9364,50504,L,W,L 3-6 vs. Pittsburgh Penguins,W 6-3 @ Montreal Canadiens,0
-2025,2024-10-14,Utah Mammoth,New Jersey Devils,0,3,-3,3,0,1,0,,9364,50505,W,L,W 3-0 vs. Utah Hockey Club,L 0-3 @ New Jersey Devils,0
+2025,2024-10-14,Utah Mammoth,New Jersey Devils,0,3,-3,3,0,1,0,,9364,50505,W,L,W 3-0 vs. Utah Mammoth,L 0-3 @ New Jersey Devils,0
 2025,2024-10-14,Detroit Red Wings,New York Rangers,1,4,-3,3,0,1,0,,9364,50506,W,L,W 4-1 vs. Detroit Red Wings,L 1-4 @ New York Rangers,0
 2025,2024-10-15,Vancouver Canucks,Tampa Bay Lightning,1,4,-3,3,0,1,0,,9365,50507,W,L,W 4-1 vs. Vancouver Canucks,L 1-4 @ Tampa Bay Lightning,0
 2025,2024-10-15,Vegas Golden Knights,Washington Capitals,2,4,-2,2,0,1,0,,9365,50508,W,L,W 4-2 vs. Vegas Golden Knights,L 2-4 @ Washington Capitals,0
@@ -50514,7 +50514,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-15,Florida Panthers,Columbus Blue Jackets,4,3,1,-1,1,0,0,,9365,50513,L,W,L 3-4 vs. Florida Panthers,W 4-3 @ Columbus Blue Jackets,0
 2025,2024-10-15,New Jersey Devils,Carolina Hurricanes,2,4,-2,2,0,1,0,,9365,50514,W,L,W 4-2 vs. New Jersey Devils,L 2-4 @ Carolina Hurricanes,0
 2025,2024-10-15,San Jose Sharks,Dallas Stars,2,3,-1,1,0,1,0,SO,9365,50515,W,L,W 3-2 vs. San Jose Sharks (SO),L 2-3 @ Dallas Stars (SO),0
-2025,2024-10-16,Utah Mammoth,Anaheim Ducks,4,5,-1,1,0,1,0,OT,9366,50516,W,L,W 5-4 vs. Utah Hockey Club (OT),L 4-5 @ Anaheim Ducks (OT),0
+2025,2024-10-16,Utah Mammoth,Anaheim Ducks,4,5,-1,1,0,1,0,OT,9366,50516,W,L,W 5-4 vs. Utah Mammoth (OT),L 4-5 @ Anaheim Ducks (OT),0
 2025,2024-10-16,Boston Bruins,Colorado Avalanche,5,3,2,-2,1,0,0,,9366,50517,L,W,L 3-5 vs. Boston Bruins,W 5-3 @ Colorado Avalanche,0
 2025,2024-10-16,Buffalo Sabres,Pittsburgh Penguins,5,6,-1,1,0,1,0,OT,9366,50518,W,L,W 6-5 vs. Buffalo Sabres (OT),L 5-6 @ Pittsburgh Penguins (OT),0
 2025,2024-10-16,Los Angeles Kings,Toronto Maple Leafs,2,6,-4,4,0,1,0,,9366,50519,W,L,W 6-2 vs. Los Angeles Kings,L 2-6 @ Toronto Maple Leafs,0
@@ -50534,7 +50534,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-18,San Jose Sharks,Winnipeg Jets,3,8,-5,5,0,1,0,,9368,50533,W,L,W 8-3 vs. San Jose Sharks,L 3-8 @ Winnipeg Jets,0
 2025,2024-10-19,Vancouver Canucks,Philadelphia Flyers,3,0,3,-3,1,0,0,,9369,50534,L,W,L 0-3 vs. Vancouver Canucks,W 3-0 @ Philadelphia Flyers,0
 2025,2024-10-19,Calgary Flames,Seattle Kraken,1,2,-1,1,0,1,0,OT,9369,50535,W,L,W 2-1 vs. Calgary Flames (OT),L 1-2 @ Seattle Kraken (OT),0
-2025,2024-10-19,Boston Bruins,Utah Mammoth,1,2,-1,1,0,1,0,OT,9369,50536,W,L,W 2-1 vs. Boston Bruins (OT),L 1-2 @ Utah Hockey Club (OT),0
+2025,2024-10-19,Boston Bruins,Utah Mammoth,1,2,-1,1,0,1,0,OT,9369,50536,W,L,W 2-1 vs. Boston Bruins (OT),L 1-2 @ Utah Mammoth (OT),0
 2025,2024-10-19,New York Rangers,Toronto Maple Leafs,4,1,3,-3,1,0,0,,9369,50537,L,W,L 1-4 vs. New York Rangers,W 4-1 @ Toronto Maple Leafs,0
 2025,2024-10-19,Carolina Hurricanes,St. Louis Blues,3,4,-1,1,0,1,0,,9369,50538,W,L,W 4-3 vs. Carolina Hurricanes,L 3-4 @ St. Louis Blues,0
 2025,2024-10-19,Montreal Canadiens,New York Islanders,3,4,-1,1,0,1,0,SO,9369,50539,W,L,W 4-3 vs. Montreal Canadiens (SO),L 3-4 @ New York Islanders (SO),0
@@ -50551,7 +50551,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-21,Tampa Bay Lightning,Toronto Maple Leafs,2,5,-3,3,0,1,0,,9371,50550,W,L,W 5-2 vs. Tampa Bay Lightning,L 2-5 @ Toronto Maple Leafs,0
 2025,2024-10-22,Boston Bruins,Nashville Predators,0,4,-4,4,0,1,0,,9372,50551,W,L,W 4-0 vs. Boston Bruins,L 0-4 @ Nashville Predators,0
 2025,2024-10-22,Los Angeles Kings,Vegas Golden Knights,1,6,-5,5,0,1,0,,9372,50552,W,L,W 6-1 vs. Los Angeles Kings,L 1-6 @ Vegas Golden Knights,0
-2025,2024-10-22,Ottawa Senators,Utah Mammoth,4,0,4,-4,1,0,0,,9372,50553,L,W,L 0-4 vs. Ottawa Senators,W 4-0 @ Utah Hockey Club,0
+2025,2024-10-22,Ottawa Senators,Utah Mammoth,4,0,4,-4,1,0,0,,9372,50553,L,W,L 0-4 vs. Ottawa Senators,W 4-0 @ Utah Mammoth,0
 2025,2024-10-22,Winnipeg Jets,St. Louis Blues,3,2,1,-1,1,0,0,,9372,50554,L,W,L 2-3 vs. Winnipeg Jets,W 3-2 @ St. Louis Blues,0
 2025,2024-10-22,Washington Capitals,Philadelphia Flyers,4,1,3,-3,1,0,0,,9372,50555,L,W,L 1-4 vs. Washington Capitals,W 4-1 @ Philadelphia Flyers,0
 2025,2024-10-22,Detroit Red Wings,New York Islanders,1,0,1,-1,1,0,0,,9372,50556,L,W,L 0-1 vs. Detroit Red Wings,W 1-0 @ New York Islanders,0
@@ -50566,7 +50566,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-22,San Jose Sharks,Anaheim Ducks,1,3,-2,2,0,1,0,,9372,50565,W,L,W 3-1 vs. San Jose Sharks,L 1-3 @ Anaheim Ducks,0
 2025,2024-10-22,New York Rangers,Montreal Canadiens,7,2,5,-5,1,0,0,,9372,50566,L,W,L 2-7 vs. New York Rangers,W 7-2 @ Montreal Canadiens,0
 2025,2024-10-23,Philadelphia Flyers,Washington Capitals,3,6,-3,3,0,1,0,,9373,50567,W,L,W 6-3 vs. Philadelphia Flyers,L 3-6 @ Washington Capitals,0
-2025,2024-10-24,Colorado Avalanche,Utah Mammoth,5,1,4,-4,1,0,0,,9374,50568,L,W,L 1-5 vs. Colorado Avalanche,W 5-1 @ Utah Hockey Club,0
+2025,2024-10-24,Colorado Avalanche,Utah Mammoth,5,1,4,-4,1,0,0,,9374,50568,L,W,L 1-5 vs. Colorado Avalanche,W 5-1 @ Utah Mammoth,0
 2025,2024-10-24,St. Louis Blues,Toronto Maple Leafs,5,1,4,-4,1,0,0,,9374,50569,L,W,L 1-5 vs. St. Louis Blues,W 5-1 @ Toronto Maple Leafs,0
 2025,2024-10-24,Minnesota Wild,Tampa Bay Lightning,4,2,2,-2,1,0,0,,9374,50570,L,W,L 2-4 vs. Minnesota Wild,W 4-2 @ Tampa Bay Lightning,0
 2025,2024-10-24,Winnipeg Jets,Seattle Kraken,4,3,1,-1,1,0,0,OT,9374,50571,L,W,L 3-4 vs. Winnipeg Jets (OT),W 4-3 @ Seattle Kraken (OT),0
@@ -50588,7 +50588,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-26,Anaheim Ducks,New York Rangers,1,2,-1,1,0,1,0,,9376,50587,W,L,W 2-1 vs. Anaheim Ducks,L 1-2 @ New York Rangers,0
 2025,2024-10-26,St. Louis Blues,Montreal Canadiens,2,5,-3,3,0,1,0,,9376,50588,W,L,W 5-2 vs. St. Louis Blues,L 2-5 @ Montreal Canadiens,0
 2025,2024-10-26,Columbus Blue Jackets,Nashville Predators,3,4,-1,1,0,1,0,OT,9376,50589,W,L,W 4-3 vs. Columbus Blue Jackets (OT),L 3-4 @ Nashville Predators (OT),0
-2025,2024-10-26,Utah Mammoth,Los Angeles Kings,2,3,-1,1,0,1,0,,9376,50590,W,L,W 3-2 vs. Utah Hockey Club,L 2-3 @ Los Angeles Kings,0
+2025,2024-10-26,Utah Mammoth,Los Angeles Kings,2,3,-1,1,0,1,0,,9376,50590,W,L,W 3-2 vs. Utah Mammoth,L 2-3 @ Los Angeles Kings,0
 2025,2024-10-26,Chicago Blackhawks,Dallas Stars,2,4,-2,2,0,1,0,,9376,50591,W,L,W 4-2 vs. Chicago Blackhawks,L 2-4 @ Dallas Stars,0
 2025,2024-10-26,Winnipeg Jets,Calgary Flames,5,3,2,-2,1,0,0,,9376,50592,L,W,L 3-5 vs. Winnipeg Jets,W 5-3 @ Calgary Flames,0
 2025,2024-10-26,Detroit Red Wings,Buffalo Sabres,3,5,-2,2,0,1,0,,9376,50593,W,L,W 5-3 vs. Detroit Red Wings,L 3-5 @ Buffalo Sabres,0
@@ -50601,7 +50601,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-28,Edmonton Oilers,Columbus Blue Jackets,1,6,-5,5,0,1,0,,9378,50600,W,L,W 6-1 vs. Edmonton Oilers,L 1-6 @ Columbus Blue Jackets,0
 2025,2024-10-28,Chicago Blackhawks,Colorado Avalanche,5,2,3,-3,1,0,0,,9378,50601,L,W,L 2-5 vs. Chicago Blackhawks,W 5-2 @ Colorado Avalanche,0
 2025,2024-10-28,Nashville Predators,Tampa Bay Lightning,2,3,-1,1,0,1,0,OT,9378,50602,W,L,W 3-2 vs. Nashville Predators (OT),L 2-3 @ Tampa Bay Lightning (OT),0
-2025,2024-10-28,San Jose Sharks,Utah Mammoth,5,4,1,-1,1,0,0,OT,9378,50603,L,W,L 4-5 vs. San Jose Sharks (OT),W 5-4 @ Utah Hockey Club (OT),0
+2025,2024-10-28,San Jose Sharks,Utah Mammoth,5,4,1,-1,1,0,0,OT,9378,50603,L,W,L 4-5 vs. San Jose Sharks (OT),W 5-4 @ Utah Mammoth (OT),0
 2025,2024-10-28,Carolina Hurricanes,Vancouver Canucks,4,3,1,-1,1,0,0,OT,9378,50604,L,W,L 3-4 vs. Carolina Hurricanes (OT),W 4-3 @ Vancouver Canucks (OT),0
 2025,2024-10-28,Calgary Flames,Vegas Golden Knights,0,5,-5,5,0,1,0,,9378,50605,W,L,W 5-0 vs. Calgary Flames,L 0-5 @ Vegas Golden Knights,0
 2025,2024-10-28,Toronto Maple Leafs,Winnipeg Jets,6,4,2,-2,1,0,0,,9378,50606,L,W,L 4-6 vs. Toronto Maple Leafs,W 6-4 @ Winnipeg Jets,0
@@ -50616,7 +50616,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-10-30,Tampa Bay Lightning,Colorado Avalanche,5,2,3,-3,1,0,0,,9380,50615,L,W,L 2-5 vs. Tampa Bay Lightning,W 5-2 @ Colorado Avalanche,0
 2025,2024-10-30,Winnipeg Jets,Detroit Red Wings,6,2,4,-4,1,0,0,,9380,50616,L,W,L 2-6 vs. Winnipeg Jets,W 6-2 @ Detroit Red Wings,0
 2025,2024-10-30,Vegas Golden Knights,Los Angeles Kings,3,6,-3,3,0,1,0,,9380,50617,W,L,W 6-3 vs. Vegas Golden Knights,L 3-6 @ Los Angeles Kings,0
-2025,2024-10-30,Calgary Flames,Utah Mammoth,1,5,-4,4,0,1,0,,9380,50618,W,L,W 5-1 vs. Calgary Flames,L 1-5 @ Utah Hockey Club,0
+2025,2024-10-30,Calgary Flames,Utah Mammoth,1,5,-4,4,0,1,0,,9380,50618,W,L,W 5-1 vs. Calgary Flames,L 1-5 @ Utah Mammoth,0
 2025,2024-10-30,New Jersey Devils,Vancouver Canucks,6,0,6,-6,1,0,0,,9380,50619,L,W,L 0-6 vs. New Jersey Devils,W 6-0 @ Vancouver Canucks,0
 2025,2024-10-31,Montreal Canadiens,Washington Capitals,3,6,-3,3,0,1,0,,9381,50620,W,L,W 6-3 vs. Montreal Canadiens,L 3-6 @ Washington Capitals,0
 2025,2024-10-31,Seattle Kraken,Toronto Maple Leafs,1,4,-3,3,0,1,0,,9381,50621,W,L,W 4-1 vs. Seattle Kraken,L 1-4 @ Toronto Maple Leafs,0
@@ -50636,7 +50636,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-02,Toronto Maple Leafs,St. Louis Blues,2,4,-2,2,0,1,0,,9383,50635,W,L,W 4-2 vs. Toronto Maple Leafs,L 2-4 @ St. Louis Blues,0
 2025,2024-11-02,Vancouver Canucks,San Jose Sharks,3,2,1,-1,1,0,0,,9383,50636,L,W,L 2-3 vs. Vancouver Canucks,W 3-2 @ San Jose Sharks,0
 2025,2024-11-02,Boston Bruins,Philadelphia Flyers,3,0,3,-3,1,0,0,,9383,50637,L,W,L 0-3 vs. Boston Bruins,W 3-0 @ Philadelphia Flyers,0
-2025,2024-11-02,Utah Mammoth,Vegas Golden Knights,3,4,-1,1,0,1,0,OT,9383,50638,W,L,W 4-3 vs. Utah Hockey Club (OT),L 3-4 @ Vegas Golden Knights (OT),0
+2025,2024-11-02,Utah Mammoth,Vegas Golden Knights,3,4,-1,1,0,1,0,OT,9383,50638,W,L,W 4-3 vs. Utah Mammoth (OT),L 3-4 @ Vegas Golden Knights (OT),0
 2025,2024-11-02,Colorado Avalanche,Nashville Predators,2,5,-3,3,0,1,0,,9383,50639,W,L,W 5-2 vs. Colorado Avalanche,L 2-5 @ Nashville Predators,0
 2025,2024-11-02,Chicago Blackhawks,Los Angeles Kings,4,3,1,-1,1,0,0,SO,9383,50640,L,W,L 3-4 vs. Chicago Blackhawks (SO),W 4-3 @ Los Angeles Kings (SO),0
 2025,2024-11-02,Dallas Stars,Florida Panthers,2,4,-2,2,0,1,0,,9383,50641,W,L,W 4-2 vs. Dallas Stars,L 2-4 @ Florida Panthers,0
@@ -50656,7 +50656,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-05,Tampa Bay Lightning,St. Louis Blues,2,3,-1,1,0,1,0,,9386,50655,W,L,W 3-2 vs. Tampa Bay Lightning,L 2-3 @ St. Louis Blues,0
 2025,2024-11-05,Columbus Blue Jackets,San Jose Sharks,1,2,-1,1,0,1,0,OT,9386,50656,W,L,W 2-1 vs. Columbus Blue Jackets (OT),L 1-2 @ San Jose Sharks (OT),0
 2025,2024-11-05,Calgary Flames,Montreal Canadiens,3,2,1,-1,1,0,0,OT,9386,50657,L,W,L 2-3 vs. Calgary Flames (OT),W 3-2 @ Montreal Canadiens (OT),0
-2025,2024-11-05,Utah Mammoth,Winnipeg Jets,0,3,-3,3,0,1,0,,9386,50658,W,L,W 3-0 vs. Utah Hockey Club,L 0-3 @ Winnipeg Jets,0
+2025,2024-11-05,Utah Mammoth,Winnipeg Jets,0,3,-3,3,0,1,0,,9386,50658,W,L,W 3-0 vs. Utah Mammoth,L 0-3 @ Winnipeg Jets,0
 2025,2024-11-05,Seattle Kraken,Colorado Avalanche,3,6,-3,3,0,1,0,,9386,50659,W,L,W 6-3 vs. Seattle Kraken,L 3-6 @ Colorado Avalanche,0
 2025,2024-11-05,Philadelphia Flyers,Carolina Hurricanes,4,6,-2,2,0,1,0,,9386,50660,W,L,W 6-4 vs. Philadelphia Flyers,L 4-6 @ Carolina Hurricanes,0
 2025,2024-11-05,Ottawa Senators,Buffalo Sabres,1,5,-4,4,0,1,0,,9386,50661,W,L,W 5-1 vs. Ottawa Senators,L 1-5 @ Buffalo Sabres,0
@@ -50667,7 +50667,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-06,Nashville Predators,Washington Capitals,2,3,-1,1,0,1,0,,9387,50666,W,L,W 3-2 vs. Nashville Predators,L 2-3 @ Washington Capitals,0
 2025,2024-11-07,Colorado Avalanche,Winnipeg Jets,0,1,-1,1,0,1,0,,9388,50667,W,L,W 1-0 vs. Colorado Avalanche,L 0-1 @ Winnipeg Jets,0
 2025,2024-11-07,Philadelphia Flyers,Tampa Bay Lightning,2,1,1,-1,1,0,0,SO,9388,50668,L,W,L 1-2 vs. Philadelphia Flyers (SO),W 2-1 @ Tampa Bay Lightning (SO),0
-2025,2024-11-07,Utah Mammoth,St. Louis Blues,4,2,2,-2,1,0,0,,9388,50669,L,W,L 2-4 vs. Utah Hockey Club,W 4-2 @ St. Louis Blues,0
+2025,2024-11-07,Utah Mammoth,St. Louis Blues,4,2,2,-2,1,0,0,,9388,50669,L,W,L 2-4 vs. Utah Mammoth,W 4-2 @ St. Louis Blues,0
 2025,2024-11-07,Minnesota Wild,San Jose Sharks,5,2,3,-3,1,0,0,,9388,50670,L,W,L 2-5 vs. Minnesota Wild,W 5-2 @ San Jose Sharks,0
 2025,2024-11-07,New York Islanders,Ottawa Senators,4,2,2,-2,1,0,0,,9388,50671,L,W,L 2-4 vs. New York Islanders,W 4-2 @ Ottawa Senators,0
 2025,2024-11-07,Buffalo Sabres,New York Rangers,6,1,5,-5,1,0,0,,9388,50672,L,W,L 1-6 vs. Buffalo Sabres,W 6-1 @ New York Rangers,0
@@ -50685,7 +50685,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-09,Edmonton Oilers,Vancouver Canucks,7,3,4,-4,1,0,0,,9390,50684,L,W,L 3-7 vs. Edmonton Oilers,W 7-3 @ Vancouver Canucks,0
 2025,2024-11-09,Montreal Canadiens,Toronto Maple Leafs,1,4,-3,3,0,1,0,,9390,50685,W,L,W 4-1 vs. Montreal Canadiens,L 1-4 @ Toronto Maple Leafs,0
 2025,2024-11-09,Dallas Stars,Winnipeg Jets,1,4,-3,3,0,1,0,,9390,50686,W,L,W 4-1 vs. Dallas Stars,L 1-4 @ Winnipeg Jets,0
-2025,2024-11-09,Utah Mammoth,Nashville Predators,0,4,-4,4,0,1,0,,9390,50687,W,L,W 4-0 vs. Utah Hockey Club,L 0-4 @ Nashville Predators,0
+2025,2024-11-09,Utah Mammoth,Nashville Predators,0,4,-4,4,0,1,0,,9390,50687,W,L,W 4-0 vs. Utah Mammoth,L 0-4 @ Nashville Predators,0
 2025,2024-11-09,Washington Capitals,St. Louis Blues,8,1,7,-7,1,0,0,,9390,50688,L,W,L 1-8 vs. Washington Capitals,W 8-1 @ St. Louis Blues,0
 2025,2024-11-09,Philadelphia Flyers,Florida Panthers,3,4,-1,1,0,1,0,SO,9390,50689,W,L,W 4-3 vs. Philadelphia Flyers (SO),L 3-4 @ Florida Panthers (SO),0
 2025,2024-11-09,New York Rangers,Detroit Red Wings,4,0,4,-4,1,0,0,,9390,50690,L,W,L 0-4 vs. New York Rangers,W 4-0 @ Detroit Red Wings,0
@@ -50712,7 +50712,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-13,Vegas Golden Knights,Anaheim Ducks,3,2,1,-1,1,0,0,,9394,50711,L,W,L 2-3 vs. Vegas Golden Knights,W 3-2 @ Anaheim Ducks,0
 2025,2024-11-13,Los Angeles Kings,Colorado Avalanche,2,4,-2,2,0,1,0,,9394,50712,W,L,W 4-2 vs. Los Angeles Kings,L 2-4 @ Colorado Avalanche,0
 2025,2024-11-13,Detroit Red Wings,Pittsburgh Penguins,3,2,1,-1,1,0,0,OT,9394,50713,L,W,L 2-3 vs. Detroit Red Wings (OT),W 3-2 @ Pittsburgh Penguins (OT),0
-2025,2024-11-13,Carolina Hurricanes,Utah Mammoth,1,4,-3,3,0,1,0,,9394,50714,W,L,W 4-1 vs. Carolina Hurricanes,L 1-4 @ Utah Hockey Club,0
+2025,2024-11-13,Carolina Hurricanes,Utah Mammoth,1,4,-3,3,0,1,0,,9394,50714,W,L,W 4-1 vs. Carolina Hurricanes,L 1-4 @ Utah Mammoth,0
 2025,2024-11-13,Toronto Maple Leafs,Washington Capitals,4,3,1,-1,1,0,0,OT,9394,50715,L,W,L 3-4 vs. Toronto Maple Leafs (OT),W 4-3 @ Washington Capitals (OT),0
 2025,2024-11-14,Philadelphia Flyers,Ottawa Senators,5,4,1,-1,1,0,0,OT,9395,50716,L,W,L 4-5 vs. Philadelphia Flyers (OT),W 5-4 @ Ottawa Senators (OT),0
 2025,2024-11-14,New York Islanders,Vancouver Canucks,5,2,3,-3,1,0,0,,9395,50717,L,W,L 2-5 vs. New York Islanders,W 5-2 @ Vancouver Canucks,0
@@ -50728,7 +50728,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-15,Pittsburgh Penguins,Columbus Blue Jackets,2,6,-4,4,0,1,0,,9396,50727,W,L,W 6-2 vs. Pittsburgh Penguins,L 2-6 @ Columbus Blue Jackets,0
 2025,2024-11-15,Nashville Predators,Calgary Flames,0,2,-2,2,0,1,0,,9396,50728,W,L,W 2-0 vs. Nashville Predators,L 0-2 @ Calgary Flames,0
 2025,2024-11-15,Washington Capitals,Colorado Avalanche,5,2,3,-3,1,0,0,,9396,50729,L,W,L 2-5 vs. Washington Capitals,W 5-2 @ Colorado Avalanche,0
-2025,2024-11-15,Vegas Golden Knights,Utah Mammoth,4,2,2,-2,1,0,0,,9396,50730,L,W,L 2-4 vs. Vegas Golden Knights,W 4-2 @ Utah Hockey Club,0
+2025,2024-11-15,Vegas Golden Knights,Utah Mammoth,4,2,2,-2,1,0,0,,9396,50730,L,W,L 2-4 vs. Vegas Golden Knights,W 4-2 @ Utah Mammoth,0
 2025,2024-11-16,Chicago Blackhawks,Vancouver Canucks,1,4,-3,3,0,1,0,,9397,50731,W,L,W 4-1 vs. Chicago Blackhawks,L 1-4 @ Vancouver Canucks,0
 2025,2024-11-16,Edmonton Oilers,Toronto Maple Leafs,3,4,-1,1,0,1,0,OT,9397,50732,W,L,W 4-3 vs. Edmonton Oilers (OT),L 3-4 @ Toronto Maple Leafs (OT),0
 2025,2024-11-16,New Jersey Devils,Tampa Bay Lightning,0,4,-4,4,0,1,0,,9397,50733,W,L,W 4-0 vs. New Jersey Devils,L 0-4 @ Tampa Bay Lightning,0
@@ -50745,7 +50745,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-17,Nashville Predators,Vancouver Canucks,5,3,2,-2,1,0,0,,9398,50744,L,W,L 3-5 vs. Nashville Predators,W 5-3 @ Vancouver Canucks,0
 2025,2024-11-17,St. Louis Blues,Carolina Hurricanes,1,4,-3,3,0,1,0,,9398,50745,W,L,W 4-1 vs. St. Louis Blues,L 1-4 @ Carolina Hurricanes,0
 2025,2024-11-17,New York Rangers,Seattle Kraken,2,0,2,-2,1,0,0,,9398,50746,L,W,L 0-2 vs. New York Rangers,W 2-0 @ Seattle Kraken,0
-2025,2024-11-18,Washington Capitals,Utah Mammoth,6,2,4,-4,1,0,0,,9399,50747,L,W,L 2-6 vs. Washington Capitals,W 6-2 @ Utah Hockey Club,0
+2025,2024-11-18,Washington Capitals,Utah Mammoth,6,2,4,-4,1,0,0,,9399,50747,L,W,L 2-6 vs. Washington Capitals,W 6-2 @ Utah Mammoth,0
 2025,2024-11-18,Detroit Red Wings,San Jose Sharks,4,5,-1,1,0,1,0,OT,9399,50748,W,L,W 5-4 vs. Detroit Red Wings (OT),L 4-5 @ San Jose Sharks (OT),0
 2025,2024-11-18,Colorado Avalanche,Philadelphia Flyers,3,2,1,-1,1,0,0,,9399,50749,L,W,L 2-3 vs. Colorado Avalanche,W 3-2 @ Philadelphia Flyers,0
 2025,2024-11-18,Anaheim Ducks,Dallas Stars,4,2,2,-2,1,0,0,,9399,50750,L,W,L 2-4 vs. Anaheim Ducks,W 4-2 @ Dallas Stars,0
@@ -50771,14 +50771,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-21,Florida Panthers,Chicago Blackhawks,1,3,-2,2,0,1,0,,9402,50770,W,L,W 3-1 vs. Florida Panthers,L 1-3 @ Chicago Blackhawks,0
 2025,2024-11-21,New York Rangers,Calgary Flames,2,3,-1,1,0,1,0,,9402,50771,W,L,W 3-2 vs. New York Rangers,L 2-3 @ Calgary Flames,0
 2025,2024-11-21,Tampa Bay Lightning,Columbus Blue Jackets,6,7,-1,1,0,1,0,OT,9402,50772,W,L,W 7-6 vs. Tampa Bay Lightning (OT),L 6-7 @ Columbus Blue Jackets (OT),0
-2025,2024-11-21,Utah Mammoth,Boston Bruins,0,1,-1,1,0,1,0,,9402,50773,W,L,W 1-0 vs. Utah Hockey Club,L 0-1 @ Boston Bruins,0
+2025,2024-11-21,Utah Mammoth,Boston Bruins,0,1,-1,1,0,1,0,,9402,50773,W,L,W 1-0 vs. Utah Mammoth,L 0-1 @ Boston Bruins,0
 2025,2024-11-21,New York Islanders,Detroit Red Wings,1,2,-1,1,0,1,0,,9402,50774,W,L,W 2-1 vs. New York Islanders,L 1-2 @ Detroit Red Wings,0
 2025,2024-11-22,Buffalo Sabres,Anaheim Ducks,3,2,1,-1,1,0,0,OT,9403,50775,L,W,L 2-3 vs. Buffalo Sabres (OT),W 3-2 @ Anaheim Ducks (OT),0
 2025,2024-11-22,Winnipeg Jets,Pittsburgh Penguins,4,1,3,-3,1,0,0,,9403,50776,L,W,L 1-4 vs. Winnipeg Jets,W 4-1 @ Pittsburgh Penguins,0
 2025,2024-11-23,New Jersey Devils,Washington Capitals,3,2,1,-1,1,0,0,,9404,50777,L,W,L 2-3 vs. New Jersey Devils,W 3-2 @ Washington Capitals,0
 2025,2024-11-23,Dallas Stars,Tampa Bay Lightning,4,2,2,-2,1,0,0,,9404,50778,L,W,L 2-4 vs. Dallas Stars,W 4-2 @ Tampa Bay Lightning,0
 2025,2024-11-23,Buffalo Sabres,San Jose Sharks,4,2,2,-2,1,0,0,,9404,50779,L,W,L 2-4 vs. Buffalo Sabres,W 4-2 @ San Jose Sharks,0
-2025,2024-11-23,Utah Mammoth,Pittsburgh Penguins,6,1,5,-5,1,0,0,,9404,50780,L,W,L 1-6 vs. Utah Hockey Club,W 6-1 @ Pittsburgh Penguins,0
+2025,2024-11-23,Utah Mammoth,Pittsburgh Penguins,6,1,5,-5,1,0,0,,9404,50780,L,W,L 1-6 vs. Utah Mammoth,W 6-1 @ Pittsburgh Penguins,0
 2025,2024-11-23,Chicago Blackhawks,Philadelphia Flyers,2,3,-1,1,0,1,0,OT,9404,50781,W,L,W 3-2 vs. Chicago Blackhawks (OT),L 2-3 @ Philadelphia Flyers (OT),0
 2025,2024-11-23,Vancouver Canucks,Ottawa Senators,4,3,1,-1,1,0,0,,9404,50782,L,W,L 3-4 vs. Vancouver Canucks,W 4-3 @ Ottawa Senators,0
 2025,2024-11-23,St. Louis Blues,New York Islanders,1,3,-2,2,0,1,0,,9404,50783,W,L,W 3-1 vs. St. Louis Blues,L 1-3 @ New York Islanders,0
@@ -50790,7 +50790,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-23,Minnesota Wild,Calgary Flames,3,4,-1,1,0,1,0,SO,9404,50789,W,L,W 4-3 vs. Minnesota Wild (SO),L 3-4 @ Calgary Flames (SO),0
 2025,2024-11-23,Carolina Hurricanes,Columbus Blue Jackets,4,5,-1,1,0,1,0,SO,9404,50790,W,L,W 5-4 vs. Carolina Hurricanes (SO),L 4-5 @ Columbus Blue Jackets (SO),0
 2025,2024-11-23,Winnipeg Jets,Nashville Predators,1,4,-3,3,0,1,0,,9404,50791,W,L,W 4-1 vs. Winnipeg Jets,L 1-4 @ Nashville Predators,0
-2025,2024-11-24,Utah Mammoth,Toronto Maple Leafs,2,3,-1,1,0,1,0,,9405,50792,W,L,W 3-2 vs. Utah Hockey Club,L 2-3 @ Toronto Maple Leafs,0
+2025,2024-11-24,Utah Mammoth,Toronto Maple Leafs,2,3,-1,1,0,1,0,,9405,50792,W,L,W 3-2 vs. Utah Mammoth,L 2-3 @ Toronto Maple Leafs,0
 2025,2024-11-25,St. Louis Blues,New York Rangers,5,2,3,-3,1,0,0,,9406,50793,L,W,L 2-5 vs. St. Louis Blues,W 5-2 @ New York Rangers,0
 2025,2024-11-25,Colorado Avalanche,Tampa Bay Lightning,2,8,-6,6,0,1,0,,9406,50794,W,L,W 8-2 vs. Colorado Avalanche,L 2-8 @ Tampa Bay Lightning,0
 2025,2024-11-25,Los Angeles Kings,San Jose Sharks,2,7,-5,5,0,1,0,,9406,50795,W,L,W 7-2 vs. Los Angeles Kings,L 2-7 @ San Jose Sharks,0
@@ -50803,7 +50803,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-25,Dallas Stars,Carolina Hurricanes,4,6,-2,2,0,1,0,,9406,50802,W,L,W 6-4 vs. Dallas Stars,L 4-6 @ Carolina Hurricanes,0
 2025,2024-11-25,Seattle Kraken,Anaheim Ducks,3,2,1,-1,1,0,0,,9406,50803,L,W,L 2-3 vs. Seattle Kraken,W 3-2 @ Anaheim Ducks,0
 2025,2024-11-26,Vancouver Canucks,Boston Bruins,2,0,2,-2,1,0,0,,9407,50804,L,W,L 0-2 vs. Vancouver Canucks,W 2-0 @ Boston Bruins,0
-2025,2024-11-26,Utah Mammoth,Montreal Canadiens,3,2,1,-1,1,0,0,OT,9407,50805,L,W,L 2-3 vs. Utah Hockey Club (OT),W 3-2 @ Montreal Canadiens (OT),0
+2025,2024-11-26,Utah Mammoth,Montreal Canadiens,3,2,1,-1,1,0,0,OT,9407,50805,L,W,L 2-3 vs. Utah Mammoth (OT),W 3-2 @ Montreal Canadiens (OT),0
 2025,2024-11-27,Washington Capitals,Tampa Bay Lightning,5,4,1,-1,1,0,0,,9408,50806,L,W,L 4-5 vs. Washington Capitals,W 5-4 @ Tampa Bay Lightning,0
 2025,2024-11-27,Ottawa Senators,San Jose Sharks,4,3,1,-1,1,0,0,,9408,50807,L,W,L 3-4 vs. Ottawa Senators,W 4-3 @ San Jose Sharks,0
 2025,2024-11-27,Anaheim Ducks,Seattle Kraken,5,2,3,-3,1,0,0,,9408,50808,L,W,L 2-5 vs. Anaheim Ducks,W 5-2 @ Seattle Kraken,0
@@ -50820,7 +50820,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-27,New York Rangers,Carolina Hurricanes,3,4,-1,1,0,1,0,,9408,50819,W,L,W 4-3 vs. New York Rangers,L 3-4 @ Carolina Hurricanes,0
 2025,2024-11-27,Minnesota Wild,Buffalo Sabres,1,0,1,-1,1,0,0,,9408,50820,L,W,L 0-1 vs. Minnesota Wild,W 1-0 @ Buffalo Sabres,0
 2025,2024-11-29,Winnipeg Jets,Vegas Golden Knights,3,4,-1,1,0,1,0,,9409,50821,W,L,W 4-3 vs. Winnipeg Jets,L 3-4 @ Vegas Golden Knights,0
-2025,2024-11-29,Edmonton Oilers,Utah Mammoth,4,3,1,-1,1,0,0,OT,9409,50822,L,W,L 3-4 vs. Edmonton Oilers (OT),W 4-3 @ Utah Hockey Club (OT),0
+2025,2024-11-29,Edmonton Oilers,Utah Mammoth,4,3,1,-1,1,0,0,OT,9409,50822,L,W,L 3-4 vs. Edmonton Oilers (OT),W 4-3 @ Utah Mammoth (OT),0
 2025,2024-11-29,Seattle Kraken,San Jose Sharks,5,8,-3,3,0,1,0,,9409,50823,W,L,W 8-5 vs. Seattle Kraken,L 5-8 @ San Jose Sharks,0
 2025,2024-11-29,New York Rangers,Philadelphia Flyers,1,3,-2,2,0,1,0,,9409,50824,W,L,W 3-1 vs. New York Rangers,L 1-3 @ Philadelphia Flyers,0
 2025,2024-11-29,New York Islanders,Washington Capitals,4,5,-1,1,0,1,0,OT,9409,50825,W,L,W 5-4 vs. New York Islanders (OT),L 4-5 @ Washington Capitals (OT),0
@@ -50833,7 +50833,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-11-29,Pittsburgh Penguins,Boston Bruins,2,1,1,-1,1,0,0,,9409,50832,L,W,L 1-2 vs. Pittsburgh Penguins,W 2-1 @ Boston Bruins,0
 2025,2024-11-29,Los Angeles Kings,Anaheim Ducks,2,1,1,-1,1,0,0,,9409,50833,L,W,L 1-2 vs. Los Angeles Kings,W 2-1 @ Anaheim Ducks,0
 2025,2024-11-29,New Jersey Devils,Detroit Red Wings,5,4,1,-1,1,0,0,,9409,50834,L,W,L 4-5 vs. New Jersey Devils,W 5-4 @ Detroit Red Wings,0
-2025,2024-11-30,Utah Mammoth,Vegas Golden Knights,6,0,6,-6,1,0,0,,9410,50835,L,W,L 0-6 vs. Utah Hockey Club,W 6-0 @ Vegas Golden Knights,0
+2025,2024-11-30,Utah Mammoth,Vegas Golden Knights,6,0,6,-6,1,0,0,,9410,50835,L,W,L 0-6 vs. Utah Mammoth,W 6-0 @ Vegas Golden Knights,0
 2025,2024-11-30,Toronto Maple Leafs,Tampa Bay Lightning,5,3,2,-2,1,0,0,,9410,50836,L,W,L 3-5 vs. Toronto Maple Leafs,W 5-3 @ Tampa Bay Lightning,0
 2025,2024-11-30,Philadelphia Flyers,St. Louis Blues,3,2,1,-1,1,0,0,OT,9410,50837,L,W,L 2-3 vs. Philadelphia Flyers (OT),W 3-2 @ St. Louis Blues (OT),0
 2025,2024-11-30,San Jose Sharks,Seattle Kraken,4,2,2,-2,1,0,0,,9410,50838,L,W,L 2-4 vs. San Jose Sharks,W 4-2 @ Seattle Kraken,0
@@ -50850,7 +50850,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-01,Montreal Canadiens,Boston Bruins,3,6,-3,3,0,1,0,,9411,50849,W,L,W 6-3 vs. Montreal Canadiens,L 3-6 @ Boston Bruins,0
 2025,2024-12-01,Columbus Blue Jackets,Chicago Blackhawks,6,3,3,-3,1,0,0,,9411,50850,L,W,L 3-6 vs. Columbus Blue Jackets,W 6-3 @ Chicago Blackhawks,0
 2025,2024-12-01,Winnipeg Jets,Dallas Stars,1,3,-2,2,0,1,0,,9411,50851,W,L,W 3-1 vs. Winnipeg Jets,L 1-3 @ Dallas Stars,0
-2025,2024-12-02,Dallas Stars,Utah Mammoth,2,1,1,-1,1,0,0,,9412,50852,L,W,L 1-2 vs. Dallas Stars,W 2-1 @ Utah Hockey Club,0
+2025,2024-12-02,Dallas Stars,Utah Mammoth,2,1,1,-1,1,0,0,,9412,50852,L,W,L 1-2 vs. Dallas Stars,W 2-1 @ Utah Mammoth,0
 2025,2024-12-02,New Jersey Devils,New York Rangers,5,1,4,-4,1,0,0,,9412,50853,L,W,L 1-5 vs. New Jersey Devils,W 5-1 @ New York Rangers,0
 2025,2024-12-02,Chicago Blackhawks,Toronto Maple Leafs,1,4,-3,3,0,1,0,,9412,50854,W,L,W 4-1 vs. Chicago Blackhawks,L 1-4 @ Toronto Maple Leafs,0
 2025,2024-12-03,Detroit Red Wings,Boston Bruins,2,3,-1,1,0,1,0,OT,9413,50855,W,L,W 3-2 vs. Detroit Red Wings (OT),L 2-3 @ Boston Bruins (OT),0
@@ -50890,14 +50890,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-07,Carolina Hurricanes,New York Islanders,3,4,-1,1,0,1,0,,9417,50889,W,L,W 4-3 vs. Carolina Hurricanes,L 3-4 @ New York Islanders,0
 2025,2024-12-07,Colorado Avalanche,Detroit Red Wings,2,1,1,-1,1,0,0,,9417,50890,L,W,L 1-2 vs. Colorado Avalanche,W 2-1 @ Detroit Red Wings,0
 2025,2024-12-07,Winnipeg Jets,Chicago Blackhawks,4,2,2,-2,1,0,0,,9417,50891,L,W,L 2-4 vs. Winnipeg Jets,W 4-2 @ Chicago Blackhawks,0
-2025,2024-12-07,Utah Mammoth,Buffalo Sabres,5,2,3,-3,1,0,0,,9417,50892,L,W,L 2-5 vs. Utah Hockey Club,W 5-2 @ Buffalo Sabres,0
+2025,2024-12-07,Utah Mammoth,Buffalo Sabres,5,2,3,-3,1,0,0,,9417,50892,L,W,L 2-5 vs. Utah Mammoth,W 5-2 @ Buffalo Sabres,0
 2025,2024-12-07,Philadelphia Flyers,Boston Bruins,3,4,-1,1,0,1,0,OT,9417,50893,W,L,W 4-3 vs. Philadelphia Flyers (OT),L 3-4 @ Boston Bruins (OT),0
 2025,2024-12-07,St. Louis Blues,Edmonton Oilers,2,4,-2,2,0,1,0,,9417,50894,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Edmonton Oilers,0
 2025,2024-12-08,Calgary Flames,Dallas Stars,2,6,-4,4,0,1,0,,9418,50895,W,L,W 6-2 vs. Calgary Flames,L 2-6 @ Dallas Stars,0
 2025,2024-12-08,Colorado Avalanche,New Jersey Devils,4,0,4,-4,1,0,0,,9418,50896,L,W,L 0-4 vs. Colorado Avalanche,W 4-0 @ New Jersey Devils,0
 2025,2024-12-08,Seattle Kraken,New York Rangers,7,5,2,-2,1,0,0,,9418,50897,L,W,L 5-7 vs. Seattle Kraken,W 7-5 @ New York Rangers,0
 2025,2024-12-08,New York Islanders,Ottawa Senators,4,2,2,-2,1,0,0,,9418,50898,L,W,L 2-4 vs. New York Islanders,W 4-2 @ Ottawa Senators,0
-2025,2024-12-08,Utah Mammoth,Philadelphia Flyers,4,2,2,-2,1,0,0,,9418,50899,L,W,L 2-4 vs. Utah Hockey Club,W 4-2 @ Philadelphia Flyers,0
+2025,2024-12-08,Utah Mammoth,Philadelphia Flyers,4,2,2,-2,1,0,0,,9418,50899,L,W,L 2-4 vs. Utah Mammoth,W 4-2 @ Philadelphia Flyers,0
 2025,2024-12-08,Tampa Bay Lightning,Vancouver Canucks,4,2,2,-2,1,0,0,,9418,50900,L,W,L 2-4 vs. Tampa Bay Lightning,W 4-2 @ Vancouver Canucks,0
 2025,2024-12-08,Columbus Blue Jackets,Winnipeg Jets,4,1,3,-3,1,0,0,,9418,50901,L,W,L 1-4 vs. Columbus Blue Jackets,W 4-1 @ Winnipeg Jets,0
 2025,2024-12-09,Chicago Blackhawks,New York Rangers,2,1,1,-1,1,0,0,,9419,50902,L,W,L 1-2 vs. Chicago Blackhawks,W 2-1 @ New York Rangers,0
@@ -50908,7 +50908,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-10,Florida Panthers,Seattle Kraken,2,1,1,-1,1,0,0,SO,9420,50907,L,W,L 1-2 vs. Florida Panthers (SO),W 2-1 @ Seattle Kraken (SO),0
 2025,2024-12-10,Colorado Avalanche,Pittsburgh Penguins,6,2,4,-4,1,0,0,,9420,50908,L,W,L 2-6 vs. Colorado Avalanche,W 6-2 @ Pittsburgh Penguins,0
 2025,2024-12-10,Los Angeles Kings,New York Islanders,3,1,2,-2,1,0,0,,9420,50909,L,W,L 1-3 vs. Los Angeles Kings,W 3-1 @ New York Islanders,0
-2025,2024-12-10,Minnesota Wild,Utah Mammoth,5,4,1,-1,1,0,0,SO,9420,50910,L,W,L 4-5 vs. Minnesota Wild (SO),W 5-4 @ Utah Hockey Club (SO),0
+2025,2024-12-10,Minnesota Wild,Utah Mammoth,5,4,1,-1,1,0,0,SO,9420,50910,L,W,L 4-5 vs. Minnesota Wild (SO),W 5-4 @ Utah Mammoth (SO),0
 2025,2024-12-10,Toronto Maple Leafs,New Jersey Devils,2,1,1,-1,1,0,0,OT,9420,50911,L,W,L 1-2 vs. Toronto Maple Leafs (OT),W 2-1 @ New Jersey Devils (OT),0
 2025,2024-12-10,Tampa Bay Lightning,Edmonton Oilers,1,2,-1,1,0,1,0,,9420,50912,W,L,W 2-1 vs. Tampa Bay Lightning,L 1-2 @ Edmonton Oilers,0
 2025,2024-12-10,Philadelphia Flyers,Columbus Blue Jackets,5,3,2,-2,1,0,0,,9420,50913,L,W,L 3-5 vs. Philadelphia Flyers,W 5-3 @ Columbus Blue Jackets,0
@@ -50926,14 +50926,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-12,Pittsburgh Penguins,Montreal Canadiens,9,2,7,-7,1,0,0,,9422,50925,L,W,L 2-9 vs. Pittsburgh Penguins,W 9-2 @ Montreal Canadiens,0
 2025,2024-12-12,Edmonton Oilers,Minnesota Wild,7,1,6,-6,1,0,0,,9422,50926,L,W,L 1-7 vs. Edmonton Oilers,W 7-1 @ Minnesota Wild,0
 2025,2024-12-12,Nashville Predators,Dallas Stars,4,1,3,-3,1,0,0,,9422,50927,L,W,L 1-4 vs. Nashville Predators,W 4-1 @ Dallas Stars,0
-2025,2024-12-12,Utah Mammoth,Colorado Avalanche,4,1,3,-3,1,0,0,,9422,50928,L,W,L 1-4 vs. Utah Hockey Club,W 4-1 @ Colorado Avalanche,0
+2025,2024-12-12,Utah Mammoth,Colorado Avalanche,4,1,3,-3,1,0,0,,9422,50928,L,W,L 1-4 vs. Utah Mammoth,W 4-1 @ Colorado Avalanche,0
 2025,2024-12-12,Tampa Bay Lightning,Calgary Flames,8,3,5,-5,1,0,0,,9422,50929,L,W,L 3-8 vs. Tampa Bay Lightning,W 8-3 @ Calgary Flames,0
 2025,2024-12-12,Washington Capitals,Columbus Blue Jackets,2,1,1,-1,1,0,0,OT,9422,50930,L,W,L 1-2 vs. Washington Capitals (OT),W 2-1 @ Columbus Blue Jackets (OT),0
 2025,2024-12-12,Los Angeles Kings,New Jersey Devils,1,3,-2,2,0,1,0,,9422,50931,W,L,W 3-1 vs. Los Angeles Kings,L 1-3 @ New Jersey Devils,0
 2025,2024-12-13,Ottawa Senators,Carolina Hurricanes,3,0,3,-3,1,0,0,,9423,50932,L,W,L 0-3 vs. Ottawa Senators,W 3-0 @ Carolina Hurricanes,0
 2025,2024-12-14,Montreal Canadiens,Winnipeg Jets,2,4,-2,2,0,1,0,,9424,50933,W,L,W 4-2 vs. Montreal Canadiens,L 2-4 @ Winnipeg Jets,0
 2025,2024-12-14,Boston Bruins,Vancouver Canucks,5,1,4,-4,1,0,0,,9424,50934,L,W,L 1-5 vs. Boston Bruins,W 5-1 @ Vancouver Canucks,0
-2025,2024-12-14,Utah Mammoth,San Jose Sharks,4,3,1,-1,1,0,0,,9424,50935,L,W,L 3-4 vs. Utah Hockey Club,W 4-3 @ San Jose Sharks,0
+2025,2024-12-14,Utah Mammoth,San Jose Sharks,4,3,1,-1,1,0,0,,9424,50935,L,W,L 3-4 vs. Utah Mammoth,W 4-3 @ San Jose Sharks,0
 2025,2024-12-14,Tampa Bay Lightning,Seattle Kraken,5,1,4,-4,1,0,0,,9424,50936,L,W,L 1-5 vs. Tampa Bay Lightning,W 5-1 @ Seattle Kraken,0
 2025,2024-12-14,Pittsburgh Penguins,Ottawa Senators,2,3,-1,1,0,1,0,OT,9424,50937,W,L,W 3-2 vs. Pittsburgh Penguins (OT),L 2-3 @ Ottawa Senators (OT),0
 2025,2024-12-14,Los Angeles Kings,New York Rangers,5,1,4,-4,1,0,0,,9424,50938,L,W,L 1-5 vs. Los Angeles Kings,W 5-1 @ New York Rangers,0
@@ -50964,7 +50964,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-17,Winnipeg Jets,San Jose Sharks,4,3,1,-1,1,0,0,,9427,50963,L,W,L 3-4 vs. Winnipeg Jets,W 4-3 @ San Jose Sharks,0
 2025,2024-12-17,New Jersey Devils,St. Louis Blues,4,1,3,-3,1,0,0,,9427,50964,L,W,L 1-4 vs. New Jersey Devils,W 4-1 @ St. Louis Blues,0
 2025,2024-12-17,Columbus Blue Jackets,Tampa Bay Lightning,3,5,-2,2,0,1,0,,9427,50965,W,L,W 5-3 vs. Columbus Blue Jackets,L 3-5 @ Tampa Bay Lightning,0
-2025,2024-12-18,Vancouver Canucks,Utah Mammoth,2,3,-1,1,0,1,0,OT,9428,50966,W,L,W 3-2 vs. Vancouver Canucks (OT),L 2-3 @ Utah Hockey Club (OT),0
+2025,2024-12-18,Vancouver Canucks,Utah Mammoth,2,3,-1,1,0,1,0,OT,9428,50966,W,L,W 3-2 vs. Vancouver Canucks (OT),L 2-3 @ Utah Mammoth (OT),0
 2025,2024-12-18,Florida Panthers,Minnesota Wild,6,1,5,-5,1,0,0,,9428,50967,L,W,L 1-6 vs. Florida Panthers,W 6-1 @ Minnesota Wild,0
 2025,2024-12-18,Philadelphia Flyers,Detroit Red Wings,4,6,-2,2,0,1,0,,9428,50968,W,L,W 6-4 vs. Philadelphia Flyers,L 4-6 @ Detroit Red Wings,0
 2025,2024-12-18,Toronto Maple Leafs,Dallas Stars,5,3,2,-2,1,0,0,,9428,50969,L,W,L 3-5 vs. Toronto Maple Leafs,W 5-3 @ Dallas Stars,0
@@ -50979,7 +50979,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-19,St. Louis Blues,Tampa Bay Lightning,1,3,-2,2,0,1,0,,9429,50978,W,L,W 3-1 vs. St. Louis Blues,L 1-3 @ Tampa Bay Lightning,0
 2025,2024-12-19,Vancouver Canucks,Vegas Golden Knights,1,3,-2,2,0,1,0,,9429,50979,W,L,W 3-1 vs. Vancouver Canucks,L 1-3 @ Vegas Golden Knights,0
 2025,2024-12-20,Carolina Hurricanes,Washington Capitals,1,3,-2,2,0,1,0,,9430,50980,W,L,W 3-1 vs. Carolina Hurricanes,L 1-3 @ Washington Capitals,0
-2025,2024-12-20,Utah Mammoth,Minnesota Wild,2,1,1,-1,1,0,0,,9430,50981,L,W,L 1-2 vs. Utah Hockey Club,W 2-1 @ Minnesota Wild,0
+2025,2024-12-20,Utah Mammoth,Minnesota Wild,2,1,1,-1,1,0,0,,9430,50981,L,W,L 1-2 vs. Utah Mammoth,W 2-1 @ Minnesota Wild,0
 2025,2024-12-20,St. Louis Blues,Florida Panthers,1,2,-1,1,0,1,0,OT,9430,50982,W,L,W 2-1 vs. St. Louis Blues (OT),L 1-2 @ Florida Panthers (OT),0
 2025,2024-12-20,New York Rangers,Dallas Stars,3,1,2,-2,1,0,0,,9430,50983,L,W,L 1-3 vs. New York Rangers,W 3-1 @ Dallas Stars,0
 2025,2024-12-20,Toronto Maple Leafs,Buffalo Sabres,6,3,3,-3,1,0,0,,9430,50984,L,W,L 3-6 vs. Toronto Maple Leafs,W 6-3 @ Buffalo Sabres,0
@@ -51000,10 +51000,10 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-22,Ottawa Senators,Edmonton Oilers,1,3,-2,2,0,1,0,,9432,50999,W,L,W 3-1 vs. Ottawa Senators,L 1-3 @ Edmonton Oilers,0
 2025,2024-12-22,Carolina Hurricanes,New York Rangers,3,1,2,-2,1,0,0,,9432,51000,L,W,L 1-3 vs. Carolina Hurricanes,W 3-1 @ New York Rangers,0
 2025,2024-12-22,Florida Panthers,Tampa Bay Lightning,4,2,2,-2,1,0,0,,9432,51001,L,W,L 2-4 vs. Florida Panthers,W 4-2 @ Tampa Bay Lightning,0
-2025,2024-12-22,Anaheim Ducks,Utah Mammoth,5,4,1,-1,1,0,0,SO,9432,51002,L,W,L 4-5 vs. Anaheim Ducks (SO),W 5-4 @ Utah Hockey Club (SO),0
+2025,2024-12-22,Anaheim Ducks,Utah Mammoth,5,4,1,-1,1,0,0,SO,9432,51002,L,W,L 4-5 vs. Anaheim Ducks (SO),W 5-4 @ Utah Mammoth (SO),0
 2025,2024-12-22,Los Angeles Kings,Washington Capitals,1,3,-2,2,0,1,0,,9432,51003,W,L,W 3-1 vs. Los Angeles Kings,L 1-3 @ Washington Capitals,0
 2025,2024-12-23,Winnipeg Jets,Toronto Maple Leafs,5,2,3,-3,1,0,0,,9433,51004,L,W,L 2-5 vs. Winnipeg Jets,W 5-2 @ Toronto Maple Leafs,0
-2025,2024-12-23,Dallas Stars,Utah Mammoth,3,2,1,-1,1,0,0,,9433,51005,L,W,L 2-3 vs. Dallas Stars,W 3-2 @ Utah Hockey Club,0
+2025,2024-12-23,Dallas Stars,Utah Mammoth,3,2,1,-1,1,0,0,,9433,51005,L,W,L 2-3 vs. Dallas Stars,W 3-2 @ Utah Mammoth,0
 2025,2024-12-23,Philadelphia Flyers,Pittsburgh Penguins,3,7,-4,4,0,1,0,,9433,51006,W,L,W 7-3 vs. Philadelphia Flyers,L 3-7 @ Pittsburgh Penguins,0
 2025,2024-12-23,Anaheim Ducks,Vegas Golden Knights,1,3,-2,2,0,1,0,,9433,51007,W,L,W 3-1 vs. Anaheim Ducks,L 1-3 @ Vegas Golden Knights,0
 2025,2024-12-23,San Jose Sharks,Vancouver Canucks,3,4,-1,1,0,1,0,,9433,51008,W,L,W 4-3 vs. San Jose Sharks,L 3-4 @ Vancouver Canucks,0
@@ -51015,7 +51015,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-23,St. Louis Blues,Detroit Red Wings,4,0,4,-4,1,0,0,,9433,51014,L,W,L 0-4 vs. St. Louis Blues,W 4-0 @ Detroit Red Wings,0
 2025,2024-12-23,Montreal Canadiens,Columbus Blue Jackets,4,5,-1,1,0,1,0,,9433,51015,W,L,W 5-4 vs. Montreal Canadiens,L 4-5 @ Columbus Blue Jackets,0
 2025,2024-12-23,Carolina Hurricanes,Nashville Predators,2,5,-3,3,0,1,0,,9433,51016,W,L,W 5-2 vs. Carolina Hurricanes,L 2-5 @ Nashville Predators,0
-2025,2024-12-27,Colorado Avalanche,Utah Mammoth,4,1,3,-3,1,0,0,,9434,51017,L,W,L 1-4 vs. Colorado Avalanche,W 4-1 @ Utah Hockey Club,0
+2025,2024-12-27,Colorado Avalanche,Utah Mammoth,4,1,3,-3,1,0,0,,9434,51017,L,W,L 1-4 vs. Colorado Avalanche,W 4-1 @ Utah Mammoth,0
 2025,2024-12-27,Nashville Predators,St. Louis Blues,4,7,-3,3,0,1,0,,9434,51018,W,L,W 7-4 vs. Nashville Predators,L 4-7 @ St. Louis Blues,0
 2025,2024-12-27,Vegas Golden Knights,San Jose Sharks,6,3,3,-3,1,0,0,,9434,51019,L,W,L 3-6 vs. Vegas Golden Knights,W 6-3 @ San Jose Sharks,0
 2025,2024-12-27,Carolina Hurricanes,New Jersey Devils,2,4,-2,2,0,1,0,,9434,51020,W,L,W 4-2 vs. Carolina Hurricanes,L 2-4 @ New Jersey Devils,0
@@ -51044,14 +51044,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2024-12-29,Edmonton Oilers,Anaheim Ducks,3,5,-2,2,0,1,0,,9436,51043,W,L,W 5-3 vs. Edmonton Oilers,L 3-5 @ Anaheim Ducks,0
 2025,2024-12-29,Philadelphia Flyers,Los Angeles Kings,4,5,-1,1,0,1,0,,9436,51044,W,L,W 5-4 vs. Philadelphia Flyers,L 4-5 @ Los Angeles Kings,0
 2025,2024-12-30,New York Rangers,Florida Panthers,3,5,-2,2,0,1,0,,9437,51045,W,L,W 5-3 vs. New York Rangers,L 3-5 @ Florida Panthers,0
-2025,2024-12-30,Utah Mammoth,Seattle Kraken,2,5,-3,3,0,1,0,,9437,51046,W,L,W 5-2 vs. Utah Hockey Club,L 2-5 @ Seattle Kraken,0
+2025,2024-12-30,Utah Mammoth,Seattle Kraken,2,5,-3,3,0,1,0,,9437,51046,W,L,W 5-2 vs. Utah Mammoth,L 2-5 @ Seattle Kraken,0
 2025,2024-12-30,Nashville Predators,Winnipeg Jets,0,3,-3,3,0,1,0,,9437,51047,W,L,W 3-0 vs. Nashville Predators,L 0-3 @ Winnipeg Jets,0
 2025,2024-12-31,Nashville Predators,Minnesota Wild,3,5,-2,2,0,1,0,,9438,51048,W,L,W 5-3 vs. Nashville Predators,L 3-5 @ Minnesota Wild,0
 2025,2024-12-31,Boston Bruins,Washington Capitals,1,3,-2,2,0,1,0,,9438,51049,W,L,W 3-1 vs. Boston Bruins,L 1-3 @ Washington Capitals,0
 2025,2024-12-31,Montreal Canadiens,Vegas Golden Knights,3,2,1,-1,1,0,0,,9438,51050,L,W,L 2-3 vs. Montreal Canadiens,W 3-2 @ Vegas Golden Knights,0
 2025,2024-12-31,New York Islanders,Toronto Maple Leafs,1,3,-2,2,0,1,0,,9438,51051,W,L,W 3-1 vs. New York Islanders,L 1-3 @ Toronto Maple Leafs,0
 2025,2024-12-31,Philadelphia Flyers,San Jose Sharks,4,0,4,-4,1,0,0,,9438,51052,L,W,L 0-4 vs. Philadelphia Flyers,W 4-0 @ San Jose Sharks,0
-2025,2024-12-31,Utah Mammoth,Edmonton Oilers,1,4,-3,3,0,1,0,,9438,51053,W,L,W 4-1 vs. Utah Hockey Club,L 1-4 @ Edmonton Oilers,0
+2025,2024-12-31,Utah Mammoth,Edmonton Oilers,1,4,-3,3,0,1,0,,9438,51053,W,L,W 4-1 vs. Utah Mammoth,L 1-4 @ Edmonton Oilers,0
 2025,2024-12-31,Buffalo Sabres,Dallas Stars,2,4,-2,2,0,1,0,,9438,51054,W,L,W 4-2 vs. Buffalo Sabres,L 2-4 @ Dallas Stars,0
 2025,2024-12-31,Winnipeg Jets,Colorado Avalanche,2,5,-3,3,0,1,0,,9438,51055,W,L,W 5-2 vs. Winnipeg Jets,L 2-5 @ Colorado Avalanche,0
 2025,2024-12-31,St. Louis Blues,Chicago Blackhawks,6,2,4,-4,1,0,0,,9438,51056,L,W,L 2-6 vs. St. Louis Blues,W 6-2 @ Chicago Blackhawks,0
@@ -51069,7 +51069,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-02,Ottawa Senators,Dallas Stars,2,4,-2,2,0,1,0,,9440,51068,W,L,W 4-2 vs. Ottawa Senators,L 2-4 @ Dallas Stars,0
 2025,2025-01-02,Carolina Hurricanes,Florida Panthers,3,1,2,-2,1,0,0,,9440,51069,L,W,L 1-3 vs. Carolina Hurricanes,W 3-1 @ Florida Panthers,0
 2025,2025-01-02,Buffalo Sabres,Colorado Avalanche,5,6,-1,1,0,1,0,OT,9440,51070,W,L,W 6-5 vs. Buffalo Sabres (OT),L 5-6 @ Colorado Avalanche (OT),0
-2025,2025-01-02,Utah Mammoth,Calgary Flames,5,3,2,-2,1,0,0,,9440,51071,L,W,L 3-5 vs. Utah Hockey Club,W 5-3 @ Calgary Flames,0
+2025,2025-01-02,Utah Mammoth,Calgary Flames,5,3,2,-2,1,0,0,,9440,51071,L,W,L 3-5 vs. Utah Mammoth,W 5-3 @ Calgary Flames,0
 2025,2025-01-02,Detroit Red Wings,Columbus Blue Jackets,5,4,1,-1,1,0,0,,9440,51072,L,W,L 4-5 vs. Detroit Red Wings,W 5-4 @ Columbus Blue Jackets,0
 2025,2025-01-02,Toronto Maple Leafs,New York Islanders,2,1,1,-1,1,0,0,,9440,51073,L,W,L 1-2 vs. Toronto Maple Leafs,W 2-1 @ New York Islanders,0
 2025,2025-01-03,Nashville Predators,Vancouver Canucks,3,0,3,-3,1,0,0,,9441,51074,L,W,L 0-3 vs. Nashville Predators,W 3-0 @ Vancouver Canucks,0
@@ -51084,7 +51084,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-04,Boston Bruins,Toronto Maple Leafs,4,6,-2,2,0,1,0,,9442,51083,W,L,W 6-4 vs. Boston Bruins,L 4-6 @ Toronto Maple Leafs,0
 2025,2025-01-04,Edmonton Oilers,Seattle Kraken,4,2,2,-2,1,0,0,,9442,51084,L,W,L 2-4 vs. Edmonton Oilers,W 4-2 @ Seattle Kraken,0
 2025,2025-01-04,Minnesota Wild,Carolina Hurricanes,4,0,4,-4,1,0,0,,9442,51085,L,W,L 0-4 vs. Minnesota Wild,W 4-0 @ Carolina Hurricanes,0
-2025,2025-01-04,Utah Mammoth,Dallas Stars,2,3,-1,1,0,1,0,OT,9442,51086,W,L,W 3-2 vs. Utah Hockey Club (OT),L 2-3 @ Dallas Stars (OT),0
+2025,2025-01-04,Utah Mammoth,Dallas Stars,2,3,-1,1,0,1,0,OT,9442,51086,W,L,W 3-2 vs. Utah Mammoth (OT),L 2-3 @ Dallas Stars (OT),0
 2025,2025-01-04,Montreal Canadiens,Colorado Avalanche,2,1,1,-1,1,0,0,SO,9442,51087,L,W,L 1-2 vs. Montreal Canadiens (SO),W 2-1 @ Colorado Avalanche (SO),0
 2025,2025-01-04,Nashville Predators,Calgary Flames,4,1,3,-3,1,0,0,,9442,51088,L,W,L 1-4 vs. Nashville Predators,W 4-1 @ Calgary Flames,0
 2025,2025-01-04,St. Louis Blues,Columbus Blue Jackets,4,6,-2,2,0,1,0,,9442,51089,W,L,W 6-4 vs. St. Louis Blues,L 4-6 @ Columbus Blue Jackets,0
@@ -51109,7 +51109,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-07,Edmonton Oilers,Boston Bruins,4,0,4,-4,1,0,0,,9445,51108,L,W,L 0-4 vs. Edmonton Oilers,W 4-0 @ Boston Bruins,0
 2025,2025-01-07,Calgary Flames,Anaheim Ducks,3,2,1,-1,1,0,0,OT,9445,51109,L,W,L 2-3 vs. Calgary Flames (OT),W 3-2 @ Anaheim Ducks (OT),0
 2025,2025-01-08,Colorado Avalanche,Chicago Blackhawks,1,3,-2,2,0,1,0,,9446,51110,W,L,W 3-1 vs. Colorado Avalanche,L 1-3 @ Chicago Blackhawks,0
-2025,2025-01-08,Florida Panthers,Utah Mammoth,4,1,3,-3,1,0,0,,9446,51111,L,W,L 1-4 vs. Florida Panthers,W 4-1 @ Utah Hockey Club,0
+2025,2025-01-08,Florida Panthers,Utah Mammoth,4,1,3,-3,1,0,0,,9446,51111,L,W,L 1-4 vs. Florida Panthers,W 4-1 @ Utah Mammoth,0
 2025,2025-01-08,Vancouver Canucks,Washington Capitals,1,2,-1,1,0,1,0,OT,9446,51112,W,L,W 2-1 vs. Vancouver Canucks (OT),L 1-2 @ Washington Capitals (OT),0
 2025,2025-01-09,New York Islanders,Vegas Golden Knights,4,0,4,-4,1,0,0,,9447,51113,L,W,L 0-4 vs. New York Islanders,W 4-0 @ Vegas Golden Knights,0
 2025,2025-01-09,Boston Bruins,Tampa Bay Lightning,1,4,-3,3,0,1,0,,9447,51114,W,L,W 4-1 vs. Boston Bruins,L 1-4 @ Tampa Bay Lightning,0
@@ -51122,14 +51122,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-09,Toronto Maple Leafs,Carolina Hurricanes,3,6,-3,3,0,1,0,,9447,51121,W,L,W 6-3 vs. Toronto Maple Leafs,L 3-6 @ Carolina Hurricanes,0
 2025,2025-01-09,Buffalo Sabres,Ottawa Senators,4,0,4,-4,1,0,0,,9447,51122,L,W,L 0-4 vs. Buffalo Sabres,W 4-0 @ Ottawa Senators,0
 2025,2025-01-10,Montreal Canadiens,Washington Capitals,3,2,1,-1,1,0,0,OT,9448,51123,L,W,L 2-3 vs. Montreal Canadiens (OT),W 3-2 @ Washington Capitals (OT),0
-2025,2025-01-10,San Jose Sharks,Utah Mammoth,1,2,-1,1,0,1,0,,9448,51124,W,L,W 2-1 vs. San Jose Sharks,L 1-2 @ Utah Hockey Club,0
+2025,2025-01-10,San Jose Sharks,Utah Mammoth,1,2,-1,1,0,1,0,,9448,51124,W,L,W 2-1 vs. San Jose Sharks,L 1-2 @ Utah Mammoth,0
 2025,2025-01-10,Los Angeles Kings,Winnipeg Jets,2,1,1,-1,1,0,0,OT,9448,51125,L,W,L 1-2 vs. Los Angeles Kings (OT),W 2-1 @ Winnipeg Jets (OT),0
 2025,2025-01-10,Vancouver Canucks,Carolina Hurricanes,0,2,-2,2,0,1,0,,9448,51126,W,L,W 2-0 vs. Vancouver Canucks,L 0-2 @ Carolina Hurricanes,0
 2025,2025-01-10,Chicago Blackhawks,Detroit Red Wings,3,5,-2,2,0,1,0,,9448,51127,W,L,W 5-3 vs. Chicago Blackhawks,L 3-5 @ Detroit Red Wings,0
 2025,2025-01-11,Minnesota Wild,San Jose Sharks,3,1,2,-2,1,0,0,,9449,51128,L,W,L 1-3 vs. Minnesota Wild,W 3-1 @ San Jose Sharks,0
 2025,2025-01-11,Colorado Avalanche,Winnipeg Jets,0,3,-3,3,0,1,0,,9449,51129,W,L,W 3-0 vs. Colorado Avalanche,L 0-3 @ Winnipeg Jets,0
 2025,2025-01-11,New York Rangers,Vegas Golden Knights,2,1,1,-1,1,0,0,,9449,51130,L,W,L 1-2 vs. New York Rangers,W 2-1 @ Vegas Golden Knights,0
-2025,2025-01-11,New York Islanders,Utah Mammoth,2,1,1,-1,1,0,0,,9449,51131,L,W,L 1-2 vs. New York Islanders,W 2-1 @ Utah Hockey Club,0
+2025,2025-01-11,New York Islanders,Utah Mammoth,2,1,1,-1,1,0,0,,9449,51131,L,W,L 1-2 vs. New York Islanders,W 2-1 @ Utah Mammoth,0
 2025,2025-01-11,Vancouver Canucks,Toronto Maple Leafs,3,0,3,-3,1,0,0,,9449,51132,L,W,L 0-3 vs. Vancouver Canucks,W 3-0 @ Toronto Maple Leafs,0
 2025,2025-01-11,Columbus Blue Jackets,St. Louis Blues,2,1,1,-1,1,0,0,,9449,51133,L,W,L 1-2 vs. Columbus Blue Jackets,W 2-1 @ St. Louis Blues,0
 2025,2025-01-11,Ottawa Senators,Pittsburgh Penguins,5,0,5,-5,1,0,0,,9449,51134,L,W,L 0-5 vs. Ottawa Senators,W 5-0 @ Pittsburgh Penguins,0
@@ -51153,7 +51153,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-14,Dallas Stars,Toronto Maple Leafs,4,1,3,-3,1,0,0,,9452,51152,L,W,L 1-4 vs. Dallas Stars,W 4-1 @ Toronto Maple Leafs,0
 2025,2025-01-14,Seattle Kraken,Pittsburgh Penguins,4,2,2,-2,1,0,0,,9452,51153,L,W,L 2-4 vs. Seattle Kraken,W 4-2 @ Pittsburgh Penguins,0
 2025,2025-01-14,Vancouver Canucks,Winnipeg Jets,1,6,-5,5,0,1,0,,9452,51154,W,L,W 6-1 vs. Vancouver Canucks,L 1-6 @ Winnipeg Jets,0
-2025,2025-01-14,Montreal Canadiens,Utah Mammoth,5,3,2,-2,1,0,0,,9452,51155,L,W,L 3-5 vs. Montreal Canadiens,W 5-3 @ Utah Hockey Club,0
+2025,2025-01-14,Montreal Canadiens,Utah Mammoth,5,3,2,-2,1,0,0,,9452,51155,L,W,L 3-5 vs. Montreal Canadiens,W 5-3 @ Utah Mammoth,0
 2025,2025-01-14,Ottawa Senators,New York Islanders,2,0,2,-2,1,0,0,,9452,51156,L,W,L 0-2 vs. Ottawa Senators,W 2-0 @ New York Islanders,0
 2025,2025-01-14,Calgary Flames,St. Louis Blues,1,2,-1,1,0,1,0,,9452,51157,W,L,W 2-1 vs. Calgary Flames,L 1-2 @ St. Louis Blues,0
 2025,2025-01-14,Florida Panthers,New Jersey Devils,2,1,1,-1,1,0,0,SO,9452,51158,L,W,L 1-2 vs. Florida Panthers (SO),W 2-1 @ New Jersey Devils (SO),0
@@ -51164,7 +51164,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-14,Vegas Golden Knights,Nashville Predators,3,5,-2,2,0,1,0,,9452,51163,W,L,W 5-3 vs. Vegas Golden Knights,L 3-5 @ Nashville Predators,0
 2025,2025-01-15,Carolina Hurricanes,Buffalo Sabres,2,4,-2,2,0,1,0,,9453,51164,W,L,W 4-2 vs. Carolina Hurricanes,L 2-4 @ Buffalo Sabres,0
 2025,2025-01-15,Edmonton Oilers,Minnesota Wild,5,3,2,-2,1,0,0,,9453,51165,L,W,L 3-5 vs. Edmonton Oilers,W 5-3 @ Minnesota Wild,0
-2025,2025-01-16,New York Rangers,Utah Mammoth,5,3,2,-2,1,0,0,,9454,51166,L,W,L 3-5 vs. New York Rangers,W 5-3 @ Utah Hockey Club,0
+2025,2025-01-16,New York Rangers,Utah Mammoth,5,3,2,-2,1,0,0,,9454,51166,L,W,L 3-5 vs. New York Rangers,W 5-3 @ Utah Mammoth,0
 2025,2025-01-16,New Jersey Devils,Toronto Maple Leafs,3,4,-1,1,0,1,0,OT,9454,51167,W,L,W 4-3 vs. New Jersey Devils (OT),L 3-4 @ Toronto Maple Leafs (OT),0
 2025,2025-01-16,Anaheim Ducks,Tampa Bay Lightning,3,4,-1,1,0,1,0,SO,9454,51168,W,L,W 4-3 vs. Anaheim Ducks (SO),L 3-4 @ Tampa Bay Lightning (SO),0
 2025,2025-01-16,Calgary Flames,St. Louis Blues,1,4,-3,3,0,1,0,,9454,51169,W,L,W 4-1 vs. Calgary Flames,L 1-4 @ St. Louis Blues,0
@@ -51183,7 +51183,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-18,Pittsburgh Penguins,Washington Capitals,1,4,-3,3,0,1,0,,9456,51182,W,L,W 4-1 vs. Pittsburgh Penguins,L 1-4 @ Washington Capitals,0
 2025,2025-01-18,Calgary Flames,Winnipeg Jets,3,1,2,-2,1,0,0,,9456,51183,L,W,L 1-3 vs. Calgary Flames,W 3-1 @ Winnipeg Jets,0
 2025,2025-01-18,Edmonton Oilers,Vancouver Canucks,2,3,-1,1,0,1,0,,9456,51184,W,L,W 3-2 vs. Edmonton Oilers,L 2-3 @ Vancouver Canucks,0
-2025,2025-01-18,St. Louis Blues,Utah Mammoth,2,4,-2,2,0,1,0,,9456,51185,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Utah Hockey Club,0
+2025,2025-01-18,St. Louis Blues,Utah Mammoth,2,4,-2,2,0,1,0,,9456,51185,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Utah Mammoth,0
 2025,2025-01-18,Los Angeles Kings,Seattle Kraken,2,4,-2,2,0,1,0,,9456,51186,W,L,W 4-2 vs. Los Angeles Kings,L 2-4 @ Seattle Kraken,0
 2025,2025-01-18,Columbus Blue Jackets,New York Rangers,0,1,-1,1,0,1,0,SO,9456,51187,W,L,W 1-0 vs. Columbus Blue Jackets (SO),L 0-1 @ New York Rangers (SO),0
 2025,2025-01-18,Boston Bruins,Ottawa Senators,5,6,-1,1,0,1,0,SO,9456,51188,W,L,W 6-5 vs. Boston Bruins (SO),L 5-6 @ Ottawa Senators (SO),0
@@ -51201,7 +51201,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-20,Buffalo Sabres,Seattle Kraken,4,6,-2,2,0,1,0,,9458,51200,W,L,W 6-4 vs. Buffalo Sabres,L 4-6 @ Seattle Kraken,0
 2025,2025-01-20,St. Louis Blues,Vegas Golden Knights,5,4,1,-1,1,0,0,SO,9458,51201,L,W,L 4-5 vs. St. Louis Blues (SO),W 5-4 @ Vegas Golden Knights (SO),0
 2025,2025-01-20,Columbus Blue Jackets,New York Islanders,1,3,-2,2,0,1,0,,9458,51202,W,L,W 3-1 vs. Columbus Blue Jackets,L 1-3 @ New York Islanders,0
-2025,2025-01-20,Winnipeg Jets,Utah Mammoth,2,5,-3,3,0,1,0,,9458,51203,W,L,W 5-2 vs. Winnipeg Jets,L 2-5 @ Utah Hockey Club,0
+2025,2025-01-20,Winnipeg Jets,Utah Mammoth,2,5,-3,3,0,1,0,,9458,51203,W,L,W 5-2 vs. Winnipeg Jets,L 2-5 @ Utah Mammoth,0
 2025,2025-01-20,Minnesota Wild,Colorado Avalanche,3,1,2,-2,1,0,0,,9458,51204,L,W,L 1-3 vs. Minnesota Wild,W 3-1 @ Colorado Avalanche,0
 2025,2025-01-20,Carolina Hurricanes,Chicago Blackhawks,4,3,1,-1,1,0,0,OT,9458,51205,L,W,L 3-4 vs. Carolina Hurricanes (OT),W 4-3 @ Chicago Blackhawks (OT),0
 2025,2025-01-20,Pittsburgh Penguins,Los Angeles Kings,5,1,4,-4,1,0,0,,9458,51206,L,W,L 1-5 vs. Pittsburgh Penguins,W 5-1 @ Los Angeles Kings,0
@@ -51218,7 +51218,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-22,Florida Panthers,Los Angeles Kings,1,2,-1,1,0,1,0,,9460,51217,W,L,W 2-1 vs. Florida Panthers,L 1-2 @ Los Angeles Kings,0
 2025,2025-01-22,Boston Bruins,New Jersey Devils,1,5,-4,4,0,1,0,,9460,51218,W,L,W 5-1 vs. Boston Bruins,L 1-5 @ New Jersey Devils,0
 2025,2025-01-22,Columbus Blue Jackets,Toronto Maple Leafs,5,1,4,-4,1,0,0,,9460,51219,L,W,L 1-5 vs. Columbus Blue Jackets,W 5-1 @ Toronto Maple Leafs,0
-2025,2025-01-23,Utah Mammoth,Minnesota Wild,4,0,4,-4,1,0,0,,9461,51220,L,W,L 0-4 vs. Utah Hockey Club,W 4-0 @ Minnesota Wild,0
+2025,2025-01-23,Utah Mammoth,Minnesota Wild,4,0,4,-4,1,0,0,,9461,51220,L,W,L 0-4 vs. Utah Mammoth,W 4-0 @ Minnesota Wild,0
 2025,2025-01-23,Vegas Golden Knights,St. Louis Blues,4,2,2,-2,1,0,0,,9461,51221,L,W,L 2-4 vs. Vegas Golden Knights,W 4-2 @ St. Louis Blues,0
 2025,2025-01-23,Washington Capitals,Seattle Kraken,3,0,3,-3,1,0,0,,9461,51222,L,W,L 0-3 vs. Washington Capitals,W 3-0 @ Seattle Kraken,0
 2025,2025-01-23,Philadelphia Flyers,New York Rangers,1,6,-5,5,0,1,0,,9461,51223,W,L,W 6-1 vs. Philadelphia Flyers,L 1-6 @ New York Rangers,0
@@ -51232,7 +51232,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-24,Tampa Bay Lightning,Chicago Blackhawks,4,3,1,-1,1,0,0,OT,9462,51231,L,W,L 3-4 vs. Tampa Bay Lightning (OT),W 4-3 @ Chicago Blackhawks (OT),0
 2025,2025-01-24,Vegas Golden Knights,Dallas Stars,3,4,-1,1,0,1,0,,9462,51232,W,L,W 4-3 vs. Vegas Golden Knights,L 3-4 @ Dallas Stars,0
 2025,2025-01-24,Philadelphia Flyers,New York Islanders,1,3,-2,2,0,1,0,,9462,51233,W,L,W 3-1 vs. Philadelphia Flyers,L 1-3 @ New York Islanders,0
-2025,2025-01-24,Utah Mammoth,Winnipeg Jets,2,5,-3,3,0,1,0,,9462,51234,W,L,W 5-2 vs. Utah Hockey Club,L 2-5 @ Winnipeg Jets,0
+2025,2025-01-24,Utah Mammoth,Winnipeg Jets,2,5,-3,3,0,1,0,,9462,51234,W,L,W 5-2 vs. Utah Mammoth,L 2-5 @ Winnipeg Jets,0
 2025,2025-01-25,Washington Capitals,Vancouver Canucks,1,2,-1,1,0,1,0,,9463,51235,W,L,W 2-1 vs. Washington Capitals,L 1-2 @ Vancouver Canucks,0
 2025,2025-01-25,Dallas Stars,St. Louis Blues,2,0,2,-2,1,0,0,,9463,51236,L,W,L 0-2 vs. Dallas Stars,W 2-0 @ St. Louis Blues,0
 2025,2025-01-25,Florida Panthers,San Jose Sharks,7,2,5,-5,1,0,0,,9463,51237,L,W,L 2-7 vs. Florida Panthers,W 7-2 @ San Jose Sharks,0
@@ -51248,7 +51248,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-25,New Jersey Devils,Montreal Canadiens,4,3,1,-1,1,0,0,OT,9463,51247,L,W,L 3-4 vs. New Jersey Devils (OT),W 4-3 @ Montreal Canadiens (OT),0
 2025,2025-01-26,Minnesota Wild,Chicago Blackhawks,4,2,2,-2,1,0,0,,9464,51248,L,W,L 2-4 vs. Minnesota Wild,W 4-2 @ Chicago Blackhawks,0
 2025,2025-01-26,Colorado Avalanche,New York Rangers,5,4,1,-1,1,0,0,,9464,51249,L,W,L 4-5 vs. Colorado Avalanche,W 5-4 @ New York Rangers,0
-2025,2025-01-26,Utah Mammoth,Ottawa Senators,1,3,-2,2,0,1,0,,9464,51250,W,L,W 3-1 vs. Utah Hockey Club,L 1-3 @ Ottawa Senators,0
+2025,2025-01-26,Utah Mammoth,Ottawa Senators,1,3,-2,2,0,1,0,,9464,51250,W,L,W 3-1 vs. Utah Mammoth,L 1-3 @ Ottawa Senators,0
 2025,2025-01-26,Florida Panthers,Vegas Golden Knights,1,4,-3,3,0,1,0,,9464,51251,W,L,W 4-1 vs. Florida Panthers,L 1-4 @ Vegas Golden Knights,0
 2025,2025-01-26,Calgary Flames,Winnipeg Jets,2,5,-3,3,0,1,0,,9464,51252,W,L,W 5-2 vs. Calgary Flames,L 2-5 @ Winnipeg Jets,0
 2025,2025-01-27,Pittsburgh Penguins,San Jose Sharks,1,2,-1,1,0,1,0,,9465,51253,W,L,W 2-1 vs. Pittsburgh Penguins,L 1-2 @ San Jose Sharks,0
@@ -51264,7 +51264,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-28,Anaheim Ducks,Seattle Kraken,6,4,2,-2,1,0,0,,9466,51263,L,W,L 4-6 vs. Anaheim Ducks,W 6-4 @ Seattle Kraken,0
 2025,2025-01-28,Chicago Blackhawks,Tampa Bay Lightning,4,1,3,-3,1,0,0,,9466,51264,L,W,L 1-4 vs. Chicago Blackhawks,W 4-1 @ Tampa Bay Lightning,0
 2025,2025-01-28,Dallas Stars,Vegas Golden Knights,4,3,1,-1,1,0,0,OT,9466,51265,L,W,L 3-4 vs. Dallas Stars (OT),W 4-3 @ Vegas Golden Knights (OT),0
-2025,2025-01-29,Pittsburgh Penguins,Utah Mammoth,3,2,1,-1,1,0,0,OT,9467,51266,L,W,L 2-3 vs. Pittsburgh Penguins (OT),W 3-2 @ Utah Hockey Club (OT),0
+2025,2025-01-29,Pittsburgh Penguins,Utah Mammoth,3,2,1,-1,1,0,0,OT,9467,51266,L,W,L 2-3 vs. Pittsburgh Penguins (OT),W 3-2 @ Utah Mammoth (OT),0
 2025,2025-01-29,Minnesota Wild,Toronto Maple Leafs,3,1,2,-2,1,0,0,,9467,51267,L,W,L 1-3 vs. Minnesota Wild,W 3-1 @ Toronto Maple Leafs,0
 2025,2025-01-29,Vancouver Canucks,Nashville Predators,3,1,2,-2,1,0,0,,9467,51268,L,W,L 1-3 vs. Vancouver Canucks,W 3-1 @ Nashville Predators,0
 2025,2025-01-29,Philadelphia Flyers,New Jersey Devils,0,5,-5,5,0,1,0,,9467,51269,W,L,W 5-0 vs. Philadelphia Flyers,L 0-5 @ New Jersey Devils,0
@@ -51279,7 +51279,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-01-30,San Jose Sharks,Seattle Kraken,2,6,-4,4,0,1,0,,9468,51278,W,L,W 6-2 vs. San Jose Sharks,L 2-6 @ Seattle Kraken,0
 2025,2025-01-30,Los Angeles Kings,Tampa Bay Lightning,0,3,-3,3,0,1,0,,9468,51279,W,L,W 3-0 vs. Los Angeles Kings,L 0-3 @ Tampa Bay Lightning,0
 2025,2025-01-30,Columbus Blue Jackets,Vegas Golden Knights,2,1,1,-1,1,0,0,OT,9468,51280,L,W,L 1-2 vs. Columbus Blue Jackets (OT),W 2-1 @ Vegas Golden Knights (OT),0
-2025,2025-01-31,Columbus Blue Jackets,Utah Mammoth,3,2,1,-1,1,0,0,OT,9469,51281,L,W,L 2-3 vs. Columbus Blue Jackets (OT),W 3-2 @ Utah Hockey Club (OT),0
+2025,2025-01-31,Columbus Blue Jackets,Utah Mammoth,3,2,1,-1,1,0,0,OT,9469,51281,L,W,L 2-3 vs. Columbus Blue Jackets (OT),W 3-2 @ Utah Mammoth (OT),0
 2025,2025-01-31,Vancouver Canucks,Dallas Stars,3,5,-2,2,0,1,0,,9469,51282,W,L,W 5-3 vs. Vancouver Canucks,L 3-5 @ Dallas Stars,0
 2025,2025-01-31,Nashville Predators,Buffalo Sabres,3,4,-1,1,0,1,0,,9469,51283,W,L,W 4-3 vs. Nashville Predators,L 3-4 @ Buffalo Sabres,0
 2025,2025-01-31,St. Louis Blues,Colorado Avalanche,0,5,-5,5,0,1,0,,9469,51284,W,L,W 5-0 vs. St. Louis Blues,L 0-5 @ Colorado Avalanche,0
@@ -51294,7 +51294,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-01,Winnipeg Jets,Washington Capitals,5,4,1,-1,1,0,0,OT,9470,51293,L,W,L 4-5 vs. Winnipeg Jets (OT),W 5-4 @ Washington Capitals (OT),0
 2025,2025-02-02,Philadelphia Flyers,Colorado Avalanche,0,2,-2,2,0,1,0,,9471,51294,W,L,W 2-0 vs. Philadelphia Flyers,L 0-2 @ Colorado Avalanche,0
 2025,2025-02-02,Detroit Red Wings,Vancouver Canucks,3,2,1,-1,1,0,0,OT,9471,51295,L,W,L 2-3 vs. Detroit Red Wings (OT),W 3-2 @ Vancouver Canucks (OT),0
-2025,2025-02-02,St. Louis Blues,Utah Mammoth,2,1,1,-1,1,0,0,,9471,51296,L,W,L 1-2 vs. St. Louis Blues,W 2-1 @ Utah Hockey Club,0
+2025,2025-02-02,St. Louis Blues,Utah Mammoth,2,1,1,-1,1,0,0,,9471,51296,L,W,L 1-2 vs. St. Louis Blues,W 2-1 @ Utah Mammoth,0
 2025,2025-02-02,Calgary Flames,Seattle Kraken,3,2,1,-1,1,0,0,,9471,51297,L,W,L 2-3 vs. Calgary Flames,W 3-2 @ Seattle Kraken,0
 2025,2025-02-02,Vegas Golden Knights,New York Rangers,2,4,-2,2,0,1,0,,9471,51298,W,L,W 4-2 vs. Vegas Golden Knights,L 2-4 @ New York Rangers,0
 2025,2025-02-02,Montreal Canadiens,Anaheim Ducks,2,3,-1,1,0,1,0,,9471,51299,W,L,W 3-2 vs. Montreal Canadiens,L 2-3 @ Anaheim Ducks,0
@@ -51303,7 +51303,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-02,New York Islanders,Florida Panthers,3,6,-3,3,0,1,0,,9471,51302,W,L,W 6-3 vs. New York Islanders,L 3-6 @ Florida Panthers,0
 2025,2025-02-03,Ottawa Senators,Nashville Predators,5,2,3,-3,1,0,0,,9472,51303,L,W,L 2-5 vs. Ottawa Senators,W 5-2 @ Nashville Predators,0
 2025,2025-02-04,Ottawa Senators,Tampa Bay Lightning,3,4,-1,1,0,1,0,,9473,51304,W,L,W 4-3 vs. Ottawa Senators,L 3-4 @ Tampa Bay Lightning,0
-2025,2025-02-04,Philadelphia Flyers,Utah Mammoth,2,3,-1,1,0,1,0,OT,9473,51305,W,L,W 3-2 vs. Philadelphia Flyers (OT),L 2-3 @ Utah Hockey Club (OT),0
+2025,2025-02-04,Philadelphia Flyers,Utah Mammoth,2,3,-1,1,0,1,0,OT,9473,51305,W,L,W 3-2 vs. Philadelphia Flyers (OT),L 2-3 @ Utah Mammoth (OT),0
 2025,2025-02-04,Edmonton Oilers,St. Louis Blues,3,2,1,-1,1,0,0,OT,9473,51306,L,W,L 2-3 vs. Edmonton Oilers (OT),W 3-2 @ St. Louis Blues (OT),0
 2025,2025-02-04,Colorado Avalanche,Vancouver Canucks,0,3,-3,3,0,1,0,,9473,51307,W,L,W 3-0 vs. Colorado Avalanche,L 0-3 @ Vancouver Canucks,0
 2025,2025-02-04,Carolina Hurricanes,Winnipeg Jets,0,3,-3,3,0,1,0,,9473,51308,W,L,W 3-0 vs. Carolina Hurricanes,L 0-3 @ Winnipeg Jets,0
@@ -51323,7 +51323,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-06,Florida Panthers,St. Louis Blues,3,2,1,-1,1,0,0,,9475,51322,L,W,L 2-3 vs. Florida Panthers,W 3-2 @ St. Louis Blues,0
 2025,2025-02-06,Vancouver Canucks,San Jose Sharks,2,1,1,-1,1,0,0,OT,9475,51323,L,W,L 1-2 vs. Vancouver Canucks (OT),W 2-1 @ San Jose Sharks (OT),0
 2025,2025-02-06,Toronto Maple Leafs,Seattle Kraken,3,1,2,-2,1,0,0,,9475,51324,L,W,L 1-3 vs. Toronto Maple Leafs,W 3-1 @ Seattle Kraken,0
-2025,2025-02-06,Utah Mammoth,Columbus Blue Jackets,3,2,1,-1,1,0,0,OT,9475,51325,L,W,L 2-3 vs. Utah Hockey Club (OT),W 3-2 @ Columbus Blue Jackets (OT),0
+2025,2025-02-06,Utah Mammoth,Columbus Blue Jackets,3,2,1,-1,1,0,0,OT,9475,51325,L,W,L 2-3 vs. Utah Mammoth (OT),W 3-2 @ Columbus Blue Jackets (OT),0
 2025,2025-02-06,Vegas Golden Knights,New Jersey Devils,3,1,2,-2,1,0,0,,9475,51326,L,W,L 1-3 vs. Vegas Golden Knights,W 3-1 @ New Jersey Devils,0
 2025,2025-02-06,Carolina Hurricanes,Minnesota Wild,1,2,-1,1,0,1,0,,9475,51327,W,L,W 2-1 vs. Carolina Hurricanes,L 1-2 @ Minnesota Wild,0
 2025,2025-02-06,Colorado Avalanche,Calgary Flames,4,2,2,-2,1,0,0,,9475,51328,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Calgary Flames,0
@@ -51344,11 +51344,11 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-08,Tampa Bay Lightning,Detroit Red Wings,6,3,3,-3,1,0,0,,9477,51343,L,W,L 3-6 vs. Tampa Bay Lightning,W 6-3 @ Detroit Red Wings,0
 2025,2025-02-08,Seattle Kraken,Calgary Flames,3,2,1,-1,1,0,0,OT,9477,51344,L,W,L 2-3 vs. Seattle Kraken (OT),W 3-2 @ Calgary Flames (OT),0
 2025,2025-02-08,New York Rangers,Columbus Blue Jackets,4,3,1,-1,1,0,0,,9477,51345,L,W,L 3-4 vs. New York Rangers,W 4-3 @ Columbus Blue Jackets,0
-2025,2025-02-08,Utah Mammoth,Carolina Hurricanes,3,7,-4,4,0,1,0,,9477,51346,W,L,W 7-3 vs. Utah Hockey Club,L 3-7 @ Carolina Hurricanes,0
+2025,2025-02-08,Utah Mammoth,Carolina Hurricanes,3,7,-4,4,0,1,0,,9477,51346,W,L,W 7-3 vs. Utah Mammoth,L 3-7 @ Carolina Hurricanes,0
 2025,2025-02-08,Vegas Golden Knights,Boston Bruins,4,3,1,-1,1,0,0,,9477,51347,L,W,L 3-4 vs. Vegas Golden Knights,W 4-3 @ Boston Bruins,0
 2025,2025-02-08,Anaheim Ducks,Los Angeles Kings,2,1,1,-1,1,0,0,SO,9477,51348,L,W,L 1-2 vs. Anaheim Ducks (SO),W 2-1 @ Los Angeles Kings (SO),0
 2025,2025-02-09,Tampa Bay Lightning,Montreal Canadiens,5,3,2,-2,1,0,0,,9478,51349,L,W,L 3-5 vs. Tampa Bay Lightning,W 5-3 @ Montreal Canadiens,0
-2025,2025-02-09,Utah Mammoth,Washington Capitals,5,4,1,-1,1,0,0,SO,9478,51350,L,W,L 4-5 vs. Utah Hockey Club (SO),W 5-4 @ Washington Capitals (SO),0
+2025,2025-02-09,Utah Mammoth,Washington Capitals,5,4,1,-1,1,0,0,SO,9478,51350,L,W,L 4-5 vs. Utah Mammoth (SO),W 5-4 @ Washington Capitals (SO),0
 2025,2025-02-22,Montreal Canadiens,Ottawa Senators,5,2,3,-3,1,0,0,,9479,51351,L,W,L 2-5 vs. Montreal Canadiens,W 5-2 @ Ottawa Senators,0
 2025,2025-02-22,Vancouver Canucks,Vegas Golden Knights,1,3,-2,2,0,1,0,,9479,51352,W,L,W 3-1 vs. Vancouver Canucks,L 1-3 @ Vegas Golden Knights,0
 2025,2025-02-22,Winnipeg Jets,St. Louis Blues,4,3,1,-1,1,0,0,SO,9479,51353,L,W,L 3-4 vs. Winnipeg Jets (SO),W 4-3 @ St. Louis Blues (SO),0
@@ -51356,7 +51356,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-22,Edmonton Oilers,Philadelphia Flyers,3,6,-3,3,0,1,0,,9479,51355,W,L,W 6-3 vs. Edmonton Oilers,L 3-6 @ Philadelphia Flyers,0
 2025,2025-02-22,Colorado Avalanche,Nashville Predators,1,2,-1,1,0,1,0,,9479,51356,W,L,W 2-1 vs. Colorado Avalanche,L 1-2 @ Nashville Predators,0
 2025,2025-02-22,Carolina Hurricanes,Toronto Maple Leafs,3,6,-3,3,0,1,0,,9479,51357,W,L,W 6-3 vs. Carolina Hurricanes,L 3-6 @ Toronto Maple Leafs,0
-2025,2025-02-22,Utah Mammoth,Los Angeles Kings,3,5,-2,2,0,1,0,,9479,51358,W,L,W 5-3 vs. Utah Hockey Club,L 3-5 @ Los Angeles Kings,0
+2025,2025-02-22,Utah Mammoth,Los Angeles Kings,3,5,-2,2,0,1,0,,9479,51358,W,L,W 5-3 vs. Utah Mammoth,L 3-5 @ Los Angeles Kings,0
 2025,2025-02-22,Seattle Kraken,Florida Panthers,2,1,1,-1,1,0,0,,9479,51359,L,W,L 1-2 vs. Seattle Kraken,W 2-1 @ Florida Panthers,0
 2025,2025-02-22,Minnesota Wild,Detroit Red Wings,4,3,1,-1,1,0,0,OT,9479,51360,L,W,L 3-4 vs. Minnesota Wild (OT),W 4-3 @ Detroit Red Wings (OT),0
 2025,2025-02-22,Chicago Blackhawks,Columbus Blue Jackets,1,5,-4,4,0,1,0,,9479,51361,W,L,W 5-1 vs. Chicago Blackhawks,L 1-5 @ Columbus Blue Jackets,0
@@ -51364,7 +51364,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-22,Anaheim Ducks,Boston Bruins,3,2,1,-1,1,0,0,OT,9479,51363,L,W,L 2-3 vs. Anaheim Ducks (OT),W 3-2 @ Boston Bruins (OT),0
 2025,2025-02-22,Dallas Stars,New Jersey Devils,4,2,2,-2,1,0,0,,9479,51364,L,W,L 2-4 vs. Dallas Stars,W 4-2 @ New Jersey Devils,0
 2025,2025-02-23,Edmonton Oilers,Washington Capitals,3,7,-4,4,0,1,0,,9480,51365,W,L,W 7-3 vs. Edmonton Oilers,L 3-7 @ Washington Capitals,0
-2025,2025-02-23,Vancouver Canucks,Utah Mammoth,1,2,-1,1,0,1,0,,9480,51366,W,L,W 2-1 vs. Vancouver Canucks,L 1-2 @ Utah Hockey Club,0
+2025,2025-02-23,Vancouver Canucks,Utah Mammoth,1,2,-1,1,0,1,0,,9480,51366,W,L,W 2-1 vs. Vancouver Canucks,L 1-2 @ Utah Mammoth,0
 2025,2025-02-23,Seattle Kraken,Tampa Bay Lightning,1,4,-3,3,0,1,0,,9480,51367,W,L,W 4-1 vs. Seattle Kraken,L 1-4 @ Tampa Bay Lightning,0
 2025,2025-02-23,Colorado Avalanche,St. Louis Blues,1,3,-2,2,0,1,0,,9480,51368,W,L,W 3-1 vs. Colorado Avalanche,L 1-3 @ St. Louis Blues,0
 2025,2025-02-23,New York Rangers,Pittsburgh Penguins,5,3,2,-2,1,0,0,,9480,51369,L,W,L 3-5 vs. New York Rangers,W 5-3 @ Pittsburgh Penguins,0
@@ -51376,7 +51376,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-24,Vegas Golden Knights,Los Angeles Kings,2,5,-3,3,0,1,0,,9481,51375,W,L,W 5-2 vs. Vegas Golden Knights,L 2-5 @ Los Angeles Kings,0
 2025,2025-02-24,San Jose Sharks,Winnipeg Jets,1,2,-1,1,0,1,0,OT,9481,51376,W,L,W 2-1 vs. San Jose Sharks (OT),L 1-2 @ Winnipeg Jets (OT),0
 2025,2025-02-25,Calgary Flames,Washington Capitals,3,1,2,-2,1,0,0,,9482,51377,L,W,L 1-3 vs. Calgary Flames,W 3-1 @ Washington Capitals,0
-2025,2025-02-25,Chicago Blackhawks,Utah Mammoth,1,2,-1,1,0,1,0,,9482,51378,W,L,W 2-1 vs. Chicago Blackhawks,L 1-2 @ Utah Hockey Club,0
+2025,2025-02-25,Chicago Blackhawks,Utah Mammoth,1,2,-1,1,0,1,0,,9482,51378,W,L,W 2-1 vs. Chicago Blackhawks,L 1-2 @ Utah Mammoth,0
 2025,2025-02-25,Edmonton Oilers,Tampa Bay Lightning,1,4,-3,3,0,1,0,,9482,51379,W,L,W 4-1 vs. Edmonton Oilers,L 1-4 @ Tampa Bay Lightning,0
 2025,2025-02-25,Pittsburgh Penguins,Philadelphia Flyers,1,6,-5,5,0,1,0,,9482,51380,W,L,W 6-1 vs. Pittsburgh Penguins,L 1-6 @ Philadelphia Flyers,0
 2025,2025-02-25,New York Rangers,New York Islanders,5,1,4,-4,1,0,0,,9482,51381,L,W,L 1-5 vs. New York Rangers,W 5-1 @ New York Islanders,0
@@ -51392,7 +51392,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-02-26,Winnipeg Jets,Ottawa Senators,4,1,3,-3,1,0,0,,9483,51391,L,W,L 1-4 vs. Winnipeg Jets,W 4-1 @ Ottawa Senators,0
 2025,2025-02-27,St. Louis Blues,Washington Capitals,5,2,3,-3,1,0,0,,9484,51392,L,W,L 2-5 vs. St. Louis Blues,W 5-2 @ Washington Capitals,0
 2025,2025-02-27,Chicago Blackhawks,Vegas Golden Knights,5,7,-2,2,0,1,0,,9484,51393,W,L,W 7-5 vs. Chicago Blackhawks,L 5-7 @ Vegas Golden Knights,0
-2025,2025-02-27,Minnesota Wild,Utah Mammoth,1,6,-5,5,0,1,0,,9484,51394,W,L,W 6-1 vs. Minnesota Wild,L 1-6 @ Utah Hockey Club,0
+2025,2025-02-27,Minnesota Wild,Utah Mammoth,1,6,-5,5,0,1,0,,9484,51394,W,L,W 6-1 vs. Minnesota Wild,L 1-6 @ Utah Mammoth,0
 2025,2025-02-27,Calgary Flames,Tampa Bay Lightning,0,3,-3,3,0,1,0,,9484,51395,W,L,W 3-0 vs. Calgary Flames,L 0-3 @ Tampa Bay Lightning,0
 2025,2025-02-27,Philadelphia Flyers,Pittsburgh Penguins,4,5,-1,1,0,1,0,OT,9484,51396,W,L,W 5-4 vs. Philadelphia Flyers (OT),L 4-5 @ Pittsburgh Penguins (OT),0
 2025,2025-02-27,Winnipeg Jets,Nashville Predators,1,2,-1,1,0,1,0,,9484,51397,W,L,W 2-1 vs. Winnipeg Jets,L 1-2 @ Nashville Predators,0
@@ -51408,7 +51408,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-01,Vancouver Canucks,Seattle Kraken,3,6,-3,3,0,1,0,,9486,51407,W,L,W 6-3 vs. Vancouver Canucks,L 3-6 @ Seattle Kraken,0
 2025,2025-03-01,Tampa Bay Lightning,Washington Capitals,3,1,2,-2,1,0,0,,9486,51408,L,W,L 1-3 vs. Tampa Bay Lightning,W 3-1 @ Washington Capitals,0
 2025,2025-03-01,Philadelphia Flyers,Winnipeg Jets,2,1,1,-1,1,0,0,SO,9486,51409,L,W,L 1-2 vs. Philadelphia Flyers (SO),W 2-1 @ Winnipeg Jets (SO),0
-2025,2025-03-01,New Jersey Devils,Utah Mammoth,3,1,2,-2,1,0,0,,9486,51410,L,W,L 1-3 vs. New Jersey Devils,W 3-1 @ Utah Hockey Club,0
+2025,2025-03-01,New Jersey Devils,Utah Mammoth,3,1,2,-2,1,0,0,,9486,51410,L,W,L 1-3 vs. New Jersey Devils,W 3-1 @ Utah Mammoth,0
 2025,2025-03-01,Los Angeles Kings,St. Louis Blues,1,4,-3,3,0,1,0,,9486,51411,W,L,W 4-1 vs. Los Angeles Kings,L 1-4 @ St. Louis Blues,0
 2025,2025-03-01,Boston Bruins,Pittsburgh Penguins,3,2,1,-1,1,0,0,,9486,51412,L,W,L 2-3 vs. Boston Bruins,W 3-2 @ Pittsburgh Penguins,0
 2025,2025-03-01,Nashville Predators,New York Islanders,4,7,-3,3,0,1,0,,9486,51413,W,L,W 7-4 vs. Nashville Predators,L 4-7 @ New York Islanders,0
@@ -51450,13 +51450,13 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-06,Seattle Kraken,Nashville Predators,3,5,-2,2,0,1,0,,9491,51449,W,L,W 5-3 vs. Seattle Kraken,L 3-5 @ Nashville Predators,0
 2025,2025-03-06,Columbus Blue Jackets,Florida Panthers,0,3,-3,3,0,1,0,,9491,51450,W,L,W 3-0 vs. Columbus Blue Jackets,L 0-3 @ Florida Panthers,0
 2025,2025-03-06,Calgary Flames,Dallas Stars,2,3,-1,1,0,1,0,OT,9491,51451,W,L,W 3-2 vs. Calgary Flames (OT),L 2-3 @ Dallas Stars (OT),0
-2025,2025-03-06,Utah Mammoth,Detroit Red Wings,4,2,2,-2,1,0,0,,9491,51452,L,W,L 2-4 vs. Utah Hockey Club,W 4-2 @ Detroit Red Wings,0
+2025,2025-03-06,Utah Mammoth,Detroit Red Wings,4,2,2,-2,1,0,0,,9491,51452,L,W,L 2-4 vs. Utah Mammoth,W 4-2 @ Detroit Red Wings,0
 2025,2025-03-06,San Jose Sharks,Colorado Avalanche,3,7,-4,4,0,1,0,,9491,51453,W,L,W 7-3 vs. San Jose Sharks,L 3-7 @ Colorado Avalanche,0
 2025,2025-03-06,Boston Bruins,Carolina Hurricanes,2,3,-1,1,0,1,0,,9491,51454,W,L,W 3-2 vs. Boston Bruins,L 2-3 @ Carolina Hurricanes,0
 2025,2025-03-06,Montreal Canadiens,Edmonton Oilers,2,3,-1,1,0,1,0,OT,9491,51455,W,L,W 3-2 vs. Montreal Canadiens (OT),L 2-3 @ Edmonton Oilers (OT),0
 2025,2025-03-07,Detroit Red Wings,Washington Capitals,2,5,-3,3,0,1,0,,9492,51456,W,L,W 5-2 vs. Detroit Red Wings,L 2-5 @ Washington Capitals,0
 2025,2025-03-07,St. Louis Blues,Anaheim Ducks,4,3,1,-1,1,0,0,,9492,51457,L,W,L 3-4 vs. St. Louis Blues,W 4-3 @ Anaheim Ducks,0
-2025,2025-03-07,Utah Mammoth,Chicago Blackhawks,3,4,-1,1,0,1,0,OT,9492,51458,W,L,W 4-3 vs. Utah Hockey Club (OT),L 3-4 @ Chicago Blackhawks (OT),0
+2025,2025-03-07,Utah Mammoth,Chicago Blackhawks,3,4,-1,1,0,1,0,OT,9492,51458,W,L,W 4-3 vs. Utah Mammoth (OT),L 3-4 @ Chicago Blackhawks (OT),0
 2025,2025-03-07,Winnipeg Jets,New Jersey Devils,6,1,5,-5,1,0,0,,9492,51459,L,W,L 1-6 vs. Winnipeg Jets,W 6-1 @ New Jersey Devils,0
 2025,2025-03-07,Minnesota Wild,Vancouver Canucks,1,3,-2,2,0,1,0,,9492,51460,W,L,W 3-1 vs. Minnesota Wild,L 1-3 @ Vancouver Canucks,0
 2025,2025-03-07,Pittsburgh Penguins,Vegas Golden Knights,0,4,-4,4,0,1,0,,9492,51461,W,L,W 4-0 vs. Pittsburgh Penguins,L 0-4 @ Vegas Golden Knights,0
@@ -51481,7 +51481,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-10,Edmonton Oilers,Buffalo Sabres,2,3,-1,1,0,1,0,,9495,51480,W,L,W 3-2 vs. Edmonton Oilers,L 2-3 @ Buffalo Sabres,0
 2025,2025-03-10,Chicago Blackhawks,Colorado Avalanche,0,3,-3,3,0,1,0,,9495,51481,W,L,W 3-0 vs. Chicago Blackhawks,L 0-3 @ Colorado Avalanche,0
 2025,2025-03-10,Detroit Red Wings,Ottawa Senators,1,2,-1,1,0,1,0,,9495,51482,W,L,W 2-1 vs. Detroit Red Wings,L 1-2 @ Ottawa Senators,0
-2025,2025-03-10,Toronto Maple Leafs,Utah Mammoth,4,3,1,-1,1,0,0,SO,9495,51483,L,W,L 3-4 vs. Toronto Maple Leafs (SO),W 4-3 @ Utah Hockey Club (SO),0
+2025,2025-03-10,Toronto Maple Leafs,Utah Mammoth,4,3,1,-1,1,0,0,SO,9495,51483,L,W,L 3-4 vs. Toronto Maple Leafs (SO),W 4-3 @ Utah Mammoth (SO),0
 2025,2025-03-11,Vegas Golden Knights,Pittsburgh Penguins,2,3,-1,1,0,1,0,OT,9496,51484,W,L,W 3-2 vs. Vegas Golden Knights (OT),L 2-3 @ Pittsburgh Penguins (OT),0
 2025,2025-03-11,New York Rangers,Winnipeg Jets,1,2,-1,1,0,1,0,,9496,51485,W,L,W 2-1 vs. New York Rangers,L 1-2 @ Winnipeg Jets,0
 2025,2025-03-11,Ottawa Senators,Philadelphia Flyers,5,2,3,-3,1,0,0,,9496,51486,L,W,L 2-5 vs. Ottawa Senators,W 5-2 @ Philadelphia Flyers,0
@@ -51496,7 +51496,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-12,Vancouver Canucks,Calgary Flames,4,3,1,-1,1,0,0,SO,9497,51495,L,W,L 3-4 vs. Vancouver Canucks (SO),W 4-3 @ Calgary Flames (SO),0
 2025,2025-03-12,Buffalo Sabres,Detroit Red Wings,3,7,-4,4,0,1,0,,9497,51496,W,L,W 7-3 vs. Buffalo Sabres,L 3-7 @ Detroit Red Wings,0
 2025,2025-03-12,Montreal Canadiens,Seattle Kraken,4,5,-1,1,0,1,0,OT,9497,51497,W,L,W 5-4 vs. Montreal Canadiens (OT),L 4-5 @ Seattle Kraken (OT),0
-2025,2025-03-12,Anaheim Ducks,Utah Mammoth,2,3,-1,1,0,1,0,,9497,51498,W,L,W 3-2 vs. Anaheim Ducks,L 2-3 @ Utah Hockey Club,0
+2025,2025-03-12,Anaheim Ducks,Utah Mammoth,2,3,-1,1,0,1,0,,9497,51498,W,L,W 3-2 vs. Anaheim Ducks,L 2-3 @ Utah Mammoth,0
 2025,2025-03-13,Florida Panthers,Toronto Maple Leafs,3,2,1,-1,1,0,0,,9498,51499,L,W,L 2-3 vs. Florida Panthers,W 3-2 @ Toronto Maple Leafs,0
 2025,2025-03-13,Chicago Blackhawks,San Jose Sharks,2,4,-2,2,0,1,0,,9498,51500,W,L,W 4-2 vs. Chicago Blackhawks,L 2-4 @ San Jose Sharks,0
 2025,2025-03-13,St. Louis Blues,Pittsburgh Penguins,3,5,-2,2,0,1,0,,9498,51501,W,L,W 5-3 vs. St. Louis Blues,L 3-5 @ Pittsburgh Penguins,0
@@ -51510,7 +51510,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-14,Detroit Red Wings,Carolina Hurricanes,2,4,-2,2,0,1,0,,9499,51509,W,L,W 4-2 vs. Detroit Red Wings,L 2-4 @ Carolina Hurricanes,0
 2025,2025-03-14,Colorado Avalanche,Calgary Flames,4,2,2,-2,1,0,0,,9499,51510,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Calgary Flames,0
 2025,2025-03-14,Edmonton Oilers,New York Islanders,2,1,1,-1,1,0,0,OT,9499,51511,L,W,L 1-2 vs. Edmonton Oilers (OT),W 2-1 @ New York Islanders (OT),0
-2025,2025-03-14,Utah Mammoth,Seattle Kraken,2,4,-2,2,0,1,0,,9499,51512,W,L,W 4-2 vs. Utah Hockey Club,L 2-4 @ Seattle Kraken,0
+2025,2025-03-14,Utah Mammoth,Seattle Kraken,2,4,-2,2,0,1,0,,9499,51512,W,L,W 4-2 vs. Utah Mammoth,L 2-4 @ Seattle Kraken,0
 2025,2025-03-14,Dallas Stars,Winnipeg Jets,1,4,-3,3,0,1,0,,9499,51513,W,L,W 4-1 vs. Dallas Stars,L 1-4 @ Winnipeg Jets,0
 2025,2025-03-15,Carolina Hurricanes,Philadelphia Flyers,5,0,5,-5,1,0,0,,9500,51514,L,W,L 0-5 vs. Carolina Hurricanes,W 5-0 @ Philadelphia Flyers,0
 2025,2025-03-15,Ottawa Senators,Toronto Maple Leafs,4,2,2,-2,1,0,0,,9500,51515,L,W,L 2-4 vs. Ottawa Senators,W 4-2 @ Toronto Maple Leafs,0
@@ -51523,7 +51523,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-15,Vegas Golden Knights,Buffalo Sabres,3,4,-1,1,0,1,0,SO,9500,51522,W,L,W 4-3 vs. Vegas Golden Knights (SO),L 3-4 @ Buffalo Sabres (SO),0
 2025,2025-03-15,Tampa Bay Lightning,Boston Bruins,6,2,4,-4,1,0,0,,9500,51523,L,W,L 2-6 vs. Tampa Bay Lightning,W 6-2 @ Boston Bruins,0
 2025,2025-03-15,Florida Panthers,Montreal Canadiens,1,3,-2,2,0,1,0,,9500,51524,W,L,W 3-1 vs. Florida Panthers,L 1-3 @ Montreal Canadiens,0
-2025,2025-03-16,Utah Mammoth,Vancouver Canucks,3,1,2,-2,1,0,0,,9501,51525,L,W,L 1-3 vs. Utah Hockey Club,W 3-1 @ Vancouver Canucks,0
+2025,2025-03-16,Utah Mammoth,Vancouver Canucks,3,1,2,-2,1,0,0,,9501,51525,L,W,L 1-3 vs. Utah Mammoth,W 3-1 @ Vancouver Canucks,0
 2025,2025-03-16,Winnipeg Jets,Seattle Kraken,3,2,1,-1,1,0,0,OT,9501,51526,L,W,L 2-3 vs. Winnipeg Jets (OT),W 3-2 @ Seattle Kraken (OT),0
 2025,2025-03-16,Edmonton Oilers,New York Rangers,3,1,2,-2,1,0,0,,9501,51527,L,W,L 1-3 vs. Edmonton Oilers,W 3-1 @ New York Rangers,0
 2025,2025-03-16,Anaheim Ducks,St. Louis Blues,2,7,-5,5,0,1,0,,9501,51528,W,L,W 7-2 vs. Anaheim Ducks,L 2-7 @ St. Louis Blues,0
@@ -51540,7 +51540,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-18,New York Islanders,Pittsburgh Penguins,4,2,2,-2,1,0,0,,9503,51539,L,W,L 2-4 vs. New York Islanders,W 4-2 @ Pittsburgh Penguins,0
 2025,2025-03-18,St. Louis Blues,Nashville Predators,4,1,3,-3,1,0,0,,9503,51540,L,W,L 1-4 vs. St. Louis Blues,W 4-1 @ Nashville Predators,0
 2025,2025-03-18,Winnipeg Jets,Vancouver Canucks,2,6,-4,4,0,1,0,,9503,51541,W,L,W 6-2 vs. Winnipeg Jets,L 2-6 @ Vancouver Canucks,0
-2025,2025-03-18,Utah Mammoth,Edmonton Oilers,1,7,-6,6,0,1,0,,9503,51542,W,L,W 7-1 vs. Utah Hockey Club,L 1-7 @ Edmonton Oilers,0
+2025,2025-03-18,Utah Mammoth,Edmonton Oilers,1,7,-6,6,0,1,0,,9503,51542,W,L,W 7-1 vs. Utah Mammoth,L 1-7 @ Edmonton Oilers,0
 2025,2025-03-18,Anaheim Ducks,Dallas Stars,3,4,-1,1,0,1,0,OT,9503,51543,W,L,W 4-3 vs. Anaheim Ducks (OT),L 3-4 @ Dallas Stars (OT),0
 2025,2025-03-18,Seattle Kraken,Chicago Blackhawks,6,2,4,-4,1,0,0,,9503,51544,L,W,L 2-6 vs. Seattle Kraken,W 6-2 @ Chicago Blackhawks,0
 2025,2025-03-18,Ottawa Senators,Montreal Canadiens,3,6,-3,3,0,1,0,,9503,51545,W,L,W 6-3 vs. Ottawa Senators,L 3-6 @ Montreal Canadiens,0
@@ -51548,7 +51548,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-19,Colorado Avalanche,Toronto Maple Leafs,1,2,-1,1,0,1,0,,9504,51547,W,L,W 2-1 vs. Colorado Avalanche,L 1-2 @ Toronto Maple Leafs,0
 2025,2025-03-20,Philadelphia Flyers,Washington Capitals,2,3,-1,1,0,1,0,,9505,51548,W,L,W 3-2 vs. Philadelphia Flyers,L 2-3 @ Washington Capitals,0
 2025,2025-03-20,Boston Bruins,Vegas Golden Knights,1,5,-4,4,0,1,0,,9505,51549,W,L,W 5-1 vs. Boston Bruins,L 1-5 @ Vegas Golden Knights,0
-2025,2025-03-20,Buffalo Sabres,Utah Mammoth,2,5,-3,3,0,1,0,,9505,51550,W,L,W 5-2 vs. Buffalo Sabres,L 2-5 @ Utah Hockey Club,0
+2025,2025-03-20,Buffalo Sabres,Utah Mammoth,2,5,-3,3,0,1,0,,9505,51550,W,L,W 5-2 vs. Buffalo Sabres,L 2-5 @ Utah Mammoth,0
 2025,2025-03-20,Vancouver Canucks,St. Louis Blues,3,4,-1,1,0,1,0,OT,9505,51551,W,L,W 4-3 vs. Vancouver Canucks (OT),L 3-4 @ St. Louis Blues (OT),0
 2025,2025-03-20,Carolina Hurricanes,San Jose Sharks,3,1,2,-2,1,0,0,,9505,51552,L,W,L 1-3 vs. Carolina Hurricanes,W 3-1 @ San Jose Sharks,0
 2025,2025-03-20,Colorado Avalanche,Ottawa Senators,5,1,4,-4,1,0,0,,9505,51553,L,W,L 1-5 vs. Colorado Avalanche,W 5-1 @ Ottawa Senators,0
@@ -51563,7 +51563,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-21,Columbus Blue Jackets,Pittsburgh Penguins,3,6,-3,3,0,1,0,,9506,51562,W,L,W 6-3 vs. Columbus Blue Jackets,L 3-6 @ Pittsburgh Penguins,0
 2025,2025-03-22,Vancouver Canucks,New York Rangers,3,5,-2,2,0,1,0,,9507,51563,W,L,W 5-3 vs. Vancouver Canucks,L 3-5 @ New York Rangers,0
 2025,2025-03-22,Detroit Red Wings,Vegas Golden Knights,3,6,-3,3,0,1,0,,9507,51564,W,L,W 6-3 vs. Detroit Red Wings,L 3-6 @ Vegas Golden Knights,0
-2025,2025-03-22,Tampa Bay Lightning,Utah Mammoth,4,6,-2,2,0,1,0,,9507,51565,W,L,W 6-4 vs. Tampa Bay Lightning,L 4-6 @ Utah Hockey Club,0
+2025,2025-03-22,Tampa Bay Lightning,Utah Mammoth,4,6,-2,2,0,1,0,,9507,51565,W,L,W 6-4 vs. Tampa Bay Lightning,L 4-6 @ Utah Mammoth,0
 2025,2025-03-22,Chicago Blackhawks,St. Louis Blues,1,4,-3,3,0,1,0,,9507,51566,W,L,W 4-1 vs. Chicago Blackhawks,L 1-4 @ St. Louis Blues,0
 2025,2025-03-22,Boston Bruins,San Jose Sharks,1,3,-2,2,0,1,0,,9507,51567,W,L,W 3-1 vs. Boston Bruins,L 1-3 @ San Jose Sharks,0
 2025,2025-03-22,Calgary Flames,New York Islanders,4,3,1,-1,1,0,0,OT,9507,51568,L,W,L 3-4 vs. Calgary Flames (OT),W 4-3 @ New York Islanders (OT),0
@@ -51585,7 +51585,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-24,Minnesota Wild,Dallas Stars,0,3,-3,3,0,1,0,,9509,51584,W,L,W 3-0 vs. Minnesota Wild,L 0-3 @ Dallas Stars,0
 2025,2025-03-24,Vancouver Canucks,New Jersey Devils,4,3,1,-1,1,0,0,SO,9509,51585,L,W,L 3-4 vs. Vancouver Canucks (SO),W 4-3 @ New Jersey Devils (SO),0
 2025,2025-03-24,Columbus Blue Jackets,New York Islanders,4,3,1,-1,1,0,0,SO,9509,51586,L,W,L 3-4 vs. Columbus Blue Jackets (SO),W 4-3 @ New York Islanders (SO),0
-2025,2025-03-24,Detroit Red Wings,Utah Mammoth,5,1,4,-4,1,0,0,,9509,51587,L,W,L 1-5 vs. Detroit Red Wings,W 5-1 @ Utah Hockey Club,0
+2025,2025-03-24,Detroit Red Wings,Utah Mammoth,5,1,4,-4,1,0,0,,9509,51587,L,W,L 1-5 vs. Detroit Red Wings,W 5-1 @ Utah Mammoth,0
 2025,2025-03-25,Washington Capitals,Winnipeg Jets,2,3,-1,1,0,1,0,OT,9510,51588,W,L,W 3-2 vs. Washington Capitals (OT),L 2-3 @ Winnipeg Jets (OT),0
 2025,2025-03-25,Philadelphia Flyers,Toronto Maple Leafs,2,7,-5,5,0,1,0,,9510,51589,W,L,W 7-2 vs. Philadelphia Flyers,L 2-7 @ Toronto Maple Leafs,0
 2025,2025-03-25,Pittsburgh Penguins,Tampa Bay Lightning,1,6,-5,5,0,1,0,,9510,51590,W,L,W 6-1 vs. Pittsburgh Penguins,L 1-6 @ Tampa Bay Lightning,0
@@ -51601,7 +51601,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-26,Dallas Stars,Edmonton Oilers,4,3,1,-1,1,0,0,,9511,51600,L,W,L 3-4 vs. Dallas Stars,W 4-3 @ Edmonton Oilers,0
 2025,2025-03-26,Vancouver Canucks,New York Islanders,5,2,3,-3,1,0,0,,9511,51601,L,W,L 2-5 vs. Vancouver Canucks,W 5-2 @ New York Islanders,0
 2025,2025-03-27,Montreal Canadiens,Philadelphia Flyers,4,6,-2,2,0,1,0,,9512,51602,W,L,W 6-4 vs. Montreal Canadiens,L 4-6 @ Philadelphia Flyers,0
-2025,2025-03-27,Utah Mammoth,Tampa Bay Lightning,0,8,-8,8,0,1,0,,9512,51603,W,L,W 8-0 vs. Utah Hockey Club,L 0-8 @ Tampa Bay Lightning,0
+2025,2025-03-27,Utah Mammoth,Tampa Bay Lightning,0,8,-8,8,0,1,0,,9512,51603,W,L,W 8-0 vs. Utah Mammoth,L 0-8 @ Tampa Bay Lightning,0
 2025,2025-03-27,Toronto Maple Leafs,San Jose Sharks,5,6,-1,1,0,1,0,SO,9512,51604,W,L,W 6-5 vs. Toronto Maple Leafs (SO),L 5-6 @ San Jose Sharks (SO),0
 2025,2025-03-27,Edmonton Oilers,Seattle Kraken,1,6,-5,5,0,1,0,,9512,51605,W,L,W 6-1 vs. Edmonton Oilers,L 1-6 @ Seattle Kraken,0
 2025,2025-03-27,St. Louis Blues,Nashville Predators,3,2,1,-1,1,0,0,,9512,51606,L,W,L 2-3 vs. St. Louis Blues,W 3-2 @ Nashville Predators,0
@@ -51614,7 +51614,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-28,Montreal Canadiens,Carolina Hurricanes,1,4,-3,3,0,1,0,,9513,51613,W,L,W 4-1 vs. Montreal Canadiens,L 1-4 @ Carolina Hurricanes,0
 2025,2025-03-28,Vancouver Canucks,Columbus Blue Jackets,6,7,-1,1,0,1,0,SO,9513,51614,W,L,W 7-6 vs. Vancouver Canucks (SO),L 6-7 @ Columbus Blue Jackets (SO),0
 2025,2025-03-28,Vegas Golden Knights,Chicago Blackhawks,5,3,2,-2,1,0,0,,9513,51615,L,W,L 3-5 vs. Vegas Golden Knights,W 5-3 @ Chicago Blackhawks,0
-2025,2025-03-28,Utah Mammoth,Florida Panthers,1,2,-1,1,0,1,0,OT,9513,51616,W,L,W 2-1 vs. Utah Hockey Club (OT),L 1-2 @ Florida Panthers (OT),0
+2025,2025-03-28,Utah Mammoth,Florida Panthers,1,2,-1,1,0,1,0,OT,9513,51616,W,L,W 2-1 vs. Utah Mammoth (OT),L 1-2 @ Florida Panthers (OT),0
 2025,2025-03-28,New Jersey Devils,Winnipeg Jets,0,4,-4,4,0,1,0,,9513,51617,W,L,W 4-0 vs. New Jersey Devils,L 0-4 @ Winnipeg Jets,0
 2025,2025-03-29,New York Islanders,Tampa Bay Lightning,3,5,-2,2,0,1,0,,9514,51618,W,L,W 5-3 vs. New York Islanders,L 3-5 @ Tampa Bay Lightning,0
 2025,2025-03-29,New York Rangers,San Jose Sharks,6,1,5,-5,1,0,0,,9514,51619,L,W,L 1-6 vs. New York Rangers,W 6-1 @ San Jose Sharks,0
@@ -51632,7 +51632,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-30,Vancouver Canucks,Winnipeg Jets,1,3,-2,2,0,1,0,,9515,51631,W,L,W 3-1 vs. Vancouver Canucks,L 1-3 @ Winnipeg Jets,0
 2025,2025-03-30,San Jose Sharks,Los Angeles Kings,1,8,-7,7,0,1,0,,9515,51632,W,L,W 8-1 vs. San Jose Sharks,L 1-8 @ Los Angeles Kings,0
 2025,2025-03-30,Montreal Canadiens,Florida Panthers,4,2,2,-2,1,0,0,,9515,51633,L,W,L 2-4 vs. Montreal Canadiens,W 4-2 @ Florida Panthers,0
-2025,2025-03-30,Utah Mammoth,Chicago Blackhawks,5,2,3,-3,1,0,0,,9515,51634,L,W,L 2-5 vs. Utah Hockey Club,W 5-2 @ Chicago Blackhawks,0
+2025,2025-03-30,Utah Mammoth,Chicago Blackhawks,5,2,3,-3,1,0,0,,9515,51634,L,W,L 2-5 vs. Utah Mammoth,W 5-2 @ Chicago Blackhawks,0
 2025,2025-03-30,New York Islanders,Carolina Hurricanes,4,6,-2,2,0,1,0,,9515,51635,W,L,W 6-4 vs. New York Islanders,L 4-6 @ Carolina Hurricanes,0
 2025,2025-03-30,Toronto Maple Leafs,Anaheim Ducks,3,2,1,-1,1,0,0,,9515,51636,L,W,L 2-3 vs. Toronto Maple Leafs,W 3-2 @ Anaheim Ducks,0
 2025,2025-03-31,Calgary Flames,Colorado Avalanche,3,2,1,-1,1,0,0,SO,9516,51637,L,W,L 2-3 vs. Calgary Flames (SO),W 3-2 @ Colorado Avalanche (SO),0
@@ -51640,7 +51640,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-03-31,Nashville Predators,Philadelphia Flyers,1,2,-1,1,0,1,0,,9516,51639,W,L,W 2-1 vs. Nashville Predators,L 1-2 @ Philadelphia Flyers,0
 2025,2025-03-31,Dallas Stars,Seattle Kraken,3,1,2,-2,1,0,0,,9516,51640,L,W,L 1-3 vs. Dallas Stars,W 3-1 @ Seattle Kraken,0
 2025,2025-04-01,Edmonton Oilers,Vegas Golden Knights,3,2,1,-1,1,0,0,,9517,51641,L,W,L 2-3 vs. Edmonton Oilers,W 3-2 @ Vegas Golden Knights,0
-2025,2025-04-01,Calgary Flames,Utah Mammoth,1,3,-2,2,0,1,0,,9517,51642,W,L,W 3-1 vs. Calgary Flames,L 1-3 @ Utah Hockey Club,0
+2025,2025-04-01,Calgary Flames,Utah Mammoth,1,3,-2,2,0,1,0,,9517,51642,W,L,W 3-1 vs. Calgary Flames,L 1-3 @ Utah Mammoth,0
 2025,2025-04-01,Detroit Red Wings,St. Louis Blues,1,2,-1,1,0,1,0,OT,9517,51643,W,L,W 2-1 vs. Detroit Red Wings (OT),L 1-2 @ St. Louis Blues (OT),0
 2025,2025-04-01,Buffalo Sabres,Ottawa Senators,5,2,3,-3,1,0,0,,9517,51644,L,W,L 2-5 vs. Buffalo Sabres,W 5-2 @ Ottawa Senators,0
 2025,2025-04-01,Tampa Bay Lightning,New York Islanders,4,1,3,-3,1,0,0,,9517,51645,L,W,L 1-4 vs. Tampa Bay Lightning,W 4-1 @ New York Islanders,0
@@ -51656,7 +51656,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-02,Seattle Kraken,Vancouver Canucks,5,0,5,-5,1,0,0,,9518,51655,L,W,L 0-5 vs. Seattle Kraken,W 5-0 @ Vancouver Canucks,0
 2025,2025-04-03,Pittsburgh Penguins,St. Louis Blues,4,5,-1,1,0,1,0,OT,9519,51656,W,L,W 5-4 vs. Pittsburgh Penguins (OT),L 4-5 @ St. Louis Blues (OT),0
 2025,2025-04-03,Winnipeg Jets,Vegas Golden Knights,4,0,4,-4,1,0,0,,9519,51657,L,W,L 0-4 vs. Winnipeg Jets,W 4-0 @ Vegas Golden Knights,0
-2025,2025-04-03,Los Angeles Kings,Utah Mammoth,4,2,2,-2,1,0,0,,9519,51658,L,W,L 2-4 vs. Los Angeles Kings,W 4-2 @ Utah Hockey Club,0
+2025,2025-04-03,Los Angeles Kings,Utah Mammoth,4,2,2,-2,1,0,0,,9519,51658,L,W,L 2-4 vs. Los Angeles Kings,W 4-2 @ Utah Mammoth,0
 2025,2025-04-03,Edmonton Oilers,San Jose Sharks,3,2,1,-1,1,0,0,,9519,51659,L,W,L 2-3 vs. Edmonton Oilers,W 3-2 @ San Jose Sharks,0
 2025,2025-04-03,Boston Bruins,Montreal Canadiens,1,4,-3,3,0,1,0,,9519,51660,W,L,W 4-1 vs. Boston Bruins,L 1-4 @ Montreal Canadiens,0
 2025,2025-04-03,Nashville Predators,Dallas Stars,1,5,-4,4,0,1,0,,9519,51661,W,L,W 5-1 vs. Nashville Predators,L 1-5 @ Dallas Stars,0
@@ -51667,7 +51667,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-04,Minnesota Wild,New York Islanders,1,3,-2,2,0,1,0,,9520,51666,W,L,W 3-1 vs. Minnesota Wild,L 1-3 @ New York Islanders,0
 2025,2025-04-04,Chicago Blackhawks,Washington Capitals,3,5,-2,2,0,1,0,,9520,51667,W,L,W 5-3 vs. Chicago Blackhawks,L 3-5 @ Washington Capitals,0
 2025,2025-04-05,Edmonton Oilers,Los Angeles Kings,0,3,-3,3,0,1,0,,9521,51668,W,L,W 3-0 vs. Edmonton Oilers,L 0-3 @ Los Angeles Kings,0
-2025,2025-04-05,Winnipeg Jets,Utah Mammoth,1,4,-3,3,0,1,0,,9521,51669,W,L,W 4-1 vs. Winnipeg Jets,L 1-4 @ Utah Hockey Club,0
+2025,2025-04-05,Winnipeg Jets,Utah Mammoth,1,4,-3,3,0,1,0,,9521,51669,W,L,W 4-1 vs. Winnipeg Jets,L 1-4 @ Utah Mammoth,0
 2025,2025-04-05,Columbus Blue Jackets,Toronto Maple Leafs,0,5,-5,5,0,1,0,,9521,51670,W,L,W 5-0 vs. Columbus Blue Jackets,L 0-5 @ Toronto Maple Leafs,0
 2025,2025-04-05,Colorado Avalanche,St. Louis Blues,4,5,-1,1,0,1,0,,9521,51671,W,L,W 5-4 vs. Colorado Avalanche,L 4-5 @ St. Louis Blues,0
 2025,2025-04-05,Seattle Kraken,San Jose Sharks,5,1,4,-4,1,0,0,,9521,51672,L,W,L 1-5 vs. Seattle Kraken,W 5-1 @ San Jose Sharks,0
@@ -51692,7 +51692,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-07,Tampa Bay Lightning,New York Rangers,5,1,4,-4,1,0,0,,9523,51691,L,W,L 1-5 vs. Tampa Bay Lightning,W 5-1 @ New York Rangers,0
 2025,2025-04-07,Calgary Flames,San Jose Sharks,3,2,1,-1,1,0,0,,9523,51692,L,W,L 2-3 vs. Calgary Flames,W 3-2 @ San Jose Sharks,0
 2025,2025-04-07,St. Louis Blues,Winnipeg Jets,1,3,-2,2,0,1,0,,9523,51693,W,L,W 3-1 vs. St. Louis Blues,L 1-3 @ Winnipeg Jets,0
-2025,2025-04-08,Seattle Kraken,Utah Mammoth,1,7,-6,6,0,1,0,,9524,51694,W,L,W 7-1 vs. Seattle Kraken,L 1-7 @ Utah Hockey Club,0
+2025,2025-04-08,Seattle Kraken,Utah Mammoth,1,7,-6,6,0,1,0,,9524,51694,W,L,W 7-1 vs. Seattle Kraken,L 1-7 @ Utah Mammoth,0
 2025,2025-04-08,Chicago Blackhawks,Pittsburgh Penguins,0,5,-5,5,0,1,0,,9524,51695,W,L,W 5-0 vs. Chicago Blackhawks,L 0-5 @ Pittsburgh Penguins,0
 2025,2025-04-08,New York Islanders,Nashville Predators,6,7,-1,1,0,1,0,OT,9524,51696,W,L,W 7-6 vs. New York Islanders (OT),L 6-7 @ Nashville Predators (OT),0
 2025,2025-04-08,Boston Bruins,New Jersey Devils,7,2,5,-5,1,0,0,,9524,51697,L,W,L 2-7 vs. Boston Bruins,W 7-2 @ New Jersey Devils,0
@@ -51709,7 +51709,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-09,St. Louis Blues,Edmonton Oilers,3,4,-1,1,0,1,0,,9525,51708,W,L,W 4-3 vs. St. Louis Blues,L 3-4 @ Edmonton Oilers,0
 2025,2025-04-10,Seattle Kraken,Vegas Golden Knights,1,2,-1,1,0,1,0,,9526,51709,W,L,W 2-1 vs. Seattle Kraken,L 1-2 @ Vegas Golden Knights,0
 2025,2025-04-10,Carolina Hurricanes,Washington Capitals,4,5,-1,1,0,1,0,SO,9526,51710,W,L,W 5-4 vs. Carolina Hurricanes (SO),L 4-5 @ Washington Capitals (SO),0
-2025,2025-04-10,Nashville Predators,Utah Mammoth,4,3,1,-1,1,0,0,SO,9526,51711,L,W,L 3-4 vs. Nashville Predators (SO),W 4-3 @ Utah Hockey Club (SO),0
+2025,2025-04-10,Nashville Predators,Utah Mammoth,4,3,1,-1,1,0,0,SO,9526,51711,L,W,L 3-4 vs. Nashville Predators (SO),W 4-3 @ Utah Mammoth (SO),0
 2025,2025-04-10,Anaheim Ducks,Los Angeles Kings,1,6,-5,5,0,1,0,,9526,51712,W,L,W 6-1 vs. Anaheim Ducks,L 1-6 @ Los Angeles Kings,0
 2025,2025-04-10,New York Rangers,New York Islanders,9,2,7,-7,1,0,0,,9526,51713,L,W,L 2-9 vs. New York Rangers,W 9-2 @ New York Islanders,0
 2025,2025-04-10,Winnipeg Jets,Dallas Stars,4,0,4,-4,1,0,0,,9526,51714,L,W,L 0-4 vs. Winnipeg Jets,W 4-0 @ Dallas Stars,0
@@ -51728,7 +51728,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-12,Montreal Canadiens,Toronto Maple Leafs,0,1,-1,1,0,1,0,OT,9528,51727,W,L,W 1-0 vs. Montreal Canadiens (OT),L 0-1 @ Toronto Maple Leafs (OT),0
 2025,2025-04-12,Colorado Avalanche,Los Angeles Kings,4,5,-1,1,0,1,0,,9528,51728,W,L,W 5-4 vs. Colorado Avalanche,L 4-5 @ Los Angeles Kings,0
 2025,2025-04-12,Nashville Predators,Vegas Golden Knights,3,5,-2,2,0,1,0,,9528,51729,W,L,W 5-3 vs. Nashville Predators,L 3-5 @ Vegas Golden Knights,0
-2025,2025-04-12,Utah Mammoth,Dallas Stars,5,3,2,-2,1,0,0,,9528,51730,L,W,L 3-5 vs. Utah Hockey Club,W 5-3 @ Dallas Stars,0
+2025,2025-04-12,Utah Mammoth,Dallas Stars,5,3,2,-2,1,0,0,,9528,51730,L,W,L 3-5 vs. Utah Mammoth,W 5-3 @ Dallas Stars,0
 2025,2025-04-12,Winnipeg Jets,Chicago Blackhawks,5,4,1,-1,1,0,0,SO,9528,51731,L,W,L 4-5 vs. Winnipeg Jets (SO),W 5-4 @ Chicago Blackhawks (SO),0
 2025,2025-04-12,Washington Capitals,Columbus Blue Jackets,0,7,-7,7,0,1,0,,9528,51732,W,L,W 7-0 vs. Washington Capitals,L 0-7 @ Columbus Blue Jackets,0
 2025,2025-04-12,New York Rangers,Carolina Hurricanes,3,7,-4,4,0,1,0,,9528,51733,W,L,W 7-3 vs. New York Rangers,L 3-7 @ Carolina Hurricanes,0
@@ -51746,10 +51746,10 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2025,2025-04-14,Los Angeles Kings,Edmonton Oilers,5,0,5,-5,1,0,0,,9530,51745,L,W,L 0-5 vs. Los Angeles Kings,W 5-0 @ Edmonton Oilers,0
 2025,2025-04-14,New York Rangers,Florida Panthers,5,3,2,-2,1,0,0,,9530,51746,L,W,L 3-5 vs. New York Rangers,W 5-3 @ Florida Panthers,0
 2025,2025-04-14,Chicago Blackhawks,Montreal Canadiens,4,3,1,-1,1,0,0,SO,9530,51747,L,W,L 3-4 vs. Chicago Blackhawks (SO),W 4-3 @ Montreal Canadiens (SO),0
-2025,2025-04-14,Utah Mammoth,Nashville Predators,7,3,4,-4,1,0,0,,9530,51748,L,W,L 3-7 vs. Utah Hockey Club,W 7-3 @ Nashville Predators,0
+2025,2025-04-14,Utah Mammoth,Nashville Predators,7,3,4,-4,1,0,0,,9530,51748,L,W,L 3-7 vs. Utah Mammoth,W 7-3 @ Nashville Predators,0
 2025,2025-04-14,San Jose Sharks,Vancouver Canucks,1,2,-1,1,0,1,0,OT,9530,51749,W,L,W 2-1 vs. San Jose Sharks (OT),L 1-2 @ Vancouver Canucks (OT),0
 2025,2025-04-15,Florida Panthers,Tampa Bay Lightning,1,5,-4,4,0,1,0,,9531,51750,W,L,W 5-1 vs. Florida Panthers,L 1-5 @ Tampa Bay Lightning,0
-2025,2025-04-15,Utah Mammoth,St. Louis Blues,1,6,-5,5,0,1,0,,9531,51751,W,L,W 6-1 vs. Utah Hockey Club,L 1-6 @ St. Louis Blues,0
+2025,2025-04-15,Utah Mammoth,St. Louis Blues,1,6,-5,5,0,1,0,,9531,51751,W,L,W 6-1 vs. Utah Mammoth,L 1-6 @ St. Louis Blues,0
 2025,2025-04-15,Los Angeles Kings,Seattle Kraken,6,5,1,-1,1,0,0,,9531,51752,L,W,L 5-6 vs. Los Angeles Kings,W 6-5 @ Seattle Kraken,0
 2025,2025-04-15,Chicago Blackhawks,Ottawa Senators,4,3,1,-1,1,0,0,OT,9531,51753,L,W,L 3-4 vs. Chicago Blackhawks (OT),W 4-3 @ Ottawa Senators (OT),0
 2025,2025-04-15,Columbus Blue Jackets,Philadelphia Flyers,3,0,3,-3,1,0,0,,9531,51754,L,W,L 0-3 vs. Columbus Blue Jackets,W 3-0 @ Philadelphia Flyers,0
@@ -51868,7 +51868,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-09,Anaheim Ducks,Seattle Kraken,1,3,-2,2,0,1,0,,9582,51867,W,L,W 3-1 vs. Anaheim Ducks,L 1-3 @ Seattle Kraken,0
 2026,2025-10-09,Vegas Golden Knights,San Jose Sharks,4,3,1,-1,1,0,0,OT,9582,51868,L,W,L 3-4 vs. Vegas Golden Knights (OT),W 4-3 @ San Jose Sharks (OT),0
 2026,2025-10-09,Calgary Flames,Vancouver Canucks,1,5,-4,4,0,1,0,,9582,51869,W,L,W 5-1 vs. Calgary Flames,L 1-5 @ Vancouver Canucks,0
-2026,2025-10-09,Utah Mammoth,Colorado Avalanche,1,2,-1,1,0,1,0,,9582,51870,W,L,W 2-1 vs. Utah Hockey Club,L 1-2 @ Colorado Avalanche,0
+2026,2025-10-09,Utah Mammoth,Colorado Avalanche,1,2,-1,1,0,1,0,,9582,51870,W,L,W 2-1 vs. Utah Mammoth,L 1-2 @ Colorado Avalanche,0
 2026,2025-10-09,Dallas Stars,Winnipeg Jets,5,4,1,-1,1,0,0,,9582,51871,L,W,L 4-5 vs. Dallas Stars,W 5-4 @ Winnipeg Jets,0
 2026,2025-10-09,Minnesota Wild,St. Louis Blues,5,0,5,-5,1,0,0,,9582,51872,L,W,L 0-5 vs. Minnesota Wild,W 5-0 @ St. Louis Blues,0
 2026,2025-10-09,New York Islanders,Pittsburgh Penguins,3,4,-1,1,0,1,0,,9582,51873,W,L,W 4-3 vs. New York Islanders,L 3-4 @ Pittsburgh Penguins,0
@@ -51878,7 +51878,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-09,New York Rangers,Buffalo Sabres,4,0,4,-4,1,0,0,,9582,51877,L,W,L 0-4 vs. New York Rangers,W 4-0 @ Buffalo Sabres,0
 2026,2025-10-09,Chicago Blackhawks,Boston Bruins,3,4,-1,1,0,1,0,OT,9582,51878,W,L,W 4-3 vs. Chicago Blackhawks (OT),L 3-4 @ Boston Bruins (OT),0
 2026,2025-10-09,New Jersey Devils,Carolina Hurricanes,3,6,-3,3,0,1,0,,9582,51879,W,L,W 6-3 vs. New Jersey Devils,L 3-6 @ Carolina Hurricanes,0
-2026,2025-10-11,Utah Mammoth,Nashville Predators,3,2,1,-1,1,0,0,OT,9583,51880,L,W,L 2-3 vs. Utah Hockey Club (OT),W 3-2 @ Nashville Predators (OT),0
+2026,2025-10-11,Utah Mammoth,Nashville Predators,3,2,1,-1,1,0,0,OT,9583,51880,L,W,L 2-3 vs. Utah Mammoth (OT),W 3-2 @ Nashville Predators (OT),0
 2026,2025-10-11,Montreal Canadiens,Chicago Blackhawks,3,2,1,-1,1,0,0,,9583,51881,L,W,L 2-3 vs. Montreal Canadiens,W 3-2 @ Chicago Blackhawks,0
 2026,2025-10-11,Columbus Blue Jackets,Minnesota Wild,7,4,3,-3,1,0,0,,9583,51882,L,W,L 4-7 vs. Columbus Blue Jackets,W 7-4 @ Minnesota Wild,0
 2026,2025-10-11,Philadelphia Flyers,Carolina Hurricanes,3,4,-1,1,0,1,0,OT,9583,51883,W,L,W 4-3 vs. Philadelphia Flyers (OT),L 3-4 @ Carolina Hurricanes (OT),0
@@ -51895,7 +51895,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-11,New Jersey Devils,Tampa Bay Lightning,5,3,2,-2,1,0,0,,9583,51894,L,W,L 3-5 vs. New Jersey Devils,W 5-3 @ Tampa Bay Lightning,0
 2026,2025-10-11,Buffalo Sabres,Boston Bruins,1,3,-2,2,0,1,0,,9583,51895,W,L,W 3-1 vs. Buffalo Sabres,L 1-3 @ Boston Bruins,0
 2026,2025-10-12,Washington Capitals,New York Rangers,1,0,1,-1,1,0,0,,9584,51896,L,W,L 0-1 vs. Washington Capitals,W 1-0 @ New York Rangers,0
-2026,2025-10-13,Utah Mammoth,Chicago Blackhawks,1,3,-2,2,0,1,0,,9585,51897,W,L,W 3-1 vs. Utah Hockey Club,L 1-3 @ Chicago Blackhawks,0
+2026,2025-10-13,Utah Mammoth,Chicago Blackhawks,1,3,-2,2,0,1,0,,9585,51897,W,L,W 3-1 vs. Utah Mammoth,L 1-3 @ Chicago Blackhawks,0
 2026,2025-10-13,Los Angeles Kings,Minnesota Wild,3,4,-1,1,0,1,0,SO,9585,51898,W,L,W 4-3 vs. Los Angeles Kings (SO),L 3-4 @ Minnesota Wild (SO),0
 2026,2025-10-13,St. Louis Blues,Vancouver Canucks,5,2,3,-3,1,0,0,,9585,51899,L,W,L 2-5 vs. St. Louis Blues,W 5-2 @ Vancouver Canucks,0
 2026,2025-10-13,New Jersey Devils,Columbus Blue Jackets,3,2,1,-1,1,0,0,,9585,51900,L,W,L 2-3 vs. New Jersey Devils,W 3-2 @ Columbus Blue Jackets,0
@@ -51913,7 +51913,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-14,Seattle Kraken,Montreal Canadiens,4,5,-1,1,0,1,0,OT,9586,51912,W,L,W 5-4 vs. Seattle Kraken (OT),L 4-5 @ Montreal Canadiens (OT),0
 2026,2025-10-14,Nashville Predators,Toronto Maple Leafs,4,7,-3,3,0,1,0,,9586,51913,W,L,W 7-4 vs. Nashville Predators,L 4-7 @ Toronto Maple Leafs,0
 2026,2025-10-14,Tampa Bay Lightning,Washington Capitals,2,3,-1,1,0,1,0,OT,9586,51914,W,L,W 3-2 vs. Tampa Bay Lightning (OT),L 2-3 @ Washington Capitals (OT),0
-2026,2025-10-15,Calgary Flames,Utah Mammoth,1,3,-2,2,0,1,0,,9587,51915,W,L,W 3-1 vs. Calgary Flames,L 1-3 @ Utah Hockey Club,0
+2026,2025-10-15,Calgary Flames,Utah Mammoth,1,3,-2,2,0,1,0,,9587,51915,W,L,W 3-1 vs. Calgary Flames,L 1-3 @ Utah Mammoth,0
 2026,2025-10-15,Chicago Blackhawks,St. Louis Blues,8,3,5,-5,1,0,0,,9587,51916,L,W,L 3-8 vs. Chicago Blackhawks,W 8-3 @ St. Louis Blues,0
 2026,2025-10-15,Florida Panthers,Detroit Red Wings,1,4,-3,3,0,1,0,,9587,51917,W,L,W 4-1 vs. Florida Panthers,L 1-4 @ Detroit Red Wings,0
 2026,2025-10-15,Ottawa Senators,Buffalo Sabres,4,8,-4,4,0,1,0,,9587,51918,W,L,W 8-4 vs. Ottawa Senators,L 4-8 @ Buffalo Sabres,0
@@ -51931,7 +51931,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-17,Tampa Bay Lightning,Detroit Red Wings,1,2,-1,1,0,1,0,OT,9589,51930,W,L,W 2-1 vs. Tampa Bay Lightning (OT),L 1-2 @ Detroit Red Wings (OT),0
 2026,2025-10-17,Minnesota Wild,Washington Capitals,1,5,-4,4,0,1,0,,9589,51931,W,L,W 5-1 vs. Minnesota Wild,L 1-5 @ Washington Capitals,0
 2026,2025-10-17,Vancouver Canucks,Chicago Blackhawks,3,2,1,-1,1,0,0,SO,9589,51932,L,W,L 2-3 vs. Vancouver Canucks (SO),W 3-2 @ Chicago Blackhawks (SO),0
-2026,2025-10-17,San Jose Sharks,Utah Mammoth,3,6,-3,3,0,1,0,,9589,51933,W,L,W 6-3 vs. San Jose Sharks,L 3-6 @ Utah Hockey Club,0
+2026,2025-10-17,San Jose Sharks,Utah Mammoth,3,6,-3,3,0,1,0,,9589,51933,W,L,W 6-3 vs. San Jose Sharks,L 3-6 @ Utah Mammoth,0
 2026,2025-10-18,Dallas Stars,St. Louis Blues,1,3,-2,2,0,1,0,,9590,51934,W,L,W 3-1 vs. Dallas Stars,L 1-3 @ St. Louis Blues,0
 2026,2025-10-18,Pittsburgh Penguins,San Jose Sharks,3,0,3,-3,1,0,0,,9590,51935,L,W,L 0-3 vs. Pittsburgh Penguins,W 3-0 @ San Jose Sharks,0
 2026,2025-10-18,Calgary Flames,Vegas Golden Knights,1,6,-5,5,0,1,0,,9590,51936,W,L,W 6-1 vs. Calgary Flames,L 1-6 @ Vegas Golden Knights,0
@@ -51946,7 +51946,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-18,Florida Panthers,Buffalo Sabres,0,3,-3,3,0,1,0,,9590,51945,W,L,W 3-0 vs. Florida Panthers,L 0-3 @ Buffalo Sabres,0
 2026,2025-10-18,Tampa Bay Lightning,Columbus Blue Jackets,2,3,-1,1,0,1,0,,9590,51946,W,L,W 3-2 vs. Tampa Bay Lightning,L 2-3 @ Columbus Blue Jackets,0
 2026,2025-10-19,Anaheim Ducks,Chicago Blackhawks,1,2,-1,1,0,1,0,OT,9591,51947,W,L,W 2-1 vs. Anaheim Ducks (OT),L 1-2 @ Chicago Blackhawks (OT),0
-2026,2025-10-19,Boston Bruins,Utah Mammoth,2,3,-1,1,0,1,0,,9591,51948,W,L,W 3-2 vs. Boston Bruins,L 2-3 @ Utah Hockey Club,0
+2026,2025-10-19,Boston Bruins,Utah Mammoth,2,3,-1,1,0,1,0,,9591,51948,W,L,W 3-2 vs. Boston Bruins,L 2-3 @ Utah Mammoth,0
 2026,2025-10-19,Vancouver Canucks,Washington Capitals,4,3,1,-1,1,0,0,,9591,51949,L,W,L 3-4 vs. Vancouver Canucks,W 4-3 @ Washington Capitals,0
 2026,2025-10-19,Edmonton Oilers,Detroit Red Wings,2,4,-2,2,0,1,0,,9591,51950,W,L,W 4-2 vs. Edmonton Oilers,L 2-4 @ Detroit Red Wings,0
 2026,2025-10-20,Minnesota Wild,New York Rangers,3,1,2,-2,1,0,0,,9592,51951,L,W,L 1-3 vs. Minnesota Wild,W 3-1 @ New York Rangers,0
@@ -51958,7 +51958,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-21,Columbus Blue Jackets,Dallas Stars,5,1,4,-4,1,0,0,,9593,51957,L,W,L 1-5 vs. Columbus Blue Jackets,W 5-1 @ Dallas Stars,0
 2026,2025-10-21,Anaheim Ducks,Nashville Predators,5,2,3,-3,1,0,0,,9593,51958,L,W,L 2-5 vs. Anaheim Ducks,W 5-2 @ Nashville Predators,0
 2026,2025-10-21,Florida Panthers,Boston Bruins,4,3,1,-1,1,0,0,,9593,51959,L,W,L 3-4 vs. Florida Panthers,W 4-3 @ Boston Bruins,0
-2026,2025-10-21,Colorado Avalanche,Utah Mammoth,3,4,-1,1,0,1,0,OT,9593,51960,W,L,W 4-3 vs. Colorado Avalanche (OT),L 3-4 @ Utah Hockey Club (OT),0
+2026,2025-10-21,Colorado Avalanche,Utah Mammoth,3,4,-1,1,0,1,0,OT,9593,51960,W,L,W 4-3 vs. Colorado Avalanche (OT),L 3-4 @ Utah Mammoth (OT),0
 2026,2025-10-21,Vancouver Canucks,Pittsburgh Penguins,1,5,-4,4,0,1,0,,9593,51961,W,L,W 5-1 vs. Vancouver Canucks,L 1-5 @ Pittsburgh Penguins,0
 2026,2025-10-21,San Jose Sharks,New York Islanders,3,4,-1,1,0,1,0,,9593,51962,W,L,W 4-3 vs. San Jose Sharks,L 3-4 @ New York Islanders,0
 2026,2025-10-21,Edmonton Oilers,Ottawa Senators,3,2,1,-1,1,0,0,OT,9593,51963,L,W,L 2-3 vs. Edmonton Oilers (OT),W 3-2 @ Ottawa Senators (OT),0
@@ -51972,7 +51972,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-23,Los Angeles Kings,Dallas Stars,3,2,1,-1,1,0,0,OT,9595,51971,L,W,L 2-3 vs. Los Angeles Kings (OT),W 3-2 @ Dallas Stars (OT),0
 2026,2025-10-23,Seattle Kraken,Winnipeg Jets,3,0,3,-3,1,0,0,,9595,51972,L,W,L 0-3 vs. Seattle Kraken,W 3-0 @ Winnipeg Jets,0
 2026,2025-10-23,Vancouver Canucks,Nashville Predators,1,2,-1,1,0,1,0,,9595,51973,W,L,W 2-1 vs. Vancouver Canucks,L 1-2 @ Nashville Predators,0
-2026,2025-10-23,Utah Mammoth,St. Louis Blues,7,4,3,-3,1,0,0,,9595,51974,L,W,L 4-7 vs. Utah Hockey Club,W 7-4 @ St. Louis Blues,0
+2026,2025-10-23,Utah Mammoth,St. Louis Blues,7,4,3,-3,1,0,0,,9595,51974,L,W,L 4-7 vs. Utah Mammoth,W 7-4 @ St. Louis Blues,0
 2026,2025-10-23,Detroit Red Wings,New York Islanders,2,7,-5,5,0,1,0,,9595,51975,W,L,W 7-2 vs. Detroit Red Wings,L 2-7 @ New York Islanders,0
 2026,2025-10-23,Pittsburgh Penguins,Florida Panthers,5,3,2,-2,1,0,0,,9595,51976,L,W,L 3-5 vs. Pittsburgh Penguins,W 5-3 @ Florida Panthers,0
 2026,2025-10-23,Philadelphia Flyers,Ottawa Senators,1,2,-1,1,0,1,0,,9595,51977,W,L,W 2-1 vs. Philadelphia Flyers,L 1-2 @ Ottawa Senators,0
@@ -51994,7 +51994,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-25,Buffalo Sabres,Toronto Maple Leafs,3,4,-1,1,0,1,0,OT,9597,51993,W,L,W 4-3 vs. Buffalo Sabres (OT),L 3-4 @ Toronto Maple Leafs (OT),0
 2026,2025-10-25,Anaheim Ducks,Tampa Bay Lightning,3,4,-1,1,0,1,0,,9597,51994,W,L,W 4-3 vs. Anaheim Ducks,L 3-4 @ Tampa Bay Lightning,0
 2026,2025-10-25,Colorado Avalanche,Boston Bruins,2,3,-1,1,0,1,0,,9597,51995,W,L,W 3-2 vs. Colorado Avalanche,L 2-3 @ Boston Bruins,0
-2026,2025-10-25,Utah Mammoth,Minnesota Wild,6,2,4,-4,1,0,0,,9597,51996,L,W,L 2-6 vs. Utah Hockey Club,W 6-2 @ Minnesota Wild,0
+2026,2025-10-25,Utah Mammoth,Minnesota Wild,6,2,4,-4,1,0,0,,9597,51996,L,W,L 2-6 vs. Utah Mammoth,W 6-2 @ Minnesota Wild,0
 2026,2025-10-25,New York Islanders,Philadelphia Flyers,3,4,-1,1,0,1,0,SO,9597,51997,W,L,W 4-3 vs. New York Islanders (SO),L 3-4 @ Philadelphia Flyers (SO),0
 2026,2025-10-26,Edmonton Oilers,Vancouver Canucks,3,4,-1,1,0,1,0,OT,9598,51998,W,L,W 4-3 vs. Edmonton Oilers (OT),L 3-4 @ Vancouver Canucks (OT),0
 2026,2025-10-26,New York Rangers,Calgary Flames,1,5,-4,4,0,1,0,,9598,51999,W,L,W 5-1 vs. New York Rangers,L 1-5 @ Calgary Flames,0
@@ -52003,14 +52003,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-10-26,San Jose Sharks,Minnesota Wild,6,5,1,-1,1,0,0,OT,9598,52002,L,W,L 5-6 vs. San Jose Sharks (OT),W 6-5 @ Minnesota Wild (OT),0
 2026,2025-10-26,Vegas Golden Knights,Tampa Bay Lightning,1,2,-1,1,0,1,0,OT,9598,52003,W,L,W 2-1 vs. Vegas Golden Knights (OT),L 1-2 @ Tampa Bay Lightning (OT),0
 2026,2025-10-26,Colorado Avalanche,New Jersey Devils,3,4,-1,1,0,1,0,OT,9598,52004,W,L,W 4-3 vs. Colorado Avalanche (OT),L 3-4 @ New Jersey Devils (OT),0
-2026,2025-10-26,Utah Mammoth,Winnipeg Jets,3,2,1,-1,1,0,0,,9598,52005,L,W,L 2-3 vs. Utah Hockey Club,W 3-2 @ Winnipeg Jets,0
+2026,2025-10-26,Utah Mammoth,Winnipeg Jets,3,2,1,-1,1,0,0,,9598,52005,L,W,L 2-3 vs. Utah Mammoth,W 3-2 @ Winnipeg Jets,0
 2026,2025-10-27,St. Louis Blues,Pittsburgh Penguins,3,6,-3,3,0,1,0,,9599,52006,W,L,W 6-3 vs. St. Louis Blues,L 3-6 @ Pittsburgh Penguins,0
 2026,2025-10-27,Boston Bruins,Ottawa Senators,2,7,-5,5,0,1,0,,9599,52007,W,L,W 7-2 vs. Boston Bruins,L 2-7 @ Ottawa Senators,0
 2026,2025-10-28,Washington Capitals,Dallas Stars,0,1,-1,1,0,1,0,,9600,52008,W,L,W 1-0 vs. Washington Capitals,L 0-1 @ Dallas Stars,0
 2026,2025-10-28,Los Angeles Kings,San Jose Sharks,4,3,1,-1,1,0,0,,9600,52009,L,W,L 3-4 vs. Los Angeles Kings,W 4-3 @ San Jose Sharks,0
 2026,2025-10-28,Montreal Canadiens,Seattle Kraken,4,3,1,-1,1,0,0,OT,9600,52010,L,W,L 3-4 vs. Montreal Canadiens (OT),W 4-3 @ Seattle Kraken (OT),0
 2026,2025-10-28,New York Rangers,Vancouver Canucks,2,0,2,-2,1,0,0,,9600,52011,L,W,L 0-2 vs. New York Rangers,W 2-0 @ Vancouver Canucks,0
-2026,2025-10-28,Utah Mammoth,Edmonton Oilers,3,6,-3,3,0,1,0,,9600,52012,W,L,W 6-3 vs. Utah Hockey Club,L 3-6 @ Edmonton Oilers,0
+2026,2025-10-28,Utah Mammoth,Edmonton Oilers,3,6,-3,3,0,1,0,,9600,52012,W,L,W 6-3 vs. Utah Mammoth,L 3-6 @ Edmonton Oilers,0
 2026,2025-10-28,New Jersey Devils,Colorado Avalanche,4,8,-4,4,0,1,0,,9600,52013,W,L,W 8-4 vs. New Jersey Devils,L 4-8 @ Colorado Avalanche,0
 2026,2025-10-28,Detroit Red Wings,St. Louis Blues,5,2,3,-3,1,0,0,,9600,52014,L,W,L 2-5 vs. Detroit Red Wings,W 5-2 @ St. Louis Blues,0
 2026,2025-10-28,Ottawa Senators,Chicago Blackhawks,3,7,-4,4,0,1,0,,9600,52015,W,L,W 7-3 vs. Ottawa Senators,L 3-7 @ Chicago Blackhawks,0
@@ -52053,7 +52053,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-02,Detroit Red Wings,San Jose Sharks,3,2,1,-1,1,0,0,SO,9605,52052,L,W,L 2-3 vs. Detroit Red Wings (SO),W 3-2 @ San Jose Sharks (SO),0
 2026,2025-11-02,Calgary Flames,Philadelphia Flyers,2,1,1,-1,1,0,0,,9605,52053,L,W,L 1-2 vs. Calgary Flames,W 2-1 @ Philadelphia Flyers,0
 2026,2025-11-02,New Jersey Devils,Anaheim Ducks,1,4,-3,3,0,1,0,,9605,52054,W,L,W 4-1 vs. New Jersey Devils,L 1-4 @ Anaheim Ducks,0
-2026,2025-11-02,Tampa Bay Lightning,Utah Mammoth,4,2,2,-2,1,0,0,,9605,52055,L,W,L 2-4 vs. Tampa Bay Lightning,W 4-2 @ Utah Hockey Club,0
+2026,2025-11-02,Tampa Bay Lightning,Utah Mammoth,4,2,2,-2,1,0,0,,9605,52055,L,W,L 2-4 vs. Tampa Bay Lightning,W 4-2 @ Utah Mammoth,0
 2026,2025-11-02,Columbus Blue Jackets,New York Islanders,2,3,-1,1,0,1,0,,9605,52056,W,L,W 3-2 vs. Columbus Blue Jackets,L 2-3 @ New York Islanders,0
 2026,2025-11-03,Pittsburgh Penguins,Toronto Maple Leafs,3,4,-1,1,0,1,0,,9606,52057,W,L,W 4-3 vs. Pittsburgh Penguins,L 3-4 @ Toronto Maple Leafs,0
 2026,2025-11-03,Edmonton Oilers,St. Louis Blues,2,3,-1,1,0,1,0,,9606,52058,W,L,W 3-2 vs. Edmonton Oilers,L 2-3 @ St. Louis Blues,0
@@ -52067,9 +52067,9 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-04,Carolina Hurricanes,New York Rangers,3,0,3,-3,1,0,0,,9607,52066,L,W,L 0-3 vs. Carolina Hurricanes,W 3-0 @ New York Rangers,0
 2026,2025-11-04,Boston Bruins,New York Islanders,4,3,1,-1,1,0,0,SO,9607,52067,L,W,L 3-4 vs. Boston Bruins (SO),W 4-3 @ New York Islanders (SO),0
 2026,2025-11-04,Philadelphia Flyers,Montreal Canadiens,5,4,1,-1,1,0,0,SO,9607,52068,L,W,L 4-5 vs. Philadelphia Flyers (SO),W 5-4 @ Montreal Canadiens (SO),0
-2026,2025-11-04,Utah Mammoth,Buffalo Sabres,2,1,1,-1,1,0,0,OT,9607,52069,L,W,L 1-2 vs. Utah Hockey Club (OT),W 2-1 @ Buffalo Sabres (OT),0
+2026,2025-11-04,Utah Mammoth,Buffalo Sabres,2,1,1,-1,1,0,0,OT,9607,52069,L,W,L 1-2 vs. Utah Mammoth (OT),W 2-1 @ Buffalo Sabres (OT),0
 2026,2025-11-04,Edmonton Oilers,Dallas Stars,3,4,-1,1,0,1,0,SO,9607,52070,W,L,W 4-3 vs. Edmonton Oilers (SO),L 3-4 @ Dallas Stars (SO),0
-2026,2025-11-05,Utah Mammoth,Toronto Maple Leafs,3,5,-2,2,0,1,0,,9608,52071,W,L,W 5-3 vs. Utah Hockey Club,L 3-5 @ Toronto Maple Leafs,0
+2026,2025-11-05,Utah Mammoth,Toronto Maple Leafs,3,5,-2,2,0,1,0,,9608,52071,W,L,W 5-3 vs. Utah Mammoth,L 3-5 @ Toronto Maple Leafs,0
 2026,2025-11-05,St. Louis Blues,Washington Capitals,1,6,-5,5,0,1,0,,9608,52072,W,L,W 6-1 vs. St. Louis Blues,L 1-6 @ Washington Capitals,0
 2026,2025-11-05,Columbus Blue Jackets,Calgary Flames,1,5,-4,4,0,1,0,,9608,52073,W,L,W 5-1 vs. Columbus Blue Jackets,L 1-5 @ Calgary Flames,0
 2026,2025-11-05,Chicago Blackhawks,Vancouver Canucks,5,2,3,-3,1,0,0,,9608,52074,L,W,L 2-5 vs. Chicago Blackhawks,W 5-2 @ Vancouver Canucks,0
@@ -52094,7 +52094,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-08,Colorado Avalanche,Edmonton Oilers,9,1,8,-8,1,0,0,,9611,52093,L,W,L 1-9 vs. Colorado Avalanche,W 9-1 @ Edmonton Oilers,0
 2026,2025-11-08,Buffalo Sabres,Carolina Hurricanes,3,6,-3,3,0,1,0,,9611,52094,W,L,W 6-3 vs. Buffalo Sabres,L 3-6 @ Carolina Hurricanes,0
 2026,2025-11-08,Washington Capitals,Tampa Bay Lightning,2,3,-1,1,0,1,0,,9611,52095,W,L,W 3-2 vs. Washington Capitals,L 2-3 @ Tampa Bay Lightning,0
-2026,2025-11-08,Utah Mammoth,Montreal Canadiens,2,6,-4,4,0,1,0,,9611,52096,W,L,W 6-2 vs. Utah Hockey Club,L 2-6 @ Montreal Canadiens,0
+2026,2025-11-08,Utah Mammoth,Montreal Canadiens,2,6,-4,4,0,1,0,,9611,52096,W,L,W 6-2 vs. Utah Mammoth,L 2-6 @ Montreal Canadiens,0
 2026,2025-11-08,Boston Bruins,Toronto Maple Leafs,5,3,2,-2,1,0,0,,9611,52097,L,W,L 3-5 vs. Boston Bruins,W 5-3 @ Toronto Maple Leafs,0
 2026,2025-11-08,Dallas Stars,Nashville Predators,5,4,1,-1,1,0,0,,9611,52098,L,W,L 4-5 vs. Dallas Stars,W 5-4 @ Nashville Predators,0
 2026,2025-11-08,Ottawa Senators,Philadelphia Flyers,3,2,1,-1,1,0,0,OT,9611,52099,L,W,L 2-3 vs. Ottawa Senators (OT),W 3-2 @ Philadelphia Flyers (OT),0
@@ -52107,7 +52107,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-09,Carolina Hurricanes,Toronto Maple Leafs,5,4,1,-1,1,0,0,,9612,52106,L,W,L 4-5 vs. Carolina Hurricanes,W 5-4 @ Toronto Maple Leafs,0
 2026,2025-11-09,Los Angeles Kings,Pittsburgh Penguins,3,2,1,-1,1,0,0,,9612,52107,L,W,L 2-3 vs. Los Angeles Kings,W 3-2 @ Pittsburgh Penguins,0
 2026,2025-11-09,Chicago Blackhawks,Detroit Red Wings,5,1,4,-4,1,0,0,,9612,52108,L,W,L 1-5 vs. Chicago Blackhawks,W 5-1 @ Detroit Red Wings,0
-2026,2025-11-09,Utah Mammoth,Ottawa Senators,2,4,-2,2,0,1,0,,9612,52109,W,L,W 4-2 vs. Utah Hockey Club,L 2-4 @ Ottawa Senators,0
+2026,2025-11-09,Utah Mammoth,Ottawa Senators,2,4,-2,2,0,1,0,,9612,52109,W,L,W 4-2 vs. Utah Mammoth,L 2-4 @ Ottawa Senators,0
 2026,2025-11-10,Columbus Blue Jackets,Edmonton Oilers,4,5,-1,1,0,1,0,OT,9613,52110,W,L,W 5-4 vs. Columbus Blue Jackets (OT),L 4-5 @ Edmonton Oilers (OT),0
 2026,2025-11-10,New York Islanders,New Jersey Devils,3,2,1,-1,1,0,0,OT,9613,52111,L,W,L 2-3 vs. New York Islanders (OT),W 3-2 @ New Jersey Devils (OT),0
 2026,2025-11-10,Nashville Predators,New York Rangers,3,6,-3,3,0,1,0,,9613,52112,W,L,W 6-3 vs. Nashville Predators,L 3-6 @ New York Rangers,0
@@ -52123,7 +52123,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-11,Washington Capitals,Carolina Hurricanes,4,1,3,-3,1,0,0,,9614,52122,L,W,L 1-4 vs. Washington Capitals,W 4-1 @ Carolina Hurricanes,0
 2026,2025-11-12,New York Rangers,Tampa Bay Lightning,7,3,4,-4,1,0,0,,9615,52123,L,W,L 3-7 vs. New York Rangers,W 7-3 @ Tampa Bay Lightning,0
 2026,2025-11-12,Edmonton Oilers,Philadelphia Flyers,2,1,1,-1,1,0,0,OT,9615,52124,L,W,L 1-2 vs. Edmonton Oilers (OT),W 2-1 @ Philadelphia Flyers (OT),0
-2026,2025-11-12,Buffalo Sabres,Utah Mammoth,2,5,-3,3,0,1,0,,9615,52125,W,L,W 5-2 vs. Buffalo Sabres,L 2-5 @ Utah Hockey Club,0
+2026,2025-11-12,Buffalo Sabres,Utah Mammoth,2,5,-3,3,0,1,0,,9615,52125,W,L,W 5-2 vs. Buffalo Sabres,L 2-5 @ Utah Mammoth,0
 2026,2025-11-12,New Jersey Devils,Chicago Blackhawks,4,3,1,-1,1,0,0,OT,9615,52126,L,W,L 3-4 vs. New Jersey Devils (OT),W 4-3 @ Chicago Blackhawks (OT),0
 2026,2025-11-13,Anaheim Ducks,Detroit Red Wings,3,6,-3,3,0,1,0,,9616,52127,W,L,W 6-3 vs. Anaheim Ducks,L 3-6 @ Detroit Red Wings,0
 2026,2025-11-13,Winnipeg Jets,Seattle Kraken,3,5,-2,2,0,1,0,,9616,52128,W,L,W 5-3 vs. Winnipeg Jets,L 3-5 @ Seattle Kraken,0
@@ -52138,7 +52138,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-14,Philadelphia Flyers,St. Louis Blues,6,5,1,-1,1,0,0,SO,9617,52137,L,W,L 5-6 vs. Philadelphia Flyers (SO),W 6-5 @ St. Louis Blues (SO),0
 2026,2025-11-14,Pittsburgh Penguins,Nashville Predators,1,2,-1,1,0,1,0,OT,9617,52138,W,L,W 2-1 vs. Pittsburgh Penguins (OT),L 1-2 @ Nashville Predators (OT),0
 2026,2025-11-14,Vancouver Canucks,Carolina Hurricanes,3,4,-1,1,0,1,0,OT,9617,52139,W,L,W 4-3 vs. Vancouver Canucks (OT),L 3-4 @ Carolina Hurricanes (OT),0
-2026,2025-11-14,New York Islanders,Utah Mammoth,3,2,1,-1,1,0,0,OT,9617,52140,L,W,L 2-3 vs. New York Islanders (OT),W 3-2 @ Utah Hockey Club (OT),0
+2026,2025-11-14,New York Islanders,Utah Mammoth,3,2,1,-1,1,0,0,OT,9617,52140,L,W,L 2-3 vs. New York Islanders (OT),W 3-2 @ Utah Mammoth (OT),0
 2026,2025-11-15,Toronto Maple Leafs,Chicago Blackhawks,2,3,-1,1,0,1,0,,9618,52141,W,L,W 3-2 vs. Toronto Maple Leafs,L 2-3 @ Chicago Blackhawks,0
 2026,2025-11-15,Vegas Golden Knights,St. Louis Blues,4,1,3,-3,1,0,0,,9618,52142,L,W,L 1-4 vs. Vegas Golden Knights,W 4-1 @ St. Louis Blues,0
 2026,2025-11-15,New Jersey Devils,Washington Capitals,3,2,1,-1,1,0,0,SO,9618,52143,L,W,L 2-3 vs. New Jersey Devils (SO),W 3-2 @ Washington Capitals (SO),0
@@ -52162,9 +52162,9 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-17,Vancouver Canucks,Florida Panthers,5,8,-3,3,0,1,0,,9620,52161,W,L,W 8-5 vs. Vancouver Canucks,L 5-8 @ Florida Panthers,0
 2026,2025-11-17,Los Angeles Kings,Washington Capitals,1,2,-1,1,0,1,0,,9620,52162,W,L,W 2-1 vs. Los Angeles Kings,L 1-2 @ Washington Capitals,0
 2026,2025-11-17,Montreal Canadiens,Columbus Blue Jackets,3,4,-1,1,0,1,0,SO,9620,52163,W,L,W 4-3 vs. Montreal Canadiens (SO),L 3-4 @ Columbus Blue Jackets (SO),0
-2026,2025-11-17,Utah Mammoth,Anaheim Ducks,2,3,-1,1,0,1,0,OT,9620,52164,W,L,W 3-2 vs. Utah Hockey Club (OT),L 2-3 @ Anaheim Ducks (OT),0
+2026,2025-11-17,Utah Mammoth,Anaheim Ducks,2,3,-1,1,0,1,0,OT,9620,52164,W,L,W 3-2 vs. Utah Mammoth (OT),L 2-3 @ Anaheim Ducks (OT),0
 2026,2025-11-18,Calgary Flames,Chicago Blackhawks,2,5,-3,3,0,1,0,,9621,52165,W,L,W 5-2 vs. Calgary Flames,L 2-5 @ Chicago Blackhawks,0
-2026,2025-11-18,Utah Mammoth,San Jose Sharks,2,3,-1,1,0,1,0,OT,9621,52166,W,L,W 3-2 vs. Utah Hockey Club (OT),L 2-3 @ San Jose Sharks (OT),0
+2026,2025-11-18,Utah Mammoth,San Jose Sharks,2,3,-1,1,0,1,0,OT,9621,52166,W,L,W 3-2 vs. Utah Mammoth (OT),L 2-3 @ San Jose Sharks (OT),0
 2026,2025-11-18,Columbus Blue Jackets,Winnipeg Jets,2,5,-3,3,0,1,0,,9621,52167,W,L,W 5-2 vs. Columbus Blue Jackets,L 2-5 @ Winnipeg Jets,0
 2026,2025-11-18,New York Rangers,Vegas Golden Knights,2,3,-1,1,0,1,0,,9621,52168,W,L,W 3-2 vs. New York Rangers,L 2-3 @ Vegas Golden Knights,0
 2026,2025-11-18,New Jersey Devils,Tampa Bay Lightning,1,5,-4,4,0,1,0,,9621,52169,W,L,W 5-1 vs. New Jersey Devils,L 1-5 @ Tampa Bay Lightning,0
@@ -52178,7 +52178,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-20,Los Angeles Kings,San Jose Sharks,3,4,-1,1,0,1,0,SO,9623,52177,W,L,W 4-3 vs. Los Angeles Kings (SO),L 3-4 @ San Jose Sharks (SO),0
 2026,2025-11-20,Ottawa Senators,Anaheim Ducks,3,2,1,-1,1,0,0,,9623,52178,L,W,L 2-3 vs. Ottawa Senators,W 3-2 @ Anaheim Ducks,0
 2026,2025-11-20,Dallas Stars,Vancouver Canucks,4,2,2,-2,1,0,0,,9623,52179,L,W,L 2-4 vs. Dallas Stars,W 4-2 @ Vancouver Canucks,0
-2026,2025-11-20,Vegas Golden Knights,Utah Mammoth,4,1,3,-3,1,0,0,,9623,52180,L,W,L 1-4 vs. Vegas Golden Knights,W 4-1 @ Utah Hockey Club,0
+2026,2025-11-20,Vegas Golden Knights,Utah Mammoth,4,1,3,-3,1,0,0,,9623,52180,L,W,L 1-4 vs. Vegas Golden Knights,W 4-1 @ Utah Mammoth,0
 2026,2025-11-20,New York Rangers,Colorado Avalanche,3,6,-3,3,0,1,0,,9623,52181,W,L,W 6-3 vs. New York Rangers,L 3-6 @ Colorado Avalanche,0
 2026,2025-11-20,Seattle Kraken,Chicago Blackhawks,3,2,1,-1,1,0,0,,9623,52182,L,W,L 2-3 vs. Seattle Kraken,W 3-2 @ Chicago Blackhawks,0
 2026,2025-11-20,St. Louis Blues,Philadelphia Flyers,2,3,-1,1,0,1,0,OT,9623,52183,W,L,W 3-2 vs. St. Louis Blues (OT),L 2-3 @ Philadelphia Flyers (OT),0
@@ -52196,7 +52196,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-22,Dallas Stars,Calgary Flames,2,3,-1,1,0,1,0,SO,9625,52195,W,L,W 3-2 vs. Dallas Stars (SO),L 2-3 @ Calgary Flames (SO),0
 2026,2025-11-22,Vegas Golden Knights,Anaheim Ducks,3,4,-1,1,0,1,0,OT,9625,52196,W,L,W 4-3 vs. Vegas Golden Knights (OT),L 3-4 @ Anaheim Ducks (OT),0
 2026,2025-11-22,Tampa Bay Lightning,Washington Capitals,5,3,2,-2,1,0,0,,9625,52197,L,W,L 3-5 vs. Tampa Bay Lightning,W 5-3 @ Washington Capitals,0
-2026,2025-11-22,New York Rangers,Utah Mammoth,2,3,-1,1,0,1,0,,9625,52198,W,L,W 3-2 vs. New York Rangers,L 2-3 @ Utah Hockey Club,0
+2026,2025-11-22,New York Rangers,Utah Mammoth,2,3,-1,1,0,1,0,,9625,52198,W,L,W 3-2 vs. New York Rangers,L 2-3 @ Utah Mammoth,0
 2026,2025-11-22,New Jersey Devils,Philadelphia Flyers,3,6,-3,3,0,1,0,,9625,52199,W,L,W 6-3 vs. New Jersey Devils,L 3-6 @ Philadelphia Flyers,0
 2026,2025-11-22,Columbus Blue Jackets,Detroit Red Wings,3,4,-1,1,0,1,0,OT,9625,52200,W,L,W 4-3 vs. Columbus Blue Jackets (OT),L 3-4 @ Detroit Red Wings (OT),0
 2026,2025-11-22,St. Louis Blues,New York Islanders,2,1,1,-1,1,0,0,,9625,52201,L,W,L 1-2 vs. St. Louis Blues,W 2-1 @ New York Islanders,0
@@ -52210,7 +52210,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-23,Boston Bruins,San Jose Sharks,1,3,-2,2,0,1,0,,9626,52209,W,L,W 3-1 vs. Boston Bruins,L 1-3 @ San Jose Sharks,0
 2026,2025-11-23,Calgary Flames,Vancouver Canucks,5,2,3,-3,1,0,0,,9626,52210,L,W,L 2-5 vs. Calgary Flames,W 5-2 @ Vancouver Canucks,0
 2026,2025-11-24,Ottawa Senators,Los Angeles Kings,1,2,-1,1,0,1,0,,9627,52211,W,L,W 2-1 vs. Ottawa Senators,L 1-2 @ Los Angeles Kings,0
-2026,2025-11-24,Vegas Golden Knights,Utah Mammoth,1,5,-4,4,0,1,0,,9627,52212,W,L,W 5-1 vs. Vegas Golden Knights,L 1-5 @ Utah Hockey Club,0
+2026,2025-11-24,Vegas Golden Knights,Utah Mammoth,1,5,-4,4,0,1,0,,9627,52212,W,L,W 5-1 vs. Vegas Golden Knights,L 1-5 @ Utah Mammoth,0
 2026,2025-11-24,Florida Panthers,Nashville Predators,8,3,5,-5,1,0,0,,9627,52213,L,W,L 3-8 vs. Florida Panthers,W 8-3 @ Nashville Predators,0
 2026,2025-11-24,Columbus Blue Jackets,Washington Capitals,1,5,-4,4,0,1,0,,9627,52214,W,L,W 5-1 vs. Columbus Blue Jackets,L 1-5 @ Washington Capitals,0
 2026,2025-11-24,St. Louis Blues,New York Rangers,2,3,-1,1,0,1,0,,9627,52215,W,L,W 3-2 vs. St. Louis Blues,L 2-3 @ New York Rangers,0
@@ -52220,7 +52220,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-26,Dallas Stars,Seattle Kraken,3,2,1,-1,1,0,0,,9629,52219,L,W,L 2-3 vs. Dallas Stars,W 3-2 @ Seattle Kraken,0
 2026,2025-11-26,Vancouver Canucks,Anaheim Ducks,5,4,1,-1,1,0,0,,9629,52220,L,W,L 4-5 vs. Vancouver Canucks,W 5-4 @ Anaheim Ducks,0
 2026,2025-11-26,Ottawa Senators,Vegas Golden Knights,4,3,1,-1,1,0,0,SO,9629,52221,L,W,L 3-4 vs. Ottawa Senators (SO),W 4-3 @ Vegas Golden Knights (SO),0
-2026,2025-11-26,Montreal Canadiens,Utah Mammoth,4,3,1,-1,1,0,0,,9629,52222,L,W,L 3-4 vs. Montreal Canadiens,W 4-3 @ Utah Hockey Club,0
+2026,2025-11-26,Montreal Canadiens,Utah Mammoth,4,3,1,-1,1,0,0,,9629,52222,L,W,L 3-4 vs. Montreal Canadiens,W 4-3 @ Utah Mammoth,0
 2026,2025-11-26,Toronto Maple Leafs,Columbus Blue Jackets,2,1,1,-1,1,0,0,OT,9629,52223,L,W,L 1-2 vs. Toronto Maple Leafs (OT),W 2-1 @ Columbus Blue Jackets (OT),0
 2026,2025-11-26,New York Rangers,Carolina Hurricanes,4,2,2,-2,1,0,0,,9629,52224,L,W,L 2-4 vs. New York Rangers,W 4-2 @ Carolina Hurricanes,0
 2026,2025-11-26,San Jose Sharks,Colorado Avalanche,0,6,-6,6,0,1,0,,9629,52225,W,L,W 6-0 vs. San Jose Sharks,L 0-6 @ Colorado Avalanche,0
@@ -52233,7 +52233,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-26,Boston Bruins,New York Islanders,3,1,2,-2,1,0,0,,9629,52232,L,W,L 1-3 vs. Boston Bruins,W 3-1 @ New York Islanders,0
 2026,2025-11-26,St. Louis Blues,New Jersey Devils,2,3,-1,1,0,1,0,OT,9629,52233,W,L,W 3-2 vs. St. Louis Blues (OT),L 2-3 @ New Jersey Devils (OT),0
 2026,2025-11-28,Los Angeles Kings,Anaheim Ducks,4,5,-1,1,0,1,0,SO,9630,52234,W,L,W 5-4 vs. Los Angeles Kings (SO),L 4-5 @ Anaheim Ducks (SO),0
-2026,2025-11-28,Utah Mammoth,Dallas Stars,3,4,-1,1,0,1,0,,9630,52235,W,L,W 4-3 vs. Utah Hockey Club,L 3-4 @ Dallas Stars,0
+2026,2025-11-28,Utah Mammoth,Dallas Stars,3,4,-1,1,0,1,0,,9630,52235,W,L,W 4-3 vs. Utah Mammoth,L 3-4 @ Dallas Stars,0
 2026,2025-11-28,Nashville Predators,Chicago Blackhawks,4,3,1,-1,1,0,0,,9630,52236,L,W,L 3-4 vs. Nashville Predators,W 4-3 @ Chicago Blackhawks,0
 2026,2025-11-28,Pittsburgh Penguins,Columbus Blue Jackets,4,3,1,-1,1,0,0,OT,9630,52237,L,W,L 3-4 vs. Pittsburgh Penguins (OT),W 4-3 @ Columbus Blue Jackets (OT),0
 2026,2025-11-28,Winnipeg Jets,Carolina Hurricanes,1,5,-4,4,0,1,0,,9630,52238,W,L,W 5-1 vs. Winnipeg Jets,L 1-5 @ Carolina Hurricanes,0
@@ -52250,7 +52250,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-11-29,Winnipeg Jets,Nashville Predators,5,2,3,-3,1,0,0,,9631,52249,L,W,L 2-5 vs. Winnipeg Jets,W 5-2 @ Nashville Predators,0
 2026,2025-11-29,San Jose Sharks,Vegas Golden Knights,3,4,-1,1,0,1,0,,9631,52250,W,L,W 4-3 vs. San Jose Sharks,L 3-4 @ Vegas Golden Knights,0
 2026,2025-11-29,Buffalo Sabres,Minnesota Wild,3,2,1,-1,1,0,0,SO,9631,52251,L,W,L 2-3 vs. Buffalo Sabres (SO),W 3-2 @ Minnesota Wild (SO),0
-2026,2025-11-29,Utah Mammoth,St. Louis Blues,0,1,-1,1,0,1,0,,9631,52252,W,L,W 1-0 vs. Utah Hockey Club,L 0-1 @ St. Louis Blues,0
+2026,2025-11-29,Utah Mammoth,St. Louis Blues,0,1,-1,1,0,1,0,,9631,52252,W,L,W 1-0 vs. Utah Mammoth,L 0-1 @ St. Louis Blues,0
 2026,2025-11-29,Vancouver Canucks,Los Angeles Kings,1,2,-1,1,0,1,0,OT,9631,52253,W,L,W 2-1 vs. Vancouver Canucks (OT),L 1-2 @ Los Angeles Kings (OT),0
 2026,2025-11-29,Philadelphia Flyers,New Jersey Devils,5,3,2,-2,1,0,0,,9631,52254,L,W,L 3-5 vs. Philadelphia Flyers,W 5-3 @ New Jersey Devils,0
 2026,2025-11-29,Detroit Red Wings,Boston Bruins,2,3,-1,1,0,1,0,SO,9631,52255,W,L,W 3-2 vs. Detroit Red Wings (SO),L 2-3 @ Boston Bruins (SO),0
@@ -52266,7 +52266,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-01,Pittsburgh Penguins,Philadelphia Flyers,5,1,4,-4,1,0,0,,9633,52265,L,W,L 1-5 vs. Pittsburgh Penguins,W 5-1 @ Philadelphia Flyers,0
 2026,2025-12-01,Winnipeg Jets,Buffalo Sabres,1,5,-4,4,0,1,0,,9633,52266,W,L,W 5-1 vs. Winnipeg Jets,L 1-5 @ Buffalo Sabres,0
 2026,2025-12-01,Anaheim Ducks,St. Louis Blues,4,1,3,-3,1,0,0,,9633,52267,L,W,L 1-4 vs. Anaheim Ducks,W 4-1 @ St. Louis Blues,0
-2026,2025-12-01,Utah Mammoth,San Jose Sharks,3,6,-3,3,0,1,0,,9633,52268,W,L,W 6-3 vs. Utah Hockey Club,L 3-6 @ San Jose Sharks,0
+2026,2025-12-01,Utah Mammoth,San Jose Sharks,3,6,-3,3,0,1,0,,9633,52268,W,L,W 6-3 vs. Utah Mammoth,L 3-6 @ San Jose Sharks,0
 2026,2025-12-02,Washington Capitals,Los Angeles Kings,3,1,2,-2,1,0,0,,9634,52269,L,W,L 1-3 vs. Washington Capitals,W 3-1 @ Los Angeles Kings,0
 2026,2025-12-02,Chicago Blackhawks,Vegas Golden Knights,3,4,-1,1,0,1,0,SO,9634,52270,W,L,W 4-3 vs. Chicago Blackhawks (SO),L 3-4 @ Vegas Golden Knights (SO),0
 2026,2025-12-02,Minnesota Wild,Edmonton Oilers,1,0,1,-1,1,0,0,,9634,52271,L,W,L 0-1 vs. Minnesota Wild,W 1-0 @ Edmonton Oilers,0
@@ -52277,7 +52277,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-02,Tampa Bay Lightning,New York Islanders,1,2,-1,1,0,1,0,,9634,52276,W,L,W 2-1 vs. Tampa Bay Lightning,L 1-2 @ New York Islanders,0
 2026,2025-12-02,Ottawa Senators,Montreal Canadiens,5,2,3,-3,1,0,0,,9634,52277,L,W,L 2-5 vs. Ottawa Senators,W 5-2 @ Montreal Canadiens,0
 2026,2025-12-02,Toronto Maple Leafs,Florida Panthers,4,1,3,-3,1,0,0,,9634,52278,L,W,L 1-4 vs. Toronto Maple Leafs,W 4-1 @ Florida Panthers,0
-2026,2025-12-03,Utah Mammoth,Anaheim Ducks,7,0,7,-7,1,0,0,,9635,52279,L,W,L 0-7 vs. Utah Hockey Club,W 7-0 @ Anaheim Ducks,0
+2026,2025-12-03,Utah Mammoth,Anaheim Ducks,7,0,7,-7,1,0,0,,9635,52279,L,W,L 0-7 vs. Utah Mammoth,W 7-0 @ Anaheim Ducks,0
 2026,2025-12-03,Washington Capitals,San Jose Sharks,7,1,6,-6,1,0,0,,9635,52280,L,W,L 1-7 vs. Washington Capitals,W 7-1 @ San Jose Sharks,0
 2026,2025-12-03,Buffalo Sabres,Philadelphia Flyers,2,5,-3,3,0,1,0,,9635,52281,W,L,W 5-2 vs. Buffalo Sabres,L 2-5 @ Philadelphia Flyers,0
 2026,2025-12-03,Dallas Stars,New Jersey Devils,3,0,3,-3,1,0,0,,9635,52282,L,W,L 0-3 vs. Dallas Stars,W 3-0 @ New Jersey Devils,0
@@ -52296,9 +52296,9 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-05,Vegas Golden Knights,New Jersey Devils,3,0,3,-3,1,0,0,,9637,52295,L,W,L 0-3 vs. Vegas Golden Knights,W 3-0 @ New Jersey Devils,0
 2026,2025-12-05,Buffalo Sabres,Winnipeg Jets,1,4,-3,3,0,1,0,,9637,52296,W,L,W 4-1 vs. Buffalo Sabres,L 1-4 @ Winnipeg Jets,0
 2026,2025-12-05,San Jose Sharks,Dallas Stars,1,4,-3,3,0,1,0,,9637,52297,W,L,W 4-1 vs. San Jose Sharks,L 1-4 @ Dallas Stars,0
-2026,2025-12-05,Utah Mammoth,Vancouver Canucks,4,1,3,-3,1,0,0,,9637,52298,L,W,L 1-4 vs. Utah Hockey Club,W 4-1 @ Vancouver Canucks,0
+2026,2025-12-05,Utah Mammoth,Vancouver Canucks,4,1,3,-3,1,0,0,,9637,52298,L,W,L 1-4 vs. Utah Mammoth,W 4-1 @ Vancouver Canucks,0
 2026,2025-12-06,Chicago Blackhawks,Los Angeles Kings,0,6,-6,6,0,1,0,,9638,52299,W,L,W 6-0 vs. Chicago Blackhawks,L 0-6 @ Los Angeles Kings,0
-2026,2025-12-06,Utah Mammoth,Calgary Flames,0,2,-2,2,0,1,0,,9638,52300,W,L,W 2-0 vs. Utah Hockey Club,L 0-2 @ Calgary Flames,0
+2026,2025-12-06,Utah Mammoth,Calgary Flames,0,2,-2,2,0,1,0,,9638,52300,W,L,W 2-0 vs. Utah Mammoth,L 0-2 @ Calgary Flames,0
 2026,2025-12-06,Minnesota Wild,Vancouver Canucks,2,4,-2,2,0,1,0,,9638,52301,W,L,W 4-2 vs. Minnesota Wild,L 2-4 @ Vancouver Canucks,0
 2026,2025-12-06,Winnipeg Jets,Edmonton Oilers,2,6,-4,4,0,1,0,,9638,52302,W,L,W 6-2 vs. Winnipeg Jets,L 2-6 @ Edmonton Oilers,0
 2026,2025-12-06,Detroit Red Wings,Seattle Kraken,4,3,1,-1,1,0,0,,9638,52303,L,W,L 3-4 vs. Detroit Red Wings,W 4-3 @ Seattle Kraken,0
@@ -52318,7 +52318,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-07,Colorado Avalanche,Philadelphia Flyers,3,2,1,-1,1,0,0,,9639,52317,L,W,L 2-3 vs. Colorado Avalanche,W 3-2 @ Philadelphia Flyers,0
 2026,2025-12-07,Pittsburgh Penguins,Dallas Stars,2,3,-1,1,0,1,0,SO,9639,52318,W,L,W 3-2 vs. Pittsburgh Penguins (SO),L 2-3 @ Dallas Stars (SO),0
 2026,2025-12-08,Tampa Bay Lightning,Toronto Maple Leafs,0,2,-2,2,0,1,0,,9640,52319,W,L,W 2-0 vs. Tampa Bay Lightning,L 0-2 @ Toronto Maple Leafs,0
-2026,2025-12-08,Los Angeles Kings,Utah Mammoth,4,2,2,-2,1,0,0,,9640,52320,L,W,L 2-4 vs. Los Angeles Kings,W 4-2 @ Utah Hockey Club,0
+2026,2025-12-08,Los Angeles Kings,Utah Mammoth,4,2,2,-2,1,0,0,,9640,52320,L,W,L 2-4 vs. Los Angeles Kings,W 4-2 @ Utah Mammoth,0
 2026,2025-12-08,Buffalo Sabres,Calgary Flames,4,7,-3,3,0,1,0,,9640,52321,W,L,W 7-4 vs. Buffalo Sabres,L 4-7 @ Calgary Flames,0
 2026,2025-12-08,Detroit Red Wings,Vancouver Canucks,4,0,4,-4,1,0,0,,9640,52322,L,W,L 0-4 vs. Detroit Red Wings,W 4-0 @ Vancouver Canucks,0
 2026,2025-12-08,Minnesota Wild,Seattle Kraken,4,1,3,-3,1,0,0,,9640,52323,L,W,L 1-4 vs. Minnesota Wild,W 4-1 @ Seattle Kraken,0
@@ -52334,7 +52334,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-09,New Jersey Devils,Ottawa Senators,4,3,1,-1,1,0,0,,9641,52333,L,W,L 3-4 vs. New Jersey Devils,W 4-3 @ Ottawa Senators,0
 2026,2025-12-10,New York Rangers,Chicago Blackhawks,0,3,-3,3,0,1,0,,9642,52334,W,L,W 3-0 vs. New York Rangers,L 0-3 @ Chicago Blackhawks,0
 2026,2025-12-10,Detroit Red Wings,Calgary Flames,4,3,1,-1,1,0,0,,9642,52335,L,W,L 3-4 vs. Detroit Red Wings,W 4-3 @ Calgary Flames,0
-2026,2025-12-10,Florida Panthers,Utah Mammoth,4,3,1,-1,1,0,0,,9642,52336,L,W,L 3-4 vs. Florida Panthers,W 4-3 @ Utah Hockey Club,0
+2026,2025-12-10,Florida Panthers,Utah Mammoth,4,3,1,-1,1,0,0,,9642,52336,L,W,L 3-4 vs. Florida Panthers,W 4-3 @ Utah Mammoth,0
 2026,2025-12-10,Los Angeles Kings,Seattle Kraken,2,3,-1,1,0,1,0,OT,9642,52337,W,L,W 3-2 vs. Los Angeles Kings (OT),L 2-3 @ Seattle Kraken (OT),0
 2026,2025-12-11,St. Louis Blues,Nashville Predators,2,7,-5,5,0,1,0,,9643,52338,W,L,W 7-2 vs. St. Louis Blues,L 2-7 @ Nashville Predators,0
 2026,2025-12-11,Buffalo Sabres,Vancouver Canucks,3,2,1,-1,1,0,0,,9643,52339,L,W,L 2-3 vs. Buffalo Sabres,W 3-2 @ Vancouver Canucks,0
@@ -52350,7 +52350,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-11,San Jose Sharks,Toronto Maple Leafs,3,2,1,-1,1,0,0,OT,9643,52349,L,W,L 2-3 vs. San Jose Sharks (OT),W 3-2 @ Toronto Maple Leafs (OT),0
 2026,2025-12-11,Ottawa Senators,Columbus Blue Jackets,6,3,3,-3,1,0,0,,9643,52350,L,W,L 3-6 vs. Ottawa Senators,W 6-3 @ Columbus Blue Jackets,0
 2026,2025-12-12,Chicago Blackhawks,St. Louis Blues,2,3,-1,1,0,1,0,,9644,52351,W,L,W 3-2 vs. Chicago Blackhawks,L 2-3 @ St. Louis Blues,0
-2026,2025-12-12,Seattle Kraken,Utah Mammoth,3,5,-2,2,0,1,0,,9644,52352,W,L,W 5-3 vs. Seattle Kraken,L 3-5 @ Utah Hockey Club,0
+2026,2025-12-12,Seattle Kraken,Utah Mammoth,3,5,-2,2,0,1,0,,9644,52352,W,L,W 5-3 vs. Seattle Kraken,L 3-5 @ Utah Mammoth,0
 2026,2025-12-13,Vegas Golden Knights,Columbus Blue Jackets,3,2,1,-1,1,0,0,,9645,52353,L,W,L 2-3 vs. Vegas Golden Knights,W 3-2 @ Columbus Blue Jackets,0
 2026,2025-12-13,Nashville Predators,Colorado Avalanche,2,4,-2,2,0,1,0,,9645,52354,W,L,W 4-2 vs. Nashville Predators,L 2-4 @ Colorado Avalanche,0
 2026,2025-12-13,Florida Panthers,Dallas Stars,4,0,4,-4,1,0,0,,9645,52355,L,W,L 0-4 vs. Florida Panthers,W 4-0 @ Dallas Stars,0
@@ -52367,7 +52367,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-14,Buffalo Sabres,Seattle Kraken,3,1,2,-2,1,0,0,,9646,52366,L,W,L 1-3 vs. Buffalo Sabres,W 3-1 @ Seattle Kraken,0
 2026,2025-12-14,Boston Bruins,Minnesota Wild,2,6,-4,4,0,1,0,,9646,52367,W,L,W 6-2 vs. Boston Bruins,L 2-6 @ Minnesota Wild,0
 2026,2025-12-14,Edmonton Oilers,Montreal Canadiens,1,4,-3,3,0,1,0,,9646,52368,W,L,W 4-1 vs. Edmonton Oilers,L 1-4 @ Montreal Canadiens,0
-2026,2025-12-14,Utah Mammoth,Pittsburgh Penguins,5,4,1,-1,1,0,0,OT,9646,52369,L,W,L 4-5 vs. Utah Hockey Club (OT),W 5-4 @ Pittsburgh Penguins (OT),0
+2026,2025-12-14,Utah Mammoth,Pittsburgh Penguins,5,4,1,-1,1,0,0,OT,9646,52369,L,W,L 4-5 vs. Utah Mammoth (OT),W 5-4 @ Pittsburgh Penguins (OT),0
 2026,2025-12-14,Vancouver Canucks,New Jersey Devils,2,1,1,-1,1,0,0,,9646,52370,L,W,L 1-2 vs. Vancouver Canucks,W 2-1 @ New Jersey Devils,0
 2026,2025-12-14,Philadelphia Flyers,Carolina Hurricanes,2,3,-1,1,0,1,0,SO,9646,52371,W,L,W 3-2 vs. Philadelphia Flyers (SO),L 2-3 @ Carolina Hurricanes (SO),0
 2026,2025-12-15,Florida Panthers,Tampa Bay Lightning,5,2,3,-3,1,0,0,,9647,52372,L,W,L 2-5 vs. Florida Panthers,W 5-2 @ Tampa Bay Lightning,0
@@ -52383,10 +52383,10 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-16,New York Islanders,Detroit Red Wings,2,3,-1,1,0,1,0,,9648,52382,W,L,W 3-2 vs. New York Islanders,L 2-3 @ Detroit Red Wings,0
 2026,2025-12-16,Philadelphia Flyers,Montreal Canadiens,4,1,3,-3,1,0,0,,9648,52383,L,W,L 1-4 vs. Philadelphia Flyers,W 4-1 @ Montreal Canadiens,0
 2026,2025-12-16,Chicago Blackhawks,Toronto Maple Leafs,2,3,-1,1,0,1,0,,9648,52384,W,L,W 3-2 vs. Chicago Blackhawks,L 2-3 @ Toronto Maple Leafs,0
-2026,2025-12-16,Utah Mammoth,Boston Bruins,1,4,-3,3,0,1,0,,9648,52385,W,L,W 4-1 vs. Utah Hockey Club,L 1-4 @ Boston Bruins,0
+2026,2025-12-16,Utah Mammoth,Boston Bruins,1,4,-3,3,0,1,0,,9648,52385,W,L,W 4-1 vs. Utah Mammoth,L 1-4 @ Boston Bruins,0
 2026,2025-12-16,Vancouver Canucks,New York Rangers,3,0,3,-3,1,0,0,,9648,52386,L,W,L 0-3 vs. Vancouver Canucks,W 3-0 @ New York Rangers,0
 2026,2025-12-17,Los Angeles Kings,Florida Panthers,2,3,-1,1,0,1,0,,9649,52387,W,L,W 3-2 vs. Los Angeles Kings,L 2-3 @ Florida Panthers,0
-2026,2025-12-17,Utah Mammoth,Detroit Red Wings,4,1,3,-3,1,0,0,,9649,52388,L,W,L 1-4 vs. Utah Hockey Club,W 4-1 @ Detroit Red Wings,0
+2026,2025-12-17,Utah Mammoth,Detroit Red Wings,4,1,3,-3,1,0,0,,9649,52388,L,W,L 1-4 vs. Utah Mammoth,W 4-1 @ Detroit Red Wings,0
 2026,2025-12-17,Winnipeg Jets,St. Louis Blues,0,1,-1,1,0,1,0,,9649,52389,W,L,W 1-0 vs. Winnipeg Jets,L 0-1 @ St. Louis Blues,0
 2026,2025-12-17,Carolina Hurricanes,Nashville Predators,4,1,3,-3,1,0,0,,9649,52390,L,W,L 1-4 vs. Carolina Hurricanes,W 4-1 @ Nashville Predators,0
 2026,2025-12-17,New Jersey Devils,Vegas Golden Knights,2,1,1,-1,1,0,0,SO,9649,52391,L,W,L 1-2 vs. New Jersey Devils (SO),W 2-1 @ Vegas Golden Knights (SO),0
@@ -52403,7 +52403,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-19,Carolina Hurricanes,Florida Panthers,3,4,-1,1,0,1,0,SO,9651,52402,W,L,W 4-3 vs. Carolina Hurricanes (SO),L 3-4 @ Florida Panthers (SO),0
 2026,2025-12-19,Vancouver Canucks,New York Islanders,4,1,3,-3,1,0,0,,9651,52403,L,W,L 1-4 vs. Vancouver Canucks,W 4-1 @ New York Islanders,0
 2026,2025-12-19,Winnipeg Jets,Colorado Avalanche,2,3,-1,1,0,1,0,,9651,52404,W,L,W 3-2 vs. Winnipeg Jets,L 2-3 @ Colorado Avalanche,0
-2026,2025-12-19,New Jersey Devils,Utah Mammoth,2,1,1,-1,1,0,0,,9651,52405,L,W,L 1-2 vs. New Jersey Devils,W 2-1 @ Utah Hockey Club,0
+2026,2025-12-19,New Jersey Devils,Utah Mammoth,2,1,1,-1,1,0,0,,9651,52405,L,W,L 1-2 vs. New Jersey Devils,W 2-1 @ Utah Mammoth,0
 2026,2025-12-19,Dallas Stars,Anaheim Ducks,8,3,5,-5,1,0,0,,9651,52406,L,W,L 3-8 vs. Dallas Stars,W 8-3 @ Anaheim Ducks,0
 2026,2025-12-20,Carolina Hurricanes,Tampa Bay Lightning,4,6,-2,2,0,1,0,,9652,52407,W,L,W 6-4 vs. Carolina Hurricanes,L 4-6 @ Tampa Bay Lightning,0
 2026,2025-12-20,Columbus Blue Jackets,Anaheim Ducks,3,4,-1,1,0,1,0,,9652,52408,W,L,W 4-3 vs. Columbus Blue Jackets,L 3-4 @ Anaheim Ducks,0
@@ -52419,7 +52419,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-20,Philadelphia Flyers,New York Rangers,4,5,-1,1,0,1,0,SO,9652,52418,W,L,W 5-4 vs. Philadelphia Flyers (SO),L 4-5 @ New York Rangers (SO),0
 2026,2025-12-20,Vancouver Canucks,Boston Bruins,5,4,1,-1,1,0,0,SO,9652,52419,L,W,L 4-5 vs. Vancouver Canucks (SO),W 5-4 @ Boston Bruins (SO),0
 2026,2025-12-21,Vegas Golden Knights,Edmonton Oilers,3,4,-1,1,0,1,0,,9653,52420,W,L,W 4-3 vs. Vegas Golden Knights,L 3-4 @ Edmonton Oilers,0
-2026,2025-12-21,Winnipeg Jets,Utah Mammoth,3,4,-1,1,0,1,0,OT,9653,52421,W,L,W 4-3 vs. Winnipeg Jets (OT),L 3-4 @ Utah Hockey Club (OT),0
+2026,2025-12-21,Winnipeg Jets,Utah Mammoth,3,4,-1,1,0,1,0,OT,9653,52421,W,L,W 4-3 vs. Winnipeg Jets (OT),L 3-4 @ Utah Mammoth (OT),0
 2026,2025-12-21,New York Rangers,Nashville Predators,1,2,-1,1,0,1,0,,9653,52422,W,L,W 2-1 vs. New York Rangers,L 1-2 @ Nashville Predators,0
 2026,2025-12-21,Montreal Canadiens,Pittsburgh Penguins,3,4,-1,1,0,1,0,SO,9653,52423,W,L,W 4-3 vs. Montreal Canadiens (SO),L 3-4 @ Pittsburgh Penguins (SO),0
 2026,2025-12-21,Toronto Maple Leafs,Dallas Stars,1,5,-4,4,0,1,0,,9653,52424,W,L,W 5-1 vs. Toronto Maple Leafs,L 1-5 @ Dallas Stars,0
@@ -52435,7 +52435,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-23,Seattle Kraken,Los Angeles Kings,3,2,1,-1,1,0,0,,9655,52434,L,W,L 2-3 vs. Seattle Kraken,W 3-2 @ Los Angeles Kings,0
 2026,2025-12-23,San Jose Sharks,Vegas Golden Knights,2,7,-5,5,0,1,0,,9655,52435,W,L,W 7-2 vs. San Jose Sharks,L 2-7 @ Vegas Golden Knights,0
 2026,2025-12-23,Calgary Flames,Edmonton Oilers,1,5,-4,4,0,1,0,,9655,52436,W,L,W 5-1 vs. Calgary Flames,L 1-5 @ Edmonton Oilers,0
-2026,2025-12-23,Utah Mammoth,Colorado Avalanche,0,1,-1,1,0,1,0,,9655,52437,W,L,W 1-0 vs. Utah Hockey Club,L 0-1 @ Colorado Avalanche,0
+2026,2025-12-23,Utah Mammoth,Colorado Avalanche,0,1,-1,1,0,1,0,,9655,52437,W,L,W 1-0 vs. Utah Mammoth,L 0-1 @ Colorado Avalanche,0
 2026,2025-12-23,Florida Panthers,Carolina Hurricanes,5,2,3,-3,1,0,0,,9655,52438,L,W,L 2-5 vs. Florida Panthers,W 5-2 @ Carolina Hurricanes,0
 2026,2025-12-23,Philadelphia Flyers,Chicago Blackhawks,3,1,2,-2,1,0,0,,9655,52439,L,W,L 1-3 vs. Philadelphia Flyers,W 3-1 @ Chicago Blackhawks,0
 2026,2025-12-23,Buffalo Sabres,Ottawa Senators,3,2,1,-1,1,0,0,OT,9655,52440,L,W,L 2-3 vs. Buffalo Sabres (OT),W 3-2 @ Ottawa Senators (OT),0
@@ -52466,7 +52466,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2025-12-29,Vancouver Canucks,Seattle Kraken,3,2,1,-1,1,0,0,SO,9658,52465,L,W,L 2-3 vs. Vancouver Canucks (SO),W 3-2 @ Seattle Kraken (SO),0
 2026,2025-12-29,San Jose Sharks,Anaheim Ducks,5,4,1,-1,1,0,0,,9658,52466,L,W,L 4-5 vs. San Jose Sharks,W 5-4 @ Anaheim Ducks,0
 2026,2025-12-29,Minnesota Wild,Vegas Golden Knights,5,2,3,-3,1,0,0,,9658,52467,L,W,L 2-5 vs. Minnesota Wild,W 5-2 @ Vegas Golden Knights,0
-2026,2025-12-29,Nashville Predators,Utah Mammoth,4,3,1,-1,1,0,0,,9658,52468,L,W,L 3-4 vs. Nashville Predators,W 4-3 @ Utah Hockey Club,0
+2026,2025-12-29,Nashville Predators,Utah Mammoth,4,3,1,-1,1,0,0,,9658,52468,L,W,L 3-4 vs. Nashville Predators,W 4-3 @ Utah Mammoth,0
 2026,2025-12-29,New York Rangers,Carolina Hurricanes,2,3,-1,1,0,1,0,OT,9658,52469,W,L,W 3-2 vs. New York Rangers (OT),L 2-3 @ Carolina Hurricanes (OT),0
 2026,2025-12-29,Buffalo Sabres,St. Louis Blues,4,2,2,-2,1,0,0,,9658,52470,L,W,L 2-4 vs. Buffalo Sabres,W 4-2 @ St. Louis Blues,0
 2026,2025-12-29,Washington Capitals,Florida Panthers,3,5,-2,2,0,1,0,,9658,52471,W,L,W 5-3 vs. Washington Capitals,L 3-5 @ Florida Panthers,0
@@ -52493,7 +52493,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-01,Tampa Bay Lightning,Los Angeles Kings,5,3,2,-2,1,0,0,,9661,52492,L,W,L 3-5 vs. Tampa Bay Lightning,W 5-3 @ Los Angeles Kings,0
 2026,2026-01-01,Nashville Predators,Seattle Kraken,1,4,-3,3,0,1,0,,9661,52493,W,L,W 4-1 vs. Nashville Predators,L 1-4 @ Seattle Kraken,0
 2026,2026-01-01,Detroit Red Wings,Pittsburgh Penguins,3,4,-1,1,0,1,0,OT,9661,52494,W,L,W 4-3 vs. Detroit Red Wings (OT),L 3-4 @ Pittsburgh Penguins (OT),0
-2026,2026-01-01,Utah Mammoth,New York Islanders,7,2,5,-5,1,0,0,,9661,52495,L,W,L 2-7 vs. Utah Hockey Club,W 7-2 @ New York Islanders,0
+2026,2026-01-01,Utah Mammoth,New York Islanders,7,2,5,-5,1,0,0,,9661,52495,L,W,L 2-7 vs. Utah Mammoth,W 7-2 @ New York Islanders,0
 2026,2026-01-01,Washington Capitals,Ottawa Senators,3,4,-1,1,0,1,0,,9661,52496,W,L,W 4-3 vs. Washington Capitals,L 3-4 @ Ottawa Senators,0
 2026,2026-01-01,Winnipeg Jets,Toronto Maple Leafs,5,6,-1,1,0,1,0,,9661,52497,W,L,W 6-5 vs. Winnipeg Jets,L 5-6 @ Toronto Maple Leafs,0
 2026,2026-01-02,Vegas Golden Knights,St. Louis Blues,3,4,-1,1,0,1,0,,9662,52498,W,L,W 4-3 vs. Vegas Golden Knights,L 3-4 @ St. Louis Blues,0
@@ -52510,7 +52510,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-03,Tampa Bay Lightning,San Jose Sharks,7,3,4,-4,1,0,0,,9663,52509,L,W,L 3-7 vs. Tampa Bay Lightning,W 7-3 @ San Jose Sharks,0
 2026,2026-01-03,Montreal Canadiens,St. Louis Blues,0,2,-2,2,0,1,0,,9663,52510,W,L,W 2-0 vs. Montreal Canadiens,L 0-2 @ St. Louis Blues,0
 2026,2026-01-03,Buffalo Sabres,Columbus Blue Jackets,1,5,-4,4,0,1,0,,9663,52511,W,L,W 5-1 vs. Buffalo Sabres,L 1-5 @ Columbus Blue Jackets,0
-2026,2026-01-03,Utah Mammoth,New Jersey Devils,1,4,-3,3,0,1,0,,9663,52512,W,L,W 4-1 vs. Utah Hockey Club,L 1-4 @ New Jersey Devils,0
+2026,2026-01-03,Utah Mammoth,New Jersey Devils,1,4,-3,3,0,1,0,,9663,52512,W,L,W 4-1 vs. Utah Mammoth,L 1-4 @ New Jersey Devils,0
 2026,2026-01-03,Pittsburgh Penguins,Detroit Red Wings,4,1,3,-3,1,0,0,,9663,52513,L,W,L 1-4 vs. Pittsburgh Penguins,W 4-1 @ Detroit Red Wings,0
 2026,2026-01-03,Winnipeg Jets,Ottawa Senators,2,4,-2,2,0,1,0,,9663,52514,W,L,W 4-2 vs. Winnipeg Jets,L 2-4 @ Ottawa Senators,0
 2026,2026-01-04,Vegas Golden Knights,Chicago Blackhawks,2,3,-1,1,0,1,0,OT,9664,52515,W,L,W 3-2 vs. Vegas Golden Knights (OT),L 2-3 @ Chicago Blackhawks (OT),0
@@ -52518,7 +52518,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-04,Montreal Canadiens,Dallas Stars,4,3,1,-1,1,0,0,OT,9664,52517,L,W,L 3-4 vs. Montreal Canadiens (OT),W 4-3 @ Dallas Stars (OT),0
 2026,2026-01-04,Pittsburgh Penguins,Columbus Blue Jackets,5,4,1,-1,1,0,0,OT,9664,52518,L,W,L 4-5 vs. Pittsburgh Penguins (OT),W 5-4 @ Columbus Blue Jackets (OT),0
 2026,2026-01-04,Colorado Avalanche,Florida Panthers,1,2,-1,1,0,1,0,,9664,52519,W,L,W 2-1 vs. Colorado Avalanche,L 1-2 @ Florida Panthers,0
-2026,2026-01-05,Utah Mammoth,New York Rangers,3,2,1,-1,1,0,0,OT,9665,52520,L,W,L 2-3 vs. Utah Hockey Club (OT),W 3-2 @ New York Rangers (OT),0
+2026,2026-01-05,Utah Mammoth,New York Rangers,3,2,1,-1,1,0,0,OT,9665,52520,L,W,L 2-3 vs. Utah Mammoth (OT),W 3-2 @ New York Rangers (OT),0
 2026,2026-01-05,Anaheim Ducks,Washington Capitals,4,7,-3,3,0,1,0,,9665,52521,W,L,W 7-4 vs. Anaheim Ducks,L 4-7 @ Washington Capitals,0
 2026,2026-01-05,Detroit Red Wings,Ottawa Senators,5,3,2,-2,1,0,0,,9665,52522,L,W,L 3-5 vs. Detroit Red Wings,W 5-3 @ Ottawa Senators,0
 2026,2026-01-05,Seattle Kraken,Calgary Flames,5,1,4,-4,1,0,0,,9665,52523,L,W,L 1-5 vs. Seattle Kraken,W 5-1 @ Calgary Flames,0
@@ -52533,7 +52533,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-06,Colorado Avalanche,Tampa Bay Lightning,2,4,-2,2,0,1,0,,9666,52532,W,L,W 4-2 vs. Colorado Avalanche,L 2-4 @ Tampa Bay Lightning,0
 2026,2026-01-06,Vancouver Canucks,Buffalo Sabres,3,5,-2,2,0,1,0,,9666,52533,W,L,W 5-3 vs. Vancouver Canucks,L 3-5 @ Buffalo Sabres,0
 2026,2026-01-06,New Jersey Devils,New York Islanders,0,9,-9,9,0,1,0,,9666,52534,W,L,W 9-0 vs. New Jersey Devils,L 0-9 @ New York Islanders,0
-2026,2026-01-07,Ottawa Senators,Utah Mammoth,1,3,-2,2,0,1,0,,9667,52535,W,L,W 3-1 vs. Ottawa Senators,L 1-3 @ Utah Hockey Club,0
+2026,2026-01-07,Ottawa Senators,Utah Mammoth,1,3,-2,2,0,1,0,,9667,52535,W,L,W 3-1 vs. Ottawa Senators,L 1-3 @ Utah Mammoth,0
 2026,2026-01-07,St. Louis Blues,Chicago Blackhawks,3,7,-4,4,0,1,0,,9667,52536,W,L,W 7-3 vs. St. Louis Blues,L 3-7 @ Chicago Blackhawks,0
 2026,2026-01-07,San Jose Sharks,Los Angeles Kings,4,3,1,-1,1,0,0,OT,9667,52537,L,W,L 3-4 vs. San Jose Sharks (OT),W 4-3 @ Los Angeles Kings (OT),0
 2026,2026-01-07,Dallas Stars,Washington Capitals,4,1,3,-3,1,0,0,,9667,52538,L,W,L 1-4 vs. Dallas Stars,W 4-1 @ Washington Capitals,0
@@ -52552,7 +52552,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-08,New Jersey Devils,Pittsburgh Penguins,1,4,-3,3,0,1,0,,9668,52551,W,L,W 4-1 vs. New Jersey Devils,L 1-4 @ Pittsburgh Penguins,0
 2026,2026-01-09,Washington Capitals,Chicago Blackhawks,5,1,4,-4,1,0,0,,9669,52552,L,W,L 1-5 vs. Washington Capitals,W 5-1 @ Chicago Blackhawks,0
 2026,2026-01-09,Los Angeles Kings,Winnipeg Jets,1,5,-4,4,0,1,0,,9669,52553,W,L,W 5-1 vs. Los Angeles Kings,L 1-5 @ Winnipeg Jets,0
-2026,2026-01-09,St. Louis Blues,Utah Mammoth,2,4,-2,2,0,1,0,,9669,52554,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Utah Hockey Club,0
+2026,2026-01-09,St. Louis Blues,Utah Mammoth,2,4,-2,2,0,1,0,,9669,52554,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Utah Mammoth,0
 2026,2026-01-10,Tampa Bay Lightning,Philadelphia Flyers,7,2,5,-5,1,0,0,,9670,52555,L,W,L 2-7 vs. Tampa Bay Lightning,W 7-2 @ Philadelphia Flyers,0
 2026,2026-01-10,St. Louis Blues,Vegas Golden Knights,2,4,-2,2,0,1,0,,9670,52556,W,L,W 4-2 vs. St. Louis Blues,L 2-4 @ Vegas Golden Knights,0
 2026,2026-01-10,New York Islanders,Minnesota Wild,4,3,1,-1,1,0,0,OT,9670,52557,L,W,L 3-4 vs. New York Islanders (OT),W 4-3 @ Minnesota Wild (OT),0
@@ -52570,7 +52570,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-11,New Jersey Devils,Winnipeg Jets,3,4,-1,1,0,1,0,,9671,52569,W,L,W 4-3 vs. New Jersey Devils,L 3-4 @ Winnipeg Jets,0
 2026,2026-01-11,Pittsburgh Penguins,Boston Bruins,0,1,-1,1,0,1,0,,9671,52570,W,L,W 1-0 vs. Pittsburgh Penguins,L 0-1 @ Boston Bruins,0
 2026,2026-01-11,Washington Capitals,Nashville Predators,2,3,-1,1,0,1,0,,9671,52571,W,L,W 3-2 vs. Washington Capitals,L 2-3 @ Nashville Predators,0
-2026,2026-01-11,Columbus Blue Jackets,Utah Mammoth,3,2,1,-1,1,0,0,OT,9671,52572,L,W,L 2-3 vs. Columbus Blue Jackets (OT),W 3-2 @ Utah Hockey Club (OT),0
+2026,2026-01-11,Columbus Blue Jackets,Utah Mammoth,3,2,1,-1,1,0,0,OT,9671,52572,L,W,L 2-3 vs. Columbus Blue Jackets (OT),W 3-2 @ Utah Mammoth (OT),0
 2026,2026-01-11,Vegas Golden Knights,San Jose Sharks,7,2,5,-5,1,0,0,,9671,52573,L,W,L 2-7 vs. Vegas Golden Knights,W 7-2 @ San Jose Sharks,0
 2026,2026-01-12,Dallas Stars,Los Angeles Kings,3,1,2,-2,1,0,0,,9672,52574,L,W,L 1-3 vs. Dallas Stars,W 3-1 @ Los Angeles Kings,0
 2026,2026-01-12,Toronto Maple Leafs,Colorado Avalanche,4,3,1,-1,1,0,0,OT,9672,52575,L,W,L 3-4 vs. Toronto Maple Leafs (OT),W 4-3 @ Colorado Avalanche (OT),0
@@ -52582,7 +52582,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-12,Carolina Hurricanes,Detroit Red Wings,3,4,-1,1,0,1,0,OT,9672,52581,W,L,W 4-3 vs. Carolina Hurricanes (OT),L 3-4 @ Detroit Red Wings (OT),0
 2026,2026-01-12,Vancouver Canucks,Montreal Canadiens,3,6,-3,3,0,1,0,,9672,52582,W,L,W 6-3 vs. Vancouver Canucks,L 3-6 @ Montreal Canadiens,0
 2026,2026-01-13,Dallas Stars,Anaheim Ducks,1,3,-2,2,0,1,0,,9673,52583,W,L,W 3-1 vs. Dallas Stars,L 1-3 @ Anaheim Ducks,0
-2026,2026-01-13,Toronto Maple Leafs,Utah Mammoth,1,6,-5,5,0,1,0,,9673,52584,W,L,W 6-1 vs. Toronto Maple Leafs,L 1-6 @ Utah Hockey Club,0
+2026,2026-01-13,Toronto Maple Leafs,Utah Mammoth,1,6,-5,5,0,1,0,,9673,52584,W,L,W 6-1 vs. Toronto Maple Leafs,L 1-6 @ Utah Mammoth,0
 2026,2026-01-13,New York Islanders,Winnipeg Jets,4,5,-1,1,0,1,0,,9673,52585,W,L,W 5-4 vs. New York Islanders,L 4-5 @ Winnipeg Jets,0
 2026,2026-01-13,Carolina Hurricanes,St. Louis Blues,0,3,-3,3,0,1,0,,9673,52586,W,L,W 3-0 vs. Carolina Hurricanes,L 0-3 @ St. Louis Blues,0
 2026,2026-01-13,Edmonton Oilers,Nashville Predators,3,4,-1,1,0,1,0,OT,9673,52587,W,L,W 4-3 vs. Edmonton Oilers (OT),L 3-4 @ Nashville Predators (OT),0
@@ -52597,7 +52597,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-14,Vegas Golden Knights,Los Angeles Kings,3,2,1,-1,1,0,0,OT,9674,52596,L,W,L 2-3 vs. Vegas Golden Knights (OT),W 3-2 @ Los Angeles Kings (OT),0
 2026,2026-01-15,Toronto Maple Leafs,Vegas Golden Knights,5,6,-1,1,0,1,0,OT,9675,52597,W,L,W 6-5 vs. Toronto Maple Leafs (OT),L 5-6 @ Vegas Golden Knights (OT),0
 2026,2026-01-15,New York Islanders,Edmonton Oilers,1,0,1,-1,1,0,0,,9675,52598,L,W,L 0-1 vs. New York Islanders,W 1-0 @ Edmonton Oilers,0
-2026,2026-01-15,Dallas Stars,Utah Mammoth,1,2,-1,1,0,1,0,,9675,52599,W,L,W 2-1 vs. Dallas Stars,L 1-2 @ Utah Hockey Club,0
+2026,2026-01-15,Dallas Stars,Utah Mammoth,1,2,-1,1,0,1,0,,9675,52599,W,L,W 2-1 vs. Dallas Stars,L 1-2 @ Utah Mammoth,0
 2026,2026-01-15,Calgary Flames,Chicago Blackhawks,3,1,2,-2,1,0,0,,9675,52600,L,W,L 1-3 vs. Calgary Flames,W 3-1 @ Chicago Blackhawks,0
 2026,2026-01-15,Winnipeg Jets,Minnesota Wild,6,2,4,-4,1,0,0,,9675,52601,L,W,L 2-6 vs. Winnipeg Jets,W 6-2 @ Minnesota Wild,0
 2026,2026-01-15,Vancouver Canucks,Columbus Blue Jackets,1,4,-3,3,0,1,0,,9675,52602,W,L,W 4-1 vs. Vancouver Canucks,L 1-4 @ Columbus Blue Jackets,0
@@ -52619,7 +52619,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-17,Carolina Hurricanes,New Jersey Devils,4,1,3,-3,1,0,0,,9677,52618,L,W,L 1-4 vs. Carolina Hurricanes,W 4-1 @ New Jersey Devils,0
 2026,2026-01-17,Columbus Blue Jackets,Pittsburgh Penguins,4,3,1,-1,1,0,0,SO,9677,52619,L,W,L 3-4 vs. Columbus Blue Jackets (SO),W 4-3 @ Pittsburgh Penguins (SO),0
 2026,2026-01-17,Montreal Canadiens,Ottawa Senators,6,5,1,-1,1,0,0,OT,9677,52620,L,W,L 5-6 vs. Montreal Canadiens (OT),W 6-5 @ Ottawa Senators (OT),0
-2026,2026-01-17,Seattle Kraken,Utah Mammoth,3,6,-3,3,0,1,0,,9677,52621,W,L,W 6-3 vs. Seattle Kraken,L 3-6 @ Utah Hockey Club,0
+2026,2026-01-17,Seattle Kraken,Utah Mammoth,3,6,-3,3,0,1,0,,9677,52621,W,L,W 6-3 vs. Seattle Kraken,L 3-6 @ Utah Mammoth,0
 2026,2026-01-17,New York Islanders,Calgary Flames,2,4,-2,2,0,1,0,,9677,52622,W,L,W 4-2 vs. New York Islanders,L 2-4 @ Calgary Flames,0
 2026,2026-01-17,New York Rangers,Philadelphia Flyers,6,3,3,-3,1,0,0,,9677,52623,L,W,L 3-6 vs. New York Rangers,W 6-3 @ Philadelphia Flyers,0
 2026,2026-01-17,Minnesota Wild,Buffalo Sabres,5,4,1,-1,1,0,0,OT,9677,52624,L,W,L 4-5 vs. Minnesota Wild (OT),W 5-4 @ Buffalo Sabres (OT),0
@@ -52646,7 +52646,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-20,Minnesota Wild,Montreal Canadiens,3,4,-1,1,0,1,0,,9680,52645,W,L,W 4-3 vs. Minnesota Wild,L 3-4 @ Montreal Canadiens,0
 2026,2026-01-21,Detroit Red Wings,Toronto Maple Leafs,2,1,1,-1,1,0,0,OT,9681,52646,L,W,L 1-2 vs. Detroit Red Wings (OT),W 2-1 @ Toronto Maple Leafs (OT),0
 2026,2026-01-21,Anaheim Ducks,Colorado Avalanche,2,1,1,-1,1,0,0,SO,9681,52647,L,W,L 1-2 vs. Anaheim Ducks (SO),W 2-1 @ Colorado Avalanche (SO),0
-2026,2026-01-21,Philadelphia Flyers,Utah Mammoth,4,5,-1,1,0,1,0,OT,9681,52648,W,L,W 5-4 vs. Philadelphia Flyers (OT),L 4-5 @ Utah Hockey Club (OT),0
+2026,2026-01-21,Philadelphia Flyers,Utah Mammoth,4,5,-1,1,0,1,0,OT,9681,52648,W,L,W 5-4 vs. Philadelphia Flyers (OT),L 4-5 @ Utah Mammoth (OT),0
 2026,2026-01-21,Pittsburgh Penguins,Calgary Flames,4,1,3,-3,1,0,0,,9681,52649,L,W,L 1-4 vs. Pittsburgh Penguins,W 4-1 @ Calgary Flames,0
 2026,2026-01-21,New York Islanders,Seattle Kraken,1,4,-3,3,0,1,0,,9681,52650,W,L,W 4-1 vs. New York Islanders,L 1-4 @ Seattle Kraken,0
 2026,2026-01-21,Washington Capitals,Vancouver Canucks,3,4,-1,1,0,1,0,,9681,52651,W,L,W 4-3 vs. Washington Capitals,L 3-4 @ Vancouver Canucks,0
@@ -52674,14 +52674,14 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-24,Buffalo Sabres,New York Islanders,5,0,5,-5,1,0,0,,9684,52673,L,W,L 0-5 vs. Buffalo Sabres,W 5-0 @ New York Islanders,0
 2026,2026-01-24,Carolina Hurricanes,Ottawa Senators,4,1,3,-3,1,0,0,,9684,52674,L,W,L 1-4 vs. Carolina Hurricanes,W 4-1 @ Ottawa Senators,0
 2026,2026-01-24,Tampa Bay Lightning,Columbus Blue Jackets,5,8,-3,3,0,1,0,,9684,52675,W,L,W 8-5 vs. Tampa Bay Lightning,L 5-8 @ Columbus Blue Jackets,0
-2026,2026-01-24,Utah Mammoth,Nashville Predators,5,2,3,-3,1,0,0,,9684,52676,L,W,L 2-5 vs. Utah Hockey Club,W 5-2 @ Nashville Predators,0
+2026,2026-01-24,Utah Mammoth,Nashville Predators,5,2,3,-3,1,0,0,,9684,52676,L,W,L 2-5 vs. Utah Mammoth,W 5-2 @ Nashville Predators,0
 2026,2026-01-25,Florida Panthers,Chicago Blackhawks,5,1,4,-4,1,0,0,,9685,52677,L,W,L 1-5 vs. Florida Panthers,W 5-1 @ Chicago Blackhawks,0
 2026,2026-01-25,Pittsburgh Penguins,Vancouver Canucks,3,2,1,-1,1,0,0,,9685,52678,L,W,L 2-3 vs. Pittsburgh Penguins,W 3-2 @ Vancouver Canucks,0
 2026,2026-01-25,Anaheim Ducks,Calgary Flames,4,3,1,-1,1,0,0,OT,9685,52679,L,W,L 3-4 vs. Anaheim Ducks (OT),W 4-3 @ Calgary Flames (OT),0
 2026,2026-01-25,New Jersey Devils,Seattle Kraken,2,4,-2,2,0,1,0,,9685,52680,W,L,W 4-2 vs. New Jersey Devils,L 2-4 @ Seattle Kraken,0
 2026,2026-01-25,Colorado Avalanche,Toronto Maple Leafs,4,1,3,-3,1,0,0,,9685,52681,L,W,L 1-4 vs. Colorado Avalanche,W 4-1 @ Toronto Maple Leafs,0
 2026,2026-01-25,Vegas Golden Knights,Ottawa Senators,1,7,-6,6,0,1,0,,9685,52682,W,L,W 7-1 vs. Vegas Golden Knights,L 1-7 @ Ottawa Senators,0
-2026,2026-01-26,Utah Mammoth,Tampa Bay Lightning,0,2,-2,2,0,1,0,,9686,52683,W,L,W 2-0 vs. Utah Hockey Club,L 0-2 @ Tampa Bay Lightning,0
+2026,2026-01-26,Utah Mammoth,Tampa Bay Lightning,0,2,-2,2,0,1,0,,9686,52683,W,L,W 2-0 vs. Utah Mammoth,L 0-2 @ Tampa Bay Lightning,0
 2026,2026-01-26,Boston Bruins,New York Rangers,3,4,-1,1,0,1,0,OT,9686,52684,W,L,W 4-3 vs. Boston Bruins (OT),L 3-4 @ New York Rangers (OT),0
 2026,2026-01-26,New York Islanders,Philadelphia Flyers,4,0,4,-4,1,0,0,,9686,52685,L,W,L 0-4 vs. New York Islanders,W 4-0 @ Philadelphia Flyers,0
 2026,2026-01-26,Anaheim Ducks,Edmonton Oilers,4,7,-3,3,0,1,0,,9686,52686,W,L,W 7-4 vs. Anaheim Ducks,L 4-7 @ Edmonton Oilers,0
@@ -52694,7 +52694,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-27,Vegas Golden Knights,Montreal Canadiens,2,3,-1,1,0,1,0,OT,9687,52693,W,L,W 3-2 vs. Vegas Golden Knights (OT),L 2-3 @ Montreal Canadiens (OT),0
 2026,2026-01-27,Buffalo Sabres,Toronto Maple Leafs,7,4,3,-3,1,0,0,,9687,52694,L,W,L 4-7 vs. Buffalo Sabres,W 7-4 @ Toronto Maple Leafs,0
 2026,2026-01-27,Nashville Predators,Boston Bruins,2,3,-1,1,0,1,0,OT,9687,52695,W,L,W 3-2 vs. Nashville Predators (OT),L 2-3 @ Boston Bruins (OT),0
-2026,2026-01-27,Utah Mammoth,Florida Panthers,4,3,1,-1,1,0,0,,9687,52696,L,W,L 3-4 vs. Utah Hockey Club,W 4-3 @ Florida Panthers,0
+2026,2026-01-27,Utah Mammoth,Florida Panthers,4,3,1,-1,1,0,0,,9687,52696,L,W,L 3-4 vs. Utah Mammoth,W 4-3 @ Florida Panthers,0
 2026,2026-01-28,New York Rangers,New York Islanders,2,5,-3,3,0,1,0,,9688,52697,W,L,W 5-2 vs. New York Rangers,L 2-5 @ New York Islanders,0
 2026,2026-01-28,Philadelphia Flyers,Columbus Blue Jackets,3,5,-2,2,0,1,0,,9688,52698,W,L,W 5-3 vs. Philadelphia Flyers,L 3-5 @ Columbus Blue Jackets,0
 2026,2026-01-28,Colorado Avalanche,Ottawa Senators,2,5,-3,3,0,1,0,,9688,52699,W,L,W 5-2 vs. Colorado Avalanche,L 2-5 @ Ottawa Senators,0
@@ -52712,10 +52712,10 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-01-29,Colorado Avalanche,Montreal Canadiens,3,7,-4,4,0,1,0,,9689,52711,W,L,W 7-3 vs. Colorado Avalanche,L 3-7 @ Montreal Canadiens,0
 2026,2026-01-29,Los Angeles Kings,Buffalo Sabres,1,4,-3,3,0,1,0,,9689,52712,W,L,W 4-1 vs. Los Angeles Kings,L 1-4 @ Buffalo Sabres,0
 2026,2026-01-29,Philadelphia Flyers,Boston Bruins,3,6,-3,3,0,1,0,,9689,52713,W,L,W 6-3 vs. Philadelphia Flyers,L 3-6 @ Boston Bruins,0
-2026,2026-01-29,Utah Mammoth,Carolina Hurricanes,4,5,-1,1,0,1,0,,9689,52714,W,L,W 5-4 vs. Utah Hockey Club,L 4-5 @ Carolina Hurricanes,0
+2026,2026-01-29,Utah Mammoth,Carolina Hurricanes,4,5,-1,1,0,1,0,,9689,52714,W,L,W 5-4 vs. Utah Mammoth,L 4-5 @ Carolina Hurricanes,0
 2026,2026-01-30,Columbus Blue Jackets,Chicago Blackhawks,4,2,2,-2,1,0,0,,9690,52715,L,W,L 2-4 vs. Columbus Blue Jackets,W 4-2 @ Chicago Blackhawks,0
 2026,2026-01-31,Toronto Maple Leafs,Vancouver Canucks,3,2,1,-1,1,0,0,SO,9691,52716,L,W,L 2-3 vs. Toronto Maple Leafs (SO),W 3-2 @ Vancouver Canucks (SO),0
-2026,2026-01-31,Dallas Stars,Utah Mammoth,3,2,1,-1,1,0,0,,9691,52717,L,W,L 2-3 vs. Dallas Stars,W 3-2 @ Utah Hockey Club,0
+2026,2026-01-31,Dallas Stars,Utah Mammoth,3,2,1,-1,1,0,0,,9691,52717,L,W,L 2-3 vs. Dallas Stars,W 3-2 @ Utah Mammoth,0
 2026,2026-01-31,Winnipeg Jets,Florida Panthers,2,1,1,-1,1,0,0,,9691,52718,L,W,L 1-2 vs. Winnipeg Jets,W 2-1 @ Florida Panthers,0
 2026,2026-01-31,Seattle Kraken,Vegas Golden Knights,3,2,1,-1,1,0,0,,9691,52719,L,W,L 2-3 vs. Seattle Kraken,W 3-2 @ Vegas Golden Knights,0
 2026,2026-01-31,Columbus Blue Jackets,St. Louis Blues,5,3,2,-2,1,0,0,,9691,52720,L,W,L 3-5 vs. Columbus Blue Jackets,W 5-3 @ St. Louis Blues,0
@@ -52739,7 +52739,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-02-02,San Jose Sharks,Chicago Blackhawks,3,6,-3,3,0,1,0,,9693,52738,W,L,W 6-3 vs. San Jose Sharks,L 3-6 @ Chicago Blackhawks,0
 2026,2026-02-02,Winnipeg Jets,Dallas Stars,3,4,-1,1,0,1,0,OT,9693,52739,W,L,W 4-3 vs. Winnipeg Jets (OT),L 3-4 @ Dallas Stars (OT),0
 2026,2026-02-02,Detroit Red Wings,Colorado Avalanche,2,0,2,-2,1,0,0,,9693,52740,L,W,L 0-2 vs. Detroit Red Wings,W 2-0 @ Colorado Avalanche,0
-2026,2026-02-02,Vancouver Canucks,Utah Mammoth,2,6,-4,4,0,1,0,,9693,52741,W,L,W 6-2 vs. Vancouver Canucks,L 2-6 @ Utah Hockey Club,0
+2026,2026-02-02,Vancouver Canucks,Utah Mammoth,2,6,-4,4,0,1,0,,9693,52741,W,L,W 6-2 vs. Vancouver Canucks,L 2-6 @ Utah Mammoth,0
 2026,2026-02-02,Toronto Maple Leafs,Calgary Flames,4,2,2,-2,1,0,0,,9693,52742,L,W,L 2-4 vs. Toronto Maple Leafs,W 4-2 @ Calgary Flames,0
 2026,2026-02-03,Seattle Kraken,Anaheim Ducks,2,4,-2,2,0,1,0,,9694,52743,W,L,W 4-2 vs. Seattle Kraken,L 2-4 @ Anaheim Ducks,0
 2026,2026-02-03,Toronto Maple Leafs,Edmonton Oilers,5,2,3,-3,1,0,0,,9694,52744,L,W,L 2-5 vs. Toronto Maple Leafs,W 5-2 @ Edmonton Oilers,0
@@ -52751,7 +52751,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-02-04,Vancouver Canucks,Vegas Golden Knights,2,5,-3,3,0,1,0,,9695,52750,W,L,W 5-2 vs. Vancouver Canucks,L 2-5 @ Vegas Golden Knights,0
 2026,2026-02-04,Seattle Kraken,Los Angeles Kings,4,2,2,-2,1,0,0,,9695,52751,L,W,L 2-4 vs. Seattle Kraken,W 4-2 @ Los Angeles Kings,0
 2026,2026-02-04,St. Louis Blues,Dallas Stars,4,5,-1,1,0,1,0,,9695,52752,W,L,W 5-4 vs. St. Louis Blues,L 4-5 @ Dallas Stars,0
-2026,2026-02-04,Detroit Red Wings,Utah Mammoth,1,4,-3,3,0,1,0,,9695,52753,W,L,W 4-1 vs. Detroit Red Wings,L 1-4 @ Utah Hockey Club,0
+2026,2026-02-04,Detroit Red Wings,Utah Mammoth,1,4,-3,3,0,1,0,,9695,52753,W,L,W 4-1 vs. Detroit Red Wings,L 1-4 @ Utah Mammoth,0
 2026,2026-02-04,Edmonton Oilers,Calgary Flames,3,4,-1,1,0,1,0,,9695,52754,W,L,W 4-3 vs. Edmonton Oilers,L 3-4 @ Calgary Flames,0
 2026,2026-02-04,Minnesota Wild,Nashville Predators,6,5,1,-1,1,0,0,OT,9695,52755,L,W,L 5-6 vs. Minnesota Wild (OT),W 6-5 @ Nashville Predators (OT),0
 2026,2026-02-04,Montreal Canadiens,Winnipeg Jets,5,1,4,-4,1,0,0,,9695,52756,L,W,L 1-5 vs. Montreal Canadiens,W 5-1 @ Winnipeg Jets,0
@@ -52766,7 +52766,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-02-05,Nashville Predators,Washington Capitals,2,4,-2,2,0,1,0,,9696,52765,W,L,W 4-2 vs. Nashville Predators,L 2-4 @ Washington Capitals,0
 2026,2026-02-05,Florida Panthers,Tampa Bay Lightning,1,6,-5,5,0,1,0,,9696,52766,W,L,W 6-1 vs. Florida Panthers,L 1-6 @ Tampa Bay Lightning,0
 2026,2026-02-25,Winnipeg Jets,Vancouver Canucks,3,2,1,-1,1,0,0,OT,9697,52767,L,W,L 2-3 vs. Winnipeg Jets (OT),W 3-2 @ Vancouver Canucks (OT),0
-2026,2026-02-25,Colorado Avalanche,Utah Mammoth,4,2,2,-2,1,0,0,,9697,52768,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Utah Hockey Club,0
+2026,2026-02-25,Colorado Avalanche,Utah Mammoth,4,2,2,-2,1,0,0,,9697,52768,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Utah Mammoth,0
 2026,2026-02-25,Vegas Golden Knights,Los Angeles Kings,6,4,2,-2,1,0,0,,9697,52769,L,W,L 4-6 vs. Vegas Golden Knights,W 6-4 @ Los Angeles Kings,0
 2026,2026-02-25,Edmonton Oilers,Anaheim Ducks,5,6,-1,1,0,1,0,,9697,52770,W,L,W 6-5 vs. Edmonton Oilers,L 5-6 @ Anaheim Ducks,0
 2026,2026-02-25,Seattle Kraken,Dallas Stars,1,4,-3,3,0,1,0,,9697,52771,W,L,W 4-1 vs. Seattle Kraken,L 1-4 @ Dallas Stars,0
@@ -52787,7 +52787,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-02-26,Tampa Bay Lightning,Carolina Hurricanes,4,5,-1,1,0,1,0,,9698,52786,W,L,W 5-4 vs. Tampa Bay Lightning,L 4-5 @ Carolina Hurricanes,0
 2026,2026-02-27,Buffalo Sabres,Florida Panthers,3,2,1,-1,1,0,0,,9699,52787,L,W,L 2-3 vs. Buffalo Sabres,W 3-2 @ Florida Panthers,0
 2026,2026-02-27,Vegas Golden Knights,Washington Capitals,2,3,-1,1,0,1,0,,9699,52788,W,L,W 3-2 vs. Vegas Golden Knights,L 2-3 @ Washington Capitals,0
-2026,2026-02-27,Minnesota Wild,Utah Mammoth,2,5,-3,3,0,1,0,,9699,52789,W,L,W 5-2 vs. Minnesota Wild,L 2-5 @ Utah Hockey Club,0
+2026,2026-02-27,Minnesota Wild,Utah Mammoth,2,5,-3,3,0,1,0,,9699,52789,W,L,W 5-2 vs. Minnesota Wild,L 2-5 @ Utah Mammoth,0
 2026,2026-02-27,Winnipeg Jets,Anaheim Ducks,4,5,-1,1,0,1,0,OT,9699,52790,W,L,W 5-4 vs. Winnipeg Jets (OT),L 4-5 @ Anaheim Ducks (OT),0
 2026,2026-02-28,Buffalo Sabres,Tampa Bay Lightning,6,2,4,-4,1,0,0,,9700,52791,L,W,L 2-6 vs. Buffalo Sabres,W 6-2 @ Tampa Bay Lightning,0
 2026,2026-02-28,Nashville Predators,Dallas Stars,2,3,-1,1,0,1,0,OT,9700,52792,W,L,W 3-2 vs. Nashville Predators (OT),L 2-3 @ Dallas Stars (OT),0
@@ -52805,7 +52805,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-01,Calgary Flames,Anaheim Ducks,2,3,-1,1,0,1,0,SO,9701,52804,W,L,W 3-2 vs. Calgary Flames (SO),L 2-3 @ Anaheim Ducks (SO),0
 2026,2026-03-01,Florida Panthers,New York Islanders,4,5,-1,1,0,1,0,,9701,52805,W,L,W 5-4 vs. Florida Panthers,L 4-5 @ New York Islanders,0
 2026,2026-03-01,St. Louis Blues,Minnesota Wild,3,1,2,-2,1,0,0,,9701,52806,L,W,L 1-3 vs. St. Louis Blues,W 3-1 @ Minnesota Wild,0
-2026,2026-03-01,Chicago Blackhawks,Utah Mammoth,4,0,4,-4,1,0,0,,9701,52807,L,W,L 0-4 vs. Chicago Blackhawks,W 4-0 @ Utah Hockey Club,0
+2026,2026-03-01,Chicago Blackhawks,Utah Mammoth,4,0,4,-4,1,0,0,,9701,52807,L,W,L 0-4 vs. Chicago Blackhawks,W 4-0 @ Utah Mammoth,0
 2026,2026-03-01,Vegas Golden Knights,Pittsburgh Penguins,0,5,-5,5,0,1,0,,9701,52808,W,L,W 5-0 vs. Vegas Golden Knights,L 0-5 @ Pittsburgh Penguins,0
 2026,2026-03-01,Winnipeg Jets,San Jose Sharks,1,2,-1,1,0,1,0,OT,9701,52809,W,L,W 2-1 vs. Winnipeg Jets (OT),L 1-2 @ San Jose Sharks (OT),0
 2026,2026-03-02,Colorado Avalanche,Los Angeles Kings,4,2,2,-2,1,0,0,,9702,52810,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Los Angeles Kings,0
@@ -52820,7 +52820,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-03,Montreal Canadiens,San Jose Sharks,5,7,-2,2,0,1,0,,9703,52819,W,L,W 7-5 vs. Montreal Canadiens,L 5-7 @ San Jose Sharks,0
 2026,2026-03-03,Chicago Blackhawks,Winnipeg Jets,2,3,-1,1,0,1,0,OT,9703,52820,W,L,W 3-2 vs. Chicago Blackhawks (OT),L 2-3 @ Winnipeg Jets (OT),0
 2026,2026-03-03,Tampa Bay Lightning,Minnesota Wild,1,5,-4,4,0,1,0,,9703,52821,W,L,W 5-1 vs. Tampa Bay Lightning,L 1-5 @ Minnesota Wild,0
-2026,2026-03-03,Utah Mammoth,Washington Capitals,3,2,1,-1,1,0,0,,9703,52822,L,W,L 2-3 vs. Utah Hockey Club,W 3-2 @ Washington Capitals,0
+2026,2026-03-03,Utah Mammoth,Washington Capitals,3,2,1,-1,1,0,0,,9703,52822,L,W,L 2-3 vs. Utah Mammoth,W 3-2 @ Washington Capitals,0
 2026,2026-03-03,Pittsburgh Penguins,Boston Bruins,1,2,-1,1,0,1,0,,9703,52823,W,L,W 2-1 vs. Pittsburgh Penguins,L 1-2 @ Boston Bruins,0
 2026,2026-03-03,Nashville Predators,Columbus Blue Jackets,2,3,-1,1,0,1,0,,9703,52824,W,L,W 3-2 vs. Nashville Predators,L 2-3 @ Columbus Blue Jackets,0
 2026,2026-03-03,Florida Panthers,New Jersey Devils,1,5,-4,4,0,1,0,,9703,52825,W,L,W 5-1 vs. Florida Panthers,L 1-5 @ New Jersey Devils,0
@@ -52835,7 +52835,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-05,Boston Bruins,Nashville Predators,3,6,-3,3,0,1,0,,9705,52834,W,L,W 6-3 vs. Boston Bruins,L 3-6 @ Nashville Predators,0
 2026,2026-03-05,Ottawa Senators,Calgary Flames,4,1,3,-3,1,0,0,,9705,52835,L,W,L 1-4 vs. Ottawa Senators,W 4-1 @ Calgary Flames,0
 2026,2026-03-05,Buffalo Sabres,Pittsburgh Penguins,5,1,4,-4,1,0,0,,9705,52836,L,W,L 1-5 vs. Buffalo Sabres,W 5-1 @ Pittsburgh Penguins,0
-2026,2026-03-05,Utah Mammoth,Philadelphia Flyers,3,0,3,-3,1,0,0,,9705,52837,L,W,L 0-3 vs. Utah Hockey Club,W 3-0 @ Philadelphia Flyers,0
+2026,2026-03-05,Utah Mammoth,Philadelphia Flyers,3,0,3,-3,1,0,0,,9705,52837,L,W,L 0-3 vs. Utah Mammoth,W 3-0 @ Philadelphia Flyers,0
 2026,2026-03-05,Toronto Maple Leafs,New York Rangers,2,6,-4,4,0,1,0,,9705,52838,W,L,W 6-2 vs. Toronto Maple Leafs,L 2-6 @ New York Rangers,0
 2026,2026-03-05,Florida Panthers,Columbus Blue Jackets,2,4,-2,2,0,1,0,,9705,52839,W,L,W 4-2 vs. Florida Panthers,L 2-4 @ Columbus Blue Jackets,0
 2026,2026-03-06,Florida Panthers,Detroit Red Wings,3,1,2,-2,1,0,0,,9706,52840,L,W,L 1-3 vs. Florida Panthers,W 3-1 @ Detroit Red Wings,0
@@ -52852,7 +52852,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-07,Vancouver Canucks,Winnipeg Jets,2,3,-1,1,0,1,0,OT,9707,52851,W,L,W 3-2 vs. Vancouver Canucks (OT),L 2-3 @ Winnipeg Jets (OT),0
 2026,2026-03-07,Philadelphia Flyers,Pittsburgh Penguins,4,3,1,-1,1,0,0,SO,9707,52852,L,W,L 3-4 vs. Philadelphia Flyers (SO),W 4-3 @ Pittsburgh Penguins (SO),0
 2026,2026-03-07,Tampa Bay Lightning,Toronto Maple Leafs,5,2,3,-3,1,0,0,,9707,52853,L,W,L 2-5 vs. Tampa Bay Lightning,W 5-2 @ Toronto Maple Leafs,0
-2026,2026-03-07,Utah Mammoth,Columbus Blue Jackets,5,4,1,-1,1,0,0,OT,9707,52854,L,W,L 4-5 vs. Utah Hockey Club (OT),W 5-4 @ Columbus Blue Jackets (OT),0
+2026,2026-03-07,Utah Mammoth,Columbus Blue Jackets,5,4,1,-1,1,0,0,OT,9707,52854,L,W,L 4-5 vs. Utah Mammoth (OT),W 5-4 @ Columbus Blue Jackets (OT),0
 2026,2026-03-07,Nashville Predators,Buffalo Sabres,2,3,-1,1,0,1,0,,9707,52855,W,L,W 3-2 vs. Nashville Predators,L 2-3 @ Buffalo Sabres,0
 2026,2026-03-07,New York Rangers,New Jersey Devils,3,6,-3,3,0,1,0,,9707,52856,W,L,W 6-3 vs. New York Rangers,L 3-6 @ New Jersey Devils,0
 2026,2026-03-07,Washington Capitals,Boston Bruins,1,3,-2,2,0,1,0,,9707,52857,W,L,W 3-1 vs. Washington Capitals,L 1-3 @ Boston Bruins,0
@@ -52866,13 +52866,13 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-09,Los Angeles Kings,Columbus Blue Jackets,5,4,1,-1,1,0,0,OT,9709,52865,L,W,L 4-5 vs. Los Angeles Kings (OT),W 5-4 @ Columbus Blue Jackets (OT),0
 2026,2026-03-09,New York Rangers,Philadelphia Flyers,6,2,4,-4,1,0,0,,9709,52866,L,W,L 2-6 vs. New York Rangers,W 6-2 @ Philadelphia Flyers,0
 2026,2026-03-09,Calgary Flames,Washington Capitals,3,7,-4,4,0,1,0,,9709,52867,W,L,W 7-3 vs. Calgary Flames,L 3-7 @ Washington Capitals,0
-2026,2026-03-09,Utah Mammoth,Chicago Blackhawks,2,3,-1,1,0,1,0,OT,9709,52868,W,L,W 3-2 vs. Utah Hockey Club (OT),L 2-3 @ Chicago Blackhawks (OT),0
+2026,2026-03-09,Utah Mammoth,Chicago Blackhawks,2,3,-1,1,0,1,0,OT,9709,52868,W,L,W 3-2 vs. Utah Mammoth (OT),L 2-3 @ Chicago Blackhawks (OT),0
 2026,2026-03-09,Ottawa Senators,Vancouver Canucks,2,0,2,-2,1,0,0,,9709,52869,L,W,L 0-2 vs. Ottawa Senators,W 2-0 @ Vancouver Canucks,0
 2026,2026-03-10,Vegas Golden Knights,Dallas Stars,1,2,-1,1,0,1,0,,9710,52870,W,L,W 2-1 vs. Vegas Golden Knights,L 1-2 @ Dallas Stars,0
 2026,2026-03-10,Nashville Predators,Seattle Kraken,4,2,2,-2,1,0,0,,9710,52871,L,W,L 2-4 vs. Nashville Predators,W 4-2 @ Seattle Kraken,0
 2026,2026-03-10,Edmonton Oilers,Colorado Avalanche,4,3,1,-1,1,0,0,,9710,52872,L,W,L 3-4 vs. Edmonton Oilers,W 4-3 @ Colorado Avalanche,0
 2026,2026-03-10,Anaheim Ducks,Winnipeg Jets,4,1,3,-3,1,0,0,,9710,52873,L,W,L 1-4 vs. Anaheim Ducks,W 4-1 @ Winnipeg Jets,0
-2026,2026-03-10,Utah Mammoth,Minnesota Wild,0,5,-5,5,0,1,0,,9710,52874,W,L,W 5-0 vs. Utah Hockey Club,L 0-5 @ Minnesota Wild,0
+2026,2026-03-10,Utah Mammoth,Minnesota Wild,0,5,-5,5,0,1,0,,9710,52874,W,L,W 5-0 vs. Utah Mammoth,L 0-5 @ Minnesota Wild,0
 2026,2026-03-10,New York Islanders,St. Louis Blues,4,3,1,-1,1,0,0,OT,9710,52875,L,W,L 3-4 vs. New York Islanders (OT),W 4-3 @ St. Louis Blues (OT),0
 2026,2026-03-10,Columbus Blue Jackets,Tampa Bay Lightning,5,2,3,-3,1,0,0,,9710,52876,L,W,L 2-5 vs. Columbus Blue Jackets,W 5-2 @ Tampa Bay Lightning,0
 2026,2026-03-10,Calgary Flames,New York Rangers,0,4,-4,4,0,1,0,,9710,52877,W,L,W 4-0 vs. Calgary Flames,L 0-4 @ New York Rangers,0
@@ -52886,7 +52886,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-12,Calgary Flames,New Jersey Devils,5,4,1,-1,1,0,0,,9712,52885,L,W,L 4-5 vs. Calgary Flames,W 5-4 @ New Jersey Devils,0
 2026,2026-03-12,Pittsburgh Penguins,Vegas Golden Knights,2,6,-4,4,0,1,0,,9712,52886,W,L,W 6-2 vs. Pittsburgh Penguins,L 2-6 @ Vegas Golden Knights,0
 2026,2026-03-12,Nashville Predators,Vancouver Canucks,3,4,-1,1,0,1,0,SO,9712,52887,W,L,W 4-3 vs. Nashville Predators (SO),L 3-4 @ Vancouver Canucks (SO),0
-2026,2026-03-12,Chicago Blackhawks,Utah Mammoth,3,2,1,-1,1,0,0,OT,9712,52888,L,W,L 2-3 vs. Chicago Blackhawks (OT),W 3-2 @ Utah Hockey Club (OT),0
+2026,2026-03-12,Chicago Blackhawks,Utah Mammoth,3,2,1,-1,1,0,0,OT,9712,52888,L,W,L 2-3 vs. Chicago Blackhawks (OT),W 3-2 @ Utah Mammoth (OT),0
 2026,2026-03-12,New York Rangers,Winnipeg Jets,6,3,3,-3,1,0,0,,9712,52889,L,W,L 3-6 vs. New York Rangers,W 6-3 @ Winnipeg Jets,0
 2026,2026-03-12,Philadelphia Flyers,Minnesota Wild,3,2,1,-1,1,0,0,SO,9712,52890,L,W,L 2-3 vs. Philadelphia Flyers (SO),W 3-2 @ Minnesota Wild (SO),0
 2026,2026-03-12,Edmonton Oilers,Dallas Stars,2,7,-5,5,0,1,0,,9712,52891,W,L,W 7-2 vs. Edmonton Oilers,L 2-7 @ Dallas Stars,0
@@ -52902,7 +52902,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-14,Anaheim Ducks,Ottawa Senators,0,2,-2,2,0,1,0,,9714,52901,W,L,W 2-0 vs. Anaheim Ducks,L 0-2 @ Ottawa Senators,0
 2026,2026-03-14,Chicago Blackhawks,Vegas Golden Knights,0,4,-4,4,0,1,0,,9714,52902,W,L,W 4-0 vs. Chicago Blackhawks,L 0-4 @ Vegas Golden Knights,0
 2026,2026-03-14,Seattle Kraken,Vancouver Canucks,5,2,3,-3,1,0,0,,9714,52903,L,W,L 2-5 vs. Seattle Kraken,W 5-2 @ Vancouver Canucks,0
-2026,2026-03-14,Pittsburgh Penguins,Utah Mammoth,4,3,1,-1,1,0,0,,9714,52904,L,W,L 3-4 vs. Pittsburgh Penguins,W 4-3 @ Utah Hockey Club,0
+2026,2026-03-14,Pittsburgh Penguins,Utah Mammoth,4,3,1,-1,1,0,0,,9714,52904,L,W,L 3-4 vs. Pittsburgh Penguins,W 4-3 @ Utah Mammoth,0
 2026,2026-03-14,Columbus Blue Jackets,Philadelphia Flyers,2,1,1,-1,1,0,0,SO,9714,52905,L,W,L 1-2 vs. Columbus Blue Jackets (SO),W 2-1 @ Philadelphia Flyers (SO),0
 2026,2026-03-14,Calgary Flames,New York Islanders,2,3,-1,1,0,1,0,,9714,52906,W,L,W 3-2 vs. Calgary Flames,L 2-3 @ New York Islanders,0
 2026,2026-03-14,Los Angeles Kings,New Jersey Devils,4,6,-2,2,0,1,0,,9714,52907,W,L,W 6-4 vs. Los Angeles Kings,L 4-6 @ New Jersey Devils,0
@@ -52923,7 +52923,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-16,Pittsburgh Penguins,Colorado Avalanche,7,2,5,-5,1,0,0,,9716,52922,L,W,L 2-7 vs. Pittsburgh Penguins,W 7-2 @ Colorado Avalanche,0
 2026,2026-03-16,Calgary Flames,Detroit Red Wings,2,5,-3,3,0,1,0,,9716,52923,W,L,W 5-2 vs. Calgary Flames,L 2-5 @ Detroit Red Wings,0
 2026,2026-03-16,Boston Bruins,New Jersey Devils,3,4,-1,1,0,1,0,OT,9716,52924,W,L,W 4-3 vs. Boston Bruins (OT),L 3-4 @ New Jersey Devils (OT),0
-2026,2026-03-16,Utah Mammoth,Dallas Stars,6,3,3,-3,1,0,0,,9716,52925,L,W,L 3-6 vs. Utah Hockey Club,W 6-3 @ Dallas Stars,0
+2026,2026-03-16,Utah Mammoth,Dallas Stars,6,3,3,-3,1,0,0,,9716,52925,L,W,L 3-6 vs. Utah Mammoth,W 6-3 @ Dallas Stars,0
 2026,2026-03-17,New York Islanders,Toronto Maple Leafs,3,1,2,-2,1,0,0,,9717,52926,L,W,L 1-3 vs. New York Islanders,W 3-1 @ Toronto Maple Leafs,0
 2026,2026-03-17,Boston Bruins,Montreal Canadiens,2,3,-1,1,0,1,0,OT,9717,52927,W,L,W 3-2 vs. Boston Bruins (OT),L 2-3 @ Montreal Canadiens (OT),0
 2026,2026-03-17,Carolina Hurricanes,Columbus Blue Jackets,1,5,-4,4,0,1,0,,9717,52928,W,L,W 5-1 vs. Carolina Hurricanes,L 1-5 @ Columbus Blue Jackets,0
@@ -52942,7 +52942,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-19,Florida Panthers,Edmonton Oilers,4,0,4,-4,1,0,0,,9719,52941,L,W,L 0-4 vs. Florida Panthers,W 4-0 @ Edmonton Oilers,0
 2026,2026-03-19,Philadelphia Flyers,Los Angeles Kings,4,3,1,-1,1,0,0,SO,9719,52942,L,W,L 3-4 vs. Philadelphia Flyers (SO),W 4-3 @ Los Angeles Kings (SO),0
 2026,2026-03-19,Buffalo Sabres,San Jose Sharks,5,0,5,-5,1,0,0,,9719,52943,L,W,L 0-5 vs. Buffalo Sabres,W 5-0 @ San Jose Sharks,0
-2026,2026-03-19,Utah Mammoth,Vegas Golden Knights,4,0,4,-4,1,0,0,,9719,52944,L,W,L 0-4 vs. Utah Hockey Club,W 4-0 @ Vegas Golden Knights,0
+2026,2026-03-19,Utah Mammoth,Vegas Golden Knights,4,0,4,-4,1,0,0,,9719,52944,L,W,L 0-4 vs. Utah Mammoth,W 4-0 @ Vegas Golden Knights,0
 2026,2026-03-19,Seattle Kraken,Nashville Predators,1,3,-2,2,0,1,0,,9719,52945,W,L,W 3-1 vs. Seattle Kraken,L 1-3 @ Nashville Predators,0
 2026,2026-03-19,Tampa Bay Lightning,Vancouver Canucks,6,2,4,-4,1,0,0,,9719,52946,L,W,L 2-6 vs. Tampa Bay Lightning,W 6-2 @ Vancouver Canucks,0
 2026,2026-03-19,New York Rangers,Columbus Blue Jackets,3,6,-3,3,0,1,0,,9719,52947,W,L,W 6-3 vs. New York Rangers,L 3-6 @ Columbus Blue Jackets,0
@@ -52954,7 +52954,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-20,New Jersey Devils,Washington Capitals,1,2,-1,1,0,1,0,,9720,52953,W,L,W 2-1 vs. New Jersey Devils,L 1-2 @ Washington Capitals,0
 2026,2026-03-20,Colorado Avalanche,Chicago Blackhawks,4,1,3,-3,1,0,0,,9720,52954,L,W,L 1-4 vs. Colorado Avalanche,W 4-1 @ Chicago Blackhawks,0
 2026,2026-03-20,Florida Panthers,Calgary Flames,1,4,-3,3,0,1,0,,9720,52955,W,L,W 4-1 vs. Florida Panthers,L 1-4 @ Calgary Flames,0
-2026,2026-03-20,Anaheim Ducks,Utah Mammoth,4,1,3,-3,1,0,0,,9720,52956,L,W,L 1-4 vs. Anaheim Ducks,W 4-1 @ Utah Hockey Club,0
+2026,2026-03-20,Anaheim Ducks,Utah Mammoth,4,1,3,-3,1,0,0,,9720,52956,L,W,L 1-4 vs. Anaheim Ducks,W 4-1 @ Utah Mammoth,0
 2026,2026-03-21,Tampa Bay Lightning,Edmonton Oilers,5,2,3,-3,1,0,0,,9721,52957,L,W,L 2-5 vs. Tampa Bay Lightning,W 5-2 @ Edmonton Oilers,0
 2026,2026-03-21,Boston Bruins,Detroit Red Wings,4,2,2,-2,1,0,0,,9721,52958,L,W,L 2-4 vs. Boston Bruins,W 4-2 @ Detroit Red Wings,0
 2026,2026-03-21,St. Louis Blues,Vancouver Canucks,3,1,2,-2,1,0,0,,9721,52959,L,W,L 1-3 vs. St. Louis Blues,W 3-1 @ Vancouver Canucks,0
@@ -52969,7 +52969,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-22,Vegas Golden Knights,Dallas Stars,3,2,1,-1,1,0,0,,9722,52968,L,W,L 2-3 vs. Vegas Golden Knights,W 3-2 @ Dallas Stars,0
 2026,2026-03-22,Buffalo Sabres,Anaheim Ducks,5,6,-1,1,0,1,0,OT,9722,52969,W,L,W 6-5 vs. Buffalo Sabres (OT),L 5-6 @ Anaheim Ducks (OT),0
 2026,2026-03-22,Columbus Blue Jackets,New York Islanders,0,1,-1,1,0,1,0,,9722,52970,W,L,W 1-0 vs. Columbus Blue Jackets,L 0-1 @ New York Islanders,0
-2026,2026-03-22,Los Angeles Kings,Utah Mammoth,3,4,-1,1,0,1,0,OT,9722,52971,W,L,W 4-3 vs. Los Angeles Kings (OT),L 3-4 @ Utah Hockey Club (OT),0
+2026,2026-03-22,Los Angeles Kings,Utah Mammoth,3,4,-1,1,0,1,0,OT,9722,52971,W,L,W 4-3 vs. Los Angeles Kings (OT),L 3-4 @ Utah Mammoth (OT),0
 2026,2026-03-22,Carolina Hurricanes,Pittsburgh Penguins,5,1,4,-4,1,0,0,,9722,52972,L,W,L 1-5 vs. Carolina Hurricanes,W 5-1 @ Pittsburgh Penguins,0
 2026,2026-03-22,Nashville Predators,Chicago Blackhawks,3,2,1,-1,1,0,0,OT,9722,52973,L,W,L 2-3 vs. Nashville Predators (OT),W 3-2 @ Chicago Blackhawks (OT),0
 2026,2026-03-22,Winnipeg Jets,New York Rangers,3,2,1,-1,1,0,0,SO,9722,52974,L,W,L 2-3 vs. Winnipeg Jets (SO),W 3-2 @ New York Rangers (SO),0
@@ -52978,7 +52978,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-23,Ottawa Senators,New York Rangers,2,1,1,-1,1,0,0,,9723,52977,L,W,L 1-2 vs. Ottawa Senators,W 2-1 @ New York Rangers,0
 2026,2026-03-24,New Jersey Devils,Dallas Stars,6,4,2,-2,1,0,0,,9724,52978,L,W,L 4-6 vs. New Jersey Devils,W 6-4 @ Dallas Stars,0
 2026,2026-03-24,Anaheim Ducks,Vancouver Canucks,5,3,2,-2,1,0,0,,9724,52979,L,W,L 3-5 vs. Anaheim Ducks,W 5-3 @ Vancouver Canucks,0
-2026,2026-03-24,Edmonton Oilers,Utah Mammoth,5,2,3,-3,1,0,0,,9724,52980,L,W,L 2-5 vs. Edmonton Oilers,W 5-2 @ Utah Hockey Club,0
+2026,2026-03-24,Edmonton Oilers,Utah Mammoth,5,2,3,-3,1,0,0,,9724,52980,L,W,L 2-5 vs. Edmonton Oilers,W 5-2 @ Utah Mammoth,0
 2026,2026-03-24,Los Angeles Kings,Calgary Flames,2,3,-1,1,0,1,0,SO,9724,52981,W,L,W 3-2 vs. Los Angeles Kings (SO),L 2-3 @ Calgary Flames (SO),0
 2026,2026-03-24,Vegas Golden Knights,Winnipeg Jets,1,4,-3,3,0,1,0,,9724,52982,W,L,W 4-1 vs. Vegas Golden Knights,L 1-4 @ Winnipeg Jets,0
 2026,2026-03-24,San Jose Sharks,Nashville Predators,3,6,-3,3,0,1,0,,9724,52983,W,L,W 6-3 vs. San Jose Sharks,L 3-6 @ Nashville Predators,0
@@ -52993,7 +52993,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-24,Colorado Avalanche,Pittsburgh Penguins,6,2,4,-4,1,0,0,,9724,52992,L,W,L 2-6 vs. Colorado Avalanche,W 6-2 @ Pittsburgh Penguins,0
 2026,2026-03-25,Boston Bruins,Buffalo Sabres,4,3,1,-1,1,0,0,OT,9725,52993,L,W,L 3-4 vs. Boston Bruins (OT),W 4-3 @ Buffalo Sabres (OT),0
 2026,2026-03-25,New York Rangers,Toronto Maple Leafs,3,4,-1,1,0,1,0,,9725,52994,W,L,W 4-3 vs. New York Rangers,L 3-4 @ Toronto Maple Leafs,0
-2026,2026-03-26,Washington Capitals,Utah Mammoth,7,4,3,-3,1,0,0,,9726,52995,L,W,L 4-7 vs. Washington Capitals,W 7-4 @ Utah Hockey Club,0
+2026,2026-03-26,Washington Capitals,Utah Mammoth,7,4,3,-3,1,0,0,,9726,52995,L,W,L 4-7 vs. Washington Capitals,W 7-4 @ Utah Mammoth,0
 2026,2026-03-26,Anaheim Ducks,Calgary Flames,3,2,1,-1,1,0,0,OT,9726,52996,L,W,L 2-3 vs. Anaheim Ducks (OT),W 3-2 @ Calgary Flames (OT),0
 2026,2026-03-26,San Jose Sharks,St. Louis Blues,1,2,-1,1,0,1,0,OT,9726,52997,W,L,W 2-1 vs. San Jose Sharks (OT),L 1-2 @ St. Louis Blues (OT),0
 2026,2026-03-26,Los Angeles Kings,Vancouver Canucks,4,0,4,-4,1,0,0,,9726,52998,L,W,L 0-4 vs. Los Angeles Kings,W 4-0 @ Vancouver Canucks,0
@@ -53010,7 +53010,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-03-27,Chicago Blackhawks,New York Rangers,1,6,-5,5,0,1,0,,9727,53009,W,L,W 6-1 vs. Chicago Blackhawks,L 1-6 @ New York Rangers,0
 2026,2026-03-28,Washington Capitals,Vegas Golden Knights,5,4,1,-1,1,0,0,SO,9728,53010,L,W,L 4-5 vs. Washington Capitals (SO),W 5-4 @ Vegas Golden Knights (SO),0
 2026,2026-03-28,Vancouver Canucks,Calgary Flames,3,7,-4,4,0,1,0,,9728,53011,W,L,W 7-3 vs. Vancouver Canucks,L 3-7 @ Calgary Flames,0
-2026,2026-03-28,Utah Mammoth,Los Angeles Kings,6,2,4,-4,1,0,0,,9728,53012,L,W,L 2-6 vs. Utah Hockey Club,W 6-2 @ Los Angeles Kings,0
+2026,2026-03-28,Utah Mammoth,Los Angeles Kings,6,2,4,-4,1,0,0,,9728,53012,L,W,L 2-6 vs. Utah Mammoth,W 6-2 @ Los Angeles Kings,0
 2026,2026-03-28,Philadelphia Flyers,Detroit Red Wings,5,3,2,-2,1,0,0,,9728,53013,L,W,L 3-5 vs. Philadelphia Flyers,W 5-3 @ Detroit Red Wings,0
 2026,2026-03-28,Winnipeg Jets,Colorado Avalanche,4,2,2,-2,1,0,0,,9728,53014,L,W,L 2-4 vs. Winnipeg Jets,W 4-2 @ Colorado Avalanche,0
 2026,2026-03-28,Montreal Canadiens,Nashville Predators,4,1,3,-3,1,0,0,,9728,53015,L,W,L 1-4 vs. Montreal Canadiens,W 4-1 @ Nashville Predators,0
@@ -53049,7 +53049,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-01,Anaheim Ducks,San Jose Sharks,3,4,-1,1,0,1,0,,9732,53048,W,L,W 4-3 vs. Anaheim Ducks,L 3-4 @ San Jose Sharks,0
 2026,2026-04-02,Vancouver Canucks,Minnesota Wild,2,5,-3,3,0,1,0,,9733,53049,W,L,W 5-2 vs. Vancouver Canucks,L 2-5 @ Minnesota Wild,0
 2026,2026-04-02,Nashville Predators,Los Angeles Kings,5,4,1,-1,1,0,0,SO,9733,53050,L,W,L 4-5 vs. Nashville Predators (SO),W 5-4 @ Los Angeles Kings (SO),0
-2026,2026-04-02,Utah Mammoth,Seattle Kraken,6,2,4,-4,1,0,0,,9733,53051,L,W,L 2-6 vs. Utah Hockey Club,W 6-2 @ Seattle Kraken,0
+2026,2026-04-02,Utah Mammoth,Seattle Kraken,6,2,4,-4,1,0,0,,9733,53051,L,W,L 2-6 vs. Utah Mammoth,W 6-2 @ Seattle Kraken,0
 2026,2026-04-02,Toronto Maple Leafs,San Jose Sharks,1,4,-3,3,0,1,0,,9733,53052,W,L,W 4-1 vs. Toronto Maple Leafs,L 1-4 @ San Jose Sharks,0
 2026,2026-04-02,Calgary Flames,Vegas Golden Knights,3,6,-3,3,0,1,0,,9733,53053,W,L,W 6-3 vs. Calgary Flames,L 3-6 @ Vegas Golden Knights,0
 2026,2026-04-02,Chicago Blackhawks,Edmonton Oilers,1,3,-2,2,0,1,0,,9733,53054,W,L,W 3-1 vs. Chicago Blackhawks,L 1-3 @ Edmonton Oilers,0
@@ -53068,7 +53068,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-04,Nashville Predators,San Jose Sharks,6,3,3,-3,1,0,0,,9735,53067,L,W,L 3-6 vs. Nashville Predators,W 6-3 @ San Jose Sharks,0
 2026,2026-04-04,Calgary Flames,Anaheim Ducks,5,3,2,-2,1,0,0,,9735,53068,L,W,L 3-5 vs. Calgary Flames,W 5-3 @ Anaheim Ducks,0
 2026,2026-04-04,Toronto Maple Leafs,Los Angeles Kings,6,7,-1,1,0,1,0,OT,9735,53069,W,L,W 7-6 vs. Toronto Maple Leafs (OT),L 6-7 @ Los Angeles Kings (OT),0
-2026,2026-04-04,Utah Mammoth,Vancouver Canucks,7,4,3,-3,1,0,0,,9735,53070,L,W,L 4-7 vs. Utah Hockey Club,W 7-4 @ Vancouver Canucks,0
+2026,2026-04-04,Utah Mammoth,Vancouver Canucks,7,4,3,-3,1,0,0,,9735,53070,L,W,L 4-7 vs. Utah Mammoth,W 7-4 @ Vancouver Canucks,0
 2026,2026-04-04,New York Islanders,Carolina Hurricanes,3,4,-1,1,0,1,0,,9735,53071,W,L,W 4-3 vs. New York Islanders,L 3-4 @ Carolina Hurricanes,0
 2026,2026-04-04,Vegas Golden Knights,Edmonton Oilers,5,1,4,-4,1,0,0,,9735,53072,L,W,L 1-5 vs. Vegas Golden Knights,W 5-1 @ Edmonton Oilers,0
 2026,2026-04-04,Montreal Canadiens,New Jersey Devils,4,3,1,-1,1,0,0,SO,9735,53073,L,W,L 3-4 vs. Montreal Canadiens (SO),W 4-3 @ New Jersey Devils (SO),0
@@ -53094,7 +53094,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-07,Nashville Predators,Anaheim Ducks,5,0,5,-5,1,0,0,,9738,53093,L,W,L 0-5 vs. Nashville Predators,W 5-0 @ Anaheim Ducks,0
 2026,2026-04-07,Seattle Kraken,Minnesota Wild,2,5,-3,3,0,1,0,,9738,53094,W,L,W 5-2 vs. Seattle Kraken,L 2-5 @ Minnesota Wild,0
 2026,2026-04-07,Colorado Avalanche,St. Louis Blues,3,1,2,-2,1,0,0,,9738,53095,L,W,L 1-3 vs. Colorado Avalanche,W 3-1 @ St. Louis Blues,0
-2026,2026-04-07,Edmonton Oilers,Utah Mammoth,5,6,-1,1,0,1,0,OT,9738,53096,W,L,W 6-5 vs. Edmonton Oilers (OT),L 5-6 @ Utah Hockey Club (OT),0
+2026,2026-04-07,Edmonton Oilers,Utah Mammoth,5,6,-1,1,0,1,0,OT,9738,53096,W,L,W 6-5 vs. Edmonton Oilers (OT),L 5-6 @ Utah Mammoth (OT),0
 2026,2026-04-07,Philadelphia Flyers,New Jersey Devils,5,1,4,-4,1,0,0,,9738,53097,L,W,L 1-5 vs. Philadelphia Flyers,W 5-1 @ New Jersey Devils,0
 2026,2026-04-07,Columbus Blue Jackets,Detroit Red Wings,4,3,1,-1,1,0,0,SO,9738,53098,L,W,L 3-4 vs. Columbus Blue Jackets (SO),W 4-3 @ Detroit Red Wings (SO),0
 2026,2026-04-07,Tampa Bay Lightning,Ottawa Senators,2,6,-4,4,0,1,0,,9738,53099,W,L,W 6-2 vs. Tampa Bay Lightning,L 2-6 @ Ottawa Senators,0
@@ -53106,7 +53106,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-09,Vancouver Canucks,Los Angeles Kings,1,4,-3,3,0,1,0,,9740,53105,W,L,W 4-1 vs. Vancouver Canucks,L 1-4 @ Los Angeles Kings,0
 2026,2026-04-09,Vegas Golden Knights,Seattle Kraken,3,4,-1,1,0,1,0,SO,9740,53106,W,L,W 4-3 vs. Vegas Golden Knights (SO),L 3-4 @ Seattle Kraken (SO),0
 2026,2026-04-09,San Jose Sharks,Anaheim Ducks,1,6,-5,5,0,1,0,,9740,53107,W,L,W 6-1 vs. San Jose Sharks,L 1-6 @ Anaheim Ducks,0
-2026,2026-04-09,Nashville Predators,Utah Mammoth,1,4,-3,3,0,1,0,,9740,53108,W,L,W 4-1 vs. Nashville Predators,L 1-4 @ Utah Hockey Club,0
+2026,2026-04-09,Nashville Predators,Utah Mammoth,1,4,-3,3,0,1,0,,9740,53108,W,L,W 4-1 vs. Nashville Predators,L 1-4 @ Utah Mammoth,0
 2026,2026-04-09,Calgary Flames,Colorado Avalanche,1,3,-2,2,0,1,0,,9740,53109,W,L,W 3-1 vs. Calgary Flames,L 1-3 @ Colorado Avalanche,0
 2026,2026-04-09,Minnesota Wild,Dallas Stars,4,5,-1,1,0,1,0,,9740,53110,W,L,W 5-4 vs. Minnesota Wild,L 4-5 @ Dallas Stars,0
 2026,2026-04-09,Carolina Hurricanes,Chicago Blackhawks,7,2,5,-5,1,0,0,,9740,53111,L,W,L 2-7 vs. Carolina Hurricanes,W 7-2 @ Chicago Blackhawks,0
@@ -53117,7 +53117,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-09,Columbus Blue Jackets,Buffalo Sabres,0,5,-5,5,0,1,0,,9740,53116,W,L,W 5-0 vs. Columbus Blue Jackets,L 0-5 @ Buffalo Sabres,0
 2026,2026-04-09,Toronto Maple Leafs,New York Islanders,3,5,-2,2,0,1,0,,9740,53117,W,L,W 5-3 vs. Toronto Maple Leafs,L 3-5 @ New York Islanders,0
 2026,2026-04-09,Pittsburgh Penguins,New Jersey Devils,5,2,3,-3,1,0,0,,9740,53118,L,W,L 2-5 vs. Pittsburgh Penguins,W 5-2 @ New Jersey Devils,0
-2026,2026-04-11,Carolina Hurricanes,Utah Mammoth,4,1,3,-3,1,0,0,,9741,53119,L,W,L 1-4 vs. Carolina Hurricanes,W 4-1 @ Utah Hockey Club,0
+2026,2026-04-11,Carolina Hurricanes,Utah Mammoth,4,1,3,-3,1,0,0,,9741,53119,L,W,L 1-4 vs. Carolina Hurricanes,W 4-1 @ Utah Mammoth,0
 2026,2026-04-11,Vegas Golden Knights,Colorado Avalanche,3,2,1,-1,1,0,0,OT,9741,53120,L,W,L 2-3 vs. Vegas Golden Knights (OT),W 3-2 @ Colorado Avalanche (OT),0
 2026,2026-04-11,Vancouver Canucks,San Jose Sharks,4,3,1,-1,1,0,0,SO,9741,53121,L,W,L 3-4 vs. Vancouver Canucks (SO),W 4-3 @ San Jose Sharks (SO),0
 2026,2026-04-11,Philadelphia Flyers,Winnipeg Jets,7,1,6,-6,1,0,0,,9741,53122,L,W,L 1-7 vs. Philadelphia Flyers,W 7-1 @ Winnipeg Jets,0
@@ -53132,7 +53132,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-11,Ottawa Senators,New York Islanders,3,0,3,-3,1,0,0,,9741,53131,L,W,L 0-3 vs. Ottawa Senators,W 3-0 @ New York Islanders,0
 2026,2026-04-11,Tampa Bay Lightning,Boston Bruins,2,1,1,-1,1,0,0,,9741,53132,L,W,L 1-2 vs. Tampa Bay Lightning,W 2-1 @ Boston Bruins,0
 2026,2026-04-11,Minnesota Wild,Nashville Predators,1,2,-1,1,0,1,0,,9741,53133,W,L,W 2-1 vs. Minnesota Wild,L 1-2 @ Nashville Predators,0
-2026,2026-04-12,Utah Mammoth,Calgary Flames,1,4,-3,3,0,1,0,,9742,53134,W,L,W 4-1 vs. Utah Hockey Club,L 1-4 @ Calgary Flames,0
+2026,2026-04-12,Utah Mammoth,Calgary Flames,1,4,-3,3,0,1,0,,9742,53134,W,L,W 4-1 vs. Utah Mammoth,L 1-4 @ Calgary Flames,0
 2026,2026-04-12,Vancouver Canucks,Anaheim Ducks,4,3,1,-1,1,0,0,OT,9742,53135,L,W,L 3-4 vs. Vancouver Canucks (OT),W 4-3 @ Anaheim Ducks (OT),0
 2026,2026-04-12,Ottawa Senators,New Jersey Devils,3,4,-1,1,0,1,0,OT,9742,53136,W,L,W 4-3 vs. Ottawa Senators (OT),L 3-4 @ New Jersey Devils (OT),0
 2026,2026-04-12,Montreal Canadiens,New York Islanders,4,1,3,-3,1,0,0,,9742,53137,L,W,L 1-4 vs. Montreal Canadiens,W 4-1 @ New York Islanders,0
@@ -53151,7 +53151,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-14,Colorado Avalanche,Calgary Flames,3,1,2,-2,1,0,0,,9744,53150,L,W,L 1-3 vs. Colorado Avalanche,W 3-1 @ Calgary Flames,0
 2026,2026-04-14,Los Angeles Kings,Vancouver Canucks,3,4,-1,1,0,1,0,OT,9744,53151,W,L,W 4-3 vs. Los Angeles Kings (OT),L 3-4 @ Vancouver Canucks (OT),0
 2026,2026-04-14,Pittsburgh Penguins,St. Louis Blues,5,7,-2,2,0,1,0,,9744,53152,W,L,W 7-5 vs. Pittsburgh Penguins,L 5-7 @ St. Louis Blues,0
-2026,2026-04-14,Winnipeg Jets,Utah Mammoth,3,5,-2,2,0,1,0,,9744,53153,W,L,W 5-3 vs. Winnipeg Jets,L 3-5 @ Utah Hockey Club,0
+2026,2026-04-14,Winnipeg Jets,Utah Mammoth,3,5,-2,2,0,1,0,,9744,53153,W,L,W 5-3 vs. Winnipeg Jets,L 3-5 @ Utah Mammoth,0
 2026,2026-04-14,Montreal Canadiens,Philadelphia Flyers,2,4,-2,2,0,1,0,,9744,53154,W,L,W 4-2 vs. Montreal Canadiens,L 2-4 @ Philadelphia Flyers,0
 2026,2026-04-14,Washington Capitals,Columbus Blue Jackets,2,1,1,-1,1,0,0,,9744,53155,L,W,L 1-2 vs. Washington Capitals,W 2-1 @ Columbus Blue Jackets,0
 2026,2026-04-14,Carolina Hurricanes,New York Islanders,2,1,1,-1,1,0,0,,9744,53156,L,W,L 1-2 vs. Carolina Hurricanes,W 2-1 @ New York Islanders,0
@@ -53167,12 +53167,12 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-16,Vancouver Canucks,Edmonton Oilers,1,6,-5,5,0,1,0,,9746,53166,W,L,W 6-1 vs. Vancouver Canucks,L 1-6 @ Edmonton Oilers,0
 2026,2026-04-16,Los Angeles Kings,Calgary Flames,1,3,-2,2,0,1,0,,9746,53167,W,L,W 3-1 vs. Los Angeles Kings,L 1-3 @ Calgary Flames,0
 2026,2026-04-16,Anaheim Ducks,Nashville Predators,5,4,1,-1,1,0,0,,9746,53168,L,W,L 4-5 vs. Anaheim Ducks,W 5-4 @ Nashville Predators,0
-2026,2026-04-16,St. Louis Blues,Utah Mammoth,5,3,2,-2,1,0,0,,9746,53169,L,W,L 3-5 vs. St. Louis Blues,W 5-3 @ Utah Hockey Club,0
+2026,2026-04-16,St. Louis Blues,Utah Mammoth,5,3,2,-2,1,0,0,,9746,53169,L,W,L 3-5 vs. St. Louis Blues,W 5-3 @ Utah Mammoth,0
 2026,2026-04-16,San Jose Sharks,Winnipeg Jets,6,1,5,-5,1,0,0,,9746,53170,L,W,L 1-6 vs. San Jose Sharks,W 6-1 @ Winnipeg Jets,0
 2026,2026-04-18,Ottawa Senators,Carolina Hurricanes,0,2,-2,2,0,1,0,,9747,53171,W,L,W 2-0 vs. Ottawa Senators,L 0-2 @ Carolina Hurricanes,1
 2026,2026-04-18,Minnesota Wild,Dallas Stars,6,1,5,-5,1,0,0,,9747,53172,L,W,L 1-6 vs. Minnesota Wild,W 6-1 @ Dallas Stars,1
 2026,2026-04-18,Philadelphia Flyers,Pittsburgh Penguins,3,2,1,-1,1,0,0,,9747,53173,L,W,L 2-3 vs. Philadelphia Flyers,W 3-2 @ Pittsburgh Penguins,1
-2026,2026-04-19,Utah Mammoth,Vegas Golden Knights,2,4,-2,2,0,1,0,,9748,53174,W,L,W 4-2 vs. Utah Hockey Club,L 2-4 @ Vegas Golden Knights,1
+2026,2026-04-19,Utah Mammoth,Vegas Golden Knights,2,4,-2,2,0,1,0,,9748,53174,W,L,W 4-2 vs. Utah Mammoth,L 2-4 @ Vegas Golden Knights,1
 2026,2026-04-19,Los Angeles Kings,Colorado Avalanche,1,2,-1,1,0,1,0,,9748,53175,W,L,W 2-1 vs. Los Angeles Kings,L 1-2 @ Colorado Avalanche,1
 2026,2026-04-19,Montreal Canadiens,Tampa Bay Lightning,4,3,1,-1,1,0,0,OT,9748,53176,L,W,L 3-4 vs. Montreal Canadiens (OT),W 4-3 @ Tampa Bay Lightning (OT),1
 2026,2026-04-19,Boston Bruins,Buffalo Sabres,3,4,-1,1,0,1,0,,9748,53177,W,L,W 4-3 vs. Boston Bruins,L 3-4 @ Buffalo Sabres,1
@@ -53182,7 +53182,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-20,Ottawa Senators,Carolina Hurricanes,2,3,-1,1,0,1,0,OT,9749,53181,W,L,W 3-2 vs. Ottawa Senators (OT),L 2-3 @ Carolina Hurricanes (OT),1
 2026,2026-04-21,Montreal Canadiens,Tampa Bay Lightning,2,3,-1,1,0,1,0,OT,9750,53182,W,L,W 3-2 vs. Montreal Canadiens (OT),L 2-3 @ Tampa Bay Lightning (OT),1
 2026,2026-04-21,Boston Bruins,Buffalo Sabres,4,2,2,-2,1,0,0,,9750,53183,L,W,L 2-4 vs. Boston Bruins,W 4-2 @ Buffalo Sabres,1
-2026,2026-04-21,Utah Mammoth,Vegas Golden Knights,3,2,1,-1,1,0,0,,9750,53184,L,W,L 2-3 vs. Utah Hockey Club,W 3-2 @ Vegas Golden Knights,1
+2026,2026-04-21,Utah Mammoth,Vegas Golden Knights,3,2,1,-1,1,0,0,,9750,53184,L,W,L 2-3 vs. Utah Mammoth,W 3-2 @ Vegas Golden Knights,1
 2026,2026-04-21,Los Angeles Kings,Colorado Avalanche,1,2,-1,1,0,1,0,OT,9750,53185,W,L,W 2-1 vs. Los Angeles Kings (OT),L 1-2 @ Colorado Avalanche (OT),1
 2026,2026-04-22,Pittsburgh Penguins,Philadelphia Flyers,2,5,-3,3,0,1,0,,9751,53186,W,L,W 5-2 vs. Pittsburgh Penguins,L 2-5 @ Philadelphia Flyers,1
 2026,2026-04-22,Dallas Stars,Minnesota Wild,4,3,1,-1,1,0,0,OT,9751,53187,L,W,L 3-4 vs. Dallas Stars (OT),W 4-3 @ Minnesota Wild (OT),1
@@ -53192,7 +53192,7 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-23,Colorado Avalanche,Los Angeles Kings,4,2,2,-2,1,0,0,,9752,53191,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Los Angeles Kings,1
 2026,2026-04-24,Edmonton Oilers,Anaheim Ducks,4,7,-3,3,0,1,0,,9753,53192,W,L,W 7-4 vs. Edmonton Oilers,L 4-7 @ Anaheim Ducks,1
 2026,2026-04-24,Tampa Bay Lightning,Montreal Canadiens,2,3,-1,1,0,1,0,OT,9753,53193,W,L,W 3-2 vs. Tampa Bay Lightning (OT),L 2-3 @ Montreal Canadiens (OT),1
-2026,2026-04-24,Vegas Golden Knights,Utah Mammoth,2,4,-2,2,0,1,0,,9753,53194,W,L,W 4-2 vs. Vegas Golden Knights,L 2-4 @ Utah Hockey Club,1
+2026,2026-04-24,Vegas Golden Knights,Utah Mammoth,2,4,-2,2,0,1,0,,9753,53194,W,L,W 4-2 vs. Vegas Golden Knights,L 2-4 @ Utah Mammoth,1
 2026,2026-04-25,Carolina Hurricanes,Ottawa Senators,4,2,2,-2,1,0,0,,9754,53195,L,W,L 2-4 vs. Carolina Hurricanes,W 4-2 @ Ottawa Senators,1
 2026,2026-04-25,Dallas Stars,Minnesota Wild,2,3,-1,1,0,1,0,OT,9754,53196,W,L,W 3-2 vs. Dallas Stars (OT),L 2-3 @ Minnesota Wild (OT),1
 2026,2026-04-25,Pittsburgh Penguins,Philadelphia Flyers,4,2,2,-2,1,0,0,,9754,53197,L,W,L 2-4 vs. Pittsburgh Penguins,W 4-2 @ Philadelphia Flyers,1
@@ -53201,18 +53201,18 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2026,2026-04-26,Tampa Bay Lightning,Montreal Canadiens,3,2,1,-1,1,0,0,,9755,53200,L,W,L 2-3 vs. Tampa Bay Lightning,W 3-2 @ Montreal Canadiens,1
 2026,2026-04-26,Edmonton Oilers,Anaheim Ducks,3,4,-1,1,0,1,0,OT,9755,53201,W,L,W 4-3 vs. Edmonton Oilers (OT),L 3-4 @ Anaheim Ducks (OT),1
 2026,2026-04-27,Philadelphia Flyers,Pittsburgh Penguins,2,3,-1,1,0,1,0,,9756,53202,W,L,W 3-2 vs. Philadelphia Flyers,L 2-3 @ Pittsburgh Penguins,1
-2026,2026-04-27,Vegas Golden Knights,Utah Mammoth,5,4,1,-1,1,0,0,OT,9756,53203,L,W,L 4-5 vs. Vegas Golden Knights (OT),W 5-4 @ Utah Hockey Club (OT),1
+2026,2026-04-27,Vegas Golden Knights,Utah Mammoth,5,4,1,-1,1,0,0,OT,9756,53203,L,W,L 4-5 vs. Vegas Golden Knights (OT),W 5-4 @ Utah Mammoth (OT),1
 2026,2026-04-28,Anaheim Ducks,Edmonton Oilers,1,4,-3,3,0,1,0,,9757,53204,W,L,W 4-1 vs. Anaheim Ducks,L 1-4 @ Edmonton Oilers,1
 2026,2026-04-28,Boston Bruins,Buffalo Sabres,2,1,1,-1,1,0,0,OT,9757,53205,L,W,L 1-2 vs. Boston Bruins (OT),W 2-1 @ Buffalo Sabres (OT),1
 2026,2026-04-28,Minnesota Wild,Dallas Stars,4,2,2,-2,1,0,0,,9757,53206,L,W,L 2-4 vs. Minnesota Wild,W 4-2 @ Dallas Stars,1
-2026,2026-04-29,Utah Mammoth,Vegas Golden Knights,4,5,-1,1,0,1,0,OT,9758,53207,W,L,W 5-4 vs. Utah Hockey Club (OT),L 4-5 @ Vegas Golden Knights (OT),1
+2026,2026-04-29,Utah Mammoth,Vegas Golden Knights,4,5,-1,1,0,1,0,OT,9758,53207,W,L,W 5-4 vs. Utah Mammoth (OT),L 4-5 @ Vegas Golden Knights (OT),1
 2026,2026-04-29,Montreal Canadiens,Tampa Bay Lightning,3,2,1,-1,1,0,0,,9758,53208,L,W,L 2-3 vs. Montreal Canadiens,W 3-2 @ Tampa Bay Lightning,1
 2026,2026-04-29,Pittsburgh Penguins,Philadelphia Flyers,0,1,-1,1,0,1,0,OT,9758,53209,W,L,W 1-0 vs. Pittsburgh Penguins (OT),L 0-1 @ Philadelphia Flyers (OT),1
 2026,2026-04-30,Dallas Stars,Minnesota Wild,2,5,-3,3,0,1,0,,9759,53210,W,L,W 5-2 vs. Dallas Stars,L 2-5 @ Minnesota Wild,1
 2026,2026-04-30,Edmonton Oilers,Anaheim Ducks,2,5,-3,3,0,1,0,,9759,53211,W,L,W 5-2 vs. Edmonton Oilers,L 2-5 @ Anaheim Ducks,1
 2026,2026-05-01,Tampa Bay Lightning,Montreal Canadiens,1,0,1,-1,1,0,0,OT,9760,53212,L,W,L 0-1 vs. Tampa Bay Lightning (OT),W 1-0 @ Montreal Canadiens (OT),1
 2026,2026-05-01,Buffalo Sabres,Boston Bruins,4,1,3,-3,1,0,0,,9760,53213,L,W,L 1-4 vs. Buffalo Sabres,W 4-1 @ Boston Bruins,1
-2026,2026-05-01,Vegas Golden Knights,Utah Mammoth,5,1,4,-4,1,0,0,,9760,53214,L,W,L 1-5 vs. Vegas Golden Knights,W 5-1 @ Utah Hockey Club,1
+2026,2026-05-01,Vegas Golden Knights,Utah Mammoth,5,1,4,-4,1,0,0,,9760,53214,L,W,L 1-5 vs. Vegas Golden Knights,W 5-1 @ Utah Mammoth,1
 2026,2026-05-02,Philadelphia Flyers,Carolina Hurricanes,0,3,-3,3,0,1,0,,9761,53215,W,L,W 3-0 vs. Philadelphia Flyers,L 0-3 @ Carolina Hurricanes,1
 2026,2026-05-03,Montreal Canadiens,Tampa Bay Lightning,2,1,1,-1,1,0,0,,9762,53216,L,W,L 1-2 vs. Montreal Canadiens,W 2-1 @ Tampa Bay Lightning,1
 2026,2026-05-03,Minnesota Wild,Colorado Avalanche,6,9,-3,3,0,1,0,,9762,53217,W,L,W 9-6 vs. Minnesota Wild,L 6-9 @ Colorado Avalanche,1
