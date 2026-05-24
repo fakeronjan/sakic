@@ -740,9 +740,37 @@ if not any(e["season"] == 2005 for e in champs_list):
     })
     champs_list.sort(key=lambda e: -e["season"])
 
-# Running title counts (no pre-1980 dict for v1)
-_champ_count = {}
-_ru_count    = {}
+# Pre-1980 Stanley Cup totals (NHL era 1918-1979 + relevant Cup era 1893+).
+# Only counts titles won under the franchise's CURRENT city/name per fleet
+# relocation policy. Same-market rebrands (Toronto Arenas → St. Patricks →
+# Maple Leafs; Detroit Cougars → Falcons → Red Wings) ARE folded into the
+# modern franchise. Defunct franchises (Montreal Maroons, original Ottawa
+# Senators 1893-1934, Victoria Cougars, etc.) are omitted entirely.
+PRE_1980_CHAMPIONSHIPS = {
+    "Toronto Maple Leafs":  13,  # 1918 (Arenas), 1922 (St. Patricks), 1932, 1942, 1945, 1947, 1948, 1949, 1951, 1962, 1963, 1964, 1967
+    "Montreal Canadiens":   21,  # 1924, 1930, 1931, 1944, 1946, 1953, 1956, 1957, 1958, 1959, 1960, 1965, 1966, 1968, 1969, 1971, 1973, 1976, 1977, 1978, 1979
+    "Detroit Red Wings":     7,  # 1936, 1937, 1943, 1950, 1952, 1954, 1955
+    "Chicago Blackhawks":    3,  # 1934, 1938, 1961
+    "New York Rangers":      3,  # 1928, 1933, 1940
+    "Boston Bruins":         5,  # 1929, 1939, 1941, 1970, 1972
+    "Philadelphia Flyers":   2,  # 1974, 1975
+}
+
+PRE_1980_RUNNER_UPS = {
+    "Detroit Red Wings":    13,  # 1934, 1941, 1942, 1945, 1948, 1949, 1954, 1955, 1956, 1961, 1963, 1964, 1966
+    "Boston Bruins":        10,  # 1927, 1930, 1943, 1946, 1953, 1957, 1958, 1974, 1977, 1978
+    "Toronto Maple Leafs":   8,  # 1933, 1935, 1936, 1938, 1939, 1940, 1959, 1960
+    "Montreal Canadiens":    7,  # 1925, 1947, 1951, 1952, 1954, 1955, 1967
+    "Chicago Blackhawks":    6,  # 1931, 1944, 1962, 1965, 1971, 1973
+    "New York Rangers":      6,  # 1929, 1932, 1937, 1950, 1972, 1979
+    "St. Louis Blues":       3,  # 1968, 1969, 1970
+    "Philadelphia Flyers":   1,  # 1976
+    "Buffalo Sabres":        1,  # 1975
+}
+
+# Running title counts seeded with pre-1980 totals; walk oldest-first.
+_champ_count = dict(PRE_1980_CHAMPIONSHIPS)
+_ru_count    = dict(PRE_1980_RUNNER_UPS)
 for entry in reversed(champs_list):
     if entry.get("no_series"):
         continue  # 2004-05 lockout — no champion/runner-up to count
