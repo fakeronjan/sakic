@@ -488,6 +488,13 @@ ratings["is_rs_end"] = 0
 ratings["is_ps_end"] = 0
 ratings["is_playoff_snapshot"] = 0
 
+# In-progress gate: only mark is_ps_end for seasons whose Stanley Cup window
+# is in the past (Cup Final usually June; July 1 is a safe cutoff). Without
+# this, the latest in-progress ranking_id gets flagged as 'End of playoffs'
+# mid-Conference-Finals -- same bug pattern from feedback_in_progress_season_gate.
+import datetime as _dt_gate
+_today_gate = _dt_gate.date.today()
+
 for s, rs_end in rs_end_by_season.items():
     season_mask = ratings["season"] == s
     season_subset = ratings[season_mask]
@@ -497,8 +504,10 @@ for s, rs_end in rs_end_by_season.items():
     if not rs_candidates.empty:
         rs_end_id = rs_candidates["ranking_id"].max()
         ratings.loc[season_mask & (ratings["ranking_id"] == rs_end_id), "is_rs_end"] = 1
-    ps_end_id = season_subset["ranking_id"].max()
-    ratings.loc[season_mask & (ratings["ranking_id"] == ps_end_id), "is_ps_end"] = 1
+    s_int = int(s)
+    if _today_gate >= _dt_gate.date(s_int, 7, 1):
+        ps_end_id = season_subset["ranking_id"].max()
+        ratings.loc[season_mask & (ratings["ranking_id"] == ps_end_id), "is_ps_end"] = 1
     ratings.loc[season_mask & (ratings["ranking_date"] > rs_end), "is_playoff_snapshot"] = 1
 
 
