@@ -176,12 +176,10 @@ TEAM_DIVISION_HISTORY = {
         (2022, 9999, "Eastern",  "Metropolitan"),
     ],
     # ─── Western (originally Norris / now Central lineage) ────────────
-    "Chicago Black Hawks": [
-        (1980, 1981, "Campbell", "Smythe"),        # pre-realignment Smythe (Chicago's pre-realignment home)
-        (1982, 1987, "Campbell", "Norris"),        # moved to Norris in 1982; renamed Blackhawks for 1986-87 (= season 1987)
-    ],
+    # Single canonical franchise (renamed Black Hawks → Blackhawks for 1986-87).
     "Chicago Blackhawks": [
-        (1987, 1993, "Campbell", "Norris"),        # renamed from Black Hawks for 1986-87
+        (1980, 1981, "Campbell", "Smythe"),        # pre-realignment Smythe (Chicago's pre-realignment home)
+        (1982, 1993, "Campbell", "Norris"),        # moved to Norris in 1982; renamed Blackhawks for 1986-87 partway through
         (1994, 2013, "Western",  "Central"),
         (2014, 2020, "Western",  "Central"),
         (2021, 2021, "Central",  "Central"),
@@ -349,6 +347,10 @@ SAKIC_TEAM_DISPLAY_HISTORY = {
     # 2025-26+. Same-market rebrand → one canonical franchise, era display.
     "Utah Mammoth":          [(2025, 2025, "Utah Hockey Club"),
                               (2026, 9999, "Utah Mammoth")],
+    # Chicago: same franchise throughout; renamed Black Hawks → Blackhawks
+    # (one word) starting with the 1986-87 season.
+    "Chicago Blackhawks":    [(1980, 1986, "Chicago Black Hawks"),
+                              (1987, 9999, "Chicago Blackhawks")],
 }
 
 
@@ -927,10 +929,11 @@ for team in sorted(ratings["name"].unique()):
         seasons_dict[str(s)] = entries
     with open(f"docs/data/teams/{team_slug}.json", "w") as f:
         json.dump({
-            "team":         team,
-            "display_name": current_display_name(team),
-            "conference":   conference(team),
-            "seasons":      seasons_dict,
+            "team":             team,
+            "display_name":     current_display_name(team),
+            "historical_names": historical_display_names(team),
+            "conference":       conference(team),
+            "seasons":          seasons_dict,
         }, f, separators=(",", ":"))
 
     teams_index.append({

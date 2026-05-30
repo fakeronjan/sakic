@@ -125,6 +125,7 @@ TEAM_ALIASES = {
     "Phoenix Coyotes":         "Arizona Coyotes",   # Same metro; collapse to modern Arizona name
     "Utah Hockey Club":        "Utah Mammoth",      # Same-market rebrand: UHC 2024-25 only → Mammoth 2025-26+
     # The 2024 Utah move is a relocation: stays separate (mapped above).
+    "Chicago Black Hawks":     "Chicago Blackhawks", # Same franchise; renamed for 1986-87 season (two words → one)
 }
 
 
