@@ -53170,8 +53170,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-04-16,7:30 PM,St. Louis Blues,5,Utah Mammoth,3,,"12,478",2:36,,0,2026
 2026-04-16,8:00 PM,San Jose Sharks,6,Winnipeg Jets,1,,"15,225",2:20,,0,2026
 2026-04-18,5:30 PM,Minnesota Wild,6,Dallas Stars,1,,"18,532",2:36,,1,2026
-2026-04-18,3:00 PM,Ottawa Senators,0,Carolina Hurricanes,2,,"18,588",2:32,,1,2026
 2026-04-18,8:00 PM,Philadelphia Flyers,3,Pittsburgh Penguins,2,,"18,346",2:29,,1,2026
+2026-04-18,3:00 PM,Ottawa Senators,0,Carolina Hurricanes,2,,"18,588",2:32,,1,2026
 2026-04-19,7:30 PM,Boston Bruins,3,Buffalo Sabres,4,,"19,070",2:42,,1,2026
 2026-04-19,3:00 PM,Los Angeles Kings,1,Colorado Avalanche,2,,"18,101",2:42,,1,2026
 2026-04-19,5:45 PM,Montreal Canadiens,4,Tampa Bay Lightning,3,OT,"19,092",3:04,,1,2026
@@ -53180,10 +53180,10 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-04-20,9:30 PM,Minnesota Wild,2,Dallas Stars,4,,"18,532",2:51,,1,2026
 2026-04-20,10:00 PM,Anaheim Ducks,3,Edmonton Oilers,4,,"18,347",2:34,,1,2026
 2026-04-20,7:00 PM,Philadelphia Flyers,3,Pittsburgh Penguins,0,,"18,308",2:47,,1,2026
-2026-04-21,10:00 PM,Los Angeles Kings,1,Colorado Avalanche,2,OT,"18,142",3:32,,1,2026
+2026-04-21,7:30 PM,Boston Bruins,4,Buffalo Sabres,2,,"19,070",2:52,,1,2026
 2026-04-21,9:30 PM,Utah Mammoth,3,Vegas Golden Knights,2,,"17,871",2:40,,1,2026
 2026-04-21,7:00 PM,Montreal Canadiens,2,Tampa Bay Lightning,3,OT,"19,092",3:33,,1,2026
-2026-04-21,7:30 PM,Boston Bruins,4,Buffalo Sabres,2,,"19,070",2:52,,1,2026
+2026-04-21,10:00 PM,Los Angeles Kings,1,Colorado Avalanche,2,OT,"18,142",3:32,,1,2026
 2026-04-22,10:00 PM,Anaheim Ducks,6,Edmonton Oilers,4,,"18,347",2:34,,1,2026
 2026-04-22,9:30 PM,Dallas Stars,4,Minnesota Wild,3,2OT,"19,244",4:02,,1,2026
 2026-04-22,7:00 PM,Pittsburgh Penguins,2,Philadelphia Flyers,5,,"19,937",2:51,,1,2026
@@ -53203,8 +53203,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-04-27,7:00 PM,Philadelphia Flyers,2,Pittsburgh Penguins,3,,"18,343",2:33,,1,2026
 2026-04-27,9:30 PM,Vegas Golden Knights,5,Utah Mammoth,4,OT,"12,478",3:32,,1,2026
 2026-04-28,7:30 PM,Boston Bruins,2,Buffalo Sabres,1,OT,"19,070",2:56,,1,2026
-2026-04-28,8:00 PM,Minnesota Wild,4,Dallas Stars,2,,"18,532",2:34,,1,2026
 2026-04-28,10:00 PM,Anaheim Ducks,1,Edmonton Oilers,4,,"18,347",2:36,,1,2026
+2026-04-28,8:00 PM,Minnesota Wild,4,Dallas Stars,2,,"18,532",2:34,,1,2026
 2026-04-29,7:30 PM,Pittsburgh Penguins,0,Philadelphia Flyers,1,OT,"20,005",3:06,,1,2026
 2026-04-29,7:00 PM,Montreal Canadiens,3,Tampa Bay Lightning,2,,"19,092",2:33,,1,2026
 2026-04-29,10:00 PM,Utah Mammoth,4,Vegas Golden Knights,5,2OT,"18,033",3:58,,1,2026
@@ -53214,23 +53214,23 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-05-01,10:00 PM,Vegas Golden Knights,5,Utah Mammoth,1,,"12,478",2:41,,1,2026
 2026-05-01,7:00 PM,Tampa Bay Lightning,1,Montreal Canadiens,0,OT,"20,962",2:58,,1,2026
 2026-05-02,8:00 PM,Philadelphia Flyers,0,Carolina Hurricanes,3,,"18,620",2:42,,1,2026
-2026-05-03,9:00 PM,Minnesota Wild,6,Colorado Avalanche,9,,"18,148",2:37,,1,2026
 2026-05-03,6:00 PM,Montreal Canadiens,2,Tampa Bay Lightning,1,,"19,092",2:37,,1,2026
+2026-05-03,9:00 PM,Minnesota Wild,6,Colorado Avalanche,9,,"18,148",2:37,,1,2026
 2026-05-04,7:00 PM,Philadelphia Flyers,2,Carolina Hurricanes,3,OT,"18,647",3:19,,1,2026
 2026-05-04,9:30 PM,Anaheim Ducks,1,Vegas Golden Knights,3,,"17,838",2:40,,1,2026
 2026-05-05,8:00 PM,Minnesota Wild,2,Colorado Avalanche,5,,"18,154",2:36,,1,2026
-2026-05-06,9:30 PM,Anaheim Ducks,3,Vegas Golden Knights,1,,"18,018",2:35,,1,2026
 2026-05-06,7:00 PM,Montreal Canadiens,2,Buffalo Sabres,4,,"19,070",2:27,,1,2026
+2026-05-06,9:30 PM,Anaheim Ducks,3,Vegas Golden Knights,1,,"18,018",2:35,,1,2026
 2026-05-07,8:00 PM,Carolina Hurricanes,4,Philadelphia Flyers,1,,"19,970",2:41,,1,2026
-2026-05-08,9:30 PM,Vegas Golden Knights,6,Anaheim Ducks,2,,"16,826",2:25,,1,2026
 2026-05-08,7:00 PM,Montreal Canadiens,5,Buffalo Sabres,1,,"19,070",2:33,,1,2026
+2026-05-08,9:30 PM,Vegas Golden Knights,6,Anaheim Ducks,2,,"16,826",2:25,,1,2026
 2026-05-09,9:00 PM,Colorado Avalanche,1,Minnesota Wild,5,,"19,236",2:31,,1,2026
 2026-05-09,6:00 PM,Carolina Hurricanes,3,Philadelphia Flyers,2,OT,"19,394",2:58,,1,2026
 2026-05-10,9:30 PM,Vegas Golden Knights,3,Anaheim Ducks,4,,"16,800",2:37,,1,2026
 2026-05-10,7:00 PM,Buffalo Sabres,2,Montreal Canadiens,6,,"20,962",2:49,,1,2026
 2026-05-11,8:00 PM,Colorado Avalanche,5,Minnesota Wild,2,,"19,136",2:42,,1,2026
-2026-05-12,9:30 PM,Anaheim Ducks,2,Vegas Golden Knights,3,OT,"18,089",2:51,,1,2026
 2026-05-12,7:00 PM,Buffalo Sabres,3,Montreal Canadiens,2,,"20,962",2:50,,1,2026
+2026-05-12,9:30 PM,Anaheim Ducks,2,Vegas Golden Knights,3,OT,"18,089",2:51,,1,2026
 2026-05-13,8:00 PM,Minnesota Wild,3,Colorado Avalanche,4,OT,"18,159",2:55,,1,2026
 2026-05-14,9:30 PM,Vegas Golden Knights,5,Anaheim Ducks,1,,"16,778",2:42,,1,2026
 2026-05-14,7:00 PM,Montreal Canadiens,6,Buffalo Sabres,3,,"19,070",2:36,,1,2026
@@ -53244,6 +53244,11 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-05-25,8:00 PM,Carolina Hurricanes,3,Montreal Canadiens,2,OT,"20,962",3:11,,1,2026
 2026-05-26,9:00 PM,Colorado Avalanche,1,Vegas Golden Knights,2,,"18,188",2:29,,1,2026
 2026-05-27,8:00 PM,Carolina Hurricanes,4,Montreal Canadiens,0,,"20,962",2:39,,1,2026
-2026-05-29,8:00 PM,Montreal Canadiens,,Carolina Hurricanes,,,,,,1,2026
-2026-05-31,1:00 PM,Carolina Hurricanes,,Montreal Canadiens,,,,,,1,2026
-2026-06-02,8:00 PM,Montreal Canadiens,,Carolina Hurricanes,,,,,,1,2026
+2026-05-29,8:00 PM,Montreal Canadiens,1,Carolina Hurricanes,6,,"18,931",2:28,,1,2026
+2026-06-02,8:00 PM,Vegas Golden Knights,,Carolina Hurricanes,,,,,,1,2026
+2026-06-04,8:00 PM,Vegas Golden Knights,,Carolina Hurricanes,,,,,,1,2026
+2026-06-06,8:00 PM,Carolina Hurricanes,,Vegas Golden Knights,,,,,,1,2026
+2026-06-09,8:00 PM,Carolina Hurricanes,,Vegas Golden Knights,,,,,,1,2026
+2026-06-11,8:00 PM,Vegas Golden Knights,,Carolina Hurricanes,,,,,,1,2026
+2026-06-14,8:00 PM,Carolina Hurricanes,,Vegas Golden Knights,,,,,,1,2026
+2026-06-17,8:00 PM,Vegas Golden Knights,,Carolina Hurricanes,,,,,,1,2026
