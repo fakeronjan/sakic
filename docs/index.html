@@ -602,6 +602,14 @@ function renderLastMatch(raw, season, isStale) {
 async function teamLinkClick(slug, season) {
   if (!slug) return;
   if (!teamsIndex) await loadTeamsIndex();
+  // Prefetch disruptedSeasons so renderChampions/renderGoat have the
+  // lookup populated by the time they fire (initStandings is async but the
+  // IIFE doesn't await it, leading to a race where badges silently disappear).
+  try {
+    const _r = await fetch(`${BASE}/seasons_index.json`);
+    const _m = await _r.json();
+    if (_m.disrupted_seasons) disruptedSeasons = _m.disrupted_seasons;
+  } catch (_) {}
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelector('nav button[data-tab="team-summary"]').classList.add('active');
