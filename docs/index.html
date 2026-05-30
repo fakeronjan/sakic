@@ -809,7 +809,6 @@ function renderStandings() {
   // Preserve the all-time/league-wide rank when filtered (gaps are informative -
   // they show where filtered-out teams sit). Same pattern as GOAT and DILLON.
   const season = currentSeasonData && currentSeasonData.season;
-  updateDisruptedNote('goat-disrupted-note', teams.map(t => t.season));
   const rows = teams.map(t => {
     const isStale = !!(prevDate && t.last_match_date && t.last_match_date <= prevDate);
     const slug = nameToSlug[t.team];  // t.team is the canonical name
@@ -984,7 +983,7 @@ function renderTeamTable() {
       : g.date;
     return `<tr>
     <td style="white-space:nowrap;color:#888;font-size:12px">${dateCell}</td>
-    <td class="linked" data-season-link="${g.season}" style="font-size:11px;color:#555">${seasonCell}</td>
+    <td class="linked" data-season-link="${g.season}" style="font-size:11px;color:#555">${seasonCell}${tsView !== 'single' ? seasonTag(g.season) : ''}</td>
     <td class="last-match-cell">${renderLastMatch(g.last_match, g.season, !!g._isStale)}</td>
     <td style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordSmart(g.regular_record, g.regular_pts, g.playoff_record, g.record)}</td>
     <td class="rank-cell">${g.rank}</td>
@@ -1177,6 +1176,7 @@ function renderGoat() {
   const teams = goatConf === 'all'
     ? data
     : data.filter(t => t.conference === goatConf);
+  updateDisruptedNote('goat-disrupted-note', teams.map(t => t.season));
   const rows = teams.map(t => {
     const label = t.display_name || t.team;
     const slug = nameToSlug[t.team] || nameToSlug[label];
