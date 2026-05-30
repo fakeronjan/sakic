@@ -1186,7 +1186,7 @@ function renderGoat() {
     const shortTag = seasonTag(t.season);
     return `<tr>
     <td class="rank-cell">${t.rank}</td>
-    <td class="season-cell linked" data-season-link="${t.season}" style="text-align:center;white-space:nowrap">${fmtSeason(t.season)}${shortTag}</td>
+    <td class="season-cell linked" data-season-link="${t.season}" style="white-space:nowrap">${fmtSeason(t.season)}${shortTag}</td>
     ${teamTd}
     <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
     <td>${ratingBar(t.rating)}</td>
