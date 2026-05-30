@@ -41,5 +41,12 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update ratings $(date -u '+%Y-%m-%d')"
-            git push
+            # Race-safe push: if another commit landed during this run, rebase
+            # the data update on top and retry. Avoids losing a day's data
+            # update when a code push lands mid-cron-run.
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $i failed; retrying in 5s..."
+              sleep 5
+            done
           fi
