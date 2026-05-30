@@ -746,10 +746,31 @@ NO_TITLES_SEASONS = {2005}
 # Pattern matches GRIFFEY's COVID tag for 2020. Small samples bias ratings;
 # the tag gives readers context without altering the model.
 SHORT_SEASONS = {
-    1995: "lockout 48g",   # 1994-95 lockout: 48-game season
-    2013: "lockout 48g",   # 2012-13 lockout: 48-game season
-    2020: "COVID 70g",     # 2019-20 stopped early at COVID stoppage (~70 g)
-    2021: "COVID 56g",     # 2020-21 COVID-shortened: 56 games
+    1995: {
+        'tag': 'lockout 48g',
+        'category': 'labor',
+        'note': "The 1994-95 season was shortened to 48 games by a lockout that ran from October 1994 to January 1995.",
+    },
+    2005: {
+        'tag': 'CANCELLED',
+        'category': 'cancelled',
+        'note': "The entire 2004-05 season was cancelled due to a lockout. No games played, no Stanley Cup awarded.",
+    },
+    2013: {
+        'tag': 'lockout 48g',
+        'category': 'labor',
+        'note': "The 2012-13 season was shortened to 48 games by a lockout that ran from September 2012 to January 2013.",
+    },
+    2020: {
+        'tag': 'COVID 70g',
+        'category': 'covid',
+        'note': "The 2019-20 regular season was halted in March 2020 with ~70 games played per team; playoffs played in single-site bubbles in Toronto and Edmonton in August-September 2020.",
+    },
+    2021: {
+        'tag': 'COVID 56g',
+        'category': 'covid',
+        'note': "The 2020-21 season was shortened to 56 games with realigned divisions including the all-Canadian North Division due to ongoing COVID disruption.",
+    },
 }
 
 # Compute division winners for ALL completed seasons (1979-80 onward),
@@ -1056,8 +1077,10 @@ def build_goat(flag_col, require_cup=False):
             "division_winner":  1 if (s, r["name"]) in division_winners else 0,
             "season":           s,
             "season_label":     season_label(s),
-            "short_season":     s in SHORT_SEASONS,
-            "short_season_tag": SHORT_SEASONS.get(s, ""),
+            "short_season":          s in SHORT_SEASONS,
+            "short_season_tag":      SHORT_SEASONS.get(s, {}).get("tag", "")      if s in SHORT_SEASONS else "",
+            "short_season_category": SHORT_SEASONS.get(s, {}).get("category", "") if s in SHORT_SEASONS else "",
+            "short_season_note":     SHORT_SEASONS.get(s, {}).get("note", "")     if s in SHORT_SEASONS else "",
             "rating":           round(float(r["rating"]), 3),
             "regular_record":   format_record(s, rec["rs"]) if rec else "",
             "regular_pts":      format_pts(s, rec["rs"]) if rec else 0,
@@ -1113,6 +1136,10 @@ with open("docs/data/seasons_index.json", "w") as f:
         "first_date":     str(games["date_game"].min().date()),
         "last_date":      str(games["date_game"].max().date()),
         "generated_at":   datetime.now(timezone.utc).isoformat(),
+        "disrupted_seasons": {
+            str(year): {"tag": info["tag"], "category": info["category"], "note": info["note"]}
+            for year, info in SHORT_SEASONS.items()
+        },
     }, f, separators=(",", ":"))
 
 

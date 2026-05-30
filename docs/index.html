@@ -200,7 +200,37 @@
   .finish-runner   { background: #ddd; color: #444; }
   .conf-pill       { background: #f4f4f4; color: #555; border: 1px solid #e8e8e8; }
   .strike-tag      { background: #fde0e0; color: #c62828; border: 1px solid #f5b3b3; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 4px; letter-spacing: 0.5px; }
-  .short-season-tag { background: #fef3e0; color: #b56500; border: 1px solid #f5d6a3; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 4px; letter-spacing: 0.5px; white-space: nowrap; }
+  .short-season-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .short-season-tag.tag-cancelled { background: #fde0e0; color: #c62828; border-color: #f5b3b3; }
+  .short-season-tag.tag-labor     { background: #fef3e0; color: #b56500; border-color: #f5d6a3; }
+  .short-season-tag.tag-covid     { background: #fef9c3; color: #92750e; border-color: #fde68a; }
+  .disrupted-note {
+    background: #fafafa;
+    border-left: 3px solid #c8c8c8;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #555;
+    border-radius: 3px;
+  }
+  .disrupted-note ul { margin: 4px 0 0 18px; padding: 0; list-style: disc; }
+  .disrupted-note li { margin-bottom: 3px; line-height: 1.45; }
+  .disrupted-note li:last-child { margin-bottom: 0; }
+  .disrupted-note .short-season-tag { margin-left: 0; margin-right: 4px; }
+  .disrupted-note-bottom { margin-top: 12px; margin-bottom: 0; }
+  .season-tag-line { margin-top: 3px; line-height: 1; }
+  .season-tag-line .short-season-tag { margin-left: 0; }
 
   .last-match-cell {
     font-size: 12px;
@@ -397,6 +427,7 @@
   <p class="data-note" id="strike-note" style="display:none;color:#c62828">
     Note: the 2004-05 NHL season was cancelled in its entirety due to a lockout. No games were played, no division titles, no Presidents' Trophy, and no Stanley Cup were awarded.
   </p>
+  <div class="disrupted-note" id="standings-disrupted-note" style="display:none"></div>
   <div id="standings-table-wrap"><p class="loading">Loading standings...</p></div>
 </div>
 
@@ -412,10 +443,12 @@
       <option value="eor">End of regular season</option>
     </select>
   </div>
+  <div class="disrupted-note" id="team-summary-disrupted-note" style="display:none"></div>
   <div id="chart-wrap" style="display:none">
     <svg id="season-chart"></svg>
   </div>
   <div id="team-table-wrap"><p class="loading">Select a team above.</p></div>
+  <div class="disrupted-note disrupted-note-bottom" id="team-summary-disrupted-note-bottom" style="display:none"></div>
 </div>
 
 <!-- ── CHAMPIONS (League History) ────────────────────────────────────────── -->
@@ -424,6 +457,7 @@
     Counts reflect Stanley Cup titles won within our data window (1979-80 onward). Relocations are treated as separate franchises - e.g., the Atlanta Thrashers (1999-2011) aren't included in the modern Winnipeg Jets' count.
   </p>
   <div id="history-table-wrap"><p class="loading">Loading champions...</p></div>
+  <div class="disrupted-note disrupted-note-bottom" id="champions-disrupted-note" style="display:none"></div>
 </div>
 
 <!-- ── GOAT TABLE ───────────────────────────────────────────────────────── -->
@@ -432,6 +466,7 @@
   <div class="conf-pills" id="goat-mode-pills"></div>
   <div class="conf-pills" id="goat-conf-pills"></div>
   <div id="goat-table-wrap"><p class="loading">Loading GOAT table...</p></div>
+  <div class="disrupted-note disrupted-note-bottom" id="goat-disrupted-note" style="display:none"></div>
 </div>
 
 <script>
@@ -671,10 +706,43 @@ function fmtSeason(s) {
   return `${n - 1}-${yy}`;
 }
 
+let disruptedSeasons  = {};  // season -> {tag, category, note}; populated from seasons_index.json
+
+// ── Disrupted-season helpers ────────────────────────────────────────────────
+function seasonTag(season) {
+  const info = disruptedSeasons[String(season)];
+  if (!info) return '';
+  const cat = info.category || 'labor';
+  return `<div class="season-tag-line"><span class="short-season-tag tag-${cat}" title="${info.note}">${info.tag.toUpperCase()}</span></div>`;
+}
+function disruptedFootnoteHTML(seasons) {
+  const seen = new Set();
+  const items = [];
+  for (const s of seasons) {
+    const key = String(s);
+    if (seen.has(key)) continue;
+    const info = disruptedSeasons[key];
+    if (!info) continue;
+    seen.add(key);
+    const cat = info.category || 'labor';
+    items.push(`<li><span class="short-season-tag tag-${cat}">${info.tag.toUpperCase()}</span>${info.note}</li>`);
+  }
+  if (!items.length) return '';
+  return `<strong>Disrupted seasons in this view:</strong><ul>${items.join('')}</ul>`;
+}
+function updateDisruptedNote(elementId, seasons) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  const html = disruptedFootnoteHTML(seasons);
+  el.innerHTML = html;
+  el.style.display = html ? 'block' : 'none';
+}
+
 async function initStandings() {
   try {
     const res  = await fetch(`${BASE}/seasons_index.json`);
     const meta = await res.json();
+    if (meta.disrupted_seasons) disruptedSeasons = meta.disrupted_seasons;
     document.getElementById('last-updated').textContent =
       `Ratings include games from ${fmtDate(meta.first_date)} to ${fmtDate(meta.last_date)}`;
     if (meta.generated_at) {
@@ -715,6 +783,7 @@ async function loadSeason(season) {
       (parseInt(season) === 1980) ? 'block' : 'none';
     document.getElementById('strike-note').style.display =
       (parseInt(season) === 2005) ? 'block' : 'none';
+    updateDisruptedNote('standings-disrupted-note', [season]);
   } catch(e) {
     document.getElementById('standings-table-wrap').innerHTML =
       `<p class="error">Could not load season data.</p>`;
@@ -740,6 +809,7 @@ function renderStandings() {
   // Preserve the all-time/league-wide rank when filtered (gaps are informative -
   // they show where filtered-out teams sit). Same pattern as GOAT and DILLON.
   const season = currentSeasonData && currentSeasonData.season;
+  updateDisruptedNote('goat-disrupted-note', teams.map(t => t.season));
   const rows = teams.map(t => {
     const isStale = !!(prevDate && t.last_match_date && t.last_match_date <= prevDate);
     const slug = nameToSlug[t.team];  // t.team is the canonical name
@@ -887,6 +957,20 @@ function renderTeamTable() {
   // beneath the season number when it differs from the canonical (the
   // team page's identity).
   const canonical = data.team;
+  // Disrupted-season footnote (top for single, bottom for cross-season).
+  const _tsView = (typeof tsView !== 'undefined') ? tsView : 'cross';
+  const _isSingle = (_tsView === 'single');
+  const _seasonsList = _isSingle
+    ? [seasonFilter]
+    : rows.map(g => g.season);
+  if (_isSingle) {
+    updateDisruptedNote('team-summary-disrupted-note', _seasonsList);
+    updateDisruptedNote('team-summary-disrupted-note-bottom', []);
+  } else {
+    updateDisruptedNote('team-summary-disrupted-note-bottom', _seasonsList);
+    updateDisruptedNote('team-summary-disrupted-note', []);
+  }
+
   const tableRows = [...rows].reverse().map(g => {
     const era = (g.display_name && g.display_name !== canonical) ? g.display_name : '';
     const seasonCell = era
@@ -1032,16 +1116,18 @@ function renderChampions() {
       <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordStacked(t.rs_record, t.rs_pts, t.ps_record)}</td>`;
   }
 
+  updateDisruptedNote('champions-disrupted-note', (entries || championsData || []).map(e => e.season));
+
   const rows = entries.map(e => {
     if (e.no_series) {
       // 2004-05 lockout — single-cell row across the table with a callout.
       return `<tr style="background:#fdf3f3">
-        <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}</td>
+        <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}${seasonTag(e.season)}</td>
         <td colspan="9" style="text-align:center;color:#c62828;font-size:12px;font-style:italic">No Stanley Cup — entire season cancelled by lockout</td>
       </tr>`;
     }
     return `<tr>
-    <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}</td>
+    <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}${seasonTag(e.season)}</td>
     ${teamCell(e.champion,  'col-champ', e.season)}
     <td class="divider-col" style="text-align:center;font-size:11px;font-weight:600;white-space:nowrap;width:64px;padding:2px 4px;line-height:1.3">
       ${e.series || ''}${e.final_score ? `<div style="font-size:10px;color:#888;font-weight:400">(${e.final_score})</div>` : ''}
@@ -1097,9 +1183,7 @@ function renderGoat() {
     const teamTd = slug
       ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${t.season}">${label}</td>`
       : `<td class="team-cell">${label}</td>`;
-    const shortTag = t.short_season
-      ? ` <span class="short-season-tag" title="Shortened season (${t.short_season_tag}). Small samples can inflate ratings.">${t.short_season_tag.toUpperCase()}</span>`
-      : '';
+    const shortTag = seasonTag(t.season);
     return `<tr>
     <td class="rank-cell">${t.rank}</td>
     <td class="season-cell linked" data-season-link="${t.season}" style="text-align:center;white-space:nowrap">${fmtSeason(t.season)}${shortTag}</td>
