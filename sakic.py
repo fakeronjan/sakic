@@ -342,7 +342,7 @@ def prepare_game_data(raw_df):
     df["home_margin"]    = df["home_pts"] - df["visitor_pts"]
     df["visitor_margin"] = -df["home_margin"]
 
-    # Win flags. Ties count as 0 for both — Massey treats raw margin (0) cleanly.
+    # Win flags. Ties count as 0 for both — fakeronjan WLS treats raw margin (0) cleanly.
     df["home_win"]    = (df["home_margin"] > 0).astype(int)
     df["visitor_win"] = (df["home_margin"] < 0).astype(int)
 
@@ -394,7 +394,7 @@ def prepare_game_data(raw_df):
 
 
 # =========================================================
-# WLS MASSEY SOLVER (per-connected-component zero-sum)
+# WLS FAKERONJAN WLS SOLVER (per-connected-component zero-sum)
 # =========================================================
 
 def _apply_margin_transform(margin, transform, cap):
@@ -434,8 +434,8 @@ def _connected_components(teams, edges):
     return comp_map
 
 
-def _solve_massey(window_df, hca, weighting_mode, margin_transform, margin_cap):
-    """Solve Massey ratings on one rolling window with per-component zero-sum
+def _solve_wls(window_df, hca, weighting_mode, margin_transform, margin_cap):
+    """Solve fakeronjan WLS ratings on one rolling window with per-component zero-sum
     constraint. Single league (no AL/NL-style split), so this matches DUNCAN
     rather than GRIFFEY's per-(component, league) variant."""
     teams = sorted(set(window_df["home_team_name"]) | set(window_df["visitor_team_name"]))
@@ -571,7 +571,7 @@ def compute_ratings(master_df, existing_ratings_df):
             last_printed_ym = current_ym
 
         try:
-            ranked = _solve_massey(
+            ranked = _solve_wls(
                 window, hca=HOME_COURT_ADJUSTMENT, weighting_mode=WEIGHTING_MODE,
                 margin_transform=MARGIN_TRANSFORM, margin_cap=MARGIN_CAP,
             )
