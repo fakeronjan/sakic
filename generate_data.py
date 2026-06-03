@@ -491,16 +491,68 @@ ratings["is_ps_end"] = 0
 ratings["is_playoff_snapshot"] = 0
 
 # In-progress gate: only mark is_ps_end for seasons whose Stanley Cup is
-# definitively decided. Event-based check — the last playoff game in the
-# data must be at least 7 days old (same disambiguation cushion used in
-# the SCF champion walker below). Without this, the latest in-progress
-# ranking_id gets flagged as 'End of playoffs' mid-Conference-Finals.
-import datetime as _dt_gate
-_today_gate = _dt_gate.date.today()
-_season_last_ps_date = (
-    games[games["is_playoff_game_flag"] == 1]
-    .groupby("season")["date_game"].max().to_dict()
-)
+# definitively decided. Uses the bracket-walk over playoff games — a
+# season is "complete" iff exactly one team remains "still in" (latest
+# matchup was a win). Same algorithm is reused below to produce
+# ws_results (champion + runner-up + series + final score), so we cache
+# the per-season set here.
+def _bracket_walk(season_games):
+    """For one season's playoff games, return (still_in_team, history) or
+    (None, None) if bracket not yet resolved. History is a list of tuples
+    (date, won, opponent, w_count, l_count, series_df) for the still-in team.
+
+    Each matchup is split into consecutive 'series' separated by date gaps
+    > 10 days. Handles the 2020 NHL bubble, where some pairs played in
+    both round-robin (single game, early Aug) and a playoff series (BO7,
+    later) — without splitting, the tied H2H wipes out the loser arc and
+    a CF/R2 loser wrongly stays still-in.
+    """
+    sg = season_games.copy()
+    sg["_matchup"] = sg.apply(
+        lambda r: tuple(sorted([r["home_team_name"], r["visitor_team_name"]])),
+        axis=1,
+    )
+    history = {}
+    for matchup, mg in sg.groupby("_matchup"):
+        a, b = matchup
+        mg_sorted = mg.sort_values("date_game").reset_index(drop=True)
+        current_idx = [0]
+        for i in range(1, len(mg_sorted)):
+            gap = (mg_sorted.loc[i, "date_game"] - mg_sorted.loc[i-1, "date_game"]).days
+            if gap > 10:
+                _nhl_process_series(mg_sorted.iloc[current_idx], a, b, history)
+                current_idx = [i]
+            else:
+                current_idx.append(i)
+        _nhl_process_series(mg_sorted.iloc[current_idx], a, b, history)
+    still_in = [(t, h) for t, h in history.items() if sorted(h, key=lambda x: x[0])[-1][1]]
+    if len(still_in) != 1:
+        return None, None
+    team, hist = still_in[0]
+    hist.sort(key=lambda x: x[0])
+    return team, hist
+
+
+def _nhl_process_series(series_df, a, b, history):
+    a_wins = int(((series_df["home_team_name"] == a) & (series_df["home_win"] == 1)).sum()
+               + ((series_df["visitor_team_name"] == a) & (series_df["visitor_win"] == 1)).sum())
+    b_wins = len(series_df) - a_wins
+    if a_wins > b_wins:
+        winner, loser, w, l = a, b, a_wins, b_wins
+    elif b_wins > a_wins:
+        winner, loser, w, l = b, a, b_wins, a_wins
+    else:
+        return
+    ld = series_df["date_game"].max()
+    history.setdefault(winner, []).append((ld, True, loser, w, l, series_df))
+    history.setdefault(loser, []).append((ld, False, winner, l, w, series_df))
+
+
+_scf_complete = set()
+for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
+    team, _ = _bracket_walk(ps_games)
+    if team is not None:
+        _scf_complete.add(int(s))
 
 for s, rs_end in rs_end_by_season.items():
     season_mask = ratings["season"] == s
@@ -511,8 +563,7 @@ for s, rs_end in rs_end_by_season.items():
     if not rs_candidates.empty:
         rs_end_id = rs_candidates["ranking_id"].max()
         ratings.loc[season_mask & (ratings["ranking_id"] == rs_end_id), "is_rs_end"] = 1
-    last_ps = _season_last_ps_date.get(s)
-    if last_ps is not None and (_today_gate - last_ps.date()).days >= 7:
+    if s in _scf_complete:
         ps_end_id = season_subset["ranking_id"].max()
         ratings.loc[season_mask & (ratings["ranking_id"] == ps_end_id), "is_ps_end"] = 1
     ratings.loc[season_mask & (ratings["ranking_date"] > rs_end), "is_playoff_snapshot"] = 1
@@ -698,59 +749,29 @@ print(f"  {len(snap_record_lookup):,} (season, team, snapshot) lookups built.")
 # the Cup champion; their opponent in that final series is the runner-up.
 
 print("\nDeriving Stanley Cup champions from playoff games...")
-# Gate on the postseason being COMPLETE (not just started). Three checks:
-#   (a) The bracket has resolved to a single 2-team series at the end
-#   (b) The winner of that final series has clinched best-of-7 (>= 4 wins)
-#   (c) The last game on file is at least 7 days old — disambiguates a
-#       Conference Finals clincher (also best-of-7, 4 wins) from the actual
-#       SCF clincher. If 7+ days have passed since the last game and no
-#       newer games exist, that last game must be the SCF clinch (SCF would
-#       start within a week of CF ending if SCF were still upcoming).
-# Event-based and self-disambiguating — no fixed-date dependency.
-import datetime as _dt
-_today = _dt.date.today()
-ws_results = {}  # season -> {champion, runner_up, series}
+# Bracket-walk: for each post-RS matchup, identify the H2H winner (team
+# with more wins); in-progress matchups (tied) are skipped. A team is
+# "still in" if their LATEST matchup was a win. When exactly one team
+# remains still-in, they're the Stanley Cup champion; their latest
+# opponent is the runner-up; the matchup they won is the SCF.
+# Self-disambiguating against a Conference Finals clincher (also BO7) —
+# in that state, the two CF winners are both still-in, so len != 1 and
+# the season stays open. No date cushion.
+ws_results = {}  # season -> {champion, runner_up, series, final_score, scf_g1_date}
 for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
-    s_int = int(s)
-    last_date = ps_games["date_game"].max()
-    # Gate (c): last game at least 7 days old (disambiguation cushion).
-    if (_today - last_date.date()).days < 7:
+    champ, hist = _bracket_walk(ps_games)
+    if champ is None:
         continue
-    finals_teams = set(ps_games[ps_games["date_game"] == last_date]["home_team_name"]) | \
-                   set(ps_games[ps_games["date_game"] == last_date]["visitor_team_name"])
-    # Gate (a): exactly two teams on the latest date (a clinching game).
-    if len(finals_teams) != 2:
-        continue
-    a, b = sorted(finals_teams)
-    finals_games = ps_games[
-        ((ps_games["home_team_name"] == a) & (ps_games["visitor_team_name"] == b)) |
-        ((ps_games["home_team_name"] == b) & (ps_games["visitor_team_name"] == a))
-    ]
-    a_wins = int(((finals_games["home_team_name"] == a) & (finals_games["home_win"] == 1)).sum()
-              + ((finals_games["visitor_team_name"] == a) & (finals_games["visitor_win"] == 1)).sum())
-    b_wins = len(finals_games) - a_wins
-    # Gate (b): winner clinched the best-of-7 series (>= 4 wins).
-    if max(a_wins, b_wins) < 4:
-        continue
-    if a_wins == b_wins:
-        continue
-    if a_wins > b_wins:
-        champ, ru, series = a, b, f"{a_wins}-{b_wins}"
-    else:
-        champ, ru, series = b, a, f"{b_wins}-{a_wins}"
-    # Clinching game score (from champion's POV).
+    _, _, runner_up, c_wins, ru_wins, finals_games = hist[-1]
     clincher = finals_games.sort_values("date_game").iloc[-1]
     if clincher["home_team_name"] == champ:
         final_score = f"{int(clincher['home_pts'])}-{int(clincher['visitor_pts'])}"
     else:
         final_score = f"{int(clincher['visitor_pts'])}-{int(clincher['home_pts'])}"
-    # SCF Game 1 date = earliest date among the finals_games (LDS/conf finals
-    # already filtered out by the same-pair intersection above).
-    scf_g1_dt = finals_games["date_game"].min()
-    ws_results[s_int] = {
-        "champion": champ, "runner_up": ru,
-        "series": series, "final_score": final_score,
-        "scf_g1_date": scf_g1_dt,
+    ws_results[int(s)] = {
+        "champion": champ, "runner_up": runner_up,
+        "series": f"{c_wins}-{ru_wins}", "final_score": final_score,
+        "scf_g1_date": finals_games["date_game"].min(),
     }
 
 print(f"  Detected {len(ws_results)} Stanley Cup champions.")
