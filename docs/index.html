@@ -69,6 +69,8 @@
   nav button.active { color: #ff6eb4; border-bottom-color: #ff6eb4; }
 
   .tab { display: none; padding: 16px; max-width: 1100px; margin: 0 auto; }
+  /* Champions tab is wider to fit the Lists sub-view tables (matches DILLON/DUNCAN/GRIFFEY). */
+  #league-history.tab { max-width: 1320px; }
   .tab.active { display: block; }
 
   .controls {
@@ -263,6 +265,14 @@
   /* League History table */
   .col-champ  { background: #fffdf3; }
   .col-ru     { background: #fafafa; }
+  /* Lists sub-view highlights — sort-key column gets a yellow tint so the
+     viewer's eye lands on the metric being ranked. row-group-end draws
+     the divider line between repeat-champ runs / rematch groups. */
+  .sort-col              { background: #fff8d0 !important; }
+  thead .sort-col        { background: #fff8d0 !important; color: #155a75 !important; }
+  .sort-col.rating-cell  { font-weight: 800; }
+  tbody tr.row-group-end { border-bottom: 2px solid #d0d0d0; }
+  #history-rank-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .season-cell { font-weight: 700; color: #1a6b8a; white-space: nowrap; text-align: center; }
   .divider-col { width: 4px; background: #e8e8e8; padding: 0; }
   #history-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -453,11 +463,36 @@
 
 <!-- ── CHAMPIONS (League History) ────────────────────────────────────────── -->
 <div id="league-history" class="tab">
-  <p class="data-note">
-    Counts reflect Stanley Cup titles won within our data window (1979-80 onward). Relocations are treated as separate franchises - e.g., the Atlanta Thrashers (1999-2011) aren't included in the modern Winnipeg Jets' count.
-  </p>
-  <div id="history-table-wrap"><p class="loading">Loading champions...</p></div>
-  <div class="disrupted-note disrupted-note-bottom" id="champions-disrupted-note" style="display:none"></div>
+  <div class="conf-pills" id="history-view-pills">
+    <button class="active" data-hview="list">All Stanley Cups</button>
+    <button data-hview="rankings">Lists</button>
+  </div>
+
+  <div id="history-list-view">
+    <p class="data-note">
+      Counts reflect Stanley Cup titles won within our data window (1979-80 onward). Relocations are treated as separate franchises - e.g., the Atlanta Thrashers (1999-2011) aren't included in the modern Winnipeg Jets' count.
+    </p>
+    <div id="history-table-wrap"><p class="loading">Loading champions...</p></div>
+    <div class="disrupted-note disrupted-note-bottom" id="champions-disrupted-note" style="display:none"></div>
+  </div>
+
+  <div id="history-rankings-view" style="display:none">
+    <div class="conf-pills" id="history-rank-pills">
+      <button class="active" data-rank="best-champs">Best champs</button>
+      <button data-rank="worst-champs">Worst champs</button>
+      <button data-rank="best-losers">Best losers</button>
+      <button data-rank="worst-losers">Worst losers</button>
+      <button data-rank="best-matchup">Best matchup</button>
+      <button data-rank="worst-matchup">Worst matchup</button>
+      <button data-rank="closest">Closest predicted</button>
+      <button data-rank="blowout">Biggest blowout</button>
+      <button data-rank="upset">Upsets</button>
+      <button data-rank="repeat-champs">Repeat champs</button>
+      <button data-rank="rematches">Rematches</button>
+    </div>
+    <p class="data-note" id="history-rank-note"></p>
+    <div id="history-rank-table-wrap"><p class="loading">Loading rankings...</p></div>
+  </div>
 </div>
 
 <!-- ── GOAT TABLE ───────────────────────────────────────────────────────── -->
@@ -1161,6 +1196,381 @@ function renderChampions() {
     </table>`;
   attachLinks();
 }
+
+// ── Champions Lists sub-view ──────────────────────────────────────────────────
+// Mirrors DILLON/DUNCAN/GRIFFEY's Lists pattern (11 rankings inside the
+// Champions tab). Matchup-quality / closeness / blowout / upset rankings
+// use the pre-SCF rating (snapshot strictly before SCF Game 1) so the
+// "going-in" framing isn't contaminated by the SCF result itself. Team-
+// quality rankings (best/worst champs/losers) use the end-of-playoffs
+// rating since that's the canonical measure of how strong the team
+// ultimately was.
+
+const PRE_SCF_MODES = new Set(['best-matchup', 'worst-matchup', 'closest', 'blowout', 'upset']);
+
+// Map EOS field names onto the {rating, rank, ps_record} keys the
+// Lists code expects. Keeps per-row block code agnostic of whether
+// we're showing PS-end ratings or pre-SCF ratings.
+function eosView(team) {
+  return {
+    ...team,
+    rating: team.ps_end_rating,
+    rank:   team.ps_end_rank,
+  };
+}
+function preScfView(team) {
+  return {
+    ...team,
+    rating:    team.rating_pre,
+    rank:      team.rank_pre,
+    ps_record: team.ps_record_pre,
+  };
+}
+
+function fmtSigned(n) { return (n >= 0 ? '+' : '') + n.toFixed(2); }
+
+// Flip "4-3" to "3-4" — used when the loser is the focal team (left slot)
+// so the series score reads from their POV.
+function flipSeries(s) {
+  const m = s && s.match(/^(\d+)-(\d+)$/);
+  return m ? `${m[2]}-${m[1]}` : s;
+}
+
+// Lists-specific team block — adds the optional sort-col highlight on the
+// Rating cell for team-quality rankings.
+function rankTeamBlock(t, bg, season, sortRating) {
+  if (!t) return `<td class="${bg}" colspan="4">-</td>`;
+  const label = t.display_name || t.team;
+  const slug  = nameToSlug[t.team] || nameToSlug[label];
+  const countStr = t.title_count
+    ? ` <span style="color:#888;font-size:0.85em;font-weight:400">(${t.title_count} 👑)</span>`
+    : t.runner_up_count
+    ? ` <span style="color:#888;font-size:0.85em;font-weight:400">(${t.runner_up_count} 🥈)</span>`
+    : '';
+  const rating = t.rating != null ? t.rating.toFixed(2) : '-';
+  const rank   = t.rank   != null ? `${t.rank}` : '-';
+  const teamTd = slug
+    ? `<td class="${bg} team-cell linked" data-team-slug="${slug}" data-season="${season}" style="white-space:nowrap">${label}${countStr}</td>`
+    : `<td class="${bg} team-cell" style="white-space:nowrap">${label}${countStr}</td>`;
+  const ratingClass = sortRating ? `${bg} rating-cell sort-col` : `${bg} rating-cell`;
+  return `
+    ${teamTd}
+    <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em">${rank}</td>
+    <td class="${ratingClass}" style="font-variant-numeric:tabular-nums">${rating}</td>
+    <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordStacked(t.rs_record, t.rs_pts, t.ps_record)}</td>`;
+}
+
+function rankSeasonCell(e) {
+  return `<td class="season-cell linked" data-season-link="${e.season}" style="line-height:1.3">${e.season_label || fmtSeason(e.season)}${seasonTag(e.season)}</td>`;
+}
+
+function renderRankings(rankType) {
+  if (!championsData) return;
+  if (rankType === 'repeat-champs') return renderRepeatChamps();
+  if (rankType === 'rematches')     return renderRematches();
+
+  const isPreScf = PRE_SCF_MODES.has(rankType);
+  const entries = (championsData['NHL'] || []).filter(e => {
+    if (!e.champion || !e.runner_up) return false;
+    if (isPreScf) {
+      return e.champion.rating_pre != null && e.runner_up.rating_pre != null;
+    }
+    return e.champion.ps_end_rating != null && e.runner_up.ps_end_rating != null;
+  });
+
+  const rows = entries.map(e => {
+    const c = isPreScf ? preScfView(e.champion)  : eosView(e.champion);
+    const r = isPreScf ? preScfView(e.runner_up) : eosView(e.runner_up);
+    const hi = Math.max(c.rating, r.rating);
+    const lo = Math.min(c.rating, r.rating);
+    return {
+      season:       e.season,
+      season_label: e.season_label,
+      series:       e.series || '',
+      score:        e.final_score || '',
+      champ:        c,
+      loser:        r,
+      quality:      hi + 2 * lo,
+      diff:         c.rating - r.rating,  // + = champ favored, - = upset
+    };
+  });
+
+  let sorted, note, mode;
+  switch (rankType) {
+    case 'best-champs':
+      sorted = [...rows].sort((a, b) => b.champ.rating - a.champ.rating).slice(0, 10);
+      note   = 'Top 10 champions by end-of-playoffs rating. The strongest teams ever to win a Stanley Cup.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'worst-champs':
+      sorted = [...rows].sort((a, b) => a.champ.rating - b.champ.rating).slice(0, 10);
+      note   = 'Bottom 10 champions by end-of-playoffs rating. The weakest teams ever to win a Stanley Cup.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'best-losers':
+      sorted = [...rows].sort((a, b) => b.loser.rating - a.loser.rating).slice(0, 10);
+      note   = 'Top 10 runner-ups by end-of-playoffs rating. The strongest teams ever to lose a Stanley Cup Final.';
+      mode   = 'loser-vs-champ';
+      break;
+    case 'worst-losers':
+      sorted = [...rows].sort((a, b) => a.loser.rating - b.loser.rating).slice(0, 10);
+      note   = 'Bottom 10 runner-ups by end-of-playoffs rating. The weakest teams ever to lose a Stanley Cup Final.';
+      mode   = 'loser-vs-champ';
+      break;
+    case 'best-matchup':
+      sorted = [...rows].sort((a, b) => b.quality - a.quality).slice(0, 10);
+      note   = 'Top 10 by pre-SCF matchup quality. Formula: max(Rating) + 2 × min(Rating), which weights the weaker team double to reward balanced strength over one-sided star power.';
+      mode   = 'matchup';
+      break;
+    case 'worst-matchup':
+      sorted = [...rows].sort((a, b) => a.quality - b.quality).slice(0, 10);
+      note   = 'Bottom 10 by pre-SCF matchup quality. Formula: max(Rating) + 2 × min(Rating), which weights the weaker team double to penalise lopsided matchups over evenly-mediocre ones.';
+      mode   = 'matchup';
+      break;
+    case 'closest':
+      sorted = [...rows].sort((a, b) => Math.abs(a.diff) - Math.abs(b.diff)).slice(0, 10);
+      note   = 'Top 10 by smallest pre-SCF rating gap. Signed diff is from the champion\'s POV (negative = upset).';
+      mode   = 'spread';
+      break;
+    case 'blowout':
+      sorted = [...rows].sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff)).slice(0, 10);
+      note   = 'Top 10 by largest pre-SCF rating gap. The biggest predicted mismatches, regardless of who actually won.';
+      mode   = 'spread';
+      break;
+    case 'upset':
+      sorted = rows.filter(r => r.diff < 0).sort((a, b) => a.diff - b.diff);
+      note   = `${sorted.length} Stanley Cup Finals where the model picked the loser by pre-SCF rating. Sorted from biggest upset down.`;
+      mode   = 'spread';
+      break;
+    default:
+      sorted = []; note = ''; mode = 'team-vs-opp';
+  }
+
+  document.getElementById('history-rank-note').textContent = note;
+  document.getElementById('history-rank-table-wrap').innerHTML =
+    sorted.length ? renderRankingTable(sorted, mode) : '<p class="loading">No data.</p>';
+  attachLinks();
+}
+
+function renderRankingTable(rows, mode) {
+  const showCombined = (mode === 'matchup');
+  const showDiff     = (mode === 'spread');
+  const isPreScf     = showCombined || showDiff;
+  const loserFocal   = (mode === 'loser-vs-champ');
+  const leftLabel    = loserFocal ? 'Runner-Up' : 'Champion';
+  const rightLabel   = loserFocal ? 'Champion'  : 'Runner-Up';
+
+  const preTag = isPreScf
+    ? `<div style="font-size:9px;font-weight:400;opacity:0.65;letter-spacing:0.3px;text-transform:none">(pre-SCF)</div>`
+    : '';
+
+  const metricHeader = showCombined
+    ? `<th class="sort-col">Quality${preTag}</th>`
+    : showDiff
+    ? `<th class="sort-col">Pred. Diff${preTag}</th>`
+    : '';
+
+  const sortLeftRating = !isPreScf;
+  const leftRatingHeader = sortLeftRating
+    ? `<th class="col-champ sort-col">Rating</th>`
+    : `<th class="col-champ">Rating${preTag}</th>`;
+
+  const head = `
+    <th>#</th>
+    <th style="text-align:center">Season</th>
+    <th class="col-champ">${leftLabel}</th>
+    <th class="col-champ col-hide-mobile">Rank</th>
+    ${leftRatingHeader}
+    <th class="col-champ col-hide-mobile">${recordHeader()}</th>
+    <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series</th>
+    <th class="col-ru">${rightLabel}</th>
+    <th class="col-ru col-hide-mobile">Rank</th>
+    <th class="col-ru">Rating${preTag}</th>
+    <th class="col-ru col-hide-mobile">${recordHeader()}</th>
+    ${metricHeader}`;
+
+  const body = rows.map((e, i) => {
+    const leftTeam  = loserFocal ? e.loser : e.champ;
+    const rightTeam = loserFocal ? e.champ : e.loser;
+
+    let metricCell = '';
+    if (showCombined) {
+      metricCell = `<td class="sort-col rating-cell" style="font-variant-numeric:tabular-nums">${e.quality.toFixed(2)}</td>`;
+    } else if (showDiff) {
+      const color = e.diff >= 0 ? '#1a6b8a' : '#c2185b';
+      metricCell = `<td class="sort-col rating-cell" style="font-variant-numeric:tabular-nums;color:${color}">${fmtSigned(e.diff)}</td>`;
+    }
+
+    const displaySeries = loserFocal ? flipSeries(e.series) : e.series;
+    const displayScore  = e.score;
+    const scoreCell = `<td class="divider-col" style="text-align:center;font-size:11px;font-weight:600;white-space:nowrap;width:64px;padding:2px 4px;line-height:1.3">
+      ${displaySeries || ''}${displayScore ? `<div style="font-size:10px;color:#888;font-weight:400">(${displayScore})</div>` : ''}
+    </td>`;
+
+    return `<tr>
+      <td class="rank-cell">${i + 1}</td>
+      ${rankSeasonCell(e)}
+      ${rankTeamBlock(leftTeam,  'col-champ', e.season, sortLeftRating)}
+      ${scoreCell}
+      ${rankTeamBlock(rightTeam, 'col-ru',    e.season, false)}
+      ${metricCell}
+    </tr>`;
+  }).join('');
+
+  return `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+}
+
+// ── Repeat Champions & Rematches sub-views ──────────────────────────────────
+const PAIR_HEAD = `
+    <th style="text-align:center">Season</th>
+    <th class="col-champ">Champion</th>
+    <th class="col-champ col-hide-mobile">Rank</th>
+    <th class="col-champ">Rating</th>
+    <th class="col-champ col-hide-mobile">${recordHeader()}</th>
+    <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series</th>
+    <th class="col-ru">Runner-Up</th>
+    <th class="col-ru col-hide-mobile">Rank</th>
+    <th class="col-ru">Rating</th>
+    <th class="col-ru col-hide-mobile">${recordHeader()}</th>`;
+
+function pairRow(e, isPairEnd) {
+  const rowClass = isPairEnd ? ' class="row-group-end"' : '';
+  return `<tr${rowClass}>
+      ${rankSeasonCell(e)}
+      ${rankTeamBlock(eosView(e.champion),  'col-champ', e.season, false)}
+      <td class="divider-col" style="text-align:center;font-size:11px;font-weight:600;white-space:nowrap;width:64px;padding:2px 4px;line-height:1.3">
+        ${e.series || ''}${e.final_score ? `<div style="font-size:10px;color:#888;font-weight:400">(${e.final_score})</div>` : ''}
+      </td>
+      ${rankTeamBlock(eosView(e.runner_up), 'col-ru',    e.season, false)}
+    </tr>`;
+}
+
+function renderRepeatChamps() {
+  // Detect runs of consecutive seasons with the SAME champion. A run of
+  // length N renders as a single N-row block (Islanders '80-83 = 4 rows,
+  // Oilers back-to-backs = 2, etc.). Single-season wins are skipped.
+  // The 2004-05 lockout entry (no champion) naturally breaks any run.
+  const entries = [...(championsData['NHL'] || [])].sort((a, b) => a.season - b.season);
+  const runs = [];
+  let current = [];
+  for (let i = 0; i < entries.length; i++) {
+    const e = entries[i];
+    if (!e.champion) {
+      if (current.length >= 2) runs.push(current);
+      current = [];
+      continue;
+    }
+    const prev = current.length ? current[current.length - 1] : null;
+    const continues = prev
+      && prev.champion.team === e.champion.team
+      && e.season - prev.season === 1;
+    if (continues) {
+      current.push(e);
+    } else {
+      if (current.length >= 2) runs.push(current);
+      current = [e];
+    }
+  }
+  if (current.length >= 2) runs.push(current);
+
+  runs.sort((a, b) => b[b.length - 1].season - a[a.length - 1].season);
+
+  const totalSeasons = runs.reduce((sum, r) => sum + r.length, 0);
+  document.getElementById('history-rank-note').textContent =
+    `${runs.length} repeat-championship runs (${totalSeasons} total seasons across consecutive titles).`;
+
+  if (!runs.length) {
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No repeat champions in this dataset.</p>';
+    return;
+  }
+
+  // Newest-first within each block; border on last RENDERED (oldest) row.
+  const body = runs.map(run => {
+    const rev = [...run].reverse();
+    return rev.map((e, i) => pairRow(e, i === rev.length - 1)).join('');
+  }).join('');
+  document.getElementById('history-rank-table-wrap').innerHTML =
+    `<table><thead><tr>${PAIR_HEAD}</tr></thead><tbody>${body}</tbody></table>`;
+  attachLinks();
+}
+
+function renderRematches() {
+  // Group all Stanley Cup Finals between the SAME two teams into a single
+  // N-row block. A group's window extends as long as those two teams keep
+  // meeting — once 5 calendar years pass without them facing each other
+  // again, the window closes.
+  //
+  // Oilers-Islanders '83/'84 = 2-row block.
+  const REMATCH_GAP_THRESHOLD = 5;
+  const entries = (championsData['NHL'] || []).filter(e =>
+    e.champion && e.runner_up &&
+    e.champion.ps_end_rating != null && e.runner_up.ps_end_rating != null
+  ).sort((a, b) => a.season - b.season);
+
+  const pairKey = e => [e.champion.team, e.runner_up.team].sort().join('|');
+  const meetingsByPair = {};
+  for (const e of entries) {
+    const k = pairKey(e);
+    (meetingsByPair[k] = meetingsByPair[k] || []).push(e);
+  }
+
+  const groups = [];
+  for (const k of Object.keys(meetingsByPair)) {
+    const list = meetingsByPair[k];
+    let current = [list[0]];
+    for (let i = 1; i < list.length; i++) {
+      const gap = list[i].season - list[i - 1].season;
+      if (gap > REMATCH_GAP_THRESHOLD) {
+        if (current.length >= 2) groups.push(current);
+        current = [list[i]];
+      } else {
+        current.push(list[i]);
+      }
+    }
+    if (current.length >= 2) groups.push(current);
+  }
+
+  groups.sort((a, b) => b[b.length - 1].season - a[a.length - 1].season);
+
+  const totalMeetings = groups.reduce((sum, g) => sum + g.length, 0);
+  document.getElementById('history-rank-note').textContent =
+    `${groups.length} Stanley Cup Final rematch groups (${totalMeetings} total meetings). A group continues as long as the same two teams meet again within ${REMATCH_GAP_THRESHOLD} years.`;
+
+  if (!groups.length) {
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No qualifying rematches.</p>';
+    return;
+  }
+
+  const body = groups.map(group => {
+    const rev = [...group].reverse();
+    return rev.map((e, i) => pairRow(e, i === rev.length - 1)).join('');
+  }).join('');
+  document.getElementById('history-rank-table-wrap').innerHTML =
+    `<table><thead><tr>${PAIR_HEAD}</tr></thead><tbody>${body}</tbody></table>`;
+  attachLinks();
+}
+
+document.querySelectorAll('#history-view-pills button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#history-view-pills button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const view = btn.dataset.hview;
+    document.getElementById('history-list-view').style.display     = view === 'list'     ? '' : 'none';
+    document.getElementById('history-rankings-view').style.display = view === 'rankings' ? '' : 'none';
+    if (view === 'rankings') {
+      const active = document.querySelector('#history-rank-pills button.active');
+      renderRankings(active ? active.dataset.rank : 'best-champs');
+    }
+  });
+});
+
+document.querySelectorAll('#history-rank-pills button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#history-rank-pills button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderRankings(btn.dataset.rank);
+  });
+});
 
 // ── GOAT Table ────────────────────────────────────────────────────────────────
 async function loadGoat() {

@@ -737,7 +737,14 @@ for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
         final_score = f"{int(clincher['home_pts'])}-{int(clincher['visitor_pts'])}"
     else:
         final_score = f"{int(clincher['visitor_pts'])}-{int(clincher['home_pts'])}"
-    ws_results[s_int] = {"champion": champ, "runner_up": ru, "series": series, "final_score": final_score}
+    # SCF Game 1 date = earliest date among the finals_games (LDS/conf finals
+    # already filtered out by the same-pair intersection above).
+    scf_g1_dt = finals_games["date_game"].min()
+    ws_results[s_int] = {
+        "champion": champ, "runner_up": ru,
+        "series": series, "final_score": final_score,
+        "scf_g1_date": scf_g1_dt,
+    }
 
 print(f"  Detected {len(ws_results)} Stanley Cup champions.")
 for s in sorted(ws_results)[-5:]:
@@ -949,6 +956,73 @@ with open("docs/data/teams_index.json", "w") as f:
 
 
 # =========================================================
+# PRE-STANLEY-CUP-FINAL SNAPSHOT LOOKUP
+# =========================================================
+# For each season's SCF, find the latest rating snapshot STRICTLY BEFORE
+# SCF Game 1 for both the champion and runner-up. Used in the Lists
+# sub-view (matchup quality / closeness / blowouts / upsets) so the
+# "going-in" framing isn't contaminated by the SCF result itself.
+# Mirrors GRIFFEY's _build_pre_ws_lookup() / DUNCAN's _build_pre_finals_lookup().
+
+print("\nComputing pre-SCF snapshots (rating + PS W-L going into Game 1)...")
+
+
+def _pre_scf_ps_record(team, season, g1_dt):
+    sub = team_games_sorted[
+        (team_games_sorted["team"] == team)
+        & (team_games_sorted["season"] == season)
+        & (team_games_sorted["is_playoff_game"])
+        & (team_games_sorted["date_game"] < g1_dt)
+    ]
+    if sub.empty:
+        return "0-0"
+    last = sub.iloc[-1]
+    return f"{int(last['cum_ps_w'])}-{int(last['cum_ps_l'])}"
+
+
+_pre_scf_lookup = {}  # (team, season) -> {rating, rank, ps_record}
+for s, info in ws_results.items():
+    g1 = info["scf_g1_date"]
+    for team in (info["champion"], info["runner_up"]):
+        season_team_rows = ratings[
+            (ratings["season"] == s)
+            & (ratings["name"] == team)
+            & (ratings["ranking_date"] < g1)
+        ]
+        if season_team_rows.empty:
+            continue
+        pre_id = int(season_team_rows["ranking_id"].max())
+        snap_rows = ratings[
+            (ratings["season"] == s)
+            & (ratings["name"] == team)
+            & (ratings["ranking_id"] == pre_id)
+        ]
+        if snap_rows.empty:
+            continue
+        r = snap_rows.iloc[0]
+        _pre_scf_lookup[(team, int(s))] = {
+            "rating":    round(float(r["rating"]), 3),
+            "rank":      int(r["rank"]),
+            "ps_record": _pre_scf_ps_record(team, int(s), g1),
+        }
+
+print(f"  Pre-SCF snapshots computed for {len(set(s for (_, s) in _pre_scf_lookup))} seasons "
+      f"({len(_pre_scf_lookup)} team-entries).")
+
+
+def pre_scf_fields(name, season):
+    """Return the pre-SCF rating/rank/PS-record block, or empty if missing."""
+    p = _pre_scf_lookup.get((name, int(season)))
+    if p is None:
+        return {}
+    return {
+        "rating_pre":    p["rating"],
+        "rank_pre":      p["rank"],
+        "ps_record_pre": p["ps_record"],
+    }
+
+
+# =========================================================
 # OUTPUT: champions.json
 # =========================================================
 print("Writing champions.json...")
@@ -981,6 +1055,7 @@ for s in sorted(ws_results.keys(), reverse=True):
             "rs_end_rank":    int(ch_rs["rank"].iloc[0]) if not ch_rs.empty else None,
             "ps_end_rating":  round(float(ch_ps["rating"].iloc[0]), 3) if not ch_ps.empty else None,
             "ps_end_rank":    int(ch_ps["rank"].iloc[0]) if not ch_ps.empty else None,
+            **pre_scf_fields(info["champion"], s),
         },
         "runner_up": {
             "team":           info["runner_up"],
@@ -993,6 +1068,7 @@ for s in sorted(ws_results.keys(), reverse=True):
             "rs_end_rank":    int(ru_rs["rank"].iloc[0]) if not ru_rs.empty else None,
             "ps_end_rating":  round(float(ru_ps["rating"].iloc[0]), 3) if not ru_ps.empty else None,
             "ps_end_rank":    int(ru_ps["rank"].iloc[0]) if not ru_ps.empty else None,
+            **pre_scf_fields(info["runner_up"], s),
         },
     })
 
