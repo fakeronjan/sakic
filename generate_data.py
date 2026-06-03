@@ -490,12 +490,17 @@ ratings["is_rs_end"] = 0
 ratings["is_ps_end"] = 0
 ratings["is_playoff_snapshot"] = 0
 
-# In-progress gate: only mark is_ps_end for seasons whose Stanley Cup window
-# is in the past (Cup Final usually June; July 1 is a safe cutoff). Without
-# this, the latest in-progress ranking_id gets flagged as 'End of playoffs'
-# mid-Conference-Finals -- same bug pattern from feedback_in_progress_season_gate.
+# In-progress gate: only mark is_ps_end for seasons whose Stanley Cup is
+# definitively decided. Event-based check — the last playoff game in the
+# data must be at least 7 days old (same disambiguation cushion used in
+# the SCF champion walker below). Without this, the latest in-progress
+# ranking_id gets flagged as 'End of playoffs' mid-Conference-Finals.
 import datetime as _dt_gate
 _today_gate = _dt_gate.date.today()
+_season_last_ps_date = (
+    games[games["is_playoff_game_flag"] == 1]
+    .groupby("season")["date_game"].max().to_dict()
+)
 
 for s, rs_end in rs_end_by_season.items():
     season_mask = ratings["season"] == s
@@ -506,8 +511,8 @@ for s, rs_end in rs_end_by_season.items():
     if not rs_candidates.empty:
         rs_end_id = rs_candidates["ranking_id"].max()
         ratings.loc[season_mask & (ratings["ranking_id"] == rs_end_id), "is_rs_end"] = 1
-    s_int = int(s)
-    if _today_gate >= _dt_gate.date(s_int, 7, 1):
+    last_ps = _season_last_ps_date.get(s)
+    if last_ps is not None and (_today_gate - last_ps.date()).days >= 7:
         ps_end_id = season_subset["ranking_id"].max()
         ratings.loc[season_mask & (ratings["ranking_id"] == ps_end_id), "is_ps_end"] = 1
     ratings.loc[season_mask & (ratings["ranking_date"] > rs_end), "is_playoff_snapshot"] = 1
@@ -693,22 +698,24 @@ print(f"  {len(snap_record_lookup):,} (season, team, snapshot) lookups built.")
 # the Cup champion; their opponent in that final series is the runner-up.
 
 print("\nDeriving Stanley Cup champions from playoff games...")
-# Gate on the postseason being COMPLETE (not just started). Two checks:
-#   (a) The bracket has resolved to a single 2-team series at the end (last-date games == 1 series)
+# Gate on the postseason being COMPLETE (not just started). Three checks:
+#   (a) The bracket has resolved to a single 2-team series at the end
 #   (b) The winner of that final series has clinched best-of-7 (>= 4 wins)
-#   (c) Today's date is past the typical Cup Final window (Jul 1 of end year)
-# All three must hold. Without these, in-progress 2025-26 incorrectly emits a
-# conference-final leader as Cup champ. Same in-progress-season bug we've hit
-# repeatedly on other sites.
+#   (c) The last game on file is at least 7 days old — disambiguates a
+#       Conference Finals clincher (also best-of-7, 4 wins) from the actual
+#       SCF clincher. If 7+ days have passed since the last game and no
+#       newer games exist, that last game must be the SCF clinch (SCF would
+#       start within a week of CF ending if SCF were still upcoming).
+# Event-based and self-disambiguating — no fixed-date dependency.
 import datetime as _dt
 _today = _dt.date.today()
 ws_results = {}  # season -> {champion, runner_up, series}
 for s, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
     s_int = int(s)
-    # Gate (c): season's Cup Final window must be in the past.
-    if _today < _dt.date(s_int, 7, 1):
-        continue
     last_date = ps_games["date_game"].max()
+    # Gate (c): last game at least 7 days old (disambiguation cushion).
+    if (_today - last_date.date()).days < 7:
+        continue
     finals_teams = set(ps_games[ps_games["date_game"] == last_date]["home_team_name"]) | \
                    set(ps_games[ps_games["date_game"] == last_date]["visitor_team_name"])
     # Gate (a): exactly two teams on the latest date (a clinching game).
