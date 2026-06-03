@@ -855,7 +855,8 @@ function renderStandings() {
   const rows = teams.map(t => {
     const isStale = !!(prevDate && t.last_match_date && t.last_match_date <= prevDate);
     const slug = nameToSlug[t.team];  // t.team is the canonical name
-    const label = t.display_name || t.team;
+    const badge = finishBadge(t.finals_status);
+    const label = (t.display_name || t.team) + (badge ? ' ' + badge : '');
     const teamTd = slug
       ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${season}">${label}</td>`
       : `<td class="team-cell">${label}</td>`;
@@ -867,7 +868,6 @@ function renderStandings() {
       <td>${ratingBar(t.rating)}</td>
       <td class="last-match-cell">${renderLastMatch(t.last_match, season, isStale)}</td>
       <td class="col-hide-mobile" style="font-size:11px;color:#888;white-space:nowrap">${t.last_match_date || ''}</td>
-      <td class="col-hide-mobile" style="text-align:center">${finishBadge(t.finals_status)}</td>
     </tr>`;
   }).join('');
 
@@ -882,7 +882,6 @@ function renderStandings() {
         <th>${recordHeader(season)}</th><th>Rating</th>
         <th>Last Game</th>
         <th class="col-hide-mobile">Date</th>
-        <th class="col-hide-mobile">Honors</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
@@ -1015,9 +1014,11 @@ function renderTeamTable() {
 
   const tableRows = [...rows].reverse().map(g => {
     const era = (g.display_name && g.display_name !== canonical) ? g.display_name : '';
+    const badge = finishBadge(g.finals_status);
+    const badgeStr = badge ? ' ' + badge : '';
     const seasonCell = era
-      ? `${fmtSeason(g.season)}<div style="font-size:10px;color:#999;font-style:italic;line-height:1.2">${era}</div>`
-      : fmtSeason(g.season);
+      ? `${fmtSeason(g.season)}${badgeStr}<div style="font-size:10px;color:#999;font-style:italic;line-height:1.2">${era}</div>`
+      : `${fmtSeason(g.season)}${badgeStr}`;
     const dateLabel = g.season_flag === 1 ? 'End of regular season'
                     : g.season_flag === 2 ? 'End of playoffs'
                     : '';
@@ -1032,7 +1033,6 @@ function renderTeamTable() {
     <td class="rank-cell">${g.rank}</td>
     <td>${ratingBar(g.rating)}</td>
     <td class="col-hide-mobile" style="font-size:11px">${confBadge(g.conference || data.conference, g.finals_status, g.division, g.division_winner)}</td>
-    <td class="col-hide-mobile" style="font-size:11px">${finishBadge(g.finals_status)}</td>
   </tr>`;
   }).join('');
 
@@ -1046,7 +1046,6 @@ function renderTeamTable() {
         <th>Date</th><th style="text-align:center">Season</th><th>Last Game</th>
         <th>${tsRecordHeader}</th><th>Rank</th><th>Rating</th>
         <th class="col-hide-mobile">Conf</th>
-        <th class="col-hide-mobile">Honors</th>
       </tr></thead>
       <tbody>${tableRows}</tbody>
     </table>`;
@@ -1596,8 +1595,9 @@ function renderGoat() {
     : data.filter(t => t.conference === goatConf);
   updateDisruptedNote('goat-disrupted-note', teams.map(t => t.season));
   const rows = teams.map(t => {
-    const label = t.display_name || t.team;
-    const slug = nameToSlug[t.team] || nameToSlug[label];
+    const badge = finishBadge(t.finals_status);
+    const label = (t.display_name || t.team) + (badge ? ' ' + badge : '');
+    const slug = nameToSlug[t.team] || nameToSlug[t.display_name || t.team];
     const teamTd = slug
       ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${t.season}">${label}</td>`
       : `<td class="team-cell">${label}</td>`;
@@ -1609,7 +1609,6 @@ function renderGoat() {
     <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
     <td>${ratingBar(t.rating)}</td>
     <td style="font-variant-numeric:tabular-nums;white-space:nowrap" class="col-hide-mobile">${fmtRecordStacked(t.regular_record, t.regular_pts, t.playoff_record)}</td>
-    <td class="col-hide-mobile" style="font-size:11px">${finishBadge(t.finals_status)}</td>
   </tr>`;
   }).join('');
 
@@ -1622,7 +1621,6 @@ function renderGoat() {
         <th class="col-hide-mobile">Conf</th>
         <th>Rating</th>
         <th class="col-hide-mobile">${recordHeader()}</th>
-        <th class="col-hide-mobile">Honors</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
