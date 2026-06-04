@@ -533,13 +533,20 @@ def _bracket_walk(season_games):
     return team, hist
 
 
+# Best-of-7 clinch threshold. NHL playoffs across the data window are
+# all BO7; until the winner has 4 H2H wins the series is in progress
+# and the bracket walk must skip it (otherwise a 1-0 SCF G1 looks
+# "decided" and the game winner gets crowned mid-series).
+_NHL_SERIES_CLINCH_WINS = 4
+
+
 def _nhl_process_series(series_df, a, b, history):
     a_wins = int(((series_df["home_team_name"] == a) & (series_df["home_win"] == 1)).sum()
                + ((series_df["visitor_team_name"] == a) & (series_df["visitor_win"] == 1)).sum())
     b_wins = len(series_df) - a_wins
-    if a_wins > b_wins:
+    if a_wins >= _NHL_SERIES_CLINCH_WINS and a_wins > b_wins:
         winner, loser, w, l = a, b, a_wins, b_wins
-    elif b_wins > a_wins:
+    elif b_wins >= _NHL_SERIES_CLINCH_WINS and b_wins > a_wins:
         winner, loser, w, l = b, a, b_wins, a_wins
     else:
         return
