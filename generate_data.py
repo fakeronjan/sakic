@@ -1,5 +1,5 @@
 """
-generate_data.py — reads sakic_ratings.csv.gz + all_nhl_games.csv and writes
+generate_data.py - reads sakic_ratings.csv.gz + all_nhl_games.csv and writes
 JSON files for the SAKIC web frontend. Run after sakic.py. Outputs to docs/data/.
 
 Structure clones DUNCAN/GRIFFEY:
@@ -41,7 +41,7 @@ os.makedirs("docs/data/seasons", exist_ok=True)
 #     Central/Pacific). Detroit + Columbus moved East. Winnipeg/Dallas to West.
 #   - 2021 (2020-21): COVID-temporary 4 divisions (East/Central/West/North,
 #     Canadian teams pooled into North). No Eastern/Western conferences that
-#     year — encoded as conf=div=temp-name.
+#     year - encoded as conf=div=temp-name.
 #   - 2022 (2021-22): back to 4-division layout. Seattle Kraken joins Pacific;
 #     Arizona moves from Pacific to Central to make room.
 #   - 2025 (2024-25): Arizona Coyotes franchise moves to Utah (Utah Hockey
@@ -221,7 +221,7 @@ TEAM_DIVISION_HISTORY = {
     ],
     "Utah Mammoth": [
         # Arizona Coyotes relocated to Utah for 2024-25; same franchise per
-        # leaving-a-market-breaks-history rule? No — Arizona LEFT, so per fleet
+        # leaving-a-market-breaks-history rule? No - Arizona LEFT, so per fleet
         # rule the franchise breaks. Utah is a NEW canonical franchise.
         # 2024-25 played as Utah Hockey Club; rebranded Utah Mammoth 2025-26.
         (2025, 9999, "Western", "Central"),
@@ -491,7 +491,7 @@ ratings["is_ps_end"] = 0
 ratings["is_playoff_snapshot"] = 0
 
 # In-progress gate: only mark is_ps_end for seasons whose Stanley Cup is
-# definitively decided. Uses the bracket-walk over playoff games — a
+# definitively decided. Uses the bracket-walk over playoff games - a
 # season is "complete" iff exactly one team remains "still in" (latest
 # matchup was a win). Same algorithm is reused below to produce
 # ws_results (champion + runner-up + series + final score), so we cache
@@ -504,7 +504,7 @@ def _bracket_walk(season_games):
     Each matchup is split into consecutive 'series' separated by date gaps
     > 10 days. Handles the 2020 NHL bubble, where some pairs played in
     both round-robin (single game, early Aug) and a playoff series (BO7,
-    later) — without splitting, the tied H2H wipes out the loser arc and
+    later) - without splitting, the tied H2H wipes out the loser arc and
     a CF/R2 loser wrongly stays still-in.
     """
     sg = season_games.copy()
@@ -695,7 +695,7 @@ def _fmt_rs(r, season):
         # 1999-2005: loser-point era. Combine OTL and T into one "loser points" column
         # (both gave 1 pt). Display as W-L-(T+OTL).
         return f"{w}-{l}-{otl + t}"
-    # Pre-1999: no loser point. OTL didn't exist as a separate category — folded into L.
+    # Pre-1999: no loser point. OTL didn't exist as a separate category - folded into L.
     return f"{w}-{l + otl}-{t}"
 
 
@@ -761,7 +761,7 @@ print("\nDeriving Stanley Cup champions from playoff games...")
 # "still in" if their LATEST matchup was a win. When exactly one team
 # remains still-in, they're the Stanley Cup champion; their latest
 # opponent is the runner-up; the matchup they won is the SCF.
-# Self-disambiguating against a Conference Finals clincher (also BO7) —
+# Self-disambiguating against a Conference Finals clincher (also BO7) -
 # in that state, the two CF winners are both still-in, so len != 1 and
 # the season stays open. No date cushion.
 ws_results = {}  # season -> {champion, runner_up, series, final_score, scf_g1_date}
@@ -790,12 +790,12 @@ for s in sorted(ws_results)[-5:]:
 # =========================================================
 # DIVISION WINNERS (per season, per team)
 # =========================================================
-# 2004-05: NHL lockout cancelled the entire season — no games played, no
+# 2004-05: NHL lockout cancelled the entire season - no games played, no
 # division titles, no Presidents' Trophy, no Stanley Cup. Mirrors the GRIFFEY
 # 1994 strike handling pattern.
 NO_TITLES_SEASONS = {2005}
 
-# Short / disrupted seasons — flagged on GOAT entries so the UI can tag them.
+# Short / disrupted seasons - flagged on GOAT entries so the UI can tag them.
 # Pattern matches GRIFFEY's COVID tag for 2020. Small samples bias ratings;
 # the tag gives readers context without altering the model.
 SHORT_SEASONS = {
@@ -835,7 +835,7 @@ division_winners = set()
 rs_only_simple = team_games[~team_games["is_playoff_game"]].copy()
 rs_only_simple["pts"] = rs_only_simple["won"] * 2 + rs_only_simple["ot_so_loss"] + rs_only_simple["is_tie"]
 
-# Names that mean "no real division" — skip them.
+# Names that mean "no real division" - skip them.
 _GENERIC_DIV_LABELS = {"Other", ""}
 
 for s, sub in rs_only_simple.groupby("season"):
@@ -946,7 +946,7 @@ for team in sorted(ratings["name"].unique()):
             sf = 2 if int(r["is_ps_end"]) == 1 else (1 if int(r["is_rs_end"]) == 1 else 0)
             # Filter to game-days for THIS team (last_match_date == snap date)
             # PLUS season-flag rows (EOR / EOS). Matches DUNCAN's data-layer
-            # filter — keeps the file small AND avoids stale-row pollution in
+            # filter - keeps the file small AND avoids stale-row pollution in
             # the single-season Team Summary view.
             snap_date_str = str(snap_date_ts.date())
             is_game_day = rec.get("last_match_date") == snap_date_str
@@ -1107,7 +1107,7 @@ for s in sorted(ws_results.keys(), reverse=True):
         },
     })
 
-# 2004-05: NHL lockout cancelled the entire season — no Cup awarded. Inject a
+# 2004-05: NHL lockout cancelled the entire season - no Cup awarded. Inject a
 # synthetic entry (mirrors GRIFFEY's 1994 strike handling).
 if not any(e["season"] == 2005 for e in champs_list):
     champs_list.append({
@@ -1154,7 +1154,7 @@ _champ_count = dict(PRE_1980_CHAMPIONSHIPS)
 _ru_count    = dict(PRE_1980_RUNNER_UPS)
 for entry in reversed(champs_list):
     if entry.get("no_series"):
-        continue  # 2004-05 lockout — no champion/runner-up to count
+        continue  # 2004-05 lockout - no champion/runner-up to count
     ct = entry["champion"]["team"]
     rt = entry["runner_up"]["team"]
     _champ_count[ct] = _champ_count.get(ct, 0) + 1

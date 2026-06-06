@@ -1,5 +1,5 @@
 """
-SAKIC — NHL power ratings (fakeronjan/sakic)
+SAKIC - NHL power ratings (fakeronjan/sakic)
 
 Data sources:
   - Historical: hockey-reference.com (one HTML page per season, two tables on
@@ -9,7 +9,7 @@ Data sources:
 
 Model:
   - WLS solver with per-connected-component zero-sum anchor (handles potential
-    schedule disruptions cleanly — e.g., a future COVID-style regional split).
+    schedule disruptions cleanly - e.g., a future COVID-style regional split).
   - Single league (no AL/NL-style components), so no per-league anchor needed
     unlike GRIFFEY.
   - Variable rolling window = WINDOW_MULTIPLIER × games-per-team-per-season.
@@ -34,7 +34,7 @@ MIN_SEASON = 1980  # 1979-80 (END year of season, matches hockey-ref URL convent
 
 WINDOW_MULTIPLIER = 1.95
 
-# Modern-era home advantage in goals — empirical ~0.15-0.20. NHL has shrunk
+# Modern-era home advantage in goals - empirical ~0.15-0.20. NHL has shrunk
 # from ~0.3 in the 1980s as travel/scheduling normalized.
 HOME_COURT_ADJUSTMENT = 0.15
 
@@ -130,7 +130,7 @@ TEAM_ALIASES = {
 
 
 # =========================================================
-# DATA ACQUISITION — hockey-reference (historical)
+# DATA ACQUISITION - hockey-reference (historical)
 # =========================================================
 
 USER_AGENT = "Mozilla/5.0 (compatible; SAKIC NHL ratings bot)"
@@ -216,7 +216,7 @@ def scrape_history(min_season, max_season, existing_df, sleep_seconds=1.2):
 
 
 # =========================================================
-# DATA ACQUISITION — NHL API (current-season tail)
+# DATA ACQUISITION - NHL API (current-season tail)
 # =========================================================
 
 def fetch_nhl_api_season(season_year):
@@ -226,7 +226,7 @@ def fetch_nhl_api_season(season_year):
     today via the schedule endpoint.
 
     Returns a DataFrame with the same schema scrape_season produces (modulo
-    column names — normalized in the merge step).
+    column names - normalized in the merge step).
     """
     nhl_season = int(f"{season_year - 1}{season_year}")
     # Start at the season's regular-season start date (queried once)
@@ -307,10 +307,10 @@ def merge_game_sources(historical_df, current_df):
 def prepare_game_data(raw_df):
     """Clean and enrich the raw games DataFrame. Output schema matches the
     DUNCAN convention with NHL-specific extras: `overtimes` (REG/OT/SO),
-    `is_playoff_game_flag`, `is_tie` (REG ties — pre-2005 only)."""
+    `is_playoff_game_flag`, `is_tie` (REG ties - pre-2005 only)."""
     df = raw_df.copy()
 
-    # Normalize column names — hockey-ref uses visitor_goals/home_goals;
+    # Normalize column names - hockey-ref uses visitor_goals/home_goals;
     # we'll alias to visitor_pts/home_pts to match the fleet pattern.
     if "visitor_goals" in df.columns:
         df["visitor_pts"] = pd.to_numeric(df["visitor_goals"], errors="coerce")
@@ -326,7 +326,7 @@ def prepare_game_data(raw_df):
     df["visitor_team_name"] = df["visitor_team_name"].replace(TEAM_ALIASES)
     df["home_team_name"]    = df["home_team_name"].replace(TEAM_ALIASES)
 
-    # overtimes column — hockey-ref text is 'OT', 'SO', or empty. Normalize.
+    # overtimes column - hockey-ref text is 'OT', 'SO', or empty. Normalize.
     if "overtimes" not in df.columns:
         df["overtimes"] = ""
     df["overtimes"] = df["overtimes"].fillna("").astype(str).str.upper().str.strip()
@@ -342,7 +342,7 @@ def prepare_game_data(raw_df):
     df["home_margin"]    = df["home_pts"] - df["visitor_pts"]
     df["visitor_margin"] = -df["home_margin"]
 
-    # Win flags. Ties count as 0 for both — fakeronjan WLS treats raw margin (0) cleanly.
+    # Win flags. Ties count as 0 for both - fakeronjan WLS treats raw margin (0) cleanly.
     df["home_win"]    = (df["home_margin"] > 0).astype(int)
     df["visitor_win"] = (df["home_margin"] < 0).astype(int)
 
@@ -605,11 +605,11 @@ if __name__ == "__main__":
         print(f"  {len(loaded):,} games cached from {loaded['season'].min()}-{loaded['season'].max()}")
     else:
         loaded = pd.DataFrame()
-        print("  (no cache yet — first run will scrape everything)")
+        print("  (no cache yet - first run will scrape everything)")
 
     current_season = pd.Timestamp.utcnow().year
     if pd.Timestamp.utcnow().month < 9:
-        # Sep is start of NHL season — before that, current season is the
+        # Sep is start of NHL season - before that, current season is the
         # one whose end-year matches calendar year.
         max_season = current_season
     else:
@@ -641,7 +641,7 @@ if __name__ == "__main__":
         print(f"  Loaded {len(existing):,} cached ratings rows.")
     else:
         existing = pd.DataFrame(columns=["ranking_id","ranking_date","season","name","rating","rank","component"])
-        print("  No ratings cache yet — will compute from scratch.")
+        print("  No ratings cache yet - will compute from scratch.")
 
     # Step 6: compute new ratings
     ratings = compute_ratings(master, existing)

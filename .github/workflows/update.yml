@@ -2,7 +2,7 @@ name: Update SAKIC Ratings
 
 on:
   schedule:
-    - cron: '13 17 * * *'   # 17:13 UTC daily — after GRIFFEY (16:53); hockey-reference is in the sports-reference family but we lean on NHL API for daily updates so collision risk is low.
+    - cron: '13 17 * * *'   # 17:13 UTC daily - after GRIFFEY (16:53); hockey-reference is in the sports-reference family but we lean on NHL API for daily updates so collision risk is low.
   workflow_dispatch:        # allow manual trigger from GitHub UI
 
 permissions:

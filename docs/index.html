@@ -265,7 +265,7 @@
   /* League History table */
   .col-champ  { background: #fffdf3; }
   .col-ru     { background: #fafafa; }
-  /* Lists sub-view highlights — sort-key column gets a yellow tint so the
+  /* Lists sub-view highlights - sort-key column gets a yellow tint so the
      viewer's eye lands on the metric being ranked. row-group-end draws
      the divider line between repeat-champ runs / rematch groups. */
   .sort-col              { background: #fff8d0 !important; }
@@ -295,7 +295,7 @@
     .col-hide-mobile { display: none; }
   }
 
-  /* Fleet nav strip — links to sister sites in the fakeronjan sports ratings family */
+  /* Fleet nav strip - links to sister sites in the fakeronjan sports ratings family */
   .fleet-nav {
     background: #0e4a5f;
     display: flex;
@@ -514,7 +514,7 @@ let currentSeasonData = null;
 let currentSnapshot   = null;
 let goatDataRS        = null;
 let goatDataPS        = null;
-let goatMode          = 'ps';  // 'ps' (end of playoffs — championship contenders) or 'rs' (end of regular season)
+let goatMode          = 'ps';  // 'ps' (end of playoffs - championship contenders) or 'rs' (end of regular season)
 let teamsIndex        = null;
 let teamCache         = {};
 let nameToSlug        = {};  // canonical + historical name → slug, built from teamsIndex
@@ -1187,10 +1187,10 @@ function renderChampions() {
 
   const rows = entries.map(e => {
     if (e.no_series) {
-      // 2004-05 lockout — single-cell row across the table with a callout.
+      // 2004-05 lockout - single-cell row across the table with a callout.
       return `<tr style="background:#fdf3f3">
         <td class="season-cell linked" data-season-link="${e.season}">${e.season_label || fmtSeason(e.season)}${seasonTag(e.season)}</td>
-        <td colspan="9" style="text-align:center;color:#c62828;font-size:12px;font-style:italic">No Stanley Cup — entire season cancelled by lockout</td>
+        <td colspan="9" style="text-align:center;color:#c62828;font-size:12px;font-style:italic">No Stanley Cup - entire season cancelled by lockout</td>
       </tr>`;
     }
     return `<tr>
@@ -1254,14 +1254,14 @@ function preScfView(team) {
 
 function fmtSigned(n) { return (n >= 0 ? '+' : '') + n.toFixed(2); }
 
-// Flip "4-3" to "3-4" — used when the loser is the focal team (left slot)
+// Flip "4-3" to "3-4" - used when the loser is the focal team (left slot)
 // so the series score reads from their POV.
 function flipSeries(s) {
   const m = s && s.match(/^(\d+)-(\d+)$/);
   return m ? `${m[2]}-${m[1]}` : s;
 }
 
-// Lists-specific team block — adds the optional sort-col highlight on the
+// Lists-specific team block - adds the optional sort-col highlight on the
 // Rating cell for team-quality rankings.
 function rankTeamBlock(t, bg, season, sortRating) {
   if (!t) return `<td class="${bg}" colspan="4">-</td>`;
@@ -1522,7 +1522,7 @@ function renderRepeatChamps() {
 function renderRematches() {
   // Group all Stanley Cup Finals between the SAME two teams into a single
   // N-row block. A group's window extends as long as those two teams keep
-  // meeting — once 5 calendar years pass without them facing each other
+  // meeting - once 5 calendar years pass without them facing each other
   // again, the window closes.
   //
   // Oilers-Islanders '83/'84 = 2-row block.
