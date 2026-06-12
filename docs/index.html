@@ -708,18 +708,17 @@ function attachLinks() {
   });
 }
 
-const BAR_MIN = -2.5, BAR_MAX = 2.5, BAR_RANGE = 5;
+const BAR_D = 1, BAR_CAP = 4;
+function barScale(ratings) {
+  const m = Math.max(0, ...ratings.map(r => Math.abs(r || 0)));
+  return Math.min(BAR_CAP, Math.max(BAR_D, m));
+}
 
-function ratingBar(rating) {
-  const clipped = Math.max(BAR_MIN, Math.min(BAR_MAX, rating));
-  let leftPct, widthPct;
-  if (clipped >= 0) {
-    leftPct  = 50;
-    widthPct = (clipped / BAR_RANGE) * 100;
-  } else {
-    widthPct = (-clipped / BAR_RANGE) * 100;
-    leftPct  = 50 - widthPct;
-  }
+function ratingBar(rating, scaleMax) {
+  const S = scaleMax || BAR_D;
+  const clipped  = Math.max(-S, Math.min(S, rating));
+  const widthPct = (Math.abs(clipped) / (2 * S)) * 100;
+  const leftPct  = clipped >= 0 ? 50 : 50 - widthPct;
   return `<div class="rating-bar-wrap">
     <span class="rating-cell">${rating.toFixed(2)}</span>
     <div class="rating-bar-track">
@@ -858,6 +857,7 @@ function renderStandings() {
   // Preserve the all-time/league-wide rank when filtered (gaps are informative -
   // they show where filtered-out teams sit). Same pattern as GOAT and DILLON.
   const season = currentSeasonData && currentSeasonData.season;
+  const _bs0 = barScale(teams.map(t => t.rating));
   const rows = teams.map(t => {
     const isStale = !!(prevDate && t.last_match_date && t.last_match_date <= prevDate);
     const slug = nameToSlug[t.team];  // t.team is the canonical name
@@ -871,7 +871,7 @@ function renderStandings() {
       ${teamTd}
       <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
       <td style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordSmart(t.regular_record, t.regular_pts, t.playoff_record, t.record)}</td>
-      <td>${ratingBar(t.rating)}</td>
+      <td>${ratingBar(t.rating, _bs0)}</td>
       <td class="last-match-cell">${renderLastMatch(t.last_match, season, isStale)}</td>
       <td class="col-hide-mobile" style="font-size:11px;color:#888;white-space:nowrap">${t.last_match_date || ''}</td>
     </tr>`;
@@ -1018,6 +1018,7 @@ function renderTeamTable() {
     updateDisruptedNote('team-summary-disrupted-note', []);
   }
 
+  const _bs1 = barScale([...rows].reverse().map(g => g.rating));
   const tableRows = [...rows].reverse().map(g => {
     const era = (g.display_name && g.display_name !== canonical) ? g.display_name : '';
     const badge = finishBadge(g.finals_status);
@@ -1037,7 +1038,7 @@ function renderTeamTable() {
     <td class="last-match-cell">${renderLastMatch(g.last_match, g.season, !!g._isStale)}</td>
     <td style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordSmart(g.regular_record, g.regular_pts, g.playoff_record, g.record)}</td>
     <td class="rank-cell">${g.rank}</td>
-    <td>${ratingBar(g.rating)}</td>
+    <td>${ratingBar(g.rating, _bs1)}</td>
     <td class="col-hide-mobile" style="font-size:11px">${confBadge(g.conference || data.conference, g.finals_status, g.division, g.division_winner)}</td>
   </tr>`;
   }).join('');
@@ -1068,11 +1069,14 @@ function drawChart(rows, seasonFilter) {
   const H = 180;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
 
-  const CHART_MIN = -2.5, CHART_MAX = 2.5;
+  const D_DEFAULT = 1, D_CAP = 4;   // default band = site's "elite" tier; buster cap
+  const _peak = Math.max(0, ...rows.map(r => Math.abs(r.rating || 0)));
+  const CHART_MAX = Math.min(D_CAP, Math.max(D_DEFAULT, _peak * 1.12)), CHART_MIN = -CHART_MAX;
   const CTOP = 10, CBOT = 152;
 
   const px = (i) => (i / (rows.length - 1)) * (W - 20) + 10;
-  const py = (r) => CBOT - ((r - CHART_MIN) / (CHART_MAX - CHART_MIN)) * (CBOT - CTOP);
+  const clampR = (r) => Math.max(CHART_MIN, Math.min(CHART_MAX, r));
+  const py = (r) => CBOT - ((clampR(r) - CHART_MIN) / (CHART_MAX - CHART_MIN)) * (CBOT - CTOP);
 
   const zeroY  = py(0);
   const points = rows.map((r, i) => `${px(i).toFixed(1)},${py(r.rating).toFixed(1)}`).join(' ');
@@ -1120,6 +1124,28 @@ function drawChart(rows, seasonFilter) {
     );
   });
 
+  const ctxLine = (v) => {
+    const y = py(v).toFixed(1);
+    return `<line x1="10" y1="${y}" x2="${(W - 10).toFixed(1)}" y2="${y}" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="3,3"/>`
+         + `<text x="12" y="${(py(v) - 3).toFixed(1)}" font-size="9" fill="#999">${v > 0 ? '+' : ''}${v}</text>`;
+  };
+  const contextLines = ctxLine(D_DEFAULT) + ctxLine(-D_DEFAULT);
+  const clipMarks = [];
+  let _rs = -1, _rd = 0;
+  const _flushClip = (end) => {
+    if (_rs < 0) return;
+    const midI = Math.round((_rs + end) / 2);
+    const tri  = _rd > 0 ? '▲' : '▼';
+    const ty   = _rd > 0 ? CTOP + 8 : CBOT - 2;
+    clipMarks.push(`<text x="${px(midI).toFixed(1)}" y="${ty}" font-size="9" fill="#999" text-anchor="middle">${tri}</text>`);
+    _rs = -1; _rd = 0;
+  };
+  rows.forEach((r, i) => {
+    const d = r.rating > CHART_MAX ? 1 : (r.rating < CHART_MIN ? -1 : 0);
+    if (d !== _rd) { _flushClip(i - 1); if (d !== 0) { _rs = i; _rd = d; } }
+  });
+  _flushClip(rows.length - 1);
+
   svg.innerHTML = `
     <defs>
       <linearGradient id="lineGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}">
@@ -1127,6 +1153,7 @@ function drawChart(rows, seasonFilter) {
         <stop offset="${(zeroY / H + 0.0001).toFixed(4)}" stop-color="#ff6eb4"/>
       </linearGradient>
     </defs>
+    ${contextLines}
     <line x1="10" y1="${zeroY.toFixed(1)}" x2="${(W - 10).toFixed(1)}" y2="${zeroY.toFixed(1)}"
           stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
     <line x1="10" y1="${CBOT + 2}" x2="${(W - 10).toFixed(1)}" y2="${CBOT + 2}"
@@ -1134,6 +1161,7 @@ function drawChart(rows, seasonFilter) {
     ${ticks.join('')}
     ${xlabels.join('')}
     <polyline points="${points}" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+    ${clipMarks.join('')}
     ${trophies.join('')}`;
 }
 
@@ -1622,6 +1650,7 @@ function renderGoat() {
     ? data
     : data.filter(t => t.conference === goatConf);
   updateDisruptedNote('goat-disrupted-note', teams.map(t => t.season));
+  const _bs2 = barScale(teams.map(t => t.rating));
   const rows = teams.map(t => {
     const badge = finishBadge(t.finals_status);
     const label = (t.display_name || t.team) + (badge ? ' ' + badge : '');
@@ -1635,7 +1664,7 @@ function renderGoat() {
     <td class="season-cell linked" data-season-link="${t.season}" style="white-space:nowrap">${fmtSeason(t.season)}${shortTag}</td>
     ${teamTd}
     <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
-    <td>${ratingBar(t.rating)}</td>
+    <td>${ratingBar(t.rating, _bs2)}</td>
     <td style="font-variant-numeric:tabular-nums;white-space:nowrap" class="col-hide-mobile">${fmtRecordStacked(t.regular_record, t.regular_pts, t.playoff_record)}</td>
   </tr>`;
   }).join('');
