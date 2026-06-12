@@ -1126,8 +1126,9 @@ function drawChart(rows, seasonFilter) {
 
   const ctxLine = (v) => {
     const y = py(v).toFixed(1);
-    return `<line x1="10" y1="${y}" x2="${(W - 10).toFixed(1)}" y2="${y}" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="3,3"/>`
-         + `<text x="12" y="${(py(v) - 3).toFixed(1)}" font-size="9" fill="#999">${v > 0 ? '+' : ''}${v}</text>`;
+    const col = v > 0 ? '#1a6b8a' : '#ff6eb4';   // +D teal, -D pink (echoes bar-pos/bar-neg)
+    return `<line x1="10" y1="${y}" x2="${(W - 10).toFixed(1)}" y2="${y}" stroke="${col}" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.55"/>`
+         + `<text x="12" y="${(py(v) - 3).toFixed(1)}" font-size="9" fill="${col}">${v > 0 ? '+' : ''}${v}</text>`;
   };
   const contextLines = ctxLine(D_DEFAULT) + ctxLine(-D_DEFAULT);
   const clipMarks = [];
