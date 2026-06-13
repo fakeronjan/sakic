@@ -1665,8 +1665,8 @@ function renderGoat() {
     <td class="season-cell linked" data-season-link="${t.season}" style="white-space:nowrap">${fmtSeason(t.season)}${shortTag}</td>
     ${teamTd}
     <td class="col-hide-mobile">${confBadge(t.conference, t.finals_status, t.division, t.division_winner)}</td>
-    <td>${ratingBar(t.rating, _bs2)}</td>
     <td style="font-variant-numeric:tabular-nums;white-space:nowrap" class="col-hide-mobile">${fmtRecordStacked(t.regular_record, t.regular_pts, t.playoff_record)}</td>
+    <td>${ratingBar(t.rating, _bs2)}</td>
   </tr>`;
   }).join('');
 
@@ -1677,8 +1677,8 @@ function renderGoat() {
         <th style="text-align:center">Season</th>
         <th>Team</th>
         <th class="col-hide-mobile">Conf</th>
-        <th>Rating</th>
         <th class="col-hide-mobile">${recordHeader()}</th>
+        <th>Rating</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
