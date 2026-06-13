@@ -386,6 +386,26 @@ def historical_display_names(canonical):
     return out
 
 
+# sakic.py builds last_match strings with the canonical franchise name (e.g.
+# "L 3-4 @ Arizona Coyotes (OT)" for a 2009-10 game when the team was the
+# Phoenix Coyotes). Rewrite the opponent portion with the era-appropriate
+# display name so historical Team Summary / Standings views show the
+# franchise's contemporary name. Format is "<W/L/T> <score> <vs.|@> <opponent>"
+# with an optional trailing "(OT)"/"(SO)" suffix to preserve (mirrors DILLON).
+_LAST_MATCH_RE = re.compile(r'^([WLT])\s+(\d+\s*-\s*\d+)\s+(vs\.?|@)\s+(.+?)\s*(\([^)]+\))?\s*$')
+
+
+def era_aware_last_match(raw, season):
+    if not raw:
+        return raw
+    m = _LAST_MATCH_RE.match(str(raw))
+    if not m:
+        return raw
+    letter, score, venue, opponent, suffix = m.groups()
+    out = f"{letter} {score} {venue} {display_name(opponent.strip(), season)}"
+    return f"{out} {suffix}" if suffix else out
+
+
 def _conf_div(team, season):
     """Era-aware (conference, division) lookup. Falls back to the team's
     most-recent (conf, div) if the season is outside any encoded range."""
@@ -741,7 +761,7 @@ snap_record_lookup = {
         "rs_record":       r["rs_record"],
         "ps_record":       r["ps_record"],
         "rs_pts":          int(r["rs_pts"]),
-        "last_match":      r["last_match"],
+        "last_match":      era_aware_last_match(r["last_match"], r["season"]),
         "last_match_date": r["last_match_date"],
     }
     for _, r in snap_records.iterrows()
