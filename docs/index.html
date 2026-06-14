@@ -499,7 +499,7 @@
 
 <!-- ── GOAT TABLE ───────────────────────────────────────────────────────── -->
 <div id="goat" class="tab">
-  <p class="data-note">Top 50 single-season ratings · Switch between end of regular season (all teams) and end of playoffs (Stanley Cup Final participants only).</p>
+  <p class="data-note" id="goat-note">Top 40 single-season ratings · end of playoffs, champions only</p>
   <div class="conf-pills" id="goat-mode-pills"></div>
   <div class="conf-pills" id="goat-conf-pills"></div>
   <div id="goat-table-wrap"><p class="loading">Loading GOAT table...</p></div>
@@ -1647,6 +1647,8 @@ async function loadGoat() {
 function renderGoat() {
   const data = goatMode === 'rs' ? goatDataRS : goatDataPS;
   if (!data) return;
+  const _gn = document.getElementById('goat-note');
+  if (_gn) _gn.textContent = `Top ${data.length} single-season ratings · ` + (goatMode === 'rs' ? 'end of regular season, all teams' : 'end of playoffs, champions only');
   const teams = goatConf === 'all'
     ? data
     : data.filter(t => t.conference === goatConf);

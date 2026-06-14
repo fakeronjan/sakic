@@ -1200,11 +1200,16 @@ def build_goat(flag_col, require_cup=False):
         lambda r: r["name"] in teams_played_by_season.get(int(r["season"]), set()), axis=1
     )]
     if require_cup:
-        cup_teams = {(s, info["champion"]) for s, info in ws_results.items()} | \
-                    {(s, info["runner_up"]) for s, info in ws_results.items()}
+        # Champions only - the PS GOAT is a greatest-CHAMPIONS list; dominant
+        # non-winning seasons live on the RS GOAT. Length rounds down to the
+        # nearest 10 (capped at GOAT_TOP_N) so it grows cleanly as titles accrue.
+        cup_teams = {(s, info["champion"]) for s, info in ws_results.items()}
         rows = rows[rows.apply(lambda r: (int(r["season"]), r["name"]) in cup_teams, axis=1)]
+        n = min(GOAT_TOP_N, (rows["season"].nunique() // 10) * 10)
+    else:
+        n = GOAT_TOP_N
     rows = rows.sort_values("rating", ascending=False).reset_index(drop=True)
-    top = rows.head(GOAT_TOP_N)
+    top = rows.head(n)
     out = []
     for i, r in top.iterrows():
         s = int(r["season"])
