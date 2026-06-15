@@ -53232,8 +53232,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-05-12,7:00 PM,Buffalo Sabres,3,Montreal Canadiens,2,,"20,962",2:50,,1,2026
 2026-05-12,9:30 PM,Anaheim Ducks,2,Vegas Golden Knights,3,OT,"18,089",2:51,,1,2026
 2026-05-13,8:00 PM,Minnesota Wild,3,Colorado Avalanche,4,OT,"18,159",2:55,,1,2026
-2026-05-14,9:30 PM,Vegas Golden Knights,5,Anaheim Ducks,1,,"16,778",2:42,,1,2026
 2026-05-14,7:00 PM,Montreal Canadiens,6,Buffalo Sabres,3,,"19,070",2:36,,1,2026
+2026-05-14,9:30 PM,Vegas Golden Knights,5,Anaheim Ducks,1,,"16,778",2:42,,1,2026
 2026-05-16,8:00 PM,Buffalo Sabres,8,Montreal Canadiens,3,,"20,962",2:37,,1,2026
 2026-05-18,7:30 PM,Montreal Canadiens,3,Buffalo Sabres,2,OT,"19,070",3:07,,1,2026
 2026-05-20,8:00 PM,Vegas Golden Knights,4,Colorado Avalanche,2,,"18,109",2:40,,1,2026
@@ -53250,5 +53250,4 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-06-06,8:00 PM,Carolina Hurricanes,4,Vegas Golden Knights,5,2OT,"18,233",4:01,,1,2026
 2026-06-09,8:00 PM,Carolina Hurricanes,5,Vegas Golden Knights,3,,"18,339",2:32,,1,2026
 2026-06-11,8:00 PM,Vegas Golden Knights,2,Carolina Hurricanes,4,,"18,761",2:32,,1,2026
-2026-06-14,8:00 PM,Carolina Hurricanes,,Vegas Golden Knights,,,,,,1,2026
-2026-06-17,8:00 PM,Vegas Golden Knights,,Carolina Hurricanes,,,,,,1,2026
+2026-06-14,8:00 PM,Carolina Hurricanes,3,Vegas Golden Knights,0,,"18,354",2:37,,1,2026
