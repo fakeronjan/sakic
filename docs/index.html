@@ -484,6 +484,7 @@
       <button data-rank="worst-champs">Worst champs</button>
       <button data-rank="best-losers">Best losers</button>
       <button data-rank="worst-losers">Worst losers</button>
+      <button data-rank="biggest-leap">Biggest playoff leap</button>
       <button data-rank="best-matchup">Best matchup</button>
       <button data-rank="worst-matchup">Worst matchup</button>
       <button data-rank="closest">Closest predicted</button>
@@ -1324,6 +1325,7 @@ function renderRankings(rankType) {
   if (!championsData) return;
   if (rankType === 'repeat-champs') return renderRepeatChamps();
   if (rankType === 'rematches')     return renderRematches();
+  if (rankType === 'biggest-leap')  return renderBiggestLeap();
 
   const isPreScf = PRE_SCF_MODES.has(rankType);
   const entries = (championsData['NHL'] || []).filter(e => {
@@ -1405,6 +1407,66 @@ function renderRankings(rankType) {
   document.getElementById('history-rank-note').textContent = note;
   document.getElementById('history-rank-table-wrap').innerHTML =
     sorted.length ? renderRankingTable(sorted, mode) : '<p class="loading">No data.</p>';
+  attachLinks();
+}
+
+// Biggest playoff leap: champions ranked by how much their rating climbed from
+// the end of the regular season (rs_end_rating) to the end of the playoffs
+// (ps_end_rating). Champion-only metric, so it gets its own focused table
+// mirroring the bespoke renderRepeatChamps / renderRematches lists.
+function renderBiggestLeap() {
+  if (!championsData) return;
+  const rows = (championsData['NHL'] || [])
+    .filter(e => e.champion && e.champion.ps_end_rating != null && e.champion.rs_end_rating != null)
+    .map(e => {
+      const c = e.champion;
+      return { e, c, rs: c.rs_end_rating, ps: c.ps_end_rating, leap: c.ps_end_rating - c.rs_end_rating };
+    })
+    .sort((a, b) => b.leap - a.leap)
+    .slice(0, 10);
+
+  document.getElementById('history-rank-note').textContent =
+    'Top 10 champions by rating gained from end of regular season to end of playoffs. The teams that leveled up the most over their title run.';
+
+  if (!rows.length) {
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No data.</p>';
+    return;
+  }
+
+  const body = rows.map((r, i) => {
+    const c = r.c;
+    const label = c.display_name || c.team;
+    const slug = nameToSlug[c.team] || nameToSlug[label];
+    const countStr = c.title_count
+      ? ` <span style="color:#888;font-size:0.85em;font-weight:400">(${c.title_count} 👑)</span>`
+      : '';
+    const teamTd = slug
+      ? `<td class="team-cell linked" data-team-slug="${slug}" data-season="${r.e.season}" style="white-space:nowrap">${label}${countStr}</td>`
+      : `<td class="team-cell" style="white-space:nowrap">${label}${countStr}</td>`;
+    const sign = r.leap >= 0 ? '+' : '';
+    const num  = 'font-variant-numeric:tabular-nums';
+    return `<tr>
+      <td style="text-align:center;color:#888">${i + 1}</td>
+      <td class="season-cell linked" data-season-link="${r.e.season}">${fmtSeason(r.e.season)}${seasonTag(r.e.season)}</td>
+      ${teamTd}
+      <td class="col-hide-mobile" style="${num};white-space:nowrap">${fmtRecordStacked(c.rs_record, c.ps_record)}</td>
+      <td class="rating-cell" style="${num};white-space:nowrap">${r.rs.toFixed(2)} → ${r.ps.toFixed(2)}</td>
+      <td class="sort-col rating-cell" style="${num};text-align:center">${sign}${r.leap.toFixed(2)}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('history-rank-table-wrap').innerHTML = `
+    <table style="width:auto;margin:0 auto">
+      <thead><tr>
+        <th>#</th>
+        <th style="text-align:center">Season</th>
+        <th>Champion</th>
+        <th class="col-hide-mobile">W-L</th>
+        <th>Rating<br><span style="font-weight:400;font-size:10px;opacity:0.7;text-transform:none">Season → Playoffs</span></th>
+        <th class="sort-col" style="text-align:center">Rating Increase</th>
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table>`;
   attachLinks();
 }
 
