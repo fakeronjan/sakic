@@ -1212,7 +1212,7 @@ function renderChampions() {
       : `<td class="${bg} team-cell" style="white-space:nowrap">${label}${countStr}</td>`;
     return `
       ${teamTd}
-      <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em">${rank}</td>
+      <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em;text-align:center">${rank}</td>
       <td class="${bg} rating-cell" style="font-variant-numeric:tabular-nums">${rating}</td>
       <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordStacked(t.rs_record, t.rs_pts, t.ps_record)}</td>`;
   }
@@ -1314,7 +1314,7 @@ function rankTeamBlock(t, bg, season, sortRating) {
   const ratingClass = sortRating ? `${bg} rating-cell sort-col` : `${bg} rating-cell`;
   return `
     ${teamTd}
-    <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em">${rank}</td>
+    <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap;color:#888;font-size:0.85em;text-align:center">${rank}</td>
     <td class="${ratingClass}" style="font-variant-numeric:tabular-nums">${rating}</td>
     <td class="${bg} col-hide-mobile" style="font-variant-numeric:tabular-nums;white-space:nowrap">${fmtRecordStacked(t.rs_record, t.rs_pts, t.ps_record)}</td>`;
 }
