@@ -160,7 +160,9 @@
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     color: #1a6b8a;
+    text-align: center;
   }
+  thead th.col-num { text-align: center; }
   .rating-bar-wrap {
     display: flex;
     flex-direction: column;
@@ -884,9 +886,9 @@ function renderStandings() {
   document.getElementById('standings-table-wrap').innerHTML = `
     <table>
       <thead><tr>
-        <th>Rank</th><th>Team</th>
+        <th class="col-num">Rank</th><th>Team</th>
         <th class="col-hide-mobile">Conf</th>
-        <th>${recordHeader(season)}</th><th>Rating</th>
+        <th>${recordHeader(season)}</th><th class="col-num">Rating</th>
         <th>Last Game</th>
         <th class="col-hide-mobile">Date</th>
       </tr></thead>
@@ -1052,7 +1054,7 @@ function renderTeamTable() {
     <table>
       <thead><tr>
         <th style="text-align:center">Season</th><th>Date</th><th>Last Game</th>
-        <th>${tsRecordHeader}</th><th>Rank</th><th>Rating</th>
+        <th>${tsRecordHeader}</th><th class="col-num">Rank</th><th class="col-num">Rating</th>
         <th class="col-hide-mobile">Conf</th>
       </tr></thead>
       <tbody>${tableRows}</tbody>
@@ -1240,13 +1242,13 @@ function renderChampions() {
       <thead><tr>
         <th style="text-align:center">Season</th>
         <th class="col-champ">Champion</th>
-        <th class="col-champ col-hide-mobile">Rank</th>
-        <th class="col-champ">Rating</th>
+        <th class="col-champ col-hide-mobile col-num">Rank</th>
+        <th class="col-champ col-num">Rating</th>
         <th class="col-champ col-hide-mobile">${recordHeader()}</th>
         <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series<br>(Last game)</th>
         <th class="col-ru">Runner-Up</th>
-        <th class="col-ru col-hide-mobile">Rank</th>
-        <th class="col-ru">Rating</th>
+        <th class="col-ru col-hide-mobile col-num">Rank</th>
+        <th class="col-ru col-num">Rating</th>
         <th class="col-ru col-hide-mobile">${recordHeader()}</th>
       </tr></thead>
       <tbody>${rows}</tbody>
@@ -1462,7 +1464,7 @@ function renderBiggestLeap() {
         <th style="text-align:center">Season</th>
         <th>Champion</th>
         <th class="col-hide-mobile">W-L</th>
-        <th>Rating<br><span style="font-weight:400;font-size:10px;opacity:0.7;text-transform:none">Season → Playoffs</span></th>
+        <th class="col-num">Rating<br><span style="font-weight:400;font-size:10px;opacity:0.7;text-transform:none">Season → Playoffs</span></th>
         <th class="sort-col" style="text-align:center">Rating Increase</th>
       </tr></thead>
       <tbody>${body}</tbody>
@@ -1490,20 +1492,20 @@ function renderRankingTable(rows, mode) {
 
   const sortLeftRating = !isPreScf;
   const leftRatingHeader = sortLeftRating
-    ? `<th class="col-champ sort-col">Rating</th>`
-    : `<th class="col-champ">Rating${preTag}</th>`;
+    ? `<th class="col-champ sort-col col-num">Rating</th>`
+    : `<th class="col-champ col-num">Rating${preTag}</th>`;
 
   const head = `
     <th>#</th>
     <th style="text-align:center">Season</th>
     <th class="col-champ">${leftLabel}</th>
-    <th class="col-champ col-hide-mobile">Rank</th>
+    <th class="col-champ col-hide-mobile col-num">Rank</th>
     ${leftRatingHeader}
     <th class="col-champ col-hide-mobile">${recordHeader()}</th>
     <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series<br>(Last game)</th>
     <th class="col-ru">${rightLabel}</th>
-    <th class="col-ru col-hide-mobile">Rank</th>
-    <th class="col-ru">Rating${preTag}</th>
+    <th class="col-ru col-hide-mobile col-num">Rank</th>
+    <th class="col-ru col-num">Rating${preTag}</th>
     <th class="col-ru col-hide-mobile">${recordHeader()}</th>
     ${metricHeader}`;
 
@@ -1542,13 +1544,13 @@ function renderRankingTable(rows, mode) {
 const PAIR_HEAD = `
     <th style="text-align:center">Season</th>
     <th class="col-champ">Champion</th>
-    <th class="col-champ col-hide-mobile">Rank</th>
-    <th class="col-champ">Rating</th>
+    <th class="col-champ col-hide-mobile col-num">Rank</th>
+    <th class="col-champ col-num">Rating</th>
     <th class="col-champ col-hide-mobile">${recordHeader()}</th>
     <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series<br>(Last game)</th>
     <th class="col-ru">Runner-Up</th>
-    <th class="col-ru col-hide-mobile">Rank</th>
-    <th class="col-ru">Rating</th>
+    <th class="col-ru col-hide-mobile col-num">Rank</th>
+    <th class="col-ru col-num">Rating</th>
     <th class="col-ru col-hide-mobile">${recordHeader()}</th>`;
 
 function pairRow(e, isPairEnd) {
@@ -1742,7 +1744,7 @@ function renderGoat() {
         <th>Team</th>
         <th class="col-hide-mobile">Conf</th>
         <th class="col-hide-mobile">${recordHeader()}</th>
-        <th>Rating</th>
+        <th class="col-num">Rating</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
