@@ -461,7 +461,7 @@
   <div id="chart-wrap" style="display:none">
     <svg id="season-chart"></svg>
   </div>
-  <div id="team-table-wrap"><p class="loading">Select a team above.</p></div>
+  <div id="team-table-wrap"><p class="loading">Select a team above</p></div>
   <div class="disrupted-note disrupted-note-bottom" id="team-summary-disrupted-note-bottom" style="display:none"></div>
 </div>
 
@@ -810,7 +810,7 @@ async function initStandings() {
     await loadSeason(meta.seasons[0]);
   } catch(e) {
     document.getElementById('standings-table-wrap').innerHTML =
-      `<p class="error">Could not load standings.</p>`;
+      `<p class="error">Could not load standings</p>`;
   }
 }
 
@@ -837,7 +837,7 @@ async function loadSeason(season) {
     updateDisruptedNote('standings-disrupted-note', [season]);
   } catch(e) {
     document.getElementById('standings-table-wrap').innerHTML =
-      `<p class="error">Could not load season data.</p>`;
+      `<p class="error">Could not load season data</p>`;
   }
 }
 
@@ -947,7 +947,7 @@ async function loadTeam(slug) {
       teamCache[slug] = await res.json();
     } catch(e) {
       document.getElementById('team-table-wrap').innerHTML =
-        '<p class="error">Could not load team data.</p>';
+        '<p class="error">Could not load team data</p>';
       return;
     }
   }
@@ -1183,7 +1183,7 @@ async function loadChampions() {
     renderChampions();
   } catch(e) {
     document.getElementById('history-table-wrap').innerHTML =
-      `<p class="error">Could not load champions.</p>`;
+      `<p class="error">Could not load champions</p>`;
   }
 }
 
@@ -1192,7 +1192,7 @@ function renderChampions() {
   const entries = championsData['NHL'] || [];
   if (!entries.length) {
     document.getElementById('history-table-wrap').innerHTML =
-      `<p class="loading">No champions data.</p>`;
+      `<p class="loading">No champions data</p>`;
     return;
   }
 
@@ -1408,7 +1408,7 @@ function renderRankings(rankType) {
 
   document.getElementById('history-rank-note').textContent = note;
   document.getElementById('history-rank-table-wrap').innerHTML =
-    sorted.length ? renderRankingTable(sorted, mode) : '<p class="loading">No data.</p>';
+    sorted.length ? renderRankingTable(sorted, mode) : '<p class="loading">No data</p>';
   attachLinks();
 }
 
@@ -1431,7 +1431,7 @@ function renderBiggestLeap() {
     'Top 10 champions by rating gained from end of regular season to end of playoffs. The teams that leveled up the most over their title run.';
 
   if (!rows.length) {
-    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No data.</p>';
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No data</p>';
     return;
   }
 
@@ -1600,7 +1600,7 @@ function renderRepeatChamps() {
     `${runs.length} repeat-championship runs (${totalSeasons} total seasons across consecutive titles).`;
 
   if (!runs.length) {
-    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No repeat champions in this dataset.</p>';
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No repeat champions in this dataset</p>';
     return;
   }
 
@@ -1657,7 +1657,7 @@ function renderRematches() {
     `${groups.length} Stanley Cup Final rematch groups (${totalMeetings} total meetings). A group continues as long as the same two teams meet again within ${REMATCH_GAP_THRESHOLD} years.`;
 
   if (!groups.length) {
-    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No qualifying rematches.</p>';
+    document.getElementById('history-rank-table-wrap').innerHTML = '<p class="loading">No qualifying rematches</p>';
     return;
   }
 
@@ -1704,7 +1704,7 @@ async function loadGoat() {
     renderGoat();
   } catch(e) {
     document.getElementById('goat-table-wrap').innerHTML =
-      `<p class="error">Could not load GOAT table.</p>`;
+      `<p class="error">Could not load GOAT table</p>`;
   }
 }
 
