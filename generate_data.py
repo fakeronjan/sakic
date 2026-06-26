@@ -921,6 +921,10 @@ for s in sorted(ratings["season"].unique()):
                 "conference":       conference(r["name"], s),
                 "division":         division(r["name"], s),
                 "rating":           round(float(r["rating"]), 3),
+                "rating_o":         round(float(r["rating_o"]), 3) if "rating_o" in r and not pd.isna(r["rating_o"]) else None,
+                "rating_d":         round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
+                "rank_o":           int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
+                "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
                 "regular_record":   rec.get("rs_record", "0-0-0"),
                 "regular_pts":      rec.get("rs_pts", 0),
                 "playoff_record":   rec.get("ps_record", ""),
@@ -976,6 +980,10 @@ for team in sorted(ratings["name"].unique()):
                 "date":             snap_date_str,
                 "rank":             int(r["rank"]) if not pd.isna(r["rank"]) else None,
                 "rating":           round(float(r["rating"]), 3),
+                "rating_o":         round(float(r["rating_o"]), 3) if "rating_o" in r and not pd.isna(r["rating_o"]) else None,
+                "rating_d":         round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
+                "rank_o":           int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
+                "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
                 "display_name":     display_name(team, s),
                 "conference":       conference(team, s),
                 "division":         division(team, s),
@@ -1194,7 +1202,7 @@ GOAT_TOP_N = 50
 cup_seasons = set(ws_results.keys())
 
 
-def build_goat(flag_col, require_cup=False):
+def build_goat(flag_col, require_cup=False, sort_col="rating"):
     rows = ratings[(ratings[flag_col] == 1) & (ratings["season"].isin(cup_seasons))].copy()
     rows = rows[rows.apply(
         lambda r: r["name"] in teams_played_by_season.get(int(r["season"]), set()), axis=1
@@ -1208,7 +1216,7 @@ def build_goat(flag_col, require_cup=False):
         n = min(GOAT_TOP_N, (rows["season"].nunique() // 10) * 10)
     else:
         n = GOAT_TOP_N
-    rows = rows.sort_values("rating", ascending=False).reset_index(drop=True)
+    rows = rows.sort_values(sort_col, ascending=False).reset_index(drop=True)
     top = rows.head(n)
     out = []
     for i, r in top.iterrows():
@@ -1230,6 +1238,10 @@ def build_goat(flag_col, require_cup=False):
             "short_season_category": SHORT_SEASONS.get(s, {}).get("category", "") if s in SHORT_SEASONS else "",
             "short_season_note":     SHORT_SEASONS.get(s, {}).get("note", "")     if s in SHORT_SEASONS else "",
             "rating":           round(float(r["rating"]), 3),
+            "rating_o":         round(float(r["rating_o"]), 3) if "rating_o" in r and not pd.isna(r["rating_o"]) else None,
+            "rating_d":         round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
+            "rank_o":           int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
+            "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
             "regular_record":   format_record(s, rec["rs"]) if rec else "",
             "regular_pts":      format_pts(s, rec["rs"]) if rec else 0,
             "playoff_record":   format_record(s, rec["ps"], is_ps=True) if rec else "",
@@ -1238,13 +1250,17 @@ def build_goat(flag_col, require_cup=False):
     return out
 
 
+# Each pool emits three views (overall / offense / defense), DILLON-style:
+# every row carries rating + rating_o + rating_d so the frontend can show the
+# split and re-sort by metric; rank is positional to the active sort.
+for _fname, _col in [("goat_rs.json", "rating"), ("goat_rs_o.json", "rating_o"), ("goat_rs_d.json", "rating_d")]:
+    with open(f"docs/data/{_fname}", "w") as f:
+        json.dump(build_goat("is_rs_end", require_cup=False, sort_col=_col), f, separators=(",", ":"))
+for _fname, _col in [("goat_ps.json", "rating"), ("goat_ps_o.json", "rating_o"), ("goat_ps_d.json", "rating_d")]:
+    with open(f"docs/data/{_fname}", "w") as f:
+        json.dump(build_goat("is_ps_end", require_cup=True, sort_col=_col), f, separators=(",", ":"))
 goat_rs = build_goat("is_rs_end", require_cup=False)
 goat_ps = build_goat("is_ps_end", require_cup=True)
-
-with open("docs/data/goat_rs.json", "w") as f:
-    json.dump(goat_rs, f, separators=(",", ":"))
-with open("docs/data/goat_ps.json", "w") as f:
-    json.dump(goat_ps, f, separators=(",", ":"))
 
 
 # =========================================================
@@ -1266,6 +1282,10 @@ for _, r in latest_snap.sort_values("rank").iterrows():
         "conference":   conference(r["name"], latest_season),
         "division":     division(r["name"], latest_season),
         "rating":       round(float(r["rating"]), 3),
+        "rating_o":     round(float(r["rating_o"]), 3) if "rating_o" in r and not pd.isna(r["rating_o"]) else None,
+        "rating_d":     round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
+        "rank_o":       int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
+        "rank_d":       int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
     })
 
 with open("docs/data/current_standings.json", "w") as f:

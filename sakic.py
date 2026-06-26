@@ -45,6 +45,12 @@ MARGIN_CAP = 5
 
 WEIGHTING_MODE = "wls"
 
+# Offense/defense split: share of the per-game home edge attributed to attack
+# (the rest to defense), and an optional per-side goal clip for the O/D lean.
+# NHL is a single balanced league with no minnow routs, so raw goals are fine.
+OD_OFF_SHARE = 0.5
+OD_GOAL_CAP = None
+
 # Re-process the most recent N game-days each run so late-arriving box scores
 # (overturned reviews, suspended games) get re-absorbed automatically.
 RECOMPUTE_TAIL_DAYS = 7
@@ -490,6 +496,94 @@ def _solve_wls(window_df, hca, weighting_mode, margin_transform, margin_cap):
     return out
 
 
+def _solve_wls_od(window_df, hca, weighting_mode, off_share=0.5, goal_cap=None):
+    """Offense/defense companion to _solve_wls on the same window. Splits team
+    strength into an attacking rating (goals scored vs an average opponent) and
+    a defending rating (goals conceded).
+
+    Each game contributes two goal half-equations, from the home perspective:
+        home_O - visitor_D = home_pts - mu - hca * off_share
+        visitor_O - home_D = visitor_pts - mu + hca * (1 - off_share)
+    where mu is the window mean goals per team per game, so attack and defense
+    are each centered on zero. Like _solve_wls, the zero-sum is applied PER
+    CONNECTED COMPONENT (the early-season schedule graph can be disconnected),
+    on offense and defense separately - this keeps the attack-vs-defense lean
+    well-determined within each component.
+
+    The raw O/D level is NOT calibrated here. The caller re-anchors rating_o +
+    rating_d to the solved rating; since both rating and the raw O/D are
+    per-component zero-sum, the re-anchor delta sums to zero per component, so
+    O+D == rating exactly while the attack-vs-defense lean is preserved.
+    goal_cap, when set, clips each side's goals before the fit.
+    """
+    teams = sorted(set(window_df["home_team_name"]) | set(window_df["visitor_team_name"]))
+    team_idx = {t: i for i, t in enumerate(teams)}
+    n_teams = len(teams)
+    n_games = len(window_df)
+
+    home_pts = window_df["home_pts"].to_numpy(dtype=float)
+    visitor_pts = window_df["visitor_pts"].to_numpy(dtype=float)
+    if goal_cap is not None:
+        home_pts = np.clip(home_pts, 0, goal_cap)
+        visitor_pts = np.clip(visitor_pts, 0, goal_cap)
+    weights = window_df["date_weight"].to_numpy(dtype=float)
+    home_names = window_df["home_team_name"].to_numpy()
+    visitor_names = window_df["visitor_team_name"].to_numpy()
+
+    comp_map = _connected_components(teams, zip(home_names, visitor_names))
+    n_components = max(comp_map.values()) + 1 if comp_map else 1
+    teams_by_comp = [[] for _ in range(n_components)]
+    for t, c in comp_map.items():
+        teams_by_comp[c].append(t)
+
+    if weighting_mode != "wls":
+        raise ValueError(f"Unknown WEIGHTING_MODE: {weighting_mode}")
+
+    mu = (home_pts.sum() + visitor_pts.sum()) / (2 * n_games)
+    h_off = float(off_share)
+    h_def = 1.0 - h_off
+
+    # 2 rows per game + 2 zero-sum rows per component (offense, then defense).
+    n_rows = 2 * n_games + 2 * n_components
+    X = np.zeros((n_rows, 2 * n_teams))
+    y = np.zeros(n_rows)
+    w = np.zeros(n_rows)
+
+    for i in range(n_games):
+        h = team_idx[home_names[i]]
+        v = team_idx[visitor_names[i]]
+        # home_O - visitor_D = home_pts - mu - hca*h_off
+        X[2*i,     h]            =  1.0
+        X[2*i,     n_teams + v]  = -1.0
+        y[2*i]                   = home_pts[i] - mu - hca * h_off
+        w[2*i]                   = weights[i]
+        # visitor_O - home_D = visitor_pts - mu + hca*h_def
+        X[2*i + 1, v]            =  1.0
+        X[2*i + 1, n_teams + h]  = -1.0
+        y[2*i + 1]               = visitor_pts[i] - mu + hca * h_def
+        w[2*i + 1]               = weights[i]
+
+    row = 2 * n_games
+    for comp_teams in teams_by_comp:
+        for t in comp_teams:               # zero-sum on offense within the component
+            X[row, team_idx[t]] = 1.0
+        w[row] = 1.0e8
+        row += 1
+        for t in comp_teams:               # zero-sum on defense within the component
+            X[row, n_teams + team_idx[t]] = 1.0
+        w[row] = 1.0e8
+        row += 1
+
+    sqrt_w = np.sqrt(w)
+    sol, *_ = np.linalg.lstsq(X * sqrt_w[:, None], y * sqrt_w, rcond=None)
+
+    return pd.DataFrame({
+        "name":     teams,
+        "rating_o": sol[:n_teams],
+        "rating_d": sol[n_teams:],
+    })
+
+
 def _window_for_season(season):
     """Fixed rolling window across all seasons (82 * WINDOW_MULTIPLIER = 160).
 
@@ -575,6 +669,21 @@ def compute_ratings(master_df, existing_ratings_df):
                 window, hca=HOME_COURT_ADJUSTMENT, weighting_mode=WEIGHTING_MODE,
                 margin_transform=MARGIN_TRANSFORM, margin_cap=MARGIN_CAP,
             )
+            # Offense/defense split on the same window, re-anchored so that
+            # rating_o + rating_d == the solved rating. Both rating and the raw
+            # O/D are per-component zero-sum, so the per-team delta sums to zero
+            # within each component: O+D == rating exactly, attack-vs-defense
+            # lean preserved.
+            ranked_od = _solve_wls_od(
+                window, hca=HOME_COURT_ADJUSTMENT, weighting_mode=WEIGHTING_MODE,
+                off_share=OD_OFF_SHARE, goal_cap=OD_GOAL_CAP,
+            )
+            ranked = ranked.merge(ranked_od, on="name", how="left")
+            delta = (ranked["rating"] - ranked["rating_o"] - ranked["rating_d"]) / 2.0
+            ranked["rating_o"] = ranked["rating_o"] + delta
+            ranked["rating_d"] = ranked["rating_d"] + delta
+            ranked["rank_o"] = ranked["rating_o"].rank(ascending=False, method="min").astype(int)
+            ranked["rank_d"] = ranked["rating_d"].rank(ascending=False, method="min").astype(int)
         except Exception as e:
             print(f"  [skip] grouped_date_id {i} ({current_date.date()}): {e}")
             continue
