@@ -749,6 +749,17 @@ function fmtOD(val, rank) {
   return `<div class="od-val">${v}</div><div class="od-rank">${rank}</div>`;
 }
 
+// Cup Odds: percentage with optional rank stacked below (matches OFF/DEF
+// visually). 0% (eliminated) and rounds-to-0.0% render as '-'; 100% drops the decimal.
+function fmtTitleOdds(odds, rank) {
+  if (odds == null) return '-';
+  const displayed = (odds * 100).toFixed(1);
+  if (displayed === '0.0') return '-';
+  const value = parseFloat(displayed) >= 100 ? '100%' : `${displayed}%`;
+  if (rank == null) return value;
+  return `<div class="od-val">${value}</div><div class="od-rank">${rank}</div>`;
+}
+
 // ── Tab switching ────────────────────────────────────────────────────────────
 document.querySelectorAll('nav button').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -895,6 +906,7 @@ function renderStandings() {
       <td>${ratingBar(t.rating, _bs0)}</td>
       <td class="rating-cell od-cell col-hide-mobile">${fmtOD(t.rating_o, t.rank_o)}</td>
       <td class="rating-cell od-cell col-hide-mobile">${fmtOD(t.rating_d, t.rank_d)}</td>
+      <td class="rating-cell od-cell col-hide-mobile">${fmtTitleOdds(t.title_odds, t.title_odds_rank)}</td>
       <td class="last-match-cell">${renderLastMatch(t.last_match, season, isStale)}</td>
       <td class="col-hide-mobile" style="font-size:11px;color:#888;white-space:nowrap">${t.last_match_date || ''}</td>
     </tr>`;
@@ -911,6 +923,7 @@ function renderStandings() {
         <th>${recordHeader(season)}</th><th class="col-num">Rating</th>
         <th class="col-hide-mobile col-od" title="Attacking strength: goals scored vs an average opponent. Sums with Defense to Rating.">OFF</th>
         <th class="col-hide-mobile col-od" title="Defending strength: goals prevented vs an average opponent. Sums with Offense to Rating.">DEF</th>
+        <th class="col-hide-mobile col-od" title="Probability of winning the Stanley Cup, given (Rating, Offense, Defense, season progress) through this point in the season. Trained on the same point in every other season (salary-cap era). League-wide probabilities sum to 100%.">Cup Odds</th>
         <th>Last Game</th>
         <th class="col-hide-mobile">Date</th>
       </tr></thead>
@@ -1066,6 +1079,7 @@ function renderTeamTable() {
     <td>${ratingBar(g.rating, _bs1)}</td>
     <td class="rating-cell od-cell col-hide-mobile">${fmtOD(g.rating_o, g.rank_o)}</td>
     <td class="rating-cell od-cell col-hide-mobile">${fmtOD(g.rating_d, g.rank_d)}</td>
+    <td class="rating-cell od-cell col-hide-mobile">${fmtTitleOdds(g.title_odds, g.title_odds_rank)}</td>
     <td class="col-hide-mobile" style="font-size:11px">${confBadge(g.conference || data.conference, g.finals_status, g.division, g.division_winner)}</td>
   </tr>`;
   }).join('');
@@ -1081,6 +1095,7 @@ function renderTeamTable() {
         <th>${tsRecordHeader}</th><th class="col-num">Rank</th><th class="col-num">Rating</th>
         <th class="col-hide-mobile col-od" title="Attacking strength: goals scored vs an average opponent. Sums with Defense to Rating.">OFF</th>
         <th class="col-hide-mobile col-od" title="Defending strength: goals prevented vs an average opponent. Sums with Offense to Rating.">DEF</th>
+        <th class="col-hide-mobile col-od" title="Probability of winning the Stanley Cup, given (Rating, Offense, Defense, season progress) through this point in the season. Trained on the same point in every other season (salary-cap era). League-wide probabilities sum to 100%.">Cup Odds</th>
         <th class="col-hide-mobile">Conf</th>
       </tr></thead>
       <tbody>${tableRows}</tbody>

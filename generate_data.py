@@ -808,6 +808,181 @@ for s in sorted(ws_results)[-5:]:
 
 
 # =========================================================
+# TITLE ODDS (logistic regression, leave-one-season-out)
+# =========================================================
+# Continuous-progress model: P(Stanley Cup champion | rating, rating_o,
+# rating_d, season_progress + 3 rating x progress interactions). Progress is
+# phase-weighted: linear 0 -> 0.5 over the regular season, then jumps at each
+# playoff round (post-RS 0.55, post-R1 0.70, post-R2 0.85, post-CF 0.95,
+# champion 1.0). NHL and NBA share the playoff shape (4 rounds, all BO7), so
+# this mirrors DUNCAN. Eliminated teams drop out; alive teams renormalize to
+# 100% per snapshot. Trained on the salary-cap era (2006+) leave-one-season-out;
+# every newly-completed season auto-joins the pool on the next cron run.
+print("Computing title odds (logistic regression, leave-one-season-out)...")
+from scipy.optimize import minimize
+
+TO_PHASE_RS_MAX, TO_PHASE_POST_RS = 0.50, 0.55
+TO_PHASE_R2_ENTRY, TO_PHASE_CF_ENTRY = 0.70, 0.85
+TO_PHASE_FINALS_ENTRY, TO_PHASE_CHAMPION = 0.95, 1.00
+TITLE_TRAIN_FROM_SEASON = 2006   # salary-cap era
+
+_to_champion = {int(s): info["champion"] for s, info in ws_results.items() if info.get("champion")}
+
+# Per-team cumulative RS games played + each season's RS length (lockout-aware).
+_rs_tg = team_games[~team_games["is_playoff_game"]].sort_values("date_game").copy()
+_rs_tg["_n"] = _rs_tg.groupby(["season", "team"]).cumcount() + 1
+_rs_gp = {(int(s_), t_): list(zip(g_["date_game"], g_["_n"]))
+          for (s_, t_), g_ in _rs_tg.groupby(["season", "team"])}
+_rs_len = _rs_tg.groupby("season")["_n"].max().to_dict()
+
+def _to_games_played(season, team, d):
+    arr = _rs_gp.get((int(season), team))
+    if not arr:
+        return 0
+    n = 0
+    for gd, cnt in arr:
+        if gd <= d:
+            n = cnt
+        else:
+            break
+    return n
+
+# Full per-team playoff history (mirrors _bracket_walk but keeps every team).
+def _playoff_history(ps_games):
+    sg = ps_games.copy()
+    sg["_matchup"] = sg.apply(lambda r: tuple(sorted([r["home_team_name"], r["visitor_team_name"]])), axis=1)
+    history = {}
+    for _m, mg in sg.groupby("_matchup"):
+        a, b = _m
+        mgs = mg.sort_values("date_game").reset_index(drop=True)
+        cur = [0]
+        for i in range(1, len(mgs)):
+            if (mgs.loc[i, "date_game"] - mgs.loc[i - 1, "date_game"]).days > 10:
+                _nhl_process_series(mgs.iloc[cur], a, b, history)
+                cur = [i]
+            else:
+                cur.append(i)
+        _nhl_process_series(mgs.iloc[cur], a, b, history)
+    return history
+
+# Playoff field / series clinch dates / elimination date per (season, team).
+_to_field, _to_clinches, _to_eliminated = {}, {}, {}
+for s_, ps_games in games[games["is_playoff_game_flag"] == 1].groupby("season"):
+    s_ = int(s_)
+    hist = _playoff_history(ps_games)
+    if not hist:
+        continue
+    _to_field[s_] = set(hist.keys())
+    for t_, events in hist.items():
+        evs = sorted(events, key=lambda x: x[0])
+        _to_clinches[(s_, t_)] = [(d, won) for (d, won, *_rest) in evs]
+        lost = [d for (d, won, *_rest) in evs if not won]
+        _to_eliminated[(s_, t_)] = min(lost) if lost else None
+
+# Training/prediction rows: one per snapshot row with O/D + a progress value.
+_to_rows = []
+for _, r in ratings[ratings["rating_o"].notna() & ratings["rating_d"].notna()].iterrows():
+    s_, team, sd = int(r["season"]), r["name"], r["ranking_date"]
+    rs_end = rs_end_by_season.get(s_)
+    if rs_end is None:
+        continue
+    if sd <= rs_end:
+        gp = _to_games_played(s_, team, sd)
+        progress = TO_PHASE_RS_MAX * min(gp / max(_rs_len.get(s_, 82), 1), 1.0)
+    else:
+        if team not in _to_field.get(s_, set()):
+            continue
+        elim = _to_eliminated.get((s_, team))
+        if elim is not None and sd >= elim:
+            continue
+        won = sum(1 for (d, w) in _to_clinches.get((s_, team), []) if d <= sd and w)
+        progress = (TO_PHASE_CHAMPION if won >= 4 else TO_PHASE_FINALS_ENTRY if won == 3
+                    else TO_PHASE_CF_ENTRY if won == 2 else TO_PHASE_R2_ENTRY if won == 1
+                    else TO_PHASE_POST_RS)
+    _to_rows.append({
+        "season": s_, "team": team, "ranking_id": int(r["ranking_id"]),
+        "rating": float(r["rating"]), "rating_o": float(r["rating_o"]),
+        "rating_d": float(r["rating_d"]), "progress": float(progress),
+        "is_champion": 1 if _to_champion.get(s_) == team else 0,
+    })
+_to_train_df = pd.DataFrame(_to_rows)
+print(f"  Title-odds training rows: {len(_to_train_df):,} ({int(_to_train_df['is_champion'].sum())} champion-positive)")
+
+def _to_features(d):
+    p = d["progress"].values
+    return np.column_stack([
+        d["rating"].values, d["rating_o"].values, d["rating_d"].values,
+        p, d["rating"].values * p, d["rating_o"].values * p, d["rating_d"].values * p,
+    ])
+
+def _to_fit_logistic(X, y, reg=1e-3):
+    n, k = X.shape
+    Xa = np.column_stack([np.ones(n), X])
+    def nll(beta):
+        z = Xa @ beta
+        return float(np.sum(np.maximum(z, 0.0) + np.log1p(np.exp(-np.abs(z))) - y * z) + reg * np.sum(beta[1:] ** 2))
+    def grad(beta):
+        z = Xa @ beta
+        g = Xa.T @ (1.0 / (1.0 + np.exp(-z)) - y)
+        g[1:] += 2 * reg * beta[1:]
+        return g
+    return minimize(nll, np.zeros(k + 1), jac=grad, method="BFGS", options={"maxiter": 200, "gtol": 1e-6}).x
+
+def _to_predict_logistic(X, beta):
+    return 1.0 / (1.0 + np.exp(-(np.column_stack([np.ones(X.shape[0]), X]) @ beta)))
+
+def _to_normalize(d):
+    return d.groupby("ranking_id")["p_raw"].transform(lambda x: x / x.sum() if x.sum() > 0 else 0.0)
+
+_title_odds_cache = {}
+_eligible = _to_train_df[_to_train_df["season"] >= TITLE_TRAIN_FROM_SEASON].copy()
+_completed = {s for s in _eligible["season"].unique() if s in _to_champion}
+for s_ in _completed:
+    train, held = _eligible[_eligible["season"] != s_], _eligible[_eligible["season"] == s_].copy()
+    if train.empty or held.empty:
+        continue
+    beta = _to_fit_logistic(_to_features(train), train["is_champion"].values.astype(float))
+    held["p_raw"] = _to_predict_logistic(_to_features(held), beta)
+    held["p_norm"] = _to_normalize(held)
+    for _, r in held.iterrows():
+        _title_odds_cache[(r["ranking_id"], r["team"])] = float(r["p_norm"])
+
+# Everything else (in-progress current season + pre-cap-era extrapolation):
+# predict with the full-eligible-trained model.
+_beta_full = (_to_fit_logistic(_to_features(_eligible), _eligible["is_champion"].values.astype(float))
+              if not _eligible.empty else None)
+_remaining = _to_train_df[~_to_train_df["season"].isin(_completed)].copy()
+if _beta_full is not None and not _remaining.empty:
+    _remaining["p_raw"] = _to_predict_logistic(_to_features(_remaining), _beta_full)
+    _remaining["p_norm"] = _to_normalize(_remaining)
+    for _, r in _remaining.iterrows():
+        _title_odds_cache[(r["ranking_id"], r["team"])] = float(r["p_norm"])
+
+# Per-snapshot rank (1 = best odds among alive teams; ties share a rank).
+_title_odds_rank_cache = {}
+_pairs = {}
+for (rid, team), odds in _title_odds_cache.items():
+    if odds and odds > 0:
+        _pairs.setdefault(rid, []).append((team, odds))
+for rid, pairs in _pairs.items():
+    pairs.sort(key=lambda x: -x[1])
+    rmap, prev_o, prev_r = {}, None, 0
+    for i, (team, odds) in enumerate(pairs, start=1):
+        if odds != prev_o:
+            prev_r, prev_o = i, odds
+        rmap[team] = prev_r
+    _title_odds_rank_cache[rid] = rmap
+print(f"  Title odds cached for {len(_title_odds_cache):,} (snapshot, team) pairs")
+
+def _title_odds_val(ranking_id, team):
+    return _title_odds_cache.get((int(ranking_id), team))
+
+def _title_odds_rk(ranking_id, team):
+    rm = _title_odds_rank_cache.get(int(ranking_id))
+    return rm.get(team) if rm else None
+
+
+# =========================================================
 # DIVISION WINNERS (per season, per team)
 # =========================================================
 # 2004-05: NHL lockout cancelled the entire season - no games played, no
@@ -925,6 +1100,8 @@ for s in sorted(ratings["season"].unique()):
                 "rating_d":         round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
                 "rank_o":           int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
                 "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
+                "title_odds":       _title_odds_val(r["ranking_id"], r["name"]),
+                "title_odds_rank":  _title_odds_rk(r["ranking_id"], r["name"]),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
                 "regular_pts":      rec.get("rs_pts", 0),
                 "playoff_record":   rec.get("ps_record", ""),
@@ -984,6 +1161,8 @@ for team in sorted(ratings["name"].unique()):
                 "rating_d":         round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
                 "rank_o":           int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
                 "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
+                "title_odds":       _title_odds_val(r["ranking_id"], team),
+                "title_odds_rank":  _title_odds_rk(r["ranking_id"], team),
                 "display_name":     display_name(team, s),
                 "conference":       conference(team, s),
                 "division":         division(team, s),
@@ -1286,6 +1465,8 @@ for _, r in latest_snap.sort_values("rank").iterrows():
         "rating_d":     round(float(r["rating_d"]), 3) if "rating_d" in r and not pd.isna(r["rating_d"]) else None,
         "rank_o":       int(r["rank_o"]) if "rank_o" in r and not pd.isna(r["rank_o"]) else None,
         "rank_d":       int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
+        "title_odds":      _title_odds_val(r["ranking_id"], r["name"]),
+        "title_odds_rank": _title_odds_rk(r["ranking_id"], r["name"]),
     })
 
 with open("docs/data/current_standings.json", "w") as f:
