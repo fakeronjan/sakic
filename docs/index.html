@@ -490,6 +490,10 @@
     <div class="conf-pills" id="history-rank-pills">
       <button class="active" data-cat="champion" data-rank="best-champs">Best champs</button>
       <button data-cat="champion" data-rank="worst-champs">Worst champs</button>
+      <button data-cat="champion" data-rank="best-off-champs">Best offense champs</button>
+      <button data-cat="champion" data-rank="worst-off-champs">Worst offense champs</button>
+      <button data-cat="champion" data-rank="best-def-champs">Best defense champs</button>
+      <button data-cat="champion" data-rank="worst-def-champs">Worst defense champs</button>
       <button data-cat="champion" data-rank="biggest-leap">Biggest playoff leap</button>
       <button data-cat="champion" data-rank="biggest-favorites">Biggest favorites</button>
       <button data-cat="champion" data-rank="longest-shots">Longest shots</button>
@@ -1332,6 +1336,16 @@ function preScfView(team) {
     ps_record: team.ps_record_pre,
   };
 }
+// Offense / defense champ lists: remap so the sorted/displayed Rating is the
+// end-of-playoffs offense or defense rating.
+function offView(team) {
+  return { ...team, rating: team.ps_end_rating_o, rank: team.ps_end_rank_o };
+}
+function defView(team) {
+  return { ...team, rating: team.ps_end_rating_d, rank: team.ps_end_rank_d };
+}
+const OFF_CHAMP_MODES = new Set(['best-off-champs', 'worst-off-champs']);
+const DEF_CHAMP_MODES = new Set(['best-def-champs', 'worst-def-champs']);
 
 function fmtSigned(n) { return (n >= 0 ? '+' : '') + n.toFixed(2); }
 
@@ -1379,17 +1393,20 @@ function renderRankings(rankType) {
   if (rankType === 'longest-shots')     return renderTitleOddsList('low');
 
   const isPreScf = PRE_SCF_MODES.has(rankType);
+  const isOff    = OFF_CHAMP_MODES.has(rankType);
+  const isDef    = DEF_CHAMP_MODES.has(rankType);
+  const metricLabel = isOff ? 'Offense' : isDef ? 'Defense' : 'Rating';
   const entries = (championsData['NHL'] || []).filter(e => {
     if (!e.champion || !e.runner_up) return false;
-    if (isPreScf) {
-      return e.champion.rating_pre != null && e.runner_up.rating_pre != null;
-    }
+    if (isOff)    return e.champion.ps_end_rating_o != null && e.runner_up.ps_end_rating_o != null;
+    if (isDef)    return e.champion.ps_end_rating_d != null && e.runner_up.ps_end_rating_d != null;
+    if (isPreScf) return e.champion.rating_pre != null && e.runner_up.rating_pre != null;
     return e.champion.ps_end_rating != null && e.runner_up.ps_end_rating != null;
   });
 
   const rows = entries.map(e => {
-    const c = isPreScf ? preScfView(e.champion)  : eosView(e.champion);
-    const r = isPreScf ? preScfView(e.runner_up) : eosView(e.runner_up);
+    const c = isPreScf ? preScfView(e.champion)  : isOff ? offView(e.champion)  : isDef ? defView(e.champion)  : eosView(e.champion);
+    const r = isPreScf ? preScfView(e.runner_up) : isOff ? offView(e.runner_up) : isDef ? defView(e.runner_up) : eosView(e.runner_up);
     const hi = Math.max(c.rating, r.rating);
     const lo = Math.min(c.rating, r.rating);
     return {
@@ -1414,6 +1431,26 @@ function renderRankings(rankType) {
     case 'worst-champs':
       sorted = [...rows].sort((a, b) => a.champ.rating - b.champ.rating).slice(0, 10);
       note   = 'Bottom 10 champions by end-of-playoffs rating. The weakest teams ever to win a Stanley Cup.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'best-off-champs':
+      sorted = [...rows].sort((a, b) => b.champ.rating - a.champ.rating).slice(0, 10);
+      note   = 'Top 10 champions by end-of-playoffs Offense rating. The most explosive offenses ever to win a Stanley Cup.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'worst-off-champs':
+      sorted = [...rows].sort((a, b) => a.champ.rating - b.champ.rating).slice(0, 10);
+      note   = 'Bottom 10 champions by end-of-playoffs Offense rating. The weakest offenses ever to ride a championship defense.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'best-def-champs':
+      sorted = [...rows].sort((a, b) => b.champ.rating - a.champ.rating).slice(0, 10);
+      note   = 'Top 10 champions by end-of-playoffs Defense rating. The most suffocating defenses ever to win a Stanley Cup.';
+      mode   = 'team-vs-opp';
+      break;
+    case 'worst-def-champs':
+      sorted = [...rows].sort((a, b) => a.champ.rating - b.champ.rating).slice(0, 10);
+      note   = 'Bottom 10 champions by end-of-playoffs Defense rating. The weakest defenses ever to win on the back of an elite offense.';
       mode   = 'team-vs-opp';
       break;
     case 'best-losers':
@@ -1457,7 +1494,7 @@ function renderRankings(rankType) {
 
   document.getElementById('history-rank-note').textContent = note;
   document.getElementById('history-rank-table-wrap').innerHTML =
-    sorted.length ? renderRankingTable(sorted, mode) : '<p class="loading">No data</p>';
+    sorted.length ? renderRankingTable(sorted, mode, metricLabel) : '<p class="loading">No data</p>';
   attachLinks();
 }
 
@@ -1581,7 +1618,7 @@ function renderTitleOddsList(direction) {
   attachLinks();
 }
 
-function renderRankingTable(rows, mode) {
+function renderRankingTable(rows, mode, metricLabel = 'Rating') {
   const showCombined = (mode === 'matchup');
   const showDiff     = (mode === 'spread');
   const isPreScf     = showCombined || showDiff;
@@ -1601,8 +1638,8 @@ function renderRankingTable(rows, mode) {
 
   const sortLeftRating = !isPreScf;
   const leftRatingHeader = sortLeftRating
-    ? `<th class="col-champ sort-col col-num">Rating</th>`
-    : `<th class="col-champ col-num">Rating${preTag}</th>`;
+    ? `<th class="col-champ sort-col col-num">${metricLabel}</th>`
+    : `<th class="col-champ col-num">${metricLabel}${preTag}</th>`;
 
   const head = `
     <th>#</th>
@@ -1614,7 +1651,7 @@ function renderRankingTable(rows, mode) {
     <th class="divider-col" style="text-align:center;font-size:10px;width:64px">Series<br>(Last game)</th>
     <th class="col-ru">${rightLabel}</th>
     <th class="col-ru col-hide-mobile col-num">Rank</th>
-    <th class="col-ru col-num">Rating${preTag}</th>
+    <th class="col-ru col-num">${metricLabel}${preTag}</th>
     <th class="col-ru col-hide-mobile">${recordHeader()}</th>
     ${metricHeader}`;
 
