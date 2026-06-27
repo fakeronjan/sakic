@@ -473,7 +473,9 @@
 <div id="league-history" class="tab">
   <div class="conf-pills" id="history-view-pills">
     <button class="active" data-hview="list">All Stanley Cups</button>
-    <button data-hview="rankings">Lists</button>
+    <button data-hview="rankings" data-cat="champion">Champion Lists</button>
+    <button data-hview="rankings" data-cat="runnerup">Runner-Up Lists</button>
+    <button data-hview="rankings" data-cat="matchup">Matchup Lists</button>
   </div>
 
   <div id="history-list-view">
@@ -486,20 +488,22 @@
 
   <div id="history-rankings-view" style="display:none">
     <div class="conf-pills" id="history-rank-pills">
-      <button class="active" data-rank="best-champs">Best champs</button>
-      <button data-rank="worst-champs">Worst champs</button>
-      <button data-rank="best-losers">Best losers</button>
-      <button data-rank="worst-losers">Worst losers</button>
-      <button data-rank="biggest-leap">Biggest playoff leap</button>
-      <button data-rank="biggest-favorites">Biggest favorites</button>
-      <button data-rank="longest-shots">Longest shots</button>
-      <button data-rank="best-matchup">Best matchup</button>
-      <button data-rank="worst-matchup">Worst matchup</button>
-      <button data-rank="closest">Closest predicted</button>
-      <button data-rank="blowout">Biggest blowout</button>
-      <button data-rank="upset">Upsets</button>
-      <button data-rank="repeat-champs">Repeat champs</button>
-      <button data-rank="rematches">Rematches</button>
+      <button class="active" data-cat="champion" data-rank="best-champs">Best champs</button>
+      <button data-cat="champion" data-rank="worst-champs">Worst champs</button>
+      <button data-cat="champion" data-rank="biggest-leap">Biggest playoff leap</button>
+      <button data-cat="champion" data-rank="biggest-favorites">Biggest favorites</button>
+      <button data-cat="champion" data-rank="longest-shots">Longest shots</button>
+      <button data-cat="champion" data-rank="repeat-champs">Repeat champs</button>
+
+      <button data-cat="runnerup" data-rank="best-losers">Best losers</button>
+      <button data-cat="runnerup" data-rank="worst-losers">Worst losers</button>
+
+      <button data-cat="matchup" data-rank="best-matchup">Best matchup</button>
+      <button data-cat="matchup" data-rank="worst-matchup">Worst matchup</button>
+      <button data-cat="matchup" data-rank="closest">Closest predicted</button>
+      <button data-cat="matchup" data-rank="blowout">Blowout predicted</button>
+      <button data-cat="matchup" data-rank="upset">Upsets</button>
+      <button data-cat="matchup" data-rank="rematches">Rematches</button>
     </div>
     <p class="data-note" id="history-rank-note"></p>
     <div id="history-rank-table-wrap"><p class="loading">Loading rankings...</p></div>
@@ -1775,6 +1779,26 @@ function renderRematches() {
   attachLinks();
 }
 
+// Categorized Lists nav: each top-level pill (Champion / Runner-Up / Matchup)
+// shows only its category's rank pills and activates the first (or keeps the
+// active one if it's already in that category).
+function showRankCategory(cat) {
+  const pills = document.querySelectorAll('#history-rank-pills button');
+  let firstInCat = null;
+  pills.forEach(b => {
+    const inCat = b.dataset.cat === cat;
+    b.style.display = inCat ? '' : 'none';
+    if (inCat && !firstInCat) firstInCat = b;
+  });
+  const active = document.querySelector('#history-rank-pills button.active');
+  const target = (active && active.dataset.cat === cat) ? active : firstInCat;
+  pills.forEach(b => b.classList.remove('active'));
+  if (target) {
+    target.classList.add('active');
+    renderRankings(target.dataset.rank);
+  }
+}
+
 document.querySelectorAll('#history-view-pills button').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('#history-view-pills button').forEach(b => b.classList.remove('active'));
@@ -1783,8 +1807,7 @@ document.querySelectorAll('#history-view-pills button').forEach(btn => {
     document.getElementById('history-list-view').style.display     = view === 'list'     ? '' : 'none';
     document.getElementById('history-rankings-view').style.display = view === 'rankings' ? '' : 'none';
     if (view === 'rankings') {
-      const active = document.querySelector('#history-rank-pills button.active');
-      renderRankings(active ? active.dataset.rank : 'best-champs');
+      showRankCategory(btn.dataset.cat);
     }
   });
 });
