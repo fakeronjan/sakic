@@ -819,7 +819,6 @@ for s in sorted(ws_results)[-5:]:
 # 100% per snapshot. Trained on the salary-cap era (2006+) leave-one-season-out;
 # every newly-completed season auto-joins the pool on the next cron run.
 print("Computing title odds (logistic regression, leave-one-season-out)...")
-from scipy.optimize import minimize
 
 TO_PHASE_RS_MAX, TO_PHASE_POST_RS = 0.50, 0.55
 TO_PHASE_R2_ENTRY, TO_PHASE_CF_ENTRY = 0.70, 0.85
@@ -918,15 +917,21 @@ def _to_features(d):
 def _to_fit_logistic(X, y, reg=1e-3):
     n, k = X.shape
     Xa = np.column_stack([np.ones(n), X])
-    def nll(beta):
-        z = Xa @ beta
-        return float(np.sum(np.maximum(z, 0.0) + np.log1p(np.exp(-np.abs(z))) - y * z) + reg * np.sum(beta[1:] ** 2))
-    def grad(beta):
-        z = Xa @ beta
-        g = Xa.T @ (1.0 / (1.0 + np.exp(-z)) - y)
-        g[1:] += 2 * reg * beta[1:]
-        return g
-    return minimize(nll, np.zeros(k + 1), jac=grad, method="BFGS", options={"maxiter": 200, "gtol": 1e-6}).x
+    # Ridge logistic loss is convex, so Newton/IRLS converges to the same unique
+    # optimum BFGS would - done in pure numpy to keep scipy out of the deps (the
+    # fleet convention; same approach as MESSI's goals-model fit).
+    rmask = np.ones(k + 1); rmask[0] = 0.0          # intercept is unregularized
+    beta = np.zeros(k + 1)
+    for _ in range(100):
+        p = 1.0 / (1.0 + np.exp(-(Xa @ beta)))
+        g = Xa.T @ (p - y) + 2 * reg * (rmask * beta)
+        H = (Xa * (p * (1.0 - p))[:, None]).T @ Xa + 2 * reg * np.diag(rmask)
+        H[np.diag_indices_from(H)] += 1e-8          # numerical safety
+        step = np.linalg.solve(H, g)
+        beta -= step
+        if np.max(np.abs(step)) < 1e-10:
+            break
+    return beta
 
 def _to_predict_logistic(X, beta):
     return 1.0 / (1.0 + np.exp(-(np.column_stack([np.ones(X.shape[0]), X]) @ beta)))
