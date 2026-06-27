@@ -1297,6 +1297,8 @@ for s in sorted(ws_results.keys(), reverse=True):
             "rs_end_rank":    int(ch_rs["rank"].iloc[0]) if not ch_rs.empty else None,
             "ps_end_rating":  round(float(ch_ps["rating"].iloc[0]), 3) if not ch_ps.empty else None,
             "ps_end_rank":    int(ch_ps["rank"].iloc[0]) if not ch_ps.empty else None,
+            "rs_title_odds":      _title_odds_val(int(ch_rs["ranking_id"].iloc[0]), info["champion"]) if not ch_rs.empty else None,
+            "rs_title_odds_rank": _title_odds_rk(int(ch_rs["ranking_id"].iloc[0]), info["champion"]) if not ch_rs.empty else None,
             **pre_scf_fields(info["champion"], s),
         },
         "runner_up": {
@@ -1310,6 +1312,8 @@ for s in sorted(ws_results.keys(), reverse=True):
             "rs_end_rank":    int(ru_rs["rank"].iloc[0]) if not ru_rs.empty else None,
             "ps_end_rating":  round(float(ru_ps["rating"].iloc[0]), 3) if not ru_ps.empty else None,
             "ps_end_rank":    int(ru_ps["rank"].iloc[0]) if not ru_ps.empty else None,
+            "rs_title_odds":      _title_odds_val(int(ru_rs["ranking_id"].iloc[0]), info["runner_up"]) if not ru_rs.empty else None,
+            "rs_title_odds_rank": _title_odds_rk(int(ru_rs["ranking_id"].iloc[0]), info["runner_up"]) if not ru_rs.empty else None,
             **pre_scf_fields(info["runner_up"], s),
         },
     })
