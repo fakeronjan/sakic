@@ -53265,7 +53265,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-01,8:00 PM,Minnesota Wild,,Nashville Predators,,,,,,0,2027
 2026-10-01,7:00 PM,Tampa Bay Lightning,,New York Rangers,,,,,,0,2027
 2026-10-01,10:00 PM,Florida Panthers,,San Jose Sharks,,,,,,0,2027
-2026-10-01,9:00 PM,Chicago Blackhawks,,Utah Mammoth,,,,,,0,2027
+2026-10-01,9:30 PM,Chicago Blackhawks,,Utah Mammoth,,,,,,0,2027
 2026-10-01,10:00 PM,Edmonton Oilers,,Vancouver Canucks,,,,,,0,2027
 2026-10-02,7:00 PM,Washington Capitals,,Carolina Hurricanes,,,,,,0,2027
 2026-10-02,9:00 PM,St. Louis Blues,,Dallas Stars,,,,,,0,2027
@@ -53294,13 +53294,13 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-05,8:00 PM,San Jose Sharks,,Dallas Stars,,,,,,0,2027
 2026-10-05,7:30 PM,Winnipeg Jets,,Pittsburgh Penguins,,,,,,0,2027
 2026-10-05,7:00 PM,Philadelphia Flyers,,Tampa Bay Lightning,,,,,,0,2027
-2026-10-06,8:00 PM,Minnesota Wild,,Buffalo Sabres,,,,,,0,2027
+2026-10-06,7:00 PM,Minnesota Wild,,Buffalo Sabres,,,,,,0,2027
 2026-10-06,8:00 PM,St. Louis Blues,,Chicago Blackhawks,,,,,,0,2027
 2026-10-06,7:00 PM,Ottawa Senators,,Detroit Red Wings,,,,,,0,2027
 2026-10-06,10:30 PM,Florida Panthers,,Los Angeles Kings,,,,,,0,2027
 2026-10-06,7:00 PM,Carolina Hurricanes,,Montreal Canadiens,,,,,,0,2027
 2026-10-06,7:00 PM,Utah Mammoth,,New Jersey Devils,,,,,,0,2027
-2026-10-06,7:00 PM,New York Islanders,,New York Rangers,,,,,,0,2027
+2026-10-06,8:00 PM,New York Islanders,,New York Rangers,,,,,,0,2027
 2026-10-06,9:40 PM,Vegas Golden Knights,,Seattle Kraken,,,,,,0,2027
 2026-10-06,7:00 PM,Nashville Predators,,Toronto Maple Leafs,,,,,,0,2027
 2026-10-07,10:00 PM,Edmonton Oilers,,Anaheim Ducks,,,,,,0,2027
@@ -53356,10 +53356,10 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-13,11:00 PM,Boston Bruins,,San Jose Sharks,,,,,,0,2027
 2026-10-13,9:00 PM,Toronto Maple Leafs,,Utah Mammoth,,,,,,0,2027
 2026-10-13,8:15 PM,Minnesota Wild,,Winnipeg Jets,,,,,,0,2027
-2026-10-14,9:30 PM,Dallas Stars,,Colorado Avalanche,,,,,,0,2027
+2026-10-14,8:30 PM,Dallas Stars,,Colorado Avalanche,,,,,,0,2027
 2026-10-14,7:30 PM,Montreal Canadiens,,Washington Capitals,,,,,,0,2027
 2026-10-15,8:00 PM,Winnipeg Jets,,Chicago Blackhawks,,,,,,0,2027
-2026-10-15,7:00 PM,Philadelphia Flyers,,Detroit Red Wings,,,,,,0,2027
+2026-10-15,7:30 PM,Philadelphia Flyers,,Detroit Red Wings,,,,,,0,2027
 2026-10-15,9:00 PM,Utah Mammoth,,Edmonton Oilers,,,,,,0,2027
 2026-10-15,7:00 PM,Vancouver Canucks,,Florida Panthers,,,,,,0,2027
 2026-10-15,8:00 PM,St. Louis Blues,,Minnesota Wild,,,,,,0,2027
@@ -53412,7 +53412,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-22,7:30 PM,Los Angeles Kings,,New York Islanders,,,,,,0,2027
 2026-10-22,7:00 PM,San Jose Sharks,,Ottawa Senators,,,,,,0,2027
 2026-10-22,7:00 PM,Florida Panthers,,Pittsburgh Penguins,,,,,,0,2027
-2026-10-22,9:40 PM,Utah Mammoth,,Seattle Kraken,,,,,,0,2027
+2026-10-22,10:00 PM,Utah Mammoth,,Seattle Kraken,,,,,,0,2027
 2026-10-22,8:00 PM,Vegas Golden Knights,,St. Louis Blues,,,,,,0,2027
 2026-10-22,7:00 PM,New York Rangers,,Toronto Maple Leafs,,,,,,0,2027
 2026-10-22,10:00 PM,Detroit Red Wings,,Vancouver Canucks,,,,,,0,2027
@@ -53456,7 +53456,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-29,10:00 PM,Buffalo Sabres,,Anaheim Ducks,,,,,,0,2027
 2026-10-29,7:00 PM,Columbus Blue Jackets,,Carolina Hurricanes,,,,,,0,2027
 2026-10-29,8:00 PM,Montreal Canadiens,,Dallas Stars,,,,,,0,2027
-2026-10-29,7:00 PM,Chicago Blackhawks,,Detroit Red Wings,,,,,,0,2027
+2026-10-29,7:30 PM,Chicago Blackhawks,,Detroit Red Wings,,,,,,0,2027
 2026-10-29,10:00 PM,Ottawa Senators,,Los Angeles Kings,,,,,,0,2027
 2026-10-29,8:00 PM,New York Islanders,,Minnesota Wild,,,,,,0,2027
 2026-10-29,8:00 PM,Washington Capitals,,Nashville Predators,,,,,,0,2027
@@ -53474,7 +53474,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-10-31,4:00 PM,Buffalo Sabres,,Los Angeles Kings,,,,,,0,2027
 2026-10-31,7:00 PM,Pittsburgh Penguins,,Montreal Canadiens,,,,,,0,2027
 2026-10-31,2:00 PM,Tampa Bay Lightning,,Nashville Predators,,,,,,0,2027
-2026-10-31,3:30 PM,Edmonton Oilers,,New York Islanders,,,,,,0,2027
+2026-10-31,2:00 PM,Edmonton Oilers,,New York Islanders,,,,,,0,2027
 2026-10-31,4:00 PM,Ottawa Senators,,San Jose Sharks,,,,,,0,2027
 2026-10-31,7:00 PM,Toronto Maple Leafs,,Vancouver Canucks,,,,,,0,2027
 2026-11-01,8:00 PM,Ottawa Senators,,Anaheim Ducks,,,,,,0,2027
@@ -53488,7 +53488,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-02,9:00 PM,Calgary Flames,,San Jose Sharks,,,,,,0,2027
 2026-11-03,7:00 PM,Colorado Avalanche,,Columbus Blue Jackets,,,,,,0,2027
 2026-11-03,7:00 PM,Winnipeg Jets,,Montreal Canadiens,,,,,,0,2027
-2026-11-03,7:00 PM,Edmonton Oilers,,New Jersey Devils,,,,,,0,2027
+2026-11-03,7:30 PM,Edmonton Oilers,,New Jersey Devils,,,,,,0,2027
 2026-11-03,8:00 PM,Carolina Hurricanes,,Nashville Predators,,,,,,0,2027
 2026-11-03,7:00 PM,St. Louis Blues,,New York Rangers,,,,,,0,2027
 2026-11-03,7:00 PM,Minnesota Wild,,Philadelphia Flyers,,,,,,0,2027
@@ -53502,7 +53502,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-04,10:00 PM,San Jose Sharks,,Los Angeles Kings,,,,,,0,2027
 2026-11-04,10:00 PM,Calgary Flames,,Seattle Kraken,,,,,,0,2027
 2026-11-05,7:00 PM,Dallas Stars,,Columbus Blue Jackets,,,,,,0,2027
-2026-11-05,9:00 PM,Nashville Predators,,Colorado Avalanche,,,,,,0,2027
+2026-11-05,9:30 PM,Nashville Predators,,Colorado Avalanche,,,,,,0,2027
 2026-11-05,7:00 PM,Vegas Golden Knights,,Detroit Red Wings,,,,,,0,2027
 2026-11-05,8:00 PM,Anaheim Ducks,,Edmonton Oilers,,,,,,0,2027
 2026-11-05,7:00 PM,Utah Mammoth,,Montreal Canadiens,,,,,,0,2027
@@ -53521,7 +53521,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-07,10:00 PM,Vancouver Canucks,,Edmonton Oilers,,,,,,0,2027
 2026-11-07,9:00 PM,Pittsburgh Penguins,,Los Angeles Kings,,,,,,0,2027
 2026-11-07,8:00 PM,Tampa Bay Lightning,,Minnesota Wild,,,,,,0,2027
-2026-11-07,1:30 PM,St. Louis Blues,,Nashville Predators,,,,,,0,2027
+2026-11-07,1:00 PM,St. Louis Blues,,Nashville Predators,,,,,,0,2027
 2026-11-07,7:00 PM,New Jersey Devils,,New York Islanders,,,,,,0,2027
 2026-11-07,7:00 PM,Utah Mammoth,,Ottawa Senators,,,,,,0,2027
 2026-11-07,5:00 PM,New York Rangers,,Seattle Kraken,,,,,,0,2027
@@ -53536,7 +53536,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-09,8:00 PM,New York Rangers,,Edmonton Oilers,,,,,,0,2027
 2026-11-09,10:00 PM,New York Islanders,,San Jose Sharks,,,,,,0,2027
 2026-11-09,9:30 PM,Philadelphia Flyers,,Vancouver Canucks,,,,,,0,2027
-2026-11-10,7:00 PM,Florida Panthers,,Columbus Blue Jackets,,,,,,0,2027
+2026-11-10,7:30 PM,Florida Panthers,,Columbus Blue Jackets,,,,,,0,2027
 2026-11-10,10:00 PM,Nashville Predators,,Los Angeles Kings,,,,,,0,2027
 2026-11-10,7:00 PM,Minnesota Wild,,Montreal Canadiens,,,,,,0,2027
 2026-11-10,7:00 PM,Washington Capitals,,Ottawa Senators,,,,,,0,2027
@@ -53544,16 +53544,16 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-10,7:00 PM,Colorado Avalanche,,Toronto Maple Leafs,,,,,,0,2027
 2026-11-10,8:00 PM,New Jersey Devils,,Winnipeg Jets,,,,,,0,2027
 2026-11-11,10:00 PM,Nashville Predators,,Anaheim Ducks,,,,,,0,2027
-2026-11-11,7:30 PM,Tampa Bay Lightning,,Buffalo Sabres,,,,,,0,2027
+2026-11-11,7:00 PM,Tampa Bay Lightning,,Buffalo Sabres,,,,,,0,2027
 2026-11-11,7:30 PM,New York Rangers,,Calgary Flames,,,,,,0,2027
 2026-11-11,9:00 PM,Philadelphia Flyers,,Edmonton Oilers,,,,,,0,2027
 2026-11-11,10:00 PM,Pittsburgh Penguins,,San Jose Sharks,,,,,,0,2027
-2026-11-11,10:00 PM,Utah Mammoth,,Vegas Golden Knights,,,,,,0,2027
+2026-11-11,9:30 PM,Utah Mammoth,,Vegas Golden Knights,,,,,,0,2027
 2026-11-12,7:00 PM,Montreal Canadiens,,Boston Bruins,,,,,,0,2027
 2026-11-12,7:00 PM,Tampa Bay Lightning,,Columbus Blue Jackets,,,,,,0,2027
 2026-11-12,8:00 PM,Buffalo Sabres,,Chicago Blackhawks,,,,,,0,2027
 2026-11-12,8:00 PM,Winnipeg Jets,,Dallas Stars,,,,,,0,2027
-2026-11-12,7:00 PM,Detroit Red Wings,,Florida Panthers,,,,,,0,2027
+2026-11-12,7:30 PM,Detroit Red Wings,,Florida Panthers,,,,,,0,2027
 2026-11-12,10:00 PM,New York Islanders,,Los Angeles Kings,,,,,,0,2027
 2026-11-12,7:00 PM,Washington Capitals,,New Jersey Devils,,,,,,0,2027
 2026-11-12,7:00 PM,Colorado Avalanche,,Ottawa Senators,,,,,,0,2027
@@ -53591,7 +53591,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-17,7:00 PM,Buffalo Sabres,,Philadelphia Flyers,,,,,,0,2027
 2026-11-17,10:00 PM,Calgary Flames,,San Jose Sharks,,,,,,0,2027
 2026-11-17,8:00 PM,Anaheim Ducks,,St. Louis Blues,,,,,,0,2027
-2026-11-17,7:00 PM,Washington Capitals,,Tampa Bay Lightning,,,,,,0,2027
+2026-11-17,7:30 PM,Washington Capitals,,Tampa Bay Lightning,,,,,,0,2027
 2026-11-17,10:00 PM,Dallas Stars,,Vegas Golden Knights,,,,,,0,2027
 2026-11-17,8:00 PM,Ottawa Senators,,Winnipeg Jets,,,,,,0,2027
 2026-11-18,7:30 PM,Boston Bruins,,Detroit Red Wings,,,,,,0,2027
@@ -53604,7 +53604,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-19,7:00 PM,Philadelphia Flyers,,Ottawa Senators,,,,,,0,2027
 2026-11-19,7:00 PM,St. Louis Blues,,Pittsburgh Penguins,,,,,,0,2027
 2026-11-19,9:40 PM,Vancouver Canucks,,Seattle Kraken,,,,,,0,2027
-2026-11-19,7:00 PM,Edmonton Oilers,,Tampa Bay Lightning,,,,,,0,2027
+2026-11-19,7:30 PM,Edmonton Oilers,,Tampa Bay Lightning,,,,,,0,2027
 2026-11-19,7:00 PM,Los Angeles Kings,,Toronto Maple Leafs,,,,,,0,2027
 2026-11-19,10:00 PM,Dallas Stars,,Vegas Golden Knights,,,,,,0,2027
 2026-11-19,8:00 PM,New York Islanders,,Winnipeg Jets,,,,,,0,2027
@@ -53624,7 +53624,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-21,10:00 PM,Minnesota Wild,,Vancouver Canucks,,,,,,0,2027
 2026-11-21,7:00 PM,Vegas Golden Knights,,Winnipeg Jets,,,,,,0,2027
 2026-11-22,7:00 PM,Pittsburgh Penguins,,Dallas Stars,,,,,,0,2027
-2026-11-22,1:00 PM,Carolina Hurricanes,,New York Rangers,,,,,,0,2027
+2026-11-22,12:30 PM,Carolina Hurricanes,,New York Rangers,,,,,,0,2027
 2026-11-22,7:00 PM,Edmonton Oilers,,St. Louis Blues,,,,,,0,2027
 2026-11-22,5:00 PM,Buffalo Sabres,,Tampa Bay Lightning,,,,,,0,2027
 2026-11-22,8:00 PM,Chicago Blackhawks,,Vancouver Canucks,,,,,,0,2027
@@ -53636,7 +53636,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-23,10:00 PM,Minnesota Wild,,San Jose Sharks,,,,,,0,2027
 2026-11-23,7:30 PM,Utah Mammoth,,Winnipeg Jets,,,,,,0,2027
 2026-11-24,8:00 PM,Vegas Golden Knights,,Edmonton Oilers,,,,,,0,2027
-2026-11-25,9:30 PM,San Jose Sharks,,Anaheim Ducks,,,,,,0,2027
+2026-11-25,10:00 PM,San Jose Sharks,,Anaheim Ducks,,,,,,0,2027
 2026-11-25,7:00 PM,Winnipeg Jets,,Boston Bruins,,,,,,0,2027
 2026-11-25,7:00 PM,New York Rangers,,Buffalo Sabres,,,,,,0,2027
 2026-11-25,7:00 PM,New Jersey Devils,,Columbus Blue Jackets,,,,,,0,2027
@@ -53679,7 +53679,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-28,7:00 PM,Washington Capitals,,St. Louis Blues,,,,,,0,2027
 2026-11-28,4:00 PM,Montreal Canadiens,,Vegas Golden Knights,,,,,,0,2027
 2026-11-29,5:00 PM,Vancouver Canucks,,Boston Bruins,,,,,,0,2027
-2026-11-29,3:00 PM,Minnesota Wild,,Chicago Blackhawks,,,,,,0,2027
+2026-11-29,2:00 PM,Minnesota Wild,,Chicago Blackhawks,,,,,,0,2027
 2026-11-30,1:00 PM,Ottawa Senators,,Nashville Predators,,,,,,0,2027
 2026-11-30,7:00 PM,Carolina Hurricanes,,New York Rangers,,,,,,0,2027
 2026-11-30,7:00 PM,Columbus Blue Jackets,,Pittsburgh Penguins,,,,,,0,2027
@@ -53691,7 +53691,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-01,7:00 PM,Calgary Flames,,Detroit Red Wings,,,,,,0,2027
 2026-12-01,8:00 PM,Buffalo Sabres,,Edmonton Oilers,,,,,,0,2027
 2026-12-01,10:00 PM,Vegas Golden Knights,,Los Angeles Kings,,,,,,0,2027
-2026-12-01,7:00 PM,San Jose Sharks,,New Jersey Devils,,,,,,0,2027
+2026-12-01,7:30 PM,San Jose Sharks,,New Jersey Devils,,,,,,0,2027
 2026-12-01,7:00 PM,Florida Panthers,,New York Islanders,,,,,,0,2027
 2026-12-01,9:40 PM,Dallas Stars,,Seattle Kraken,,,,,,0,2027
 2026-12-01,7:00 PM,Vancouver Canucks,,Washington Capitals,,,,,,0,2027
@@ -53706,8 +53706,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-03,8:00 PM,Chicago Blackhawks,,Nashville Predators,,,,,,0,2027
 2026-12-03,7:00 PM,San Jose Sharks,,New York Rangers,,,,,,0,2027
 2026-12-03,7:00 PM,New Jersey Devils,,Ottawa Senators,,,,,,0,2027
-2026-12-03,7:00 PM,New York Islanders,,Philadelphia Flyers,,,,,,0,2027
-2026-12-03,9:40 PM,Dallas Stars,,Seattle Kraken,,,,,,0,2027
+2026-12-03,7:30 PM,New York Islanders,,Philadelphia Flyers,,,,,,0,2027
+2026-12-03,10:00 PM,Dallas Stars,,Seattle Kraken,,,,,,0,2027
 2026-12-03,7:00 PM,Florida Panthers,,Toronto Maple Leafs,,,,,,0,2027
 2026-12-03,10:00 PM,Utah Mammoth,,Vegas Golden Knights,,,,,,0,2027
 2026-12-04,10:00 PM,Seattle Kraken,,Anaheim Ducks,,,,,,0,2027
@@ -53739,23 +53739,23 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-08,7:00 PM,New York Rangers,,Carolina Hurricanes,,,,,,0,2027
 2026-12-08,8:00 PM,Nashville Predators,,Calgary Flames,,,,,,0,2027
 2026-12-08,7:00 PM,Boston Bruins,,Florida Panthers,,,,,,0,2027
-2026-12-08,9:00 PM,Edmonton Oilers,,Minnesota Wild,,,,,,0,2027
+2026-12-08,8:00 PM,Edmonton Oilers,,Minnesota Wild,,,,,,0,2027
 2026-12-08,7:00 PM,Vegas Golden Knights,,Montreal Canadiens,,,,,,0,2027
 2026-12-08,7:00 PM,Anaheim Ducks,,Ottawa Senators,,,,,,0,2027
-2026-12-08,7:00 PM,Chicago Blackhawks,,Pittsburgh Penguins,,,,,,0,2027
+2026-12-08,7:30 PM,Chicago Blackhawks,,Pittsburgh Penguins,,,,,,0,2027
 2026-12-08,10:00 PM,Seattle Kraken,,San Jose Sharks,,,,,,0,2027
 2026-12-08,8:00 PM,Colorado Avalanche,,St. Louis Blues,,,,,,0,2027
 2026-12-08,8:00 PM,Philadelphia Flyers,,Winnipeg Jets,,,,,,0,2027
 2026-12-09,7:30 PM,Toronto Maple Leafs,,Dallas Stars,,,,,,0,2027
-2026-12-09,10:00 PM,San Jose Sharks,,Los Angeles Kings,,,,,,0,2027
-2026-12-09,7:30 PM,Detroit Red Wings,,New Jersey Devils,,,,,,0,2027
+2026-12-09,9:30 PM,San Jose Sharks,,Los Angeles Kings,,,,,,0,2027
+2026-12-09,7:00 PM,Detroit Red Wings,,New Jersey Devils,,,,,,0,2027
 2026-12-10,7:00 PM,Edmonton Oilers,,Buffalo Sabres,,,,,,0,2027
 2026-12-10,7:00 PM,Minnesota Wild,,Columbus Blue Jackets,,,,,,0,2027
 2026-12-10,7:00 PM,Pittsburgh Penguins,,Florida Panthers,,,,,,0,2027
 2026-12-10,7:00 PM,Anaheim Ducks,,Montreal Canadiens,,,,,,0,2027
 2026-12-10,7:00 PM,Calgary Flames,,New York Islanders,,,,,,0,2027
 2026-12-10,7:00 PM,Vegas Golden Knights,,Ottawa Senators,,,,,,0,2027
-2026-12-10,9:00 PM,Washington Capitals,,Seattle Kraken,,,,,,0,2027
+2026-12-10,9:30 PM,Washington Capitals,,Seattle Kraken,,,,,,0,2027
 2026-12-10,7:00 PM,Boston Bruins,,Tampa Bay Lightning,,,,,,0,2027
 2026-12-10,9:00 PM,St. Louis Blues,,Utah Mammoth,,,,,,0,2027
 2026-12-10,9:00 PM,Nashville Predators,,Vancouver Canucks,,,,,,0,2027
@@ -53790,7 +53790,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-15,7:00 PM,Calgary Flames,,Buffalo Sabres,,,,,,0,2027
 2026-12-15,7:00 PM,Carolina Hurricanes,,Columbus Blue Jackets,,,,,,0,2027
 2026-12-15,9:30 PM,Washington Capitals,,Dallas Stars,,,,,,0,2027
-2026-12-15,7:00 PM,Los Angeles Kings,,Detroit Red Wings,,,,,,0,2027
+2026-12-15,7:30 PM,Los Angeles Kings,,Detroit Red Wings,,,,,,0,2027
 2026-12-15,8:00 PM,Toronto Maple Leafs,,Minnesota Wild,,,,,,0,2027
 2026-12-15,7:00 PM,New York Rangers,,New Jersey Devils,,,,,,0,2027
 2026-12-15,8:00 PM,Seattle Kraken,,Nashville Predators,,,,,,0,2027
@@ -53804,12 +53804,12 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-17,7:00 PM,St. Louis Blues,,Boston Bruins,,,,,,0,2027
 2026-12-17,7:00 PM,Seattle Kraken,,Columbus Blue Jackets,,,,,,0,2027
 2026-12-17,8:00 PM,Dallas Stars,,Edmonton Oilers,,,,,,0,2027
-2026-12-17,7:00 PM,Toronto Maple Leafs,,New Jersey Devils,,,,,,0,2027
+2026-12-17,7:30 PM,Toronto Maple Leafs,,New Jersey Devils,,,,,,0,2027
 2026-12-17,7:00 PM,Los Angeles Kings,,Pittsburgh Penguins,,,,,,0,2027
 2026-12-17,7:00 PM,Calgary Flames,,Tampa Bay Lightning,,,,,,0,2027
 2026-12-17,9:00 PM,Carolina Hurricanes,,Utah Mammoth,,,,,,0,2027
 2026-12-17,7:00 PM,Detroit Red Wings,,Washington Capitals,,,,,,0,2027
-2026-12-18,7:00 PM,Montreal Canadiens,,Buffalo Sabres,,,,,,0,2027
+2026-12-18,7:30 PM,Montreal Canadiens,,Buffalo Sabres,,,,,,0,2027
 2026-12-18,9:00 PM,Carolina Hurricanes,,Colorado Avalanche,,,,,,0,2027
 2026-12-18,8:00 PM,Anaheim Ducks,,Minnesota Wild,,,,,,0,2027
 2026-12-18,7:00 PM,Nashville Predators,,New York Rangers,,,,,,0,2027
@@ -53837,13 +53837,13 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-20,6:00 PM,Dallas Stars,,Winnipeg Jets,,,,,,0,2027
 2026-12-21,7:00 PM,St. Louis Blues,,Florida Panthers,,,,,,0,2027
 2026-12-21,7:00 PM,Columbus Blue Jackets,,Philadelphia Flyers,,,,,,0,2027
-2026-12-21,1:00 PM,Washington Capitals,,Toronto Maple Leafs,,,,,,0,2027
+2026-12-21,2:00 PM,Washington Capitals,,Toronto Maple Leafs,,,,,,0,2027
 2026-12-21,9:00 PM,Utah Mammoth,,Vancouver Canucks,,,,,,0,2027
 2026-12-21,10:00 PM,Carolina Hurricanes,,Vegas Golden Knights,,,,,,0,2027
-2026-12-22,10:00 PM,Vegas Golden Knights,,Anaheim Ducks,,,,,,0,2027
+2026-12-22,9:30 PM,Vegas Golden Knights,,Anaheim Ducks,,,,,,0,2027
 2026-12-22,7:00 PM,Montreal Canadiens,,Columbus Blue Jackets,,,,,,0,2027
 2026-12-22,8:00 PM,Calgary Flames,,Dallas Stars,,,,,,0,2027
-2026-12-22,7:30 PM,Toronto Maple Leafs,,Detroit Red Wings,,,,,,0,2027
+2026-12-22,7:00 PM,Toronto Maple Leafs,,Detroit Red Wings,,,,,,0,2027
 2026-12-22,8:00 PM,Los Angeles Kings,,Minnesota Wild,,,,,,0,2027
 2026-12-22,8:00 PM,Winnipeg Jets,,Nashville Predators,,,,,,0,2027
 2026-12-22,7:00 PM,Boston Bruins,,New York Islanders,,,,,,0,2027
@@ -53861,9 +53861,9 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-12-26,7:00 PM,Toronto Maple Leafs,,Montreal Canadiens,,,,,,0,2027
 2026-12-26,7:00 PM,Detroit Red Wings,,Nashville Predators,,,,,,0,2027
 2026-12-26,10:00 PM,Vegas Golden Knights,,San Jose Sharks,,,,,,0,2027
-2026-12-26,7:00 PM,Columbus Blue Jackets,,Washington Capitals,,,,,,0,2027
+2026-12-26,8:00 PM,Columbus Blue Jackets,,Washington Capitals,,,,,,0,2027
 2026-12-27,8:00 PM,Colorado Avalanche,,Anaheim Ducks,,,,,,0,2027
-2026-12-27,5:00 PM,Edmonton Oilers,,Columbus Blue Jackets,,,,,,0,2027
+2026-12-27,6:00 PM,Edmonton Oilers,,Columbus Blue Jackets,,,,,,0,2027
 2026-12-27,3:00 PM,Philadelphia Flyers,,Chicago Blackhawks,,,,,,0,2027
 2026-12-27,7:00 PM,Dallas Stars,,Montreal Canadiens,,,,,,0,2027
 2026-12-27,7:00 PM,Boston Bruins,,New Jersey Devils,,,,,,0,2027
@@ -53908,8 +53908,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-02,7:00 PM,Nashville Predators,,Carolina Hurricanes,,,,,,0,2027
 2027-01-02,7:00 PM,Boston Bruins,,Columbus Blue Jackets,,,,,,0,2027
 2027-01-02,8:00 PM,Chicago Blackhawks,,Dallas Stars,,,,,,0,2027
-2027-01-02,1:00 PM,Edmonton Oilers,,Detroit Red Wings,,,,,,0,2027
-2027-01-02,4:00 PM,Montreal Canadiens,,Florida Panthers,,,,,,0,2027
+2027-01-02,3:30 PM,Edmonton Oilers,,Detroit Red Wings,,,,,,0,2027
+2027-01-02,1:00 PM,Montreal Canadiens,,Florida Panthers,,,,,,0,2027
 2027-01-02,9:00 PM,New Jersey Devils,,Los Angeles Kings,,,,,,0,2027
 2027-01-02,7:00 PM,St. Louis Blues,,Minnesota Wild,,,,,,0,2027
 2027-01-02,10:00 PM,New York Islanders,,Seattle Kraken,,,,,,0,2027
@@ -53936,7 +53936,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-05,7:00 PM,St. Louis Blues,,Carolina Hurricanes,,,,,,0,2027
 2027-01-05,7:00 PM,New York Rangers,,Columbus Blue Jackets,,,,,,0,2027
 2027-01-05,8:00 PM,Florida Panthers,,Calgary Flames,,,,,,0,2027
-2027-01-05,8:00 PM,Edmonton Oilers,,Nashville Predators,,,,,,0,2027
+2027-01-05,7:30 PM,Edmonton Oilers,,Nashville Predators,,,,,,0,2027
 2027-01-05,9:40 PM,Tampa Bay Lightning,,Seattle Kraken,,,,,,0,2027
 2027-01-05,9:00 PM,Ottawa Senators,,Utah Mammoth,,,,,,0,2027
 2027-01-05,9:00 PM,New York Islanders,,Vancouver Canucks,,,,,,0,2027
@@ -53972,7 +53972,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-09,10:00 PM,Florida Panthers,,Vancouver Canucks,,,,,,0,2027
 2027-01-09,10:00 PM,Seattle Kraken,,Vegas Golden Knights,,,,,,0,2027
 2027-01-09,7:00 PM,Utah Mammoth,,Winnipeg Jets,,,,,,0,2027
-2027-01-10,8:00 PM,Washington Capitals,,Anaheim Ducks,,,,,,0,2027
+2027-01-10,3:30 PM,Washington Capitals,,Anaheim Ducks,,,,,,0,2027
 2027-01-10,8:00 PM,Nashville Predators,,Colorado Avalanche,,,,,,0,2027
 2027-01-10,7:30 PM,Chicago Blackhawks,,Philadelphia Flyers,,,,,,0,2027
 2027-01-11,8:30 PM,Tampa Bay Lightning,,Edmonton Oilers,,,,,,0,2027
@@ -53995,9 +53995,9 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-13,9:00 PM,Detroit Red Wings,,Utah Mammoth,,,,,,0,2027
 2027-01-14,10:00 PM,St. Louis Blues,,Anaheim Ducks,,,,,,0,2027
 2027-01-14,7:00 PM,Dallas Stars,,Boston Bruins,,,,,,0,2027
-2027-01-14,7:00 PM,Colorado Avalanche,,Buffalo Sabres,,,,,,0,2027
+2027-01-14,7:30 PM,Colorado Avalanche,,Buffalo Sabres,,,,,,0,2027
 2027-01-14,8:00 PM,San Jose Sharks,,Calgary Flames,,,,,,0,2027
-2027-01-14,9:00 PM,Florida Panthers,,Minnesota Wild,,,,,,0,2027
+2027-01-14,9:30 PM,Florida Panthers,,Minnesota Wild,,,,,,0,2027
 2027-01-14,8:00 PM,Montreal Canadiens,,Nashville Predators,,,,,,0,2027
 2027-01-14,7:00 PM,Winnipeg Jets,,Ottawa Senators,,,,,,0,2027
 2027-01-14,7:00 PM,Vegas Golden Knights,,Tampa Bay Lightning,,,,,,0,2027
@@ -54027,7 +54027,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-17,7:00 PM,Winnipeg Jets,,Edmonton Oilers,,,,,,0,2027
 2027-01-17,6:00 PM,Dallas Stars,,New York Rangers,,,,,,0,2027
 2027-01-18,1:30 PM,Tampa Bay Lightning,,Boston Bruins,,,,,,0,2027
-2027-01-18,1:00 PM,Montreal Canadiens,,Buffalo Sabres,,,,,,0,2027
+2027-01-18,2:00 PM,Montreal Canadiens,,Buffalo Sabres,,,,,,0,2027
 2027-01-18,8:30 PM,Calgary Flames,,Chicago Blackhawks,,,,,,0,2027
 2027-01-18,3:00 PM,Vancouver Canucks,,Colorado Avalanche,,,,,,0,2027
 2027-01-18,7:30 PM,Ottawa Senators,,Florida Panthers,,,,,,0,2027
@@ -54042,7 +54042,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-19,7:00 PM,Philadelphia Flyers,,New York Rangers,,,,,,0,2027
 2027-01-19,8:00 PM,Minnesota Wild,,Winnipeg Jets,,,,,,0,2027
 2027-01-19,7:00 PM,Montreal Canadiens,,Washington Capitals,,,,,,0,2027
-2027-01-20,9:30 PM,Dallas Stars,,Chicago Blackhawks,,,,,,0,2027
+2027-01-20,7:30 PM,Dallas Stars,,Chicago Blackhawks,,,,,,0,2027
 2027-01-20,9:00 PM,Boston Bruins,,Colorado Avalanche,,,,,,0,2027
 2027-01-20,2:00 PM,Vancouver Canucks,,Nashville Predators,,,,,,0,2027
 2027-01-20,7:00 PM,Buffalo Sabres,,New York Islanders,,,,,,0,2027
@@ -54063,7 +54063,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-22,10:00 PM,Boston Bruins,,Vegas Golden Knights,,,,,,0,2027
 2027-01-22,7:00 PM,New York Islanders,,Washington Capitals,,,,,,0,2027
 2027-01-23,7:00 PM,Anaheim Ducks,,Carolina Hurricanes,,,,,,0,2027
-2027-01-23,1:00 PM,Tampa Bay Lightning,,Detroit Red Wings,,,,,,0,2027
+2027-01-23,12:30 PM,Tampa Bay Lightning,,Detroit Red Wings,,,,,,0,2027
 2027-01-23,8:00 PM,New York Rangers,,Minnesota Wild,,,,,,0,2027
 2027-01-23,7:00 PM,Calgary Flames,,Montreal Canadiens,,,,,,0,2027
 2027-01-23,5:00 PM,Los Angeles Kings,,Nashville Predators,,,,,,0,2027
@@ -54100,14 +54100,14 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-27,7:30 PM,Florida Panthers,,New York Rangers,,,,,,0,2027
 2027-01-27,9:00 PM,Buffalo Sabres,,Utah Mammoth,,,,,,0,2027
 2027-01-28,10:00 PM,Chicago Blackhawks,,Anaheim Ducks,,,,,,0,2027
-2027-01-28,7:00 PM,New York Islanders,,Carolina Hurricanes,,,,,,0,2027
+2027-01-28,6:30 PM,New York Islanders,,Carolina Hurricanes,,,,,,0,2027
 2027-01-28,7:00 PM,Winnipeg Jets,,Columbus Blue Jackets,,,,,,0,2027
 2027-01-28,8:00 PM,Montreal Canadiens,,Calgary Flames,,,,,,0,2027
 2027-01-28,8:00 PM,Vancouver Canucks,,Dallas Stars,,,,,,0,2027
 2027-01-28,8:00 PM,New Jersey Devils,,Edmonton Oilers,,,,,,0,2027
 2027-01-28,9:00 PM,Seattle Kraken,,Minnesota Wild,,,,,,0,2027
 2027-01-28,7:00 PM,Boston Bruins,,Ottawa Senators,,,,,,0,2027
-2027-01-28,7:00 PM,Los Angeles Kings,,Philadelphia Flyers,,,,,,0,2027
+2027-01-28,7:30 PM,Los Angeles Kings,,Philadelphia Flyers,,,,,,0,2027
 2027-01-28,10:00 PM,Nashville Predators,,San Jose Sharks,,,,,,0,2027
 2027-01-28,8:00 PM,Colorado Avalanche,,St. Louis Blues,,,,,,0,2027
 2027-01-28,10:00 PM,Buffalo Sabres,,Vegas Golden Knights,,,,,,0,2027
@@ -54132,7 +54132,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-01-31,4:00 PM,New Jersey Devils,,Seattle Kraken,,,,,,0,2027
 2027-01-31,8:00 PM,Nashville Predators,,Utah Mammoth,,,,,,0,2027
 2027-02-01,7:30 PM,Vegas Golden Knights,,Calgary Flames,,,,,,0,2027
-2027-02-01,1:00 PM,New York Islanders,,Florida Panthers,,,,,,0,2027
+2027-02-01,2:00 PM,New York Islanders,,Florida Panthers,,,,,,0,2027
 2027-02-01,8:30 PM,Montreal Canadiens,,Vancouver Canucks,,,,,,0,2027
 2027-02-02,7:00 PM,Tampa Bay Lightning,,Pittsburgh Penguins,,,,,,0,2027
 2027-02-02,9:00 PM,Nashville Predators,,Utah Mammoth,,,,,,0,2027
@@ -54148,7 +54148,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-08,8:00 PM,Los Angeles Kings,,Dallas Stars,,,,,,0,2027
 2027-02-08,7:30 PM,Columbus Blue Jackets,,Toronto Maple Leafs,,,,,,0,2027
 2027-02-09,10:00 PM,Detroit Red Wings,,Anaheim Ducks,,,,,,0,2027
-2027-02-09,7:00 PM,Colorado Avalanche,,Carolina Hurricanes,,,,,,0,2027
+2027-02-09,7:30 PM,Colorado Avalanche,,Carolina Hurricanes,,,,,,0,2027
 2027-02-09,7:00 PM,Columbus Blue Jackets,,Ottawa Senators,,,,,,0,2027
 2027-02-09,8:00 PM,Los Angeles Kings,,St. Louis Blues,,,,,,0,2027
 2027-02-10,10:00 PM,Chicago Blackhawks,,San Jose Sharks,,,,,,0,2027
@@ -54168,7 +54168,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-13,6:00 PM,Dallas Stars,,Florida Panthers,,,,,,0,2027
 2027-02-13,6:00 PM,Chicago Blackhawks,,Los Angeles Kings,,,,,,0,2027
 2027-02-13,1:00 PM,Washington Capitals,,Montreal Canadiens,,,,,,0,2027
-2027-02-13,1:30 PM,Anaheim Ducks,,Nashville Predators,,,,,,0,2027
+2027-02-13,1:00 PM,Anaheim Ducks,,Nashville Predators,,,,,,0,2027
 2027-02-13,7:00 PM,Minnesota Wild,,New York Islanders,,,,,,0,2027
 2027-02-13,7:00 PM,Toronto Maple Leafs,,Ottawa Senators,,,,,,0,2027
 2027-02-13,7:30 PM,New Jersey Devils,,Philadelphia Flyers,,,,,,0,2027
@@ -54179,30 +54179,30 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-13,10:00 PM,Calgary Flames,,Vegas Golden Knights,,,,,,0,2027
 2027-02-14,1:00 PM,New York Rangers,,Montreal Canadiens,,,,,,0,2027
 2027-02-14,1:00 PM,Utah Mammoth,,Washington Capitals,,,,,,0,2027
-2027-02-15,12:30 PM,Anaheim Ducks,,Boston Bruins,,,,,,0,2027
+2027-02-15,2:00 PM,Anaheim Ducks,,Boston Bruins,,,,,,0,2027
 2027-02-15,3:00 PM,Columbus Blue Jackets,,Colorado Avalanche,,,,,,0,2027
 2027-02-15,10:00 PM,Calgary Flames,,Los Angeles Kings,,,,,,0,2027
 2027-02-15,7:30 PM,Ottawa Senators,,Minnesota Wild,,,,,,0,2027
 2027-02-15,3:00 PM,Utah Mammoth,,New York Islanders,,,,,,0,2027
-2027-02-15,3:00 PM,Buffalo Sabres,,New York Rangers,,,,,,0,2027
+2027-02-15,6:00 PM,Buffalo Sabres,,New York Rangers,,,,,,0,2027
 2027-02-15,4:00 PM,Pittsburgh Penguins,,Seattle Kraken,,,,,,0,2027
 2027-02-15,7:30 PM,Winnipeg Jets,,San Jose Sharks,,,,,,0,2027
 2027-02-15,8:00 PM,Philadelphia Flyers,,St. Louis Blues,,,,,,0,2027
 2027-02-15,10:00 PM,Detroit Red Wings,,Vegas Golden Knights,,,,,,0,2027
 2027-02-16,8:00 PM,Minnesota Wild,,Dallas Stars,,,,,,0,2027
 2027-02-16,8:00 PM,New Jersey Devils,,Nashville Predators,,,,,,0,2027
-2027-02-16,7:00 PM,Florida Panthers,,Tampa Bay Lightning,,,,,,0,2027
+2027-02-16,7:30 PM,Florida Panthers,,Tampa Bay Lightning,,,,,,0,2027
 2027-02-16,7:00 PM,Carolina Hurricanes,,Toronto Maple Leafs,,,,,,0,2027
 2027-02-16,9:00 PM,Pittsburgh Penguins,,Vancouver Canucks,,,,,,0,2027
 2027-02-16,7:00 PM,Anaheim Ducks,,Washington Capitals,,,,,,0,2027
 2027-02-17,9:00 PM,Boston Bruins,,Calgary Flames,,,,,,0,2027
 2027-02-17,7:30 PM,St. Louis Blues,,Chicago Blackhawks,,,,,,0,2027
-2027-02-17,9:00 PM,Colorado Avalanche,,Edmonton Oilers,,,,,,0,2027
+2027-02-17,8:30 PM,Colorado Avalanche,,Edmonton Oilers,,,,,,0,2027
 2027-02-17,9:40 PM,Ottawa Senators,,Seattle Kraken,,,,,,0,2027
 2027-02-17,9:00 PM,Columbus Blue Jackets,,Utah Mammoth,,,,,,0,2027
 2027-02-17,7:30 PM,Los Angeles Kings,,Winnipeg Jets,,,,,,0,2027
 2027-02-18,7:00 PM,Carolina Hurricanes,,Buffalo Sabres,,,,,,0,2027
-2027-02-18,8:00 PM,Philadelphia Flyers,,Dallas Stars,,,,,,0,2027
+2027-02-18,9:00 PM,Philadelphia Flyers,,Dallas Stars,,,,,,0,2027
 2027-02-18,7:00 PM,Montreal Canadiens,,Detroit Red Wings,,,,,,0,2027
 2027-02-18,7:00 PM,New Jersey Devils,,Florida Panthers,,,,,,0,2027
 2027-02-18,8:00 PM,Los Angeles Kings,,Minnesota Wild,,,,,,0,2027
@@ -54210,7 +54210,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-18,7:00 PM,New York Rangers,,New York Islanders,,,,,,0,2027
 2027-02-18,7:00 PM,Anaheim Ducks,,Tampa Bay Lightning,,,,,,0,2027
 2027-02-18,9:00 PM,Ottawa Senators,,Vancouver Canucks,,,,,,0,2027
-2027-02-18,10:30 PM,Columbus Blue Jackets,,Vegas Golden Knights,,,,,,0,2027
+2027-02-18,10:00 PM,Columbus Blue Jackets,,Vegas Golden Knights,,,,,,0,2027
 2027-02-19,7:00 PM,Detroit Red Wings,,Carolina Hurricanes,,,,,,0,2027
 2027-02-19,8:00 PM,Pittsburgh Penguins,,Calgary Flames,,,,,,0,2027
 2027-02-19,8:00 PM,Boston Bruins,,Edmonton Oilers,,,,,,0,2027
@@ -54223,13 +54223,13 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-20,5:00 PM,Anaheim Ducks,,Florida Panthers,,,,,,0,2027
 2027-02-20,10:30 PM,Seattle Kraken,,Los Angeles Kings,,,,,,0,2027
 2027-02-20,7:00 PM,New York Islanders,,Montreal Canadiens,,,,,,0,2027
-2027-02-20,3:00 PM,Buffalo Sabres,,New Jersey Devils,,,,,,0,2027
-2027-02-20,12:00 PM,New York Rangers,,Philadelphia Flyers,,,,,,0,2027
+2027-02-20,1:30 PM,Buffalo Sabres,,New Jersey Devils,,,,,,0,2027
+2027-02-20,12:30 PM,New York Rangers,,Philadelphia Flyers,,,,,,0,2027
 2027-02-20,7:00 PM,Toronto Maple Leafs,,Tampa Bay Lightning,,,,,,0,2027
 2027-02-20,10:00 PM,Colorado Avalanche,,Vancouver Canucks,,,,,,0,2027
 2027-02-21,1:00 PM,New York Rangers,,Carolina Hurricanes,,,,,,0,2027
 2027-02-21,7:00 PM,Ottawa Senators,,Calgary Flames,,,,,,0,2027
-2027-02-21,3:30 PM,New Jersey Devils,,Chicago Blackhawks,,,,,,0,2027
+2027-02-21,6:00 PM,New Jersey Devils,,Chicago Blackhawks,,,,,,0,2027
 2027-02-21,3:30 PM,Buffalo Sabres,,Detroit Red Wings,,,,,,0,2027
 2027-02-21,6:00 PM,San Jose Sharks,,Florida Panthers,,,,,,0,2027
 2027-02-21,6:00 PM,Utah Mammoth,,St. Louis Blues,,,,,,0,2027
@@ -54239,12 +54239,12 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-22,7:00 PM,New York Islanders,,Columbus Blue Jackets,,,,,,0,2027
 2027-02-22,9:00 PM,Vegas Golden Knights,,Colorado Avalanche,,,,,,0,2027
 2027-02-22,7:30 PM,Ottawa Senators,,Edmonton Oilers,,,,,,0,2027
-2027-02-22,1:00 PM,Montreal Canadiens,,Philadelphia Flyers,,,,,,0,2027
+2027-02-22,2:00 PM,Montreal Canadiens,,Philadelphia Flyers,,,,,,0,2027
 2027-02-22,9:40 PM,Boston Bruins,,Seattle Kraken,,,,,,0,2027
 2027-02-23,8:00 PM,New York Islanders,,Chicago Blackhawks,,,,,,0,2027
 2027-02-23,8:00 PM,Vancouver Canucks,,Dallas Stars,,,,,,0,2027
 2027-02-23,8:00 PM,Pittsburgh Penguins,,Minnesota Wild,,,,,,0,2027
-2027-02-23,7:00 PM,Carolina Hurricanes,,New Jersey Devils,,,,,,0,2027
+2027-02-23,7:30 PM,Carolina Hurricanes,,New Jersey Devils,,,,,,0,2027
 2027-02-23,8:00 PM,Winnipeg Jets,,Nashville Predators,,,,,,0,2027
 2027-02-23,7:00 PM,San Jose Sharks,,Tampa Bay Lightning,,,,,,0,2027
 2027-02-23,7:00 PM,Detroit Red Wings,,Toronto Maple Leafs,,,,,,0,2027
@@ -54256,7 +54256,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-24,9:30 PM,Florida Panthers,,Vegas Golden Knights,,,,,,0,2027
 2027-02-25,8:00 PM,Washington Capitals,,Boston Bruins,,,,,,0,2027
 2027-02-25,7:00 PM,San Jose Sharks,,Carolina Hurricanes,,,,,,0,2027
-2027-02-25,10:30 PM,Winnipeg Jets,,Colorado Avalanche,,,,,,0,2027
+2027-02-25,9:00 PM,Winnipeg Jets,,Colorado Avalanche,,,,,,0,2027
 2027-02-25,8:00 PM,Tampa Bay Lightning,,Dallas Stars,,,,,,0,2027
 2027-02-25,8:00 PM,Edmonton Oilers,,Nashville Predators,,,,,,0,2027
 2027-02-25,7:00 PM,Detroit Red Wings,,Ottawa Senators,,,,,,0,2027
@@ -54270,7 +54270,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-02-26,9:00 PM,Florida Panthers,,Utah Mammoth,,,,,,0,2027
 2027-02-26,9:00 PM,Anaheim Ducks,,Vegas Golden Knights,,,,,,0,2027
 2027-02-27,7:00 PM,Montreal Canadiens,,Anaheim Ducks,,,,,,0,2027
-2027-02-27,12:00 PM,Detroit Red Wings,,Boston Bruins,,,,,,0,2027
+2027-02-27,12:30 PM,Detroit Red Wings,,Boston Bruins,,,,,,0,2027
 2027-02-27,7:00 PM,Toronto Maple Leafs,,Buffalo Sabres,,,,,,0,2027
 2027-02-27,7:00 PM,Tampa Bay Lightning,,Carolina Hurricanes,,,,,,0,2027
 2027-02-27,7:00 PM,New York Islanders,,Columbus Blue Jackets,,,,,,0,2027
@@ -54307,10 +54307,10 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-03,10:00 PM,Chicago Blackhawks,,Vancouver Canucks,,,,,,0,2027
 2027-03-03,7:00 PM,Carolina Hurricanes,,Washington Capitals,,,,,,0,2027
 2027-03-04,7:00 PM,St. Louis Blues,,Buffalo Sabres,,,,,,0,2027
-2027-03-04,7:00 PM,New Jersey Devils,,Detroit Red Wings,,,,,,0,2027
-2027-03-04,7:00 PM,Pittsburgh Penguins,,Florida Panthers,,,,,,0,2027
+2027-03-04,6:00 PM,New Jersey Devils,,Detroit Red Wings,,,,,,0,2027
+2027-03-04,8:30 PM,Pittsburgh Penguins,,Florida Panthers,,,,,,0,2027
 2027-03-04,7:00 PM,Seattle Kraken,,Montreal Canadiens,,,,,,0,2027
-2027-03-04,9:30 PM,Utah Mammoth,,Nashville Predators,,,,,,0,2027
+2027-03-04,8:00 PM,Utah Mammoth,,Nashville Predators,,,,,,0,2027
 2027-03-04,7:00 PM,Vegas Golden Knights,,New York Islanders,,,,,,0,2027
 2027-03-04,7:00 PM,Boston Bruins,,Ottawa Senators,,,,,,0,2027
 2027-03-05,10:00 PM,Tampa Bay Lightning,,Anaheim Ducks,,,,,,0,2027
@@ -54321,23 +54321,23 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-05,7:00 PM,Dallas Stars,,Philadelphia Flyers,,,,,,0,2027
 2027-03-05,10:00 PM,Colorado Avalanche,,San Jose Sharks,,,,,,0,2027
 2027-03-05,8:00 PM,Washington Capitals,,Winnipeg Jets,,,,,,0,2027
-2027-03-06,12:00 PM,Pittsburgh Penguins,,Boston Bruins,,,,,,0,2027
+2027-03-06,12:30 PM,Pittsburgh Penguins,,Boston Bruins,,,,,,0,2027
 2027-03-06,3:00 PM,New York Rangers,,Buffalo Sabres,,,,,,0,2027
 2027-03-06,7:00 PM,Dallas Stars,,Detroit Red Wings,,,,,,0,2027
 2027-03-06,10:00 PM,Chicago Blackhawks,,Edmonton Oilers,,,,,,0,2027
 2027-03-06,7:00 PM,Toronto Maple Leafs,,Florida Panthers,,,,,,0,2027
 2027-03-06,7:00 PM,Vancouver Canucks,,Montreal Canadiens,,,,,,0,2027
 2027-03-06,8:00 PM,Minnesota Wild,,Nashville Predators,,,,,,0,2027
-2027-03-06,3:30 PM,Seattle Kraken,,Ottawa Senators,,,,,,0,2027
+2027-03-06,3:00 PM,Seattle Kraken,,Ottawa Senators,,,,,,0,2027
 2027-03-06,10:00 PM,Tampa Bay Lightning,,San Jose Sharks,,,,,,0,2027
 2027-03-07,8:00 PM,Columbus Blue Jackets,,Anaheim Ducks,,,,,,0,2027
 2027-03-07,1:00 PM,Utah Mammoth,,Carolina Hurricanes,,,,,,0,2027
-2027-03-07,3:30 PM,Colorado Avalanche,,Los Angeles Kings,,,,,,0,2027
-2027-03-07,8:30 PM,Washington Capitals,,Minnesota Wild,,,,,,0,2027
+2027-03-07,4:00 PM,Colorado Avalanche,,Los Angeles Kings,,,,,,0,2027
+2027-03-07,9:30 PM,Washington Capitals,,Minnesota Wild,,,,,,0,2027
 2027-03-07,1:00 PM,Pittsburgh Penguins,,New York Islanders,,,,,,0,2027
-2027-03-07,6:00 PM,Vegas Golden Knights,,New York Rangers,,,,,,0,2027
-2027-03-07,5:00 PM,Buffalo Sabres,,Ottawa Senators,,,,,,0,2027
-2027-03-07,1:00 PM,St. Louis Blues,,Philadelphia Flyers,,,,,,0,2027
+2027-03-07,7:00 PM,Vegas Golden Knights,,New York Rangers,,,,,,0,2027
+2027-03-07,3:00 PM,Buffalo Sabres,,Ottawa Senators,,,,,,0,2027
+2027-03-07,3:30 PM,St. Louis Blues,,Philadelphia Flyers,,,,,,0,2027
 2027-03-07,3:00 PM,Calgary Flames,,Winnipeg Jets,,,,,,0,2027
 2027-03-08,7:00 PM,Seattle Kraken,,Boston Bruins,,,,,,0,2027
 2027-03-08,8:00 PM,Tampa Bay Lightning,,Chicago Blackhawks,,,,,,0,2027
@@ -54351,18 +54351,18 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-09,7:00 PM,Ottawa Senators,,Pittsburgh Penguins,,,,,,0,2027
 2027-03-09,8:00 PM,Nashville Predators,,St. Louis Blues,,,,,,0,2027
 2027-03-09,9:00 PM,New York Rangers,,Utah Mammoth,,,,,,0,2027
-2027-03-09,10:00 PM,San Jose Sharks,,Vegas Golden Knights,,,,,,0,2027
+2027-03-09,10:30 PM,San Jose Sharks,,Vegas Golden Knights,,,,,,0,2027
 2027-03-09,8:00 PM,Detroit Red Wings,,Winnipeg Jets,,,,,,0,2027
 2027-03-09,7:00 PM,Calgary Flames,,Washington Capitals,,,,,,0,2027
-2027-03-10,9:30 PM,Washington Capitals,,Chicago Blackhawks,,,,,,0,2027
-2027-03-10,9:30 PM,Anaheim Ducks,,Dallas Stars,,,,,,0,2027
+2027-03-10,8:00 PM,Washington Capitals,,Chicago Blackhawks,,,,,,0,2027
+2027-03-10,8:00 PM,Anaheim Ducks,,Dallas Stars,,,,,,0,2027
 2027-03-10,7:30 PM,Boston Bruins,,Montreal Canadiens,,,,,,0,2027
 2027-03-11,7:00 PM,Vancouver Canucks,,Columbus Blue Jackets,,,,,,0,2027
-2027-03-11,9:30 PM,New York Rangers,,Colorado Avalanche,,,,,,0,2027
+2027-03-11,9:00 PM,New York Rangers,,Colorado Avalanche,,,,,,0,2027
 2027-03-11,8:00 PM,Nashville Predators,,Edmonton Oilers,,,,,,0,2027
 2027-03-11,7:00 PM,Minnesota Wild,,Ottawa Senators,,,,,,0,2027
-2027-03-11,7:00 PM,Boston Bruins,,Pittsburgh Penguins,,,,,,0,2027
-2027-03-11,9:40 PM,Los Angeles Kings,,Seattle Kraken,,,,,,0,2027
+2027-03-11,7:30 PM,Boston Bruins,,Pittsburgh Penguins,,,,,,0,2027
+2027-03-11,9:30 PM,Los Angeles Kings,,Seattle Kraken,,,,,,0,2027
 2027-03-11,8:00 PM,San Jose Sharks,,St. Louis Blues,,,,,,0,2027
 2027-03-11,7:00 PM,New Jersey Devils,,Tampa Bay Lightning,,,,,,0,2027
 2027-03-11,10:00 PM,Philadelphia Flyers,,Vegas Golden Knights,,,,,,0,2027
@@ -54396,8 +54396,8 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-15,7:30 PM,Florida Panthers,,Toronto Maple Leafs,,,,,,0,2027
 2027-03-15,9:00 PM,Dallas Stars,,Utah Mammoth,,,,,,0,2027
 2027-03-15,10:00 PM,Winnipeg Jets,,Vegas Golden Knights,,,,,,0,2027
-2027-03-15,1:00 PM,Tampa Bay Lightning,,Washington Capitals,,,,,,0,2027
-2027-03-16,10:00 PM,Carolina Hurricanes,,Anaheim Ducks,,,,,,0,2027
+2027-03-15,3:00 PM,Tampa Bay Lightning,,Washington Capitals,,,,,,0,2027
+2027-03-16,10:30 PM,Carolina Hurricanes,,Anaheim Ducks,,,,,,0,2027
 2027-03-16,7:00 PM,Pittsburgh Penguins,,Columbus Blue Jackets,,,,,,0,2027
 2027-03-16,8:00 PM,San Jose Sharks,,Chicago Blackhawks,,,,,,0,2027
 2027-03-16,10:00 PM,Winnipeg Jets,,Los Angeles Kings,,,,,,0,2027
@@ -54405,13 +54405,13 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-16,7:00 PM,Ottawa Senators,,New York Rangers,,,,,,0,2027
 2027-03-16,7:00 PM,Detroit Red Wings,,Philadelphia Flyers,,,,,,0,2027
 2027-03-17,9:30 PM,Dallas Stars,,Calgary Flames,,,,,,0,2027
-2027-03-17,9:00 PM,Minnesota Wild,,Colorado Avalanche,,,,,,0,2027
+2027-03-17,8:30 PM,Minnesota Wild,,Colorado Avalanche,,,,,,0,2027
 2027-03-17,7:30 PM,Tampa Bay Lightning,,Toronto Maple Leafs,,,,,,0,2027
 2027-03-17,10:00 PM,Nashville Predators,,Vancouver Canucks,,,,,,0,2027
 2027-03-17,10:00 PM,Seattle Kraken,,Vegas Golden Knights,,,,,,0,2027
 2027-03-17,7:00 PM,New York Islanders,,Washington Capitals,,,,,,0,2027
 2027-03-18,10:00 PM,Utah Mammoth,,Anaheim Ducks,,,,,,0,2027
-2027-03-18,7:00 PM,Washington Capitals,,Buffalo Sabres,,,,,,0,2027
+2027-03-18,7:30 PM,Washington Capitals,,Buffalo Sabres,,,,,,0,2027
 2027-03-18,7:00 PM,Columbus Blue Jackets,,Detroit Red Wings,,,,,,0,2027
 2027-03-18,9:00 PM,St. Louis Blues,,Edmonton Oilers,,,,,,0,2027
 2027-03-18,10:00 PM,Carolina Hurricanes,,Los Angeles Kings,,,,,,0,2027
@@ -54426,7 +54426,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-19,10:00 PM,Chicago Blackhawks,,Utah Mammoth,,,,,,0,2027
 2027-03-20,10:30 PM,Vegas Golden Knights,,Anaheim Ducks,,,,,,0,2027
 2027-03-20,1:00 PM,Florida Panthers,,Buffalo Sabres,,,,,,0,2027
-2027-03-20,1:00 PM,Montreal Canadiens,,Detroit Red Wings,,,,,,0,2027
+2027-03-20,12:30 PM,Montreal Canadiens,,Detroit Red Wings,,,,,,0,2027
 2027-03-20,3:30 PM,Dallas Stars,,Edmonton Oilers,,,,,,0,2027
 2027-03-20,7:00 PM,Toronto Maple Leafs,,New Jersey Devils,,,,,,0,2027
 2027-03-20,5:00 PM,Boston Bruins,,Nashville Predators,,,,,,0,2027
@@ -54440,7 +54440,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-21,5:00 PM,Chicago Blackhawks,,Colorado Avalanche,,,,,,0,2027
 2027-03-21,2:00 PM,Utah Mammoth,,Minnesota Wild,,,,,,0,2027
 2027-03-21,3:00 PM,Buffalo Sabres,,New York Islanders,,,,,,0,2027
-2027-03-21,7:00 PM,Washington Capitals,,New York Rangers,,,,,,0,2027
+2027-03-21,8:00 PM,Washington Capitals,,New York Rangers,,,,,,0,2027
 2027-03-21,8:00 PM,Los Angeles Kings,,Seattle Kraken,,,,,,0,2027
 2027-03-21,9:00 PM,Edmonton Oilers,,Vancouver Canucks,,,,,,0,2027
 2027-03-22,10:00 PM,San Jose Sharks,,Anaheim Ducks,,,,,,0,2027
@@ -54448,7 +54448,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-22,7:00 PM,Columbus Blue Jackets,,Pittsburgh Penguins,,,,,,0,2027
 2027-03-23,7:00 PM,Buffalo Sabres,,Boston Bruins,,,,,,0,2027
 2027-03-23,9:00 PM,Edmonton Oilers,,Calgary Flames,,,,,,0,2027
-2027-03-23,9:00 PM,Utah Mammoth,,Colorado Avalanche,,,,,,0,2027
+2027-03-23,9:30 PM,Utah Mammoth,,Colorado Avalanche,,,,,,0,2027
 2027-03-23,8:00 PM,Carolina Hurricanes,,Dallas Stars,,,,,,0,2027
 2027-03-23,8:00 PM,Chicago Blackhawks,,Minnesota Wild,,,,,,0,2027
 2027-03-23,7:00 PM,Philadelphia Flyers,,New Jersey Devils,,,,,,0,2027
@@ -54471,7 +54471,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-25,7:00 PM,New Jersey Devils,,Pittsburgh Penguins,,,,,,0,2027
 2027-03-25,9:40 PM,Anaheim Ducks,,Seattle Kraken,,,,,,0,2027
 2027-03-25,8:00 PM,New York Islanders,,St. Louis Blues,,,,,,0,2027
-2027-03-25,7:00 PM,Philadelphia Flyers,,Tampa Bay Lightning,,,,,,0,2027
+2027-03-25,6:30 PM,Philadelphia Flyers,,Tampa Bay Lightning,,,,,,0,2027
 2027-03-25,10:00 PM,Vegas Golden Knights,,Vancouver Canucks,,,,,,0,2027
 2027-03-25,8:00 PM,Colorado Avalanche,,Winnipeg Jets,,,,,,0,2027
 2027-03-26,8:00 PM,Nashville Predators,,Chicago Blackhawks,,,,,,0,2027
@@ -54483,17 +54483,17 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-27,8:00 PM,Nashville Predators,,Dallas Stars,,,,,,0,2027
 2027-03-27,3:30 PM,Los Angeles Kings,,Edmonton Oilers,,,,,,0,2027
 2027-03-27,6:00 PM,Philadelphia Flyers,,Florida Panthers,,,,,,0,2027
-2027-03-27,4:00 PM,Seattle Kraken,,Minnesota Wild,,,,,,0,2027
+2027-03-27,2:00 PM,Seattle Kraken,,Minnesota Wild,,,,,,0,2027
 2027-03-27,7:00 PM,New Jersey Devils,,Montreal Canadiens,,,,,,0,2027
 2027-03-27,7:30 PM,Detroit Red Wings,,New York Islanders,,,,,,0,2027
 2027-03-27,7:00 PM,Carolina Hurricanes,,Pittsburgh Penguins,,,,,,0,2027
 2027-03-27,7:00 PM,New York Rangers,,Tampa Bay Lightning,,,,,,0,2027
 2027-03-27,7:00 PM,Ottawa Senators,,Toronto Maple Leafs,,,,,,0,2027
 2027-03-27,4:00 PM,Anaheim Ducks,,Vancouver Canucks,,,,,,0,2027
-2027-03-28,3:00 PM,Seattle Kraken,,Chicago Blackhawks,,,,,,0,2027
-2027-03-28,7:00 PM,Detroit Red Wings,,Montreal Canadiens,,,,,,0,2027
-2027-03-28,9:00 PM,Buffalo Sabres,,St. Louis Blues,,,,,,0,2027
-2027-03-28,6:00 PM,Washington Capitals,,Toronto Maple Leafs,,,,,,0,2027
+2027-03-28,2:00 PM,Seattle Kraken,,Chicago Blackhawks,,,,,,0,2027
+2027-03-28,6:00 PM,Detroit Red Wings,,Montreal Canadiens,,,,,,0,2027
+2027-03-28,8:30 PM,Buffalo Sabres,,St. Louis Blues,,,,,,0,2027
+2027-03-28,7:00 PM,Washington Capitals,,Toronto Maple Leafs,,,,,,0,2027
 2027-03-29,9:30 PM,Vancouver Canucks,,Los Angeles Kings,,,,,,0,2027
 2027-03-29,7:00 PM,Carolina Hurricanes,,New Jersey Devils,,,,,,0,2027
 2027-03-29,7:00 PM,Minnesota Wild,,New York Rangers,,,,,,0,2027
@@ -54504,7 +54504,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-30,7:00 PM,Ottawa Senators,,Detroit Red Wings,,,,,,0,2027
 2027-03-30,7:00 PM,Columbus Blue Jackets,,Florida Panthers,,,,,,0,2027
 2027-03-30,8:00 PM,Buffalo Sabres,,Nashville Predators,,,,,,0,2027
-2027-03-30,7:00 PM,Carolina Hurricanes,,New York Islanders,,,,,,0,2027
+2027-03-30,7:30 PM,Carolina Hurricanes,,New York Islanders,,,,,,0,2027
 2027-03-30,7:00 PM,Pittsburgh Penguins,,Philadelphia Flyers,,,,,,0,2027
 2027-03-30,9:40 PM,Utah Mammoth,,Seattle Kraken,,,,,,0,2027
 2027-03-30,7:00 PM,Toronto Maple Leafs,,Tampa Bay Lightning,,,,,,0,2027
@@ -54513,11 +54513,11 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-03-31,10:00 PM,Winnipeg Jets,,Los Angeles Kings,,,,,,0,2027
 2027-03-31,7:30 PM,Minnesota Wild,,New Jersey Devils,,,,,,0,2027
 2027-03-31,10:30 PM,Vancouver Canucks,,Vegas Golden Knights,,,,,,0,2027
-2027-04-01,7:30 PM,Boston Bruins,,Buffalo Sabres,,,,,,0,2027
+2027-04-01,7:00 PM,Boston Bruins,,Buffalo Sabres,,,,,,0,2027
 2027-04-01,7:00 PM,Toronto Maple Leafs,,Florida Panthers,,,,,,0,2027
 2027-04-01,7:00 PM,New York Rangers,,Montreal Canadiens,,,,,,0,2027
 2027-04-01,8:00 PM,Chicago Blackhawks,,Nashville Predators,,,,,,0,2027
-2027-04-01,7:00 PM,Washington Capitals,,Philadelphia Flyers,,,,,,0,2027
+2027-04-01,7:30 PM,Washington Capitals,,Philadelphia Flyers,,,,,,0,2027
 2027-04-01,7:00 PM,New York Islanders,,Pittsburgh Penguins,,,,,,0,2027
 2027-04-01,8:00 PM,Calgary Flames,,St. Louis Blues,,,,,,0,2027
 2027-04-01,7:00 PM,Columbus Blue Jackets,,Tampa Bay Lightning,,,,,,0,2027
@@ -54533,7 +54533,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-04-03,6:00 PM,Chicago Blackhawks,,Dallas Stars,,,,,,0,2027
 2027-04-03,10:30 PM,St. Louis Blues,,Los Angeles Kings,,,,,,0,2027
 2027-04-03,3:30 PM,Calgary Flames,,Nashville Predators,,,,,,0,2027
-2027-04-03,12:00 PM,Florida Panthers,,New York Rangers,,,,,,0,2027
+2027-04-03,12:30 PM,Florida Panthers,,New York Rangers,,,,,,0,2027
 2027-04-03,8:00 PM,Philadelphia Flyers,,Pittsburgh Penguins,,,,,,0,2027
 2027-04-03,7:00 PM,Winnipeg Jets,,Seattle Kraken,,,,,,0,2027
 2027-04-03,7:00 PM,Buffalo Sabres,,Toronto Maple Leafs,,,,,,0,2027
@@ -54543,7 +54543,7 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-04-04,2:00 PM,Colorado Avalanche,,Minnesota Wild,,,,,,0,2027
 2027-04-04,4:30 PM,Florida Panthers,,New Jersey Devils,,,,,,0,2027
 2027-04-04,7:30 PM,Montreal Canadiens,,New York Islanders,,,,,,0,2027
-2027-04-04,5:00 PM,Detroit Red Wings,,Ottawa Senators,,,,,,0,2027
+2027-04-04,3:00 PM,Detroit Red Wings,,Ottawa Senators,,,,,,0,2027
 2027-04-04,9:30 PM,St. Louis Blues,,San Jose Sharks,,,,,,0,2027
 2027-04-04,7:00 PM,Pittsburgh Penguins,,Washington Capitals,,,,,,0,2027
 2027-04-05,7:00 PM,Tampa Bay Lightning,,Buffalo Sabres,,,,,,0,2027
@@ -54552,27 +54552,27 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-04-05,9:30 PM,Calgary Flames,,Edmonton Oilers,,,,,,0,2027
 2027-04-05,7:00 PM,Boston Bruins,,Toronto Maple Leafs,,,,,,0,2027
 2027-04-05,9:30 PM,Winnipeg Jets,,Utah Mammoth,,,,,,0,2027
-2027-04-06,10:00 PM,Los Angeles Kings,,Anaheim Ducks,,,,,,0,2027
-2027-04-06,7:00 PM,Washington Capitals,,Columbus Blue Jackets,,,,,,0,2027
-2027-04-06,7:00 PM,Montreal Canadiens,,Florida Panthers,,,,,,0,2027
+2027-04-06,10:15 PM,Los Angeles Kings,,Anaheim Ducks,,,,,,0,2027
+2027-04-06,7:45 PM,Washington Capitals,,Columbus Blue Jackets,,,,,,0,2027
+2027-04-06,7:15 PM,Montreal Canadiens,,Florida Panthers,,,,,,0,2027
 2027-04-06,8:00 PM,Chicago Blackhawks,,Minnesota Wild,,,,,,0,2027
-2027-04-06,7:00 PM,Tampa Bay Lightning,,New Jersey Devils,,,,,,0,2027
+2027-04-06,7:30 PM,Tampa Bay Lightning,,New Jersey Devils,,,,,,0,2027
 2027-04-06,8:00 PM,Seattle Kraken,,Nashville Predators,,,,,,0,2027
 2027-04-06,7:30 PM,Detroit Red Wings,,New York Islanders,,,,,,0,2027
-2027-04-06,7:30 PM,Pittsburgh Penguins,,New York Rangers,,,,,,0,2027
+2027-04-06,7:00 PM,Pittsburgh Penguins,,New York Rangers,,,,,,0,2027
 2027-04-06,10:00 PM,Colorado Avalanche,,Vancouver Canucks,,,,,,0,2027
-2027-04-06,10:00 PM,St. Louis Blues,,Vegas Golden Knights,,,,,,0,2027
-2027-04-07,7:00 PM,Boston Bruins,,Buffalo Sabres,,,,,,0,2027
+2027-04-06,10:30 PM,St. Louis Blues,,Vegas Golden Knights,,,,,,0,2027
+2027-04-07,7:30 PM,Boston Bruins,,Buffalo Sabres,,,,,,0,2027
 2027-04-07,7:00 PM,Ottawa Senators,,Carolina Hurricanes,,,,,,0,2027
-2027-04-07,9:30 PM,Dallas Stars,,Utah Mammoth,,,,,,0,2027
+2027-04-07,9:00 PM,Dallas Stars,,Utah Mammoth,,,,,,0,2027
 2027-04-07,8:00 PM,Edmonton Oilers,,Winnipeg Jets,,,,,,0,2027
-2027-04-08,7:00 PM,Philadelphia Flyers,,Columbus Blue Jackets,,,,,,0,2027
+2027-04-08,7:30 PM,Philadelphia Flyers,,Columbus Blue Jackets,,,,,,0,2027
 2027-04-08,9:00 PM,Colorado Avalanche,,Calgary Flames,,,,,,0,2027
 2027-04-08,8:00 PM,Nashville Predators,,Chicago Blackhawks,,,,,,0,2027
 2027-04-08,10:00 PM,Vegas Golden Knights,,Los Angeles Kings,,,,,,0,2027
 2027-04-08,7:00 PM,New York Islanders,,New Jersey Devils,,,,,,0,2027
 2027-04-08,7:00 PM,Washington Capitals,,Ottawa Senators,,,,,,0,2027
-2027-04-08,9:30 PM,Minnesota Wild,,San Jose Sharks,,,,,,0,2027
+2027-04-08,10:00 PM,Minnesota Wild,,San Jose Sharks,,,,,,0,2027
 2027-04-08,8:00 PM,Seattle Kraken,,St. Louis Blues,,,,,,0,2027
 2027-04-08,7:00 PM,Montreal Canadiens,,Tampa Bay Lightning,,,,,,0,2027
 2027-04-09,8:00 PM,Utah Mammoth,,Dallas Stars,,,,,,0,2027
@@ -54586,11 +54586,11 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2027-04-10,10:00 PM,Winnipeg Jets,,Edmonton Oilers,,,,,,0,2027
 2027-04-10,6:00 PM,Carolina Hurricanes,,Florida Panthers,,,,,,0,2027
 2027-04-10,6:00 PM,Pittsburgh Penguins,,New Jersey Devils,,,,,,0,2027
-2027-04-10,6:00 PM,Dallas Stars,,Nashville Predators,,,,,,0,2027
+2027-04-10,7:00 PM,Dallas Stars,,Nashville Predators,,,,,,0,2027
 2027-04-10,5:00 PM,Columbus Blue Jackets,,New York Islanders,,,,,,0,2027
 2027-04-10,7:00 PM,Toronto Maple Leafs,,New York Rangers,,,,,,0,2027
 2027-04-10,7:00 PM,Montreal Canadiens,,Ottawa Senators,,,,,,0,2027
-2027-04-10,12:00 PM,Washington Capitals,,Philadelphia Flyers,,,,,,0,2027
+2027-04-10,12:30 PM,Washington Capitals,,Philadelphia Flyers,,,,,,0,2027
 2027-04-10,4:00 PM,Anaheim Ducks,,San Jose Sharks,,,,,,0,2027
 2027-04-10,7:00 PM,Utah Mammoth,,St. Louis Blues,,,,,,0,2027
 2027-04-10,8:00 PM,Boston Bruins,,Tampa Bay Lightning,,,,,,0,2027
