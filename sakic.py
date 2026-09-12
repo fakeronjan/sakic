@@ -19,6 +19,7 @@ Author note: Named after Joe Sakic (Avalanche/Nordiques, 1988-2009).
 """
 
 from urllib.request import urlopen, Request
+from urllib.error import HTTPError
 import io, json, time, zipfile
 
 import numpy as np
@@ -201,6 +202,17 @@ def scrape_history(min_season, max_season, existing_df, sleep_seconds=1.2):
             df = scrape_season(year)
             print(f"{len(df)} games")
             new_frames.append(df)
+        except HTTPError as e:
+            if e.code == 403:
+                # Same company/Cloudflare setup as pro-football-reference,
+                # which started serving a bot challenge instead of real pages
+                # in Aug 2026 - the cron kept running green for weeks before
+                # anyone noticed. Fail loud instead so a GH Actions failure
+                # email catches it immediately.
+                raise RuntimeError(
+                    f"hockey-reference blocked the scraper (403) fetching season {year}"
+                ) from e
+            print(f"FAILED: {e}")
         except Exception as e:
             print(f"FAILED: {e}")
         time.sleep(sleep_seconds)
