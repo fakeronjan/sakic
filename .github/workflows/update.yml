@@ -50,8 +50,25 @@ jobs:
           path: sakic_ratings.csv.gz
           key: sakic-ratings-${{ github.run_id }}
 
+      # title_odds_cache/ holds per-season Monte Carlo results (playoff_sim.py).
+      # Each season is fingerprinted by engine code + its games + ratings, so a
+      # stale entry is recomputed automatically - no key bump needed after an
+      # engine change. A miss rebuilds everything (~20 min on the runner).
+      - name: Restore title-odds cache
+        uses: actions/cache/restore@v4
+        with:
+          path: title_odds_cache
+          key: sakic-odds-${{ github.run_id }}
+          restore-keys: sakic-odds-
+
       - name: Generate web data
         run: python generate_data.py
+
+      - name: Save title-odds cache
+        uses: actions/cache/save@v4
+        with:
+          path: title_odds_cache
+          key: sakic-odds-${{ github.run_id }}
 
       - name: Commit and push updated data
         run: |

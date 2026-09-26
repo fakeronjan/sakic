@@ -308,6 +308,42 @@ def fetch_nhl_api_season(season_year):
     return pd.DataFrame(rows)
 
 
+SCHEDULE_CSV = "nhl_schedule.csv"
+
+
+def fetch_nhl_schedule(season_year):
+    """Unplayed regular-season games for the rest of `season_year` (END
+    year) -> SCHEDULE_CSV, for the title-odds sim's remaining schedule."""
+    nhl_season = int(f"{season_year - 1}{season_year}")
+    cursor = max(pd.Timestamp.utcnow().strftime("%Y-%m-%d"), f"{season_year - 1}-09-15")
+    rows, seen = [], set()
+    while True:
+        data = json.loads(_http_get(f"https://api-web.nhle.com/v1/schedule/{cursor}"))
+        for week in data.get("gameWeek", []):
+            d = week.get("date")
+            if d in seen:
+                continue
+            seen.add(d)
+            for g in week.get("games", []):
+                if g.get("season") != nhl_season or g.get("gameType") != 2:
+                    continue
+                if g.get("gameState") in ("OFF", "FINAL"):
+                    continue
+                h = NHL_API_TEAM.get(g.get("homeTeam", {}).get("abbrev"))
+                a = NHL_API_TEAM.get(g.get("awayTeam", {}).get("abbrev"))
+                if h and a:
+                    rows.append({"date": d, "home": h, "away": a})
+        next_d = data.get("nextStartDate")
+        end = data.get("regularSeasonEndDate") or f"{season_year}-04-30"
+        if not next_d or next_d <= cursor or next_d > end:
+            break
+        cursor = next_d
+    df = pd.DataFrame(rows, columns=["date", "home", "away"])
+    df.to_csv(SCHEDULE_CSV, index=False)
+    print(f"  {len(df)} scheduled regular-season games left -> {SCHEDULE_CSV}")
+    return df
+
+
 def merge_game_sources(historical_df, current_df):
     """Drop historical rows for the current season; replace with API-pulled
     games. Identical to GRIFFEY's hybrid merge approach."""
@@ -746,6 +782,8 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"  NHL API fetch failed: {e}")
         current = pd.DataFrame()
+
+    fetch_nhl_schedule(max_season)   # a failure here should fail the run, not go stale
 
     # Step 3: merge sources (API overrides hockey-ref for current season)
     merged = merge_game_sources(historical, current)

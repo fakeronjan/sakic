@@ -5,3 +5,5 @@ __pycache__/
 # Engine-migration backup snapshots (never commit)
 *-bak
 sakic_ratings.csv.gz
+nhl_schedule.csv
+title_odds_cache/
