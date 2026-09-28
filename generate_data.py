@@ -826,7 +826,8 @@ _sim_games = _sim_games[["season", "date", "home", "away", "home_pts", "visitor_
 _cur_season = int(ratings["season"].max())
 _schedule = None
 if os.path.exists("nhl_schedule.csv"):
-    _schedule = pd.read_csv("nhl_schedule.csv", parse_dates=["date"])
+    _schedule = pd.read_csv("nhl_schedule.csv")
+    _schedule["date"] = pd.to_datetime(_schedule["date"])  # header-only file -> object dtype otherwise
     # Only the season we have ratings for (in the offseason the file already
     # holds next season's schedule).
     _schedule = _schedule[_schedule["date"].between(pd.Timestamp(f"{_cur_season - 1}-08-01"),
