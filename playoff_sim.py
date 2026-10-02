@@ -33,8 +33,7 @@ import numpy as np
 import pandas as pd
 from scipy.special import expit, ndtr
 
-N_SIMS = 10_000
-N_SIMS_PLAYOFFS = 100_000
+N_SIMS = 10_000            # every snapshot, playoffs included (fleet standard since 2026-10-02)
 CHUNK = 200_000
 
 # (first season, T0, T1, A, h): regulation outcome model, fit per era.
@@ -506,7 +505,7 @@ def compute(games, ratings_df, current_season, schedule=None, seasons=None, log=
             continue
         sim = SeasonSim(season, g, ratings, schedule if season == current_season else None)
         for d in sorted(ratings):
-            n = N_SIMS_PLAYOFFS if sim.rs_over(d) else N_SIMS
+            n = N_SIMS
             o = sim.odds_at(d, n_sims=n)
             if sim.rs_complete:
                 brackets.setdefault(season, {})[d] = (dict(sim.seeds), list(sim.matchups), n)
