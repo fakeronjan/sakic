@@ -464,6 +464,15 @@ games = pd.read_csv("all_nhl_games.csv", low_memory=False)
 games["date_game"] = pd.to_datetime(games["date_game"])
 games["season"] = games["season"].astype(int)
 
+# Refuse to build from stale ratings. The ratings file isn't in git (it comes
+# from the ratings engine, cached in Actions), so a run on a machine with an old
+# copy would publish old ratings: on 2026-10-02 a local run cut 2026 off at July 8.
+_last_game = pd.to_datetime(games.loc[games["home_pts"].notna(), "date_game"]).max()
+_last_rating = pd.to_datetime(ratings["ranking_date"]).max()
+if _last_game - _last_rating > pd.Timedelta(days=3):
+    raise SystemExit(f"Ratings end {_last_rating.date()} but games run through {_last_game.date()}: "
+                     f"the ratings file is stale. Run the ratings engine first.")
+
 # Per fleet relocation policy (leaving a market breaks history; returning doesn't),
 # the original Jets (1979-1996) and modern Jets (2011+) are ONE canonical "Winnipeg
 # Jets" franchise. Source data already emits both eras as "Winnipeg Jets" with a
