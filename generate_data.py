@@ -892,8 +892,8 @@ for rid, pairs in pd.Series(_po_odds_cache, dtype=float).groupby(level=0):
         rmap[team] = prev_r
     _po_odds_rank_cache[int(rid)] = rmap
 _proj_cache = {}
-if "proj_w50" in _playoff_odds.columns:
-    for rid, team, a, b, c, mx in _playoff_odds[["ranking_id", "team", "proj_w20", "proj_w50", "proj_w80",
+if "proj_mid" in _playoff_odds.columns:
+    for rid, team, a, b, c, mx in _playoff_odds[["ranking_id", "team", "proj_lo", "proj_mid", "proj_hi",
                                                  "proj_max"]].itertuples(index=False):
         if not pd.isna(b) and not pd.isna(rid):
             _proj_cache[(int(rid), team)] = {"proj": [int(a), int(b), int(c)], "proj_max": int(mx)}

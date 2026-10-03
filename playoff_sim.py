@@ -259,11 +259,11 @@ class SeasonSim:
         lean = -drift_lean(frac_left) * (R - R.mean())
         E = rng.normal(lean, sd, (n, T)) if sd > 0 else (lean[None, :] if lean.any() else None)
         Pn, Gn, WTn, rs_done = self._standings(d, n, rng, R, E)
-        # Projected points (Standings' Proj Points bar): 20th/50th/80th
+        # Projected points (Standings' Proj Points bar): 10th/50th/90th
         # percentile of simulated final points while games remain; the bar
         # runs to the most points possible (2 per game). Draws no random numbers.
         proj = (None if rs_done else
-                (np.quantile(Pn, [0.2, 0.5, 0.8], axis=0, method='inverted_cdf'), 2 * Gn[0]))
+                (np.quantile(Pn, [0.1, 0.5, 0.9], axis=0, method='inverted_cdf'), 2 * Gn[0]))
         S = 1 if rs_done else n                       # one table once the RS is over
         pct = Pn[:S] / np.maximum(2 * Gn[:S], 1)
         noise = rng.random((S, T))
@@ -289,7 +289,7 @@ class SeasonSim:
         rows = np.vstack([reach[0]] + [reach[k] for k in range(2, self.n_rounds + 1)] + [reach[-1]])
         res = pd.DataFrame(rows.T, index=self.teams, columns=cols)
         if proj is not None:
-            (res['proj_w20'], res['proj_w50'], res['proj_w80']), res['proj_max'] = proj
+            (res['proj_lo'], res['proj_mid'], res['proj_hi']), res['proj_max'] = proj
         return res
 
     # helpers ---------------------------------------------------------------
