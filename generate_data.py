@@ -1096,6 +1096,7 @@ for team in sorted(ratings["name"].unique()):
                 "title_odds":       _title_odds_val(r["ranking_id"], team),
                 "title_odds_rank":  _title_odds_rk(r["ranking_id"], team),
                 **_po_fields(r["ranking_id"], team),
+                **_proj(r["ranking_id"], team),
                 "display_name":     display_name(team, s),
                 "conference":       conference(team, s),
                 "division":         division(team, s),
