@@ -179,8 +179,10 @@ class SeasonSim:
                 done_series[t] = done_series.get(t, 0) + 1
         ps['round'] = [round_of[(ph, p)] for ph, p in zip(ps['phase'], ps['pair'])]
         self.ps_games = {}
-        for p, rnd, dt, w in zip(ps['pair'], ps['round'], ps['date'], ps['winner']):
+        self.ps_hosts = {}      # every real game's host, in order (set before the series)
+        for p, rnd, dt, w, h in zip(ps['pair'], ps['round'], ps['date'], ps['winner'], ps['home']):
             self.ps_games.setdefault((p, rnd), []).append((dt, w))
+            self.ps_hosts.setdefault((p, rnd), []).append(h)
         self.n_rounds = 5 if self.fmt == 'bubble' else 4
 
     def rs_over(self, d):
@@ -272,6 +274,7 @@ class SeasonSim:
         self.matchups = []
         self.seeds = {}
         self.used_actual = 0
+        self.host_miss = 0
         self.reach = np.zeros((self.n_rounds + 2, T))
         self.entered = np.zeros((n, T), bool)
         champ = getattr(self, '_play_' + self.fmt)()
@@ -323,6 +326,17 @@ class SeasonSim:
         if fixed:
             actual = [w for dt, w in self.ps_games.get((frozenset((ta, tb)), rnd), []) if dt <= self._d]
         a_hosts = self._better(a, b)
+        # A real series uses its real hosts game by game, then the format's
+        # order (from Game 1's host) for games past the real series' length.
+        hosts = self.ps_hosts.get((frozenset((ta, tb)), rnd), []) if fixed else []
+        pat = host_pattern(bo)
+        if hosts and any((h == hosts[0]) != (pat[i] == pat[0]) for i, h in enumerate(hosts[:bo])):
+            hosts = []          # venue data that fits no format order (1999 COL-SJ): keep the sim's rule
+            self.host_bad = getattr(self, 'host_bad', 0) + 1
+        if hosts:
+            real_a = (hosts[0] == ta) == bool(host_pattern(bo)[0])
+            self.host_miss += (not neutral) and bool(a_hosts[0]) != real_a
+            a_hosts = np.full(n, real_a)
         need = bo // 2 + 1
         wa = np.zeros(n, int); wb = np.zeros(n, int)
         Rp = self._bcast(self._Rp)
@@ -331,7 +345,8 @@ class SeasonSim:
             if gi < len(actual):
                 won = np.full(n, actual[gi] == ta); self.used_actual += 1
             else:
-                home = 0.0 if neutral else np.where(a_hosts == bool(better_hosts), PH, -PH)
+                a_home = (np.full(n, hosts[gi] == ta) if gi < len(hosts) else a_hosts == bool(better_hosts))
+                home = 0.0 if neutral else np.where(a_home, PH, -PH)
                 won = self._rng.random(n) < ndtr(PA * (base + home))
             live = (wa < need) & (wb < need)
             wa += won & live; wb += ~won & live

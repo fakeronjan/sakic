@@ -42,6 +42,10 @@ jobs:
       - name: Run ratings engine
         run: python sakic.py
 
+      # Once the regular season ends, the league's final order (playoff seeds)
+      - name: Final standings
+        run: python fetch_divisions.py --current
+
       # Persist the freshly-updated cache for the next run (only reached if
       # sakic.py succeeded, so a failed run never saves a partial cache).
       - name: Save ratings cache
@@ -74,7 +78,7 @@ jobs:
         run: |
           git config user.name  "SAKIC Bot"
           git config user.email "sakic-bot@users.noreply.github.com"
-          git add loaded_nhl_games.csv all_nhl_games.csv docs/data/
+          git add loaded_nhl_games.csv all_nhl_games.csv nhl_divisions.csv docs/data/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
