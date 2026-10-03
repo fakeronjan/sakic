@@ -867,6 +867,37 @@ print(f"  Title odds cached for {len(_title_odds_cache):,} (snapshot, team) pair
 def _title_odds_val(ranking_id, team):
     return _title_odds_cache.get((int(ranking_id), team))
 
+
+# Playoff odds (share of sims making the playoffs) + per-snapshot rank, for
+# the combined Playoff / Cup Odds column; and the Proj Points percentiles
+# while the regular season is going.
+_po_odds_cache = {(int(rid), team): float(p) for rid, team, p in
+                  _playoff_odds[["ranking_id", "team", "playoffs"]].itertuples(index=False)
+                  if p > 0 and not pd.isna(rid)}
+_po_odds_rank_cache = {}
+for rid, pairs in pd.Series(_po_odds_cache, dtype=float).groupby(level=0):
+    rmap, prev_o, prev_r = {}, None, 0
+    for i, ((_, team), v) in enumerate(pairs.sort_values(ascending=False).items(), start=1):
+        if v != prev_o:
+            prev_r, prev_o = i, v
+        rmap[team] = prev_r
+    _po_odds_rank_cache[int(rid)] = rmap
+_proj_cache = {}
+if "proj_w50" in _playoff_odds.columns:
+    for rid, team, a, b, c, mx in _playoff_odds[["ranking_id", "team", "proj_w20", "proj_w50", "proj_w80",
+                                                 "proj_max"]].itertuples(index=False):
+        if not pd.isna(b) and not pd.isna(rid):
+            _proj_cache[(int(rid), team)] = {"proj": [int(a), int(b), int(c)], "proj_max": int(mx)}
+
+
+def _po_fields(ranking_id, team):
+    rm = _po_odds_rank_cache.get(int(ranking_id)) or {}
+    return {"playoff_odds": _po_odds_cache.get((int(ranking_id), team)), "playoff_odds_rank": rm.get(team)}
+
+
+def _proj(ranking_id, team):
+    return _proj_cache.get((int(ranking_id), team), {})
+
 def _title_odds_rk(ranking_id, team):
     rm = _title_odds_rank_cache.get(int(ranking_id))
     return rm.get(team) if rm else None
@@ -992,6 +1023,8 @@ for s in sorted(ratings["season"].unique()):
                 "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
                 "title_odds":       _title_odds_val(r["ranking_id"], r["name"]),
                 "title_odds_rank":  _title_odds_rk(r["ranking_id"], r["name"]),
+                **_po_fields(r["ranking_id"], r["name"]),
+                **_proj(r["ranking_id"], r["name"]),
                 "regular_record":   rec.get("rs_record", "0-0-0"),
                 "regular_pts":      rec.get("rs_pts", 0),
                 "playoff_record":   rec.get("ps_record", ""),
@@ -1053,6 +1086,7 @@ for team in sorted(ratings["name"].unique()):
                 "rank_d":           int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
                 "title_odds":       _title_odds_val(r["ranking_id"], team),
                 "title_odds_rank":  _title_odds_rk(r["ranking_id"], team),
+                **_po_fields(r["ranking_id"], team),
                 "display_name":     display_name(team, s),
                 "conference":       conference(team, s),
                 "division":         division(team, s),
@@ -1369,6 +1403,8 @@ for _, r in latest_snap.sort_values("rank").iterrows():
         "rank_d":       int(r["rank_d"]) if "rank_d" in r and not pd.isna(r["rank_d"]) else None,
         "title_odds":      _title_odds_val(r["ranking_id"], r["name"]),
         "title_odds_rank": _title_odds_rk(r["ranking_id"], r["name"]),
+        **_po_fields(r["ranking_id"], r["name"]),
+        **_proj(r["ranking_id"], r["name"]),
     })
 
 with open("docs/data/current_standings.json", "w") as f:
