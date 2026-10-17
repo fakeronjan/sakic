@@ -26682,8 +26682,8 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2006,2006-01-05,Philadelphia Flyers,New York Rangers,4,3,1,-1,1,0,0,OT,5343,26681,L,W,L 3-4 vs. Philadelphia Flyers (OT),W 4-3 @ New York Rangers (OT),0
 2006,2006-01-05,Montreal Canadiens,New Jersey Devils,4,5,-1,1,0,1,0,,5343,26682,W,L,W 5-4 vs. Montreal Canadiens,L 4-5 @ New Jersey Devils,0
 2006,2006-01-05,Columbus Blue Jackets,San Jose Sharks,3,6,-3,3,0,1,0,,5343,26683,W,L,W 6-3 vs. Columbus Blue Jackets,L 3-6 @ San Jose Sharks,0
-2006,2006-01-05,Colorado Avalanche,Minnesota Wild,4,2,2,-2,1,0,0,,5343,26684,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Minnesota Wild,0
-2006,2006-01-05,Arizona Coyotes,Los Angeles Kings,0,4,-4,4,0,1,0,,5343,26685,W,L,W 4-0 vs. Arizona Coyotes,L 0-4 @ Los Angeles Kings,0
+2006,2006-01-05,Arizona Coyotes,Los Angeles Kings,0,4,-4,4,0,1,0,,5343,26684,W,L,W 4-0 vs. Arizona Coyotes,L 0-4 @ Los Angeles Kings,0
+2006,2006-01-05,Colorado Avalanche,Minnesota Wild,4,2,2,-2,1,0,0,,5343,26685,L,W,L 2-4 vs. Colorado Avalanche,W 4-2 @ Minnesota Wild,0
 2006,2006-01-05,St. Louis Blues,Detroit Red Wings,0,3,-3,3,0,1,0,,5343,26686,W,L,W 3-0 vs. St. Louis Blues,L 0-3 @ Detroit Red Wings,0
 2006,2006-01-05,Vancouver Canucks,Chicago Blackhawks,3,2,1,-1,1,0,0,,5343,26687,L,W,L 2-3 vs. Vancouver Canucks,W 3-2 @ Chicago Blackhawks,0
 2006,2006-01-05,Tampa Bay Lightning,Buffalo Sabres,1,3,-2,2,0,1,0,,5343,26688,W,L,W 3-1 vs. Tampa Bay Lightning,L 1-3 @ Buffalo Sabres,0
@@ -53369,3 +53369,5 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2027,2026-10-15,Buffalo Sabres,Toronto Maple Leafs,5,4,1,-1,1,0,0,OT,9807,53368,L,W,L 4-5 vs. Buffalo Sabres (OT),W 5-4 @ Toronto Maple Leafs (OT),0
 2027,2026-10-15,New York Rangers,New Jersey Devils,1,7,-6,6,0,1,0,,9807,53369,W,L,W 7-1 vs. New York Rangers,L 1-7 @ New Jersey Devils,0
 2027,2026-10-15,Calgary Flames,Vegas Golden Knights,2,6,-4,4,0,1,0,,9807,53370,W,L,W 6-2 vs. Calgary Flames,L 2-6 @ Vegas Golden Knights,0
+2027,2026-10-16,Pittsburgh Penguins,Colorado Avalanche,2,5,-3,3,0,1,0,,9808,53371,W,L,W 5-2 vs. Pittsburgh Penguins,L 2-5 @ Colorado Avalanche,0
+2027,2026-10-16,Boston Bruins,Anaheim Ducks,4,2,2,-2,1,0,0,,9808,53372,L,W,L 2-4 vs. Boston Bruins,W 4-2 @ Anaheim Ducks,0
