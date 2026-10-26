@@ -7,3 +7,4 @@ __pycache__/
 sakic_ratings.csv.gz
 nhl_schedule.csv
 title_odds_cache/
+matchups_cache/

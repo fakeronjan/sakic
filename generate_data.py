@@ -837,6 +837,12 @@ _schedule = None
 if os.path.exists("nhl_schedule.csv"):
     _schedule = pd.read_csv("nhl_schedule.csv")
     _schedule["date"] = pd.to_datetime(_schedule["date"])  # header-only file -> object dtype otherwise
+    _dm_schedule = _schedule.copy()          # Daily Matchups: playoff games too
+    # The sim's remaining schedule is the regular season only (the file also
+    # lists scheduled playoff games for Daily Matchups).
+    if "is_playoff" in _schedule.columns:
+        _schedule = _schedule[_schedule["is_playoff"] == 0]
+    _schedule = _schedule[["date", "home", "away"]]
     # Only the season we have ratings for (in the offseason the file already
     # holds next season's schedule).
     _schedule = _schedule[_schedule["date"].between(pd.Timestamp(f"{_cur_season - 1}-08-01"),
@@ -1510,6 +1516,63 @@ with open("docs/data/playoff_odds/index.json", "w") as f:
     json.dump({"n_sims": playoff_sim.N_SIMS, "current_season": _cur_season,
                "seasons": [x["season"] for x in _po_seasons]}, f, separators=(",", ":"))
 print(f"  {len(_po_seasons)} seasons of playoff odds written")
+
+
+# =========================================================
+# DAILY MATCHUPS (docs/data/daily_matchups/)
+# =========================================================
+# Every game of a day from the ratings going into it: win probability,
+# moneyline, O/U, and each team's playoff and Cup odds with a win and with a
+# loss. 1980 on; finished seasons are cached (daily_matchups.py). The live
+# season previews only its next game day, including opening night before
+# any game of the season has been played (last season's final ratings).
+import daily_matchups
+
+print("\nWriting daily_matchups/...")
+_dm_games = _sim_games.copy()
+if os.path.exists("nhl_schedule.csv") and len(_dm_schedule):
+    _sch = _dm_schedule.copy()
+    if "is_playoff" not in _sch.columns:
+        _sch["is_playoff"] = 0
+    # Season = the NHL season the date falls in (END year): Aug-Dec -> next year.
+    _sch["season"] = _sch["date"].dt.year + (_sch["date"].dt.month >= 8).astype(int)
+    _done = set(zip(_dm_games["date"], _dm_games["home"], _dm_games["away"]))
+    _sch = _sch[[k not in _done for k in zip(_sch["date"], _sch["home"], _sch["away"])]]
+    _dm_games = pd.concat([_dm_games, _sch.assign(home_pts=np.nan, visitor_pts=np.nan, overtimes=np.nan, is_tie=0)[
+        ["season", "date", "home", "away", "home_pts", "visitor_pts", "overtimes", "is_tie", "is_playoff"]]],
+        ignore_index=True)
+# Start times (UTC) from the NHL API, matched on date + teams.
+_dm_games["start"] = None
+if os.path.exists("nhl_start_times.csv"):
+    _st = pd.read_csv("nhl_start_times.csv", parse_dates=["date"])
+    _st_map = {(d, h, a): t for d, h, a, t in _st[["date", "home", "away", "start_utc"]].itertuples(index=False)
+               if isinstance(t, str)}
+    _dm_games["start"] = [_st_map.get(k) for k in zip(_dm_games["date"], _dm_games["home"], _dm_games["away"])]
+_dm_unplayed = _dm_games[_dm_games["home_pts"].isna()]
+_dm_live = int(_dm_unplayed["season"].max()) if len(_dm_unplayed) else None
+_dm_ratings = ratings[["season", "ranking_date", "name", "rating", "rank", "rating_o", "rating_d"]].rename(
+    columns={"ranking_date": "date"})
+_dm_ratings["date"] = pd.to_datetime(_dm_ratings["date"])
+_dm_seasons = sorted(int(s) for s in _dm_games["season"].unique() if s >= 1980)
+_dm_all = daily_matchups.build_cached(_dm_seasons, _dm_games, _dm_ratings, format_record)
+_dm_all = {s: d for s, d in _dm_all.items() if d}
+daily_matchups.add_juice(_dm_all, {s for s in _dm_all if s != _dm_live})
+# Era names for display (Mighty Ducks, Black Hawks); 'home'/'away' stay
+# canonical so team links resolve. Only written where the two differ.
+for _s, _days in _dm_all.items():
+    for _day in _days:
+        for _g in _day["games"]:
+            for _side in ("home", "away"):
+                _dn = display_name(_g[_side], _s)
+                if _dn != _g[_side]:
+                    _g[_side + "_display"] = _dn
+os.makedirs("docs/data/daily_matchups", exist_ok=True)
+for _s, _days in _dm_all.items():
+    with open(f"docs/data/daily_matchups/{_s}.json", "w") as f:
+        json.dump({"season": _s, "days": _days}, f, separators=(",", ":"))
+with open("docs/data/daily_matchups/index.json", "w") as f:
+    json.dump({"seasons": sorted(_dm_all, reverse=True), "live_season": _dm_live}, f, separators=(",", ":"))
+print(f"  {len(_dm_all)} seasons of daily matchups written")
 
 
 # =========================================================

@@ -65,8 +65,23 @@ jobs:
           key: sakic-odds-${{ github.run_id }}
           restore-keys: sakic-odds-
 
+      # matchups_cache/ holds per-season Daily Matchups (daily_matchups.py),
+      # fingerprinted the same way: a stale or missing season recomputes.
+      - name: Restore matchups cache
+        uses: actions/cache/restore@v4
+        with:
+          path: matchups_cache
+          key: sakic-matchups-${{ github.run_id }}
+          restore-keys: sakic-matchups-
+
       - name: Generate web data
         run: python generate_data.py
+
+      - name: Save matchups cache
+        uses: actions/cache/save@v4
+        with:
+          path: matchups_cache
+          key: sakic-matchups-${{ github.run_id }}
 
       - name: Save title-odds cache
         uses: actions/cache/save@v4
@@ -78,7 +93,7 @@ jobs:
         run: |
           git config user.name  "SAKIC Bot"
           git config user.email "sakic-bot@users.noreply.github.com"
-          git add loaded_nhl_games.csv all_nhl_games.csv nhl_divisions.csv docs/data/
+          git add loaded_nhl_games.csv all_nhl_games.csv nhl_divisions.csv nhl_start_times.csv docs/data/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else

@@ -131,6 +131,7 @@ class SeasonSim:
         games (date, home, away)."""
         self.season = season
         self.fmt = fmt(season)
+        self._cap = None
         g = games.sort_values('date', kind='stable').reset_index(drop=True)
         rs = g[g['is_playoff'] == 0][['date', 'home', 'away', 'home_pts', 'visitor_pts', 'overtimes', 'is_tie']]
         if schedule is not None and len(schedule):
@@ -232,15 +233,28 @@ class SeasonSim:
             aw_ = (areg | (aot if self.wtype != 'RW' else False)).astype(np.float32)
             Hm = np.zeros((len(rest), T), np.float32); Hm[np.arange(len(rest)), h] = 1
             Am = np.zeros((len(rest), T), np.float32); Am[np.arange(len(rest)), a] = 1
+            if self._cap is not None:
+                cap = self._cap
+                cap['rest'] = rest.reset_index(drop=True)
+                cap['hw'] = hreg | hot                  # home won (regulation, OT or shootout)
+                cap['aw'] = areg | aot
+                cap['hpts'] = hp_                       # standings points from the game
+                cap['apts'] = ap_
+                cap['E'] = E
+                cap['P'] = Pn                           # += below is in place: final points per sim
             Pn += hp_.astype(np.float32) @ Hm + ap_.astype(np.float32) @ Am
             WTn += hw_ @ Hm + aw_ @ Am
             Gn += (Hm + Am).sum(0)
         return Pn, Gn, WTn, rest.empty
 
     # ── playoffs ───────────────────────────────────────────────────────
-    def odds_at(self, d, n_sims=N_SIMS):
+    def odds_at(self, d, n_sims=N_SIMS, capture=None):
+        """capture: an optional dict filled with per-simulation results (Daily
+        Matchups); needs n_sims <= CHUNK and draws no extra random numbers."""
+        self._cap = capture
         if n_sims <= CHUNK:
             return self._odds_at(d, n_sims, 0)
+        assert capture is None, 'capture needs a single chunk'
         parts, done, k = [], 0, 0
         while done < n_sims:
             n = min(CHUNK, n_sims - done)
@@ -282,8 +296,14 @@ class SeasonSim:
         self.host_miss = 0
         self.reach = np.zeros((self.n_rounds + 2, T))
         self.entered = np.zeros((n, T), bool)
+        if self._cap is not None:
+            # (team_a, team_b, a's result in each sim, best-of, round name)
+            # for each fixed series' next game
+            self._cap['ps_next'] = []
         champ = getattr(self, '_play_' + self.fmt)()
         np.add.at(self.reach[-1], champ, 1)
+        if self._cap is not None:
+            self._cap.update(teams=self.teams, made=self.entered.copy(), champ=champ)
         reach = self.reach / n
         cols = ['playoffs'] + [f'r{k}' for k in range(2, self.n_rounds + 1)] + ['champ']
         rows = np.vstack([reach[0]] + [reach[k] for k in range(2, self.n_rounds + 1)] + [reach[-1]])
@@ -356,6 +376,8 @@ class SeasonSim:
                 a_home = (np.full(n, hosts[gi] == ta) if gi < len(hosts) else a_hosts == bool(better_hosts))
                 home = 0.0 if neutral else np.where(a_home, PH, -PH)
                 won = self._rng.random(n) < ndtr(PA * (base + home))
+                if self._cap is not None and fixed and gi == len(actual) and max(len(actual) - actual.count(ta), actual.count(ta)) < need:
+                    self._cap['ps_next'].append((ta, tb, won, bo, round_names(self.season)[0][rnd - 1]))
             live = (wa < need) & (wb < need)
             wa += won & live; wb += ~won & live
         if fixed and self.rs_complete:
@@ -498,6 +520,8 @@ class SeasonSim:
                     else:
                         Rp = self._bcast(self._Rp)
                         won = self._rng.random(n) < ndtr(PA * (Rp[ix, a] - Rp[ix, b]))
+                        if self._cap is not None and fixed:
+                            self._cap['ps_next'].append((self.teams[a[0]], self.teams[b[0]], won, 1, 'Round Robin'))
                     np.add.at(rrw, (ix, np.where(won, a, b)), 1)
             key = rrw + self._bcast(self._key) * 1e-3          # round-robin wins, then RS points %
             rrs = rr[ix[:, None], np.argsort(-key[ix[:, None], rr], axis=1, kind='stable')]

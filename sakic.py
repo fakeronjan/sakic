@@ -18,6 +18,7 @@ Model:
 Author note: Named after Joe Sakic (Avalanche/Nordiques, 1988-2009).
 """
 
+import os
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 import io, json, time, zipfile
@@ -237,6 +238,29 @@ def scrape_history(min_season, max_season, existing_df, sleep_seconds=1.2):
 # DATA ACQUISITION - NHL API (current-season tail)
 # =========================================================
 
+# Start times (UTC) seen in this run's NHL API pulls, saved to START_CSV.
+START_CSV = "nhl_start_times.csv"
+_START_ROWS = []
+
+
+def _api_start(g):
+    t = g.get("startTimeUTC")
+    return pd.Timestamp(t).tz_convert("UTC").strftime("%Y-%m-%dT%H:%MZ") if t else None
+
+
+def save_start_times():
+    """Merge this run's start times into START_CSV (date, home, away,
+    start_utc; one row per game, newest wins). The file holds every season
+    since 1979-80 (backfilled from the same API) for Daily Matchups."""
+    if not _START_ROWS:
+        return
+    new = pd.DataFrame(_START_ROWS, columns=["date", "home", "away", "start_utc"])
+    old = pd.read_csv(START_CSV) if os.path.exists(START_CSV) else new.iloc[:0]
+    df = pd.concat([old, new], ignore_index=True).drop_duplicates(["date", "home", "away"], keep="last")
+    df.sort_values(["date", "home", "away"]).to_csv(START_CSV, index=False)
+    print(f"  {len(new)} start times this run -> {START_CSV} ({len(df):,} games)")
+
+
 def fetch_nhl_api_season(season_year):
     """Pull current-season games from the NHL API. `season_year` is the END
     year (2026 = 2025-26 season). NHL API uses a single concat 20252026 format
@@ -286,6 +310,7 @@ def fetch_nhl_api_season(season_year):
                 if not home_name or not away_name:
                     print(f"  WARN: unmapped NHL API code {home_abbr!r} or {away_abbr!r}")
                     continue
+                _START_ROWS.append((d, home_name, away_name, _api_start(g)))
                 period_type = g.get("gameOutcome", {}).get("lastPeriodType", "REG")
                 rows.append({
                     "date_game":         d,
@@ -312,8 +337,10 @@ SCHEDULE_CSV = "nhl_schedule.csv"
 
 
 def fetch_nhl_schedule(season_year):
-    """Unplayed regular-season games for the rest of `season_year` (END
-    year) -> SCHEDULE_CSV, for the title-odds sim's remaining schedule."""
+    """Unplayed games for the rest of `season_year` (END year) ->
+    SCHEDULE_CSV: the rest of the regular season (the title-odds sim's
+    remaining schedule) and any scheduled playoff games (Daily Matchups'
+    preview), with is_playoff and start time."""
     nhl_season = int(f"{season_year - 1}{season_year}")
     cursor = max(pd.Timestamp.utcnow().strftime("%Y-%m-%d"), f"{season_year - 1}-09-15")
     rows, seen = [], set()
@@ -325,22 +352,25 @@ def fetch_nhl_schedule(season_year):
                 continue
             seen.add(d)
             for g in week.get("games", []):
-                if g.get("season") != nhl_season or g.get("gameType") != 2:
+                if g.get("season") != nhl_season or g.get("gameType") not in (2, 3):
                     continue
                 if g.get("gameState") in ("OFF", "FINAL"):
                     continue
                 h = NHL_API_TEAM.get(g.get("homeTeam", {}).get("abbrev"))
                 a = NHL_API_TEAM.get(g.get("awayTeam", {}).get("abbrev"))
                 if h and a:
-                    rows.append({"date": d, "home": h, "away": a})
+                    rows.append({"date": d, "home": h, "away": a,
+                                 "is_playoff": int(g.get("gameType") == 3), "start": _api_start(g)})
+                    _START_ROWS.append((d, h, a, _api_start(g)))
         next_d = data.get("nextStartDate")
-        end = data.get("regularSeasonEndDate") or f"{season_year}-04-30"
+        end = data.get("playoffEndDate") or f"{season_year}-07-31"
         if not next_d or next_d <= cursor or next_d > end:
             break
         cursor = next_d
-    df = pd.DataFrame(rows, columns=["date", "home", "away"])
+    df = pd.DataFrame(rows, columns=["date", "home", "away", "is_playoff", "start"])
     df.to_csv(SCHEDULE_CSV, index=False)
-    print(f"  {len(df)} scheduled regular-season games left -> {SCHEDULE_CSV}")
+    n_ps = int(df["is_playoff"].sum())
+    print(f"  {len(df) - n_ps} scheduled regular-season and {n_ps} playoff games left -> {SCHEDULE_CSV}")
     return df
 
 
@@ -784,6 +814,7 @@ if __name__ == "__main__":
         current = pd.DataFrame()
 
     fetch_nhl_schedule(max_season)   # a failure here should fail the run, not go stale
+    save_start_times()
 
     # Step 3: merge sources (API overrides hockey-ref for current season)
     merged = merge_game_sources(historical, current)
