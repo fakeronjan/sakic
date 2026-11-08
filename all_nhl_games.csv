@@ -26761,8 +26761,8 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2006,2006-01-16,Buffalo Sabres,Edmonton Oilers,3,1,2,-2,1,0,0,,5354,26760,L,W,L 1-3 vs. Buffalo Sabres,W 3-1 @ Edmonton Oilers,0
 2006,2006-01-16,Tampa Bay Lightning,San Jose Sharks,1,3,-2,2,0,1,0,,5354,26761,W,L,W 3-1 vs. Tampa Bay Lightning,L 1-3 @ San Jose Sharks,0
 2006,2006-01-17,New Jersey Devils,St. Louis Blues,5,3,2,-2,1,0,0,,5355,26762,L,W,L 3-5 vs. New Jersey Devils,W 5-3 @ St. Louis Blues,0
-2006,2006-01-17,Carolina Hurricanes,Philadelphia Flyers,4,3,1,-1,1,0,0,SO,5355,26763,L,W,L 3-4 vs. Carolina Hurricanes (SO),W 4-3 @ Philadelphia Flyers (SO),0
-2006,2006-01-17,Tampa Bay Lightning,Los Angeles Kings,4,1,3,-3,1,0,0,,5355,26764,L,W,L 1-4 vs. Tampa Bay Lightning,W 4-1 @ Los Angeles Kings,0
+2006,2006-01-17,Tampa Bay Lightning,Los Angeles Kings,4,1,3,-3,1,0,0,,5355,26763,L,W,L 1-4 vs. Tampa Bay Lightning,W 4-1 @ Los Angeles Kings,0
+2006,2006-01-17,Carolina Hurricanes,Philadelphia Flyers,4,3,1,-1,1,0,0,SO,5355,26764,L,W,L 3-4 vs. Carolina Hurricanes (SO),W 4-3 @ Philadelphia Flyers (SO),0
 2006,2006-01-17,Toronto Maple Leafs,Colorado Avalanche,3,5,-2,2,0,1,0,,5355,26765,W,L,W 5-3 vs. Toronto Maple Leafs,L 3-5 @ Colorado Avalanche,0
 2006,2006-01-17,New York Islanders,Chicago Blackhawks,2,1,1,-1,1,0,0,OT,5355,26766,L,W,L 1-2 vs. New York Islanders (OT),W 2-1 @ Chicago Blackhawks (OT),0
 2006,2006-01-18,Detroit Red Wings,Columbus Blue Jackets,4,0,4,-4,1,0,0,,5356,26767,L,W,L 0-4 vs. Detroit Red Wings,W 4-0 @ Columbus Blue Jackets,0
@@ -53527,3 +53527,5 @@ season,date_game,visitor_team_name,home_team_name,visitor_pts,home_pts,visitor_m
 2027,2026-11-07,Florida Panthers,Washington Capitals,3,4,-1,1,0,1,0,,9830,53526,W,L,W 4-3 vs. Florida Panthers,L 3-4 @ Washington Capitals,0
 2027,2026-11-07,Utah Mammoth,Ottawa Senators,2,4,-2,2,0,1,0,,9830,53527,W,L,W 4-2 vs. Utah Mammoth,L 2-4 @ Ottawa Senators,0
 2027,2026-11-07,Vancouver Canucks,Edmonton Oilers,2,4,-2,2,0,1,0,,9830,53528,W,L,W 4-2 vs. Vancouver Canucks,L 2-4 @ Edmonton Oilers,0
+2027,2026-11-08,Florida Panthers,Boston Bruins,1,4,-3,3,0,1,0,,9831,53529,W,L,W 4-1 vs. Florida Panthers,L 1-4 @ Boston Bruins,0
+2027,2026-11-08,Vegas Golden Knights,Buffalo Sabres,4,1,3,-3,1,0,0,,9831,53530,L,W,L 1-4 vs. Vegas Golden Knights,W 4-1 @ Buffalo Sabres,0
