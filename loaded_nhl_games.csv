@@ -53597,18 +53597,18 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-18,7:30 PM,Boston Bruins,4,Detroit Red Wings,1,,"18,340",2:30,,0,2027
 2026-11-18,7:30 PM,Montreal Canadiens,3,New Jersey Devils,2,,"16,514",2:29,,0,2027
 2026-11-18,10:00 PM,Colorado Avalanche,1,Utah Mammoth,4,,"14,111",2:41,,0,2027
-2026-11-19,7:00 PM,Montreal Canadiens,,Carolina Hurricanes,,,,,,0,2027
-2026-11-19,8:00 PM,Minnesota Wild,,Calgary Flames,,,,,,0,2027
-2026-11-19,8:00 PM,Columbus Blue Jackets,,Chicago Blackhawks,,,,,,0,2027
-2026-11-19,9:00 PM,Anaheim Ducks,,Colorado Avalanche,,,,,,0,2027
-2026-11-19,7:00 PM,Philadelphia Flyers,,Ottawa Senators,,,,,,0,2027
-2026-11-19,7:00 PM,St. Louis Blues,,Pittsburgh Penguins,,,,,,0,2027
-2026-11-19,9:40 PM,Vancouver Canucks,,Seattle Kraken,,,,,,0,2027
-2026-11-19,7:30 PM,Edmonton Oilers,,Tampa Bay Lightning,,,,,,0,2027
-2026-11-19,7:00 PM,Los Angeles Kings,,Toronto Maple Leafs,,,,,,0,2027
-2026-11-19,10:00 PM,Dallas Stars,,Vegas Golden Knights,,,,,,0,2027
-2026-11-19,7:00 PM,New York Islanders,,Winnipeg Jets,,,,,,0,2027
-2026-11-19,7:00 PM,Buffalo Sabres,,Washington Capitals,,,,,,0,2027
+2026-11-19,7:00 PM,Montreal Canadiens,2,Carolina Hurricanes,1,OT,"18,838",2:34,,0,2027
+2026-11-19,8:00 PM,Minnesota Wild,4,Calgary Flames,1,,"18,300",2:28,,0,2027
+2026-11-19,8:00 PM,Columbus Blue Jackets,4,Chicago Blackhawks,2,,"17,409",2:23,,0,2027
+2026-11-19,9:00 PM,Anaheim Ducks,0,Colorado Avalanche,4,,"18,116",2:25,,0,2027
+2026-11-19,7:00 PM,Philadelphia Flyers,6,Ottawa Senators,5,OT,"15,701",2:38,,0,2027
+2026-11-19,7:00 PM,St. Louis Blues,5,Pittsburgh Penguins,2,,"15,396",2:33,,0,2027
+2026-11-19,9:40 PM,Vancouver Canucks,1,Seattle Kraken,5,,"17,151",2:40,,0,2027
+2026-11-19,7:30 PM,Edmonton Oilers,1,Tampa Bay Lightning,3,,"19,092",2:22,,0,2027
+2026-11-19,7:00 PM,Los Angeles Kings,4,Toronto Maple Leafs,3,SO,"18,641",2:48,,0,2027
+2026-11-19,10:00 PM,Dallas Stars,4,Vegas Golden Knights,3,SO,"16,238",2:42,,0,2027
+2026-11-19,7:00 PM,New York Islanders,3,Winnipeg Jets,4,OT,"13,161",2:28,,0,2027
+2026-11-19,7:00 PM,Buffalo Sabres,6,Washington Capitals,3,,"18,347",2:35,,0,2027
 2026-11-21,7:00 PM,Washington Capitals,,Boston Bruins,,,,,,0,2027
 2026-11-21,1:00 PM,Edmonton Oilers,,Carolina Hurricanes,,,,,,0,2027
 2026-11-21,3:30 PM,Chicago Blackhawks,,Calgary Flames,,,,,,0,2027
