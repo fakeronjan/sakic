@@ -53623,11 +53623,11 @@ date_game,time_game,visitor_team_name,visitor_goals,home_team_name,home_goals,ov
 2026-11-21,9:00 PM,Anaheim Ducks,2,Utah Mammoth,3,,"14,111",2:27,,0,2027
 2026-11-21,10:00 PM,Minnesota Wild,3,Vancouver Canucks,4,SO,"17,145",2:45,,0,2027
 2026-11-21,7:00 PM,Vegas Golden Knights,5,Winnipeg Jets,4,SO,"14,107",2:47,,0,2027
-2026-11-22,7:00 PM,Pittsburgh Penguins,,Dallas Stars,,,,,,0,2027
-2026-11-22,12:30 PM,Carolina Hurricanes,,New York Rangers,,,,,,0,2027
-2026-11-22,7:00 PM,Edmonton Oilers,,St. Louis Blues,,,,,,0,2027
-2026-11-22,5:00 PM,Buffalo Sabres,,Tampa Bay Lightning,,,,,,0,2027
-2026-11-22,8:00 PM,Chicago Blackhawks,,Vancouver Canucks,,,,,,0,2027
+2026-11-22,7:00 PM,Pittsburgh Penguins,0,Dallas Stars,1,,"18,532",2:23,,0,2027
+2026-11-22,12:30 PM,Carolina Hurricanes,5,New York Rangers,2,,"18,006",2:35,,0,2027
+2026-11-22,7:00 PM,Edmonton Oilers,4,St. Louis Blues,5,SO,"18,096",2:48,,0,2027
+2026-11-22,5:00 PM,Buffalo Sabres,6,Tampa Bay Lightning,2,,"19,092",2:24,,0,2027
+2026-11-22,8:00 PM,Chicago Blackhawks,6,Vancouver Canucks,3,,"17,775",2:33,,0,2027
 2026-11-23,7:30 PM,Los Angeles Kings,,Montreal Canadiens,,,,,,0,2027
 2026-11-23,7:00 PM,Columbus Blue Jackets,,New Jersey Devils,,,,,,0,2027
 2026-11-23,7:30 PM,Toronto Maple Leafs,,New York Islanders,,,,,,0,2027
